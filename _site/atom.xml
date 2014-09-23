@@ -1,33 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-   <title>Gereksiz</title>
+   <title>Adam Morgan</title>
    <link href="/atom.xml" rel="self"/>
    <link href=""/>
-   <updated>2014-09-22T10:17:09-04:00</updated>
+   <updated>2014-09-22T20:27:00-04:00</updated>
    <id></id>
    <author>
-      <name>John Doe</name>
-      <email>john.doe@mail.sexy</email>
+      <name>Adam Morgan</name>
+      <email>atom.morgan@gmail.com</email>
    </author>
 
    
    <entry>
-      <title>Welcome to Jekyll!</title>
-      <link href="/welcome-to-jekyll"/>
-      <updated>2014-03-19T13:40:41-04:00</updated>
-      <id>/welcome-to-jekyll</id>
-      <content type="html">&lt;p&gt;You&amp;#39;ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
-To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+      <title>Where's Snapchat's 'Our Story' for Ferguson?</title>
+      <link href="/Wheres-Snapchats-Our-Story-for-Ferguson"/>
+      <updated>2014-08-24T00:00:00-04:00</updated>
+      <id>/Wheres-Snapchats-Our-Story-for-Ferguson</id>
+      <content type="html">&lt;p&gt;Roughly two months ago, Snapchat released their “Our Story” feature. Similar to the “My Story” feature available to all users of the app, the “Our Story” feature provides the ability for a curated channel of snaps by Snapchat users that’s accessible to everyone. Its debut was at the Electric Daisy Carnival, a dance music festival with roughly 140,000 people in attendance.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;Once I added the EDC Live account to my friends list, I was hooked. I had a first person view of the event from a variety of perspectives that I would find myself watching in short bursts throughout my day. Roughly a month later, they created another channel for the World Cup that was just as enjoyable.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;These two events may have been a great debut for the feature but I think it’s time to see this feature applied to a variety of events.&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll&amp;#39;s GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There was an “Our Story” for EDC. Why not Ferguson?&lt;/p&gt;
+
+&lt;p&gt;Twitter has completely changed the way I consume news. Once I heard enough people mention the shooting of Michael Brown, I went to Twitter and searched #ferguson. That may not have made sense ten years ago, but that’s how many people consume news today. When something happens they go to Twitter and within a hashtag they can search through numerous tweets, articles, videos, and photos all related to that event.&lt;/p&gt;
+
+&lt;p&gt;Imagine that potential on Snapchat. An “Our Story” for Ferguson would give us ground level perspectives that we’d never see on cable news. We’d hear statements from people living the event firsthand. We would have the ability to see a town react as the National Guard moved in.&lt;/p&gt;
+
+&lt;p&gt;Twitter helped organize a revolution in Egypt through a hashtag - #Jan25th. I really hope Snapchat goes along for the ride in the future.&lt;/p&gt;
+</content>
+   </entry>
+   
+   <entry>
+      <title>Little Brother, if I had to go to college again</title>
+      <link href="/Little-Brother-if-I-had-to-go-to-college-again"/>
+      <updated>2014-06-01T00:00:00-04:00</updated>
+      <id>/Little-Brother-if-I-had-to-go-to-college-again</id>
+      <content type="html">&lt;p&gt;My brother recently moved away from home to begin his first semester of college. I thought about my first semester of college and how much I changed during those four years. As I put myself in his shoes I thought to myself - what would I do differently if I had to go through college one more time? What would I do the same?&lt;/p&gt;
+
+&lt;p&gt;So a few weeks ago I sat down and wrote an email for him. I didn’t write it in an attempt to push him towards a different path. I wrote it because I think I would want him to do the same if he’d finished college before me. Here you go.&lt;/p&gt;
+
+&lt;h4&gt;Start a business&lt;/h4&gt;
+
+&lt;p&gt;Take something you’re good at, working out, and turn it into a business on the side. Be a physical trainer for people during your free time. Thanks to your classes, your days will be predictable and scheduling sessions will be easy. If there’s one thing [name redacted] and I both regret looking back, it’s not taking advantage of the freedom and free time you have in college.&lt;/p&gt;
+
+&lt;p&gt;Not only will this help your marketability when you begin to look for an internship/job but it may turn into your full-time job with or without a college degree.&lt;/p&gt;
+
+&lt;p&gt;I know you don’t want to do this but it has a lot of benefits and if you pass it up it better be because you’re doing something better instead. You’re good enough at something where people will pay you for your knowledge. They would literally be paying you for you. You’ll probably have an empty resume or one that doesn’t look like someone from your field and this is a way to change that while making an impression. You could have this above the high school jobs on your resume while everyone else has high school jobs.&lt;/p&gt;
+
+&lt;h4&gt;Look attentive in class even if you aren’t paying attention&lt;/h4&gt;
+
+&lt;p&gt;Nobody else is and teachers notice it. If you look like you’re paying attention, teachers will like you even if you never talk to them. This is exactly how I got my job as a teaching assistant for programming classes and I only remember talking to the teacher once or twice all semester. This job ended up being the reason why I got a job interview with every company I submitted my resume to. It doesn’t take much to get a significant advantage over everyone else in college.&lt;/p&gt;
+
+&lt;p&gt;Don’t be afraid to contribute to class discussions. Again, nobody else does and teachers like it when you do. It can suck, but get on their good side and you’re on the top of their list for job recommendations in a market where college degrees aren’t getting them alone. I heard roughly half of college graduates are unemployed. Avoid that.&lt;/p&gt;
+
+&lt;h4&gt;Minor in something (in or out of class)&lt;/h4&gt;
+
+&lt;p&gt;It doesn’t matter what it is but have a reason for it that you can clearly articulate. When you begin building your resume, interviewers basically talk through your resume from top to bottom. They’re going to ask about it so have a good answer. If it is unrelated to your major, it shows you have a variety of interests. If it is related, it shows you’re trying to expand into concentrations within your field and it sets you apart from someone else.&lt;/p&gt;
+
+&lt;p&gt;If I had to do it all over again, I would have minored in art. It complements a technical role well since software needs good design and it would have shown that I was seriously thinking about my future and growing my skillset. Since I didn’t, I’m teaching myself on my own time now.&lt;/p&gt;
+
+&lt;h4&gt;Know your field&lt;/h4&gt;
+
+&lt;p&gt;If I were to interview someone today to be a programmer, I’d ask them what blogs/books/websites/magazines they read on subject matter related to their field. How do they stay up-to-date? You’d be surprised how many people I was in school with who said they wanted to be programmers but they couldn’t tell you anything about their field. Would you want to hire someone full-time for a job when they aren’t even interested enough to dive into it on their own time?&lt;/p&gt;
+
+&lt;p&gt;When you’re coming straight out of college, everyone is essentially on the same level. You all took the same classes and you all worked random jobs in college and high school that are unrelated to your field (unless you change that). If a company finds someone who’s not an idiot and genuinely wants to work at their company or enter their field, they’ll see that.&lt;/p&gt;
+
+&lt;p&gt;I don’t know what you want to do after school but eventually you’ll meet someone who has your dream job. Be able to talk to them in a way that impresses them. They may be able to help you find a job or point you in the right direction. When you’re in college, it’s not hard to impress because most students don’t give a shit just yet. From what I can gather through social networks, they still don’t.&lt;/p&gt;
+</content>
+   </entry>
+   
+   <entry>
+      <title>The prisoner's dilemma of the UFC</title>
+      <link href="/The-prisoners-dilemma-of-the-UFC"/>
+      <updated>2014-03-25T00:00:00-04:00</updated>
+      <id>/The-prisoners-dilemma-of-the-UFC</id>
+      <content type="html">&lt;p&gt;Since the UFC’s debut in 1993, the sport has seen many changes in its rules both for entertainment purposes as well as a means to increase the level of protection for the fighters. In the early days of the UFC, fighters entered the octagon without gloves and would fight to the finish. A fight could only end through submission, knockout, a referee stoppage, or the classic throwing of the towel. Fighters today wear gloves and compete in fights that are typically three or five rounds that last five minutes each. Perhaps the most significant change was the introduction of weight classes. Now, fighters are matched against other fighters of similar and nearly identical weight.&lt;/p&gt;
+
+&lt;p&gt;Fights that are arranged by weight are drastically different than the early days of the sport. In its very first event, a 216 pound man was matched up against a 434 pound man. At the most recent UFC event, UFC 171, the greatest difference in weight between two fighters was 1.5 pounds and even this small difference resulted in a 20% purse penalty for the heavier fighter.&lt;/p&gt;
+
+&lt;p&gt;While there were many legitimate reasons for introducing weight classes, it has produced unintended consequences that affect the health of the fighters.&lt;/p&gt;
+
+&lt;p&gt;The day before a UFC fight, both fighters weigh in to ensure they are within the specified range for their weight class.&lt;/p&gt;
+
+&lt;p&gt;Let’s assume two fighters are competing in the welterweight division. Before the day of the fight, both fighters must weigh-in at or below 170 pounds. What’s important here for the fighters are the days leading up to the weigh-in along with the 24-hour period after the weigh-in before they enter the octagon to fight.&lt;/p&gt;
+
+&lt;p&gt;In the days leading up to the fight, the fighters begin the process of “cutting weight”. From a dietary standpoint, the fighters slowly reduce water intake to flush out their body. They also avoid carbs, fruits, sugars, salt, and starch. Combine this with hot baths and saunas and fighters can lose anywhere from &lt;a href=&quot;www.fourhourworkweek.com/blog/2013/05/06/how-to-cut-weight-ufc/&quot;&gt;10-30 pounds in just five days&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Immediately after the weigh-in, fighters reverse the entire process. They start drinking water again, fill themselves with carbs, proteins, and fats, and add salt to everything they eat to help their body retain water. In just a 24-hour period, the fighters who weighed in at 170 pounds will walk out to fight that night weighing anywhere between 180-200 pounds.&lt;/p&gt;
+
+&lt;p&gt;The process is painful and damaging both physically and mentally. Why do they do this? It’s a classic case of the prisoner’s dilemma.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgur.com/6wuLpTf.png&quot; alt=&quot;Prisonner&amp;#39;s Dilemma&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;If competing fighters within a given weight class were to avoid cutting weight as shown above, both would be better off. The fighters would be of equal weight and wouldn’t suffer the damaging effects caused by cutting weight. So our 170 pound fighters in the welterweight division could maintain their original size which is closer to 190 pounds, avoid cutting weight, and fight in the middleweight division instead.&lt;/p&gt;
+
+&lt;p&gt;Here’s where the competitive defect comes into play. Rather than maintain a weight closer to 190 pounds, why not cut weight down to a lower weight class, gain all the weight back, and fight with a significant weight advantage over your opponent who has maintained a consistent weight? This possibility of a defector along with the competitive weight advantage it brings is exactly why fighters cut weight. Strategically, they’re better off cutting weight and collectively suffering the consequences than maintaining their weight and hoping their opponents do not defect.&lt;/p&gt;
+
+&lt;p&gt;I bring up this issue because people within the sport have expressed concern about the weight cutting process without a clear understanding as to why it’s happening. It’s dangerous to the fighters and even affects the quality of the sport. The fighters may gain most of their weight back before they fight, but the fighters cannot fully recover in a 24-hour timeframe. Competing at a world class level leads to fighters who fatigue much quicker than they would under normal circumstances.&lt;/p&gt;
+
+&lt;p&gt;As far as how to solve this issue, I can’t say for sure. I’m not aware of the logistics within the UFC to recommend a practical solution. Coordinating production crews, venue setup, and fighters from city to city is an intensive process and the weigh-ins may work around all of this.&lt;/p&gt;
+
+&lt;p&gt;However, assuming the fighters arrive on location a few days in advance, a longer weigh-in process could do some good and potentially solve the problem. Rather than a single weigh-in the day before a fight, several weigh-ins could take place over a few days. These weigh-ins could require a consistent weight each day which would essentially force fighters to maintain a normal weight. Having to maintain a consistent weight through multiple weigh-ins would eliminate the ability for fighters to flush their system out and regain such a large amount of weight in such short time.&lt;/p&gt;
+
+&lt;p&gt;Extend the weigh-in process and we could see fights with healthier and stronger fighters without the negative physical and mental effects of cutting weight.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Thanks to Logan Jones and &lt;a href=&quot;https://twitter.com/MBucks1&quot;&gt;Joey Morgan&lt;/a&gt; for reading drafts of this post.&lt;/p&gt;
+</content>
+   </entry>
+   
+   <entry>
+      <title>Investors need to be accredited?</title>
+      <link href="/Investors-need-to-be-accredited"/>
+      <updated>2013-10-29T00:00:00-04:00</updated>
+      <id>/Investors-need-to-be-accredited</id>
+      <content type="html">&lt;p&gt;I stumbled upon an article the other day that contained a small piece of information I’d never known before. To be an investor, you have to be &lt;a href=&quot;http://www.businessinsider.com/sec-announces-crowdfunding-rule-to-allow-startups-to-raise-1-million-from-unaccredited-investors-2013-10#ixzz2iaskUpYm&quot;&gt;accredited&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Private companies are currently allowed to solicit only accredited investors - those with a net worth of at least $1 million, excluding the value of their homes, or annual income of more than $200,000.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;One million dollars. That seems like a high requirement in today’s world where businesses can literally be started by a couple of students living in a dorm room.&lt;/p&gt;
+
+&lt;p&gt;I’ve never invested money into a company and I definitely don’t have enough cash to throw around at a few small startups, but in the early stages companies can get by with very little capital. Just recently in Atlanta, a new &lt;a href=&quot;http://davidcummings.org/2013/09/27/announcing-the-atlanta-student-fund/&quot;&gt;fund&lt;/a&gt; has been created specifically for students at Georgia Tech. Investments range from $5,000 to $10,000.&lt;/p&gt;
+
+&lt;p&gt;That’s still no small sum of money for a recent college graduate like myself, but it’s manageable for someone in my situation. And to be perfectly honest, it’s even an amount I would seriously consider investing if I saw enough potential in the founders and their business.&lt;/p&gt;
+
+&lt;p&gt;However, even if the crowdfunding proposal is passed, “unaccredited” investors will be extremely limited in the amount they can legally contribute.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The proposal says that investors with a net worth and income of less than $100,000 can contribute only $2,000 or 5 percent of their net worth or income, whichever is greater.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I wouldn’t be able to provide the experience and knowledge of more seasoned investors, but it’s cash and it diverts attention away from fundraising and towards building a business. It’s cash I’m willing to risk today with the potential for a greater return tomorrow.&lt;/p&gt;
+
+&lt;p&gt;All of this leaves one burning question on my mind. Why do investors need to be accredited?&lt;/p&gt;
+</content>
+   </entry>
+   
+   <entry>
+      <title>Google Glass is ahead of its time</title>
+      <link href="/Google-Glass-is-ahead-of-its-time"/>
+      <updated>2013-10-09T00:00:00-04:00</updated>
+      <id>/Google-Glass-is-ahead-of-its-time</id>
+      <content type="html">&lt;p&gt;Google Glass is futuristic and it’s a step in the right direction. Wearable computing is the future of mobile technology but wearable devices are nothing but a novelty if they aren’t paired with the correct interface and this is where Glass falls short.&lt;/p&gt;
+
+&lt;p&gt;I was excited when I first heard about Glass and I desperately wanted to get my hands on a pair. Finally, just a few months ago, I was able to demo a pair from a coworker who attended Google IO.&lt;/p&gt;
+
+&lt;p&gt;As expected, an active HUD makes you feel like you’re in the future. It’s an interface that’s unlike anything we interact with today that’s implemented within a discrete object. But as soon as you begin to interact with Glass, you realize how modern the device really is.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Okay Glass, take a picture&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Is this your mental image from sci-fi movies? Audibly communicating with a pair of glasses? It’s clunky, distracting, socially awkward, and requires far too much time and effort to execute a task.&lt;/p&gt;
+
+&lt;p&gt;But Glass is cool. It provides us with POV videos of people doing really cool things. But that’s not enough.&lt;/p&gt;
+
+&lt;p&gt;The iPhone didn’t change mobile technology because it was cool. Sure, it did cool things but it did much more than that. It changed your life. Living without an iPhone after regular use is terrifying because it’s become a part of everything we do.&lt;/p&gt;
+
+&lt;p&gt;Glass is ahead of its time by introducing a product before the technology exists to allow us to effectively communicate with these devices. Applications should open via eye-tracking or telepathically using an embedded &lt;a href=&quot;http://singularityhub.com/2011/10/05/technological-telepathy-scientists-scan-your-brain-to-watch-the-movies-playing-in-your-mind/&quot;&gt;fMRI&lt;/a&gt;. An interface such as this would solve all of Glass&amp;#39; current shortcomings.&lt;/p&gt;
+
+&lt;p&gt;Glass would change from a cool piece of technology to show family and friends to a device that changed the world. &lt;/p&gt;
+</content>
+   </entry>
+   
+   <entry>
+      <title>Why the exchange rate and public opinion of Bitcoin doesn't matter</title>
+      <link href="/Why-the-exchange-rate-and-public-opinion-of-Bitcoin-doesnt-matter"/>
+      <updated>2013-10-08T00:00:00-04:00</updated>
+      <id>/Why-the-exchange-rate-and-public-opinion-of-Bitcoin-doesnt-matter</id>
+      <content type="html">&lt;p&gt;I’ve had my fair share of conversations about Bitcoin with people who are both for it and against it. Reasons for an individual’s interest in Bitcoin seem to vary widely from an economics or finance background to a political one to fight against a nationalized currency whose fate lies in the hands of a few unelected individuals. It’s great to see Bitcoin bringing people together from such a variety of backgrounds.&lt;/p&gt;
+
+&lt;p&gt;What I find even more surprising is the lack of diversity with the arguments against Bitcoin. From financial journalists to the currency layman, skepticism around Bitcoin generally comes down to two issues: usability and volatility. While the volatility of Bitcoin is definitely a topic worth discussion, I’m simply going to focus on the argument against its usability, or lack thereof, since I believe it’s the most critical issue for Bitcoin today.&lt;/p&gt;
+
+&lt;p&gt;Many people are against Bitcoin because they don’t believe it can reach mass adoption. As a consumer, why should they go out of their way to acquire Bitcoin when there’s only a handful of businesses who accept them? As a business, why should they go out of their way to integrate Bitcoin into their POS systems when there’s only a handful of early adopters who use them?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://upload.wikimedia.org/wikipedia/en/4/45/DiffusionOfInnovation.png&quot; alt=&quot;Innovation Adoption Lifecycle&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;To help give you a point of reference, we’re currently at the beginning of the adoption lifecycle where everyone who is using Bitcoin would be classified as an Innovator. A widespread, stable infrastructure isn’t in place yet so there’s a steep learning curve to use it. Many Bitcoin related services are relatively new and there are still many risks involved with using the currency. It takes valuable time to do the research to learn how to keep your Bitcoin wallet secure and only those innovators are wiling to do so.&lt;/p&gt;
+
+&lt;p&gt;As a result, people are scared of Bitcoin because it seems complex and people don’t even think they need Bitcoin. We’ve never lived in a world where the instantaneous transfer of wealth to another individual anywhere in the world has ever been possible. We can’t appreciate it. We can’t envision how it’ll work, the possibilities that lie ahead, or how drastically it’ll change the world.&lt;/p&gt;
+
+&lt;p&gt;This is why my attention is directed entirely towards the startup community. This is where all the people with crazy ideas go to work with other people who see the potential of their crazy ideas. VCs have been keeping an eye on Bitcoin and the number of startups in the Bitcoin community is growing larger everyday. They’re going to get things started for the people who matter.&lt;/p&gt;
+
+&lt;p&gt;There was a day when computers were complicated. The Internet was even worse. They were only for geeks. If anybody said that one day we’d all have multiple computers at home with some smaller than our pockets, you were crazy because there was no reason for the masses to own one. But those hackers made computers smaller and better and as more hackers got their hands on these computers they began applying the new technology to a variety of problems. Today, we can’t comprehend a world without computers and Internet access. The two affect nearly every aspect of our lives and only the crazy people who were mentally living in the future saw it coming.&lt;/p&gt;
+
+&lt;p&gt;I can’t help but feel that we’re in a similar state right now with Bitcoin. It’s new, very few people use it, even fewer truly understand it, and its potential is beyond our imagination. But the Bitcoin visionaries thrive off of this uncertainty. They don’t necessarily know the future applications of Bitcoin in the same way few saw the massive potential of computers and the Internet but they know it’s going to be a game changer and they are going to make it happen.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Originally posted on &lt;a href=&quot;https://medium.com/@atommorgan/why-the-exchange-rate-and-public-opinion-of-bitcoin-doesnt-matter-5df18ceb214a&quot;&gt;Medium&lt;/a&gt;&lt;/p&gt;
+</content>
+   </entry>
+   
+   <entry>
+      <title>Snapchat got me</title>
+      <link href="/Snapchat-got-me"/>
+      <updated>2013-10-06T00:00:00-04:00</updated>
+      <id>/Snapchat-got-me</id>
+      <content type="html">&lt;p&gt;Snapchat is one of those apps I installed on my phone expecting to remove in a week. I couldn’t see myself using it. Why would I want to send someone a temporary picture?&lt;/p&gt;
+
+&lt;p&gt;But Snapchat snuck up on me and is now easily one of my favorite apps. It provides a connection to people in our lives in ways that never existed prior to the spread of mobile technology.&lt;/p&gt;
+
+&lt;p&gt;In the past, communication was largely carried out in person or over the phone. Maybe through letters as well. But this relatively infrequent communication leads to an extremely filtered and high-level view of stories as you play catchup. You only share a handful of events throughout the conversation that may have occurred over a span of weeks or months.&lt;/p&gt;
+
+&lt;p&gt;But Snapchat gives us a glimpse into the lives of our friends and family through convenience. Snapchat makes it easy to share moments throughout your day. Short videos as you walk around downtown, pictures of your favorite coffee shop or the beachfront view on your vacation. Small moments that are now able to be captured and shared from the palms of our hands.&lt;/p&gt;
+
+&lt;p&gt;It gives me periodic photos and videos of my friends and family as they go about their day.&lt;/p&gt;
+
+&lt;p&gt;Just one more way technology helps to make the world a smaller place.&lt;/p&gt;
 </content>
    </entry>
    

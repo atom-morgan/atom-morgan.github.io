@@ -1,4 +1,4 @@
-name: "Gereksiz"
+name: "Adam Morgan"
 markdown: redcarpet
 highlighter: pygments
 permalink: :title
@@ -6,5 +6,5 @@ exclude: [README.md, LICENSE, Makefile]
 
 # Information for the Atom feed
 gereksiz:
-   author: "John Doe"
-   email: "john.doe@mail.sexy"
+   author: "Adam Morgan"
+   email: "atom.morgan@gmail.com"
