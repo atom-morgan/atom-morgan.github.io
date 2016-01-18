@@ -161,6 +161,8 @@ We're finally ready to create our first test file and write our first test. Simi
 
 If everything is correct, open `controllers.test.js` in a test file and write your first test. We want a very simple test here just so we know Karma is running everything correctly. Add this and save your file.
 
+**add controllers.test.js here???**
+
 ```
 describe("My first test file", function() {
   it("should pass with basic math", function() {
@@ -192,3 +194,96 @@ Save the file, run `karma start` again, and you should now see a failing test. J
 ![First Failed Karma Test](http://i.imgur.com/GWF0Ii5.png)
 
 *Note: The text I'm passing as my first argument into `describe` and `it` are written in a way to make the log outputs easy to read. When a test fails, the `describe` and `it` text are concatenated together into the red text after your tests finish running so you know the exact test that failed.*
+
+
+##### Protractor Setup
+
+First you'll need to install Protractor.
+
+```
+npm install protractor -g
+```
+
+As stated on the Protractor [website](https://angular.github.io/protractor/#/) this will install `protractor` and `webdriver-manager` command line tools. Before we start these, let's create our configuration file. Unlike Karma, we'll have to create this file manually.
+
+So let's first create the file in our project's root directory.
+
+```
+touch protractor.conf.js
+```
+
+Then add the following contents to the file.
+
+```
+exports.config = {
+  seleniumAddress: "http://localhost:4444/wd/hub",
+  framework: "jasmine",
+  specs: [
+    "www/js/app.e2e.js"
+  ]
+};
+
+```
+
+The `specs` property here is similar to the `files` property within our Karma configuration file. This declares where Protractor should look for our test files. Since I've hardcoded one file here to start, let's create that, add our test, and wrap up our intro to Ionic testing.
+
+Like before, create your file first.
+
+```
+touch www/js/app.e2e.js
+```
+
+Then add our first end-to-end test.
+
+```
+describe("My first Ionic app", function() {
+  it("should default to the Dashboard page", function() {
+    browser.get("http://localhost:8100");
+    expect(browser.getTitle()).toEqual("Dashboard");
+  });
+});
+```
+
+Now we're ready to run our first end-to-end test. First, let's update the `webdriver-manager` we installed earlier.
+
+```
+webdriver-manager update
+```
+
+And now let's start a Selenium server.
+
+```
+webdriver-manager start
+```
+
+Leave this task running since our Protractor tests will be sending requests this server. Then, in a seperate terminal window, run Protractor.
+
+```
+protractor protractor.conf.js
+```
+
+Once you run this, wait a few seconds and you should see a passing test.
+
+![First Protractor Test](http://i.imgur.com/EbatwKB.png)
+
+Great! Now we know everything is setup correctly. But just as we did with Karma, let's write one additional test to ensure a test we expect to fail actually fails. So jump back into your `app.e2e.js` file and add one additional test. Your file should now look like this.
+
+```
+describe("My first Ionic app", function() {
+  it("should default to the Dashboard page", function() {
+    browser.get("http://localhost:8100");
+    expect(browser.getTitle()).toEqual("Dashboard");
+  });
+
+  it("should default to the Users page", function() {
+    browser.get("http://localhost:8100");
+    expect(browser.getTitle()).toEqual("Users");
+  });
+});
+```
+
+Save the file, run `protractor protractor.conf.js` one more time, and you should now see a failing test.
+
+![First Failed Protractor Test](http://i.imgur.com/n0HrWM8.png)
+
+Now we know our test is successfully hitting our app, automatically redirecting to the Dashboard as specified in our app's routing, grabbing the title of the browser, and comparing it against our two assertions, Dashboard and Users.
