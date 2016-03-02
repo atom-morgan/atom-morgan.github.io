@@ -6,11 +6,11 @@ date: 2016-03-02
 
 ## Goal
 
-In the world of programming a "Hello, world" program allows us to create a very small working program to verify things are working correctly. If you've ever written JavaScript and you found yourself wishing there was a "Hello, world" equivelant for testing, this is it!
+In the world of programming a "Hello, world" program allows us to create a very small working program to verify things are working correctly. If you've ever written JavaScript and you found yourself wishing there was a "Hello, world" equivalent for testing, this is it!
 
 ## Assumptions
 
-For this tutorial I'm going to assume you have a basic understanding of JavaScriptand will be able to download a few tools we'll need for this tutorial. You're not trying to write code. You're trying to test it! Let's get started.
+For this tutorial I'm going to assume you have a basic understanding of JavaScript and will be able to download a few tools we'll need for this tutorial. You're not trying to write code. You're trying to test it! Let's get started.
 
 ## Setup
 
@@ -101,7 +101,11 @@ describe("Hello module", function() {
 });
 ```
 
-The `describe` block here describes our suite of tests. Since we want to test the `Hello` module we created, I simply put `Hello module`. After that is our `it` spec which describes what our code should do. You could replace `"Hello, module"` and `"should return a message"` with any string but since it serves as a description of what code is being tested and how we expect it to behave, it's worth the time to make it readable. You'll see shortly why this is important.
+The `describe` block here describes our suite of tests. Since we want to test the `Hello` module we created, I simply put `Hello module`. I think of this as the higher level description of our test file. In this case, I'm using the module name.
+
+After that is our `it` spec which describes what our code should actually do. In this case, we're testing the `testing` method. So the `describe` block was a description of our module and the `it` is specific to a method. If our module had another method to test it'd be a good idea to create another `it` block.
+
+>You could replace `"Hello, module"` and `"should return a message"` with any string but since it serves as a description of what code is being tested and how we expect it to behave, it's worth the time to make it readable.
 
 Finally, we hit our test's expectation in the form of:
 
@@ -110,6 +114,8 @@ expect(THIS).toEqual(THIS);
 ```
 
 As you can see in the real test we expect the method call, `Hello.testing()`, to equal `"Hello, testing"`. In other words, we expect our function call to be equal to the string we hardcode since we already know the answer.
+
+>When you begin to think about how to test your code, it's important to remember that the test case is not concerned with *how* the code is solving the problem. We treat it as a black box by verifying its output so we know it's behaving as expected. The test does not care about the implementation of the functionality that's being tested.
 
 With that finished you can finally save this file, close it, and run your test!
 
@@ -141,7 +147,9 @@ With that change run `jasmine spec/hello-testing.spec.js` again and you should s
 
 ![Jasmine Failing Test](http://i.imgur.com/L8HviRq.png)
 
-With that we now know that our test is handling our code correctly. When we `expect` it to return the string we specified, we don't see an error. But with an intentionally failing case, Jasmine let's us know something is wrong so we can update our code accrodingly.
+>The first line under "Failures" shows why the strings you pass in to `describe` and `it` should be descriptive.
+
+With that we now know that our test is handling our code correctly. When we `expect` it to return the string we specified, we don't see an error. But with an intentionally failing case, Jasmine let's us know something is wrong so we can update our code accordingly.
 
 ## Bonus
 
@@ -204,7 +212,7 @@ describe("Hello module", function() {
 
 Save that file, run `jasmine spec/hello-testing.spec.js`, and you should see two passing tests with zero failures. Now you can test a programming problem you're likely to see at some point in future interviews.
 
->If you're looking at my `fizzBuzz` code thinking you would have done it differently, that's okay. Our test is not concerned with *how* the code is solving the problem. It simply checks to see if a piece of code being tested returns the result we expect with a given set of inputs, if any are needed. If it looks worthy of a refactor to you, now is the best time. It's already tested so at this point you can make your changes, run the test, and if everything passes you know your code still behaves as expected even if the implementation has changed.
+>If you're looking at my `fizzBuzz` code thinking you would have done it differently, that's okay. As I mentioned earlier the test is not concerned with *how* the code is solving the problem. If it looks worthy of a refactor to you everything is already tested so at this point you can make your changes, run the test, and if everything passes you know your code still behaves as expected even with your new implementation.
 
 ## Summary
 
