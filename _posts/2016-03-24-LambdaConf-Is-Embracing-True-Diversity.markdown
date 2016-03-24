@@ -14,7 +14,7 @@ After a bit of searching on Twitter I discovered his beliefs are actually "actio
 
 While we're at it, are we going to interview every speaker about their religious beliefs? Taken literally, many religious texts are frightening. Would those same people also support banning a Muslim speaker from LambdaConf because a certain number of people are frightened by Islamic fundamentalism? Of course not. They label those thoughts Islamaphobic.
 
-It's all part of this weird trend now where the left expects communties, even at the scale of Twitter or Facebook, to be inclusive for everyone. But communities are not inclusive.
+It's all part of this weird trend now where the left expects communities, even at the scale of Twitter or Facebook, to be inclusive for everyone. But communities are not inclusive.
 
 Churches aren't diverse at all. Both race and beliefs. Curves is explicit about it. If you're flamboyantly gay, you may not feel comfortable in certain parts of The South. Similarly, a redneck wearing a camo jacket and a Make America Great Again hat probably isn't welcome in a gay bar at the heart of San Francisco even if everyone would describe themselves as tolerant, open-minded, and progressive.
 
@@ -24,7 +24,7 @@ Why should programming conferences be any different? There's the [Grace Hopper C
 
 Most initiatives for diversity in tech are political in nature. It has nothing to do with true diversity and inclusion as we're seeing with the backlash against LamdbaConf.
 
-Instead of making it political, LambdaConf has chosen to make their code of conduct exaxctly that. A code of *conduct*, not thought. As long as you don't act on those controversial thoughts in your head, who gives a fuck?
+Instead of making it political, LambdaConf has chosen to make their code of conduct exactly that. A code of *conduct*, not thought. As long as you don't act on those controversial thoughts in your head, who gives a fuck?
 
 > "People are free to believe whatever they want until that belief affects my life." -[*Ed Latimore*](https://twitter.com/EdLatimore/status/712985746718781440)
 
