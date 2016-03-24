@@ -1,4 +1,8 @@
-
+---
+layout: post
+title: "LambdaConf Is Embracing True Diversity"
+date: 2016-03-24
+---
 
 Tech is a weird place right now. There aren't enough programmers who are women, gay, or people of races other than white and Asian. Diversity is great as long as you agree with the conventional definition of diversity. How inclusive, right?
 
