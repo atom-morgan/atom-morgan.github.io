@@ -14,7 +14,7 @@ A lot of people want to believe this isn't the norm in government. It doesn't ma
 
 How long can TurboTax and the government play that game? I'm not sure. But the internet sure doesn't make it any easier.
 
-I saw this type of corruption firsthand in college. I was working on my senior project and our client was the State of Alabama [1]. The project was pure busy work. The Department of Finance wanted to purchase new software and wanted us to craft guidelines so they could determine a good vendor to build it.
+I saw this type of corruption firsthand in college. I was working on my senior project and our client was the State of Alabama [1]. The project was pure busy work. The Department of Finance wanted to purchase new software and wanted us to craft guidelines so they could find a company to build it.
 
 One of the first things we ever did was google the state employees working with us on our project. The <a href="http://blog.al.com/breaking/2011/05/state_officlal_lives_in_texas.html" target="_blank">first hit</a> showed us the assistant finance director "in charge of technology" we were working with on the project, Rex McDowell. You can imagine our surprise to discover the same assistant finance director owns his own communications company on the side. What a convenient side project for someone in charge of an entire state department's technology decisions!
 
