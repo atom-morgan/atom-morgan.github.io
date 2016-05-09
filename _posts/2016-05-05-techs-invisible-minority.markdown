@@ -72,7 +72,7 @@ The academic results of single parent households aren't promising either.
 
 >Source: [Psychology Today](https://www.psychologytoday.com/articles/199605/double-the-trouble)
 
-By no means are stable households with Asian values the only driving factor for their well-being in America or for their representation within tech. But when every conversation around diveristy boils down to an atmosphere of white guys not welcoming anyone who doesn't look like them, why ignore a minority group that doesn't fit the narrative in nearly every measurable way?
+By no means are stable households with Asian values the only driving factor for their well-being in America or for their representation within tech. But when every conversation around diversity boils down to an atmosphere of white guys not welcoming anyone who doesn't look like them, why ignore a minority group that doesn't fit the narrative in nearly every measurable way?
 
 ---
 
