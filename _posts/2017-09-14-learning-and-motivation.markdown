@@ -73,9 +73,15 @@ Fitness
 * [Austin Dunham](https://www.youtube.com/user/GeekAMD)
 * [jtm_fit](https://www.instagram.com/jtm_fit/)
 
+Supplements
+
+* <a target="_blank" href="https://www.amazon.com/gp/product/B01D20PJEG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01D20PJEG&linkCode=as2&tag=atommorgan-20&linkId=2732a1b39b2fca642e8ea17b5027b64a">Vital Proteins Grass-Fed, Pasture-Raised Organic Whey Protein</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=atommorgan-20&l=am2&o=1&a=B01D20PJEG" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+* <a target="_blank" href="https://www.amazon.com/gp/product/B00K6JUG4K/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00K6JUG4K&linkCode=as2&tag=atommorgan-20&linkId=55512a6e9a7ccce1d9b25112869e142e">Vital Proteins Pasture-Raised, Grass-Fed Collagen Peptides</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=atommorgan-20&l=am2&o=1&a=B00K6JUG4K" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+* <a target="_blank" href="https://www.amazon.com/gp/product/B002DYIZEO/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B002DYIZEO&linkCode=as2&tag=atommorgan-20&linkId=fd758ae120ba5ae63c561cfe09b0ea82">Optimum Nutrition Creatine Powder</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=atommorgan-20&l=am2&o=1&a=B002DYIZEO" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
 Art
 
-* [Drawing on the Right Side of the Brain](https://www.amazon.com/dp/B005GSYXU4/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1)
+* <a target="_blank" href="https://www.amazon.com/gp/product/1585429201/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1585429201&linkCode=as2&tag=atommorgan-20&linkId=53737358addfe49363f5228081296e2c">Drawing on the Right Side of the Brain</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=atommorgan-20&l=am2&o=1&a=1585429201" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 * [CtrlPaint](https://www.ctrlpaint.com/)
 
 EDM
