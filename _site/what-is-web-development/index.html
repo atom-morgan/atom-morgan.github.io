@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+  Jekyll integration by somiibo.com
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+<title>What is Web Development?</title>
+<meta name="description" content="">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+<link rel="manifest" href="/assets/icon/manifest.json">
+<link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icon/favicon.ico">
+<meta name="msapplication-config" content="/assets/icon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/css/main.css" />
+<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+        <header id="header">
+          <a href="/" class="logo">Adam Morgan</a>
+        </header>
+
+				<!-- Nav -->
+					<nav id="nav">
+
+            <ul class="links">
+  <li class=""><a href="/">Home</a></li>
+  <li class=""><a href="/about/">About</a></li>
+  <li class=""><a href="/blog/">Blog</a></li>
+  <li class=""><a href="/tutorials/">Tutorials</a></li>
+  <li><a href="http://atommorgan.com" target="_blank">Portfolio</a></li>
+  <li><a href="https://itunes.apple.com/us/podcast/the-adam-morgan-show/id1088616591" target="_blank">Podcast</a></li>
+</ul>
+
+
+						<ul class="icons">
+              <li><a href="https://twitter.com/atommorgan" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
+              <li><a href="https://instagram.com/adamjmorgan" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
+              <li><a href="https://github.com/atom-morgan" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+				<div id="main">
+          <section class="post">
+    				<header class="major">
+      				<span class="date">26 May 2018</span>
+      				<h1>What is Web Development?</h1>
+
+      			</header>
+      			<div class="image main"><img src="/images/what-is-web-dev/tutorial-what-is-web-dev.png" alt=""></div>
+      			<p><h2 id="video">Video</h2>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/qgkEjEA23L4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="goal">Goal</h2>
+
+<p>I’ll never forget the overwhelming feeling when I first started learning web development. There were terms I’d never heard of, multiple programming languages, front-end development, back-end development, and web frameworks.</p>
+
+<p>Learning how each of these various pieces fit together wasn’t easy and there was always the fear that I’d be wasting my time learning something I didn’t need to learn.</p>
+
+<p>In this tutorial we’re going to clarify web development terms such as HTML, CSS, JavaScript, server-side programming, client-side programming, databases, JSON, and so on to give you a grasp of how everything fits together at a high level.</p>
+
+<h2 id="how-does-the-web-work">How does the web work?</h2>
+
+<p>First we need to start with how the web works.</p>
+
+<p>Let’s think about a site like Twitter. When you access someone’s Twitter account, let’s use @realDonaldTrump as an example, the main content you see is a feed of tweets from Donald Trump. You see a feed of Trump’s tweets by accessing his Twitter URL: <a href="https://twitter.com/realDonaldTrump">https://twitter.com/realDonaldTrump</a>.</p>
+
+<p>When you enter this URL into the browser you’ve made what’s known as an HTTP request to Twitter’s servers. That HTTP request is then received by Twitter and it’s their job to handle this request. In this case Twitter sees you’re trying to access @realDonaldTrump’s account so they query their database to get any of @realDonaldTrump’s data that is needed to view this page such as his name, tweets, following count, follower count, and any other information that’s used to populate his page.</p>
+
+<p>Once Twitter finishes querying their database for this information, they respond to the browser’s request (the one you originally made when you entered in the URL <a href="https://twitter.com/realDonaldTrump">https://twitter.com/realDonaldTrump</a>) by sending back the data from their database.</p>
+
+<div class="box">
+  <p>If you’ve ever seen or heard the term <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>, that’s the file format that’s typically used to send this data but more on that in a later tutorial.</p>
+</div>
+
+<p>Once this data is received by the browser, the HTML page you see in the browser is then constructed using the data sent back from Twitter.</p>
+
+<p><img src="/images/what-is-web-dev/trump-twitter.png" alt="Trump's Twitter" /></p>
+
+<h2 id="client-server-model">Client server model</h2>
+
+<p>This model—making a request to a site like Twitter and receiving data in response—is what’s known as a client-server model. We can see the previous example illustrated in the following image where the client is a web browser and the server is Twitter.</p>
+
+<div class="box">
+  <p>We use the term “client” here instead of something like “computer” to be a bit more general because the number of devices that can act as clients continues to grow. You can now access Twitter from your laptop, tablet, smartphone, TV, video game consoles, etc. All of these would classify as a “client” in the client-server model.</p>
+</div>
+
+<p><img src="/images/what-is-web-dev/client-server-user.png" alt="Client-Server User POV" /></p>
+
+<p>This shows a client-server model at a nearly technology agnostic level. We haven’t even talked programming languages or back-end vs front-end yet. So considering that all of these are used to make web applications such as Twitter, how do they fit in to this client-server model?</p>
+
+<p><img src="/images/what-is-web-dev/client-server-dev.png" alt="Client-Server Developer POV" /></p>
+
+<p>As you can see our previous labels for “Browser” and “Twitter” have been replaced with some underlying technologies that are used such as “React” and “Node.js”. This is where some of the various frameworks you may have heard of start to come in.</p>
+
+<p>In this hypothetical example, Twitter’s front-end application is built using React. This React application makes requests to a Node.js back-end that uses a MongoDB database to store any data.</p>
+
+<h2 id="front-end-vs-back-end">Front end vs. back end</h2>
+
+<p>Any code that’s running on a browser is “front-end” code using frameworks such as React, Angular, Vue.js, or Ember. Front-end developers write code that’s executed on a client, such as a web browser. It displays a web page to the user using HTML, CSS, and JavaScript.</p>
+
+<p>Any code that’s running on a server is “back-end” code using frameworks such as Ruby on Rails, Node.js, Laravel, or Django. Back-end developers write code that’s executed on a server responding to requests made by clients. Back-end developers will also work with a database if necessary to fulfill those requests.</p>
+
+<p>The distinction between front-end and back-end is dilineated by the client that’s <strong><em>making the request</em></strong> and the server that’s sending a <strong><em>response to the request</em></strong> back to the client.</p>
+
+<p>Front-end is what you see, back-end is what you don’t see.</p>
+
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+
+<p>Once the division between front-end and back-end has been established, there are a couple common questions about programming languages and frameworks that I typically see such as these:</p>
+
+<p><strong>Should I learn a language before I learn a framework?</strong></p>
+
+<p>Yes. If you’re going to learn a framework it’s best to start off with the programming language that’s used within the framework first.</p>
+
+<p>If you’re considering front-end then learning HTML, CSS, and JavaScript is a must-have. Since so much of front-end development happens in a browser, you have to learn how to work with browser technology such as HTML, CSS, and JavaScript. Once you’ve gotten a grasp of these then you can move on to one of the popular front-end frameworks listed below:</p>
+
+<ul>
+  <li>Angular</li>
+  <li>React</li>
+  <li>Ember.js</li>
+  <li>Vue.js</li>
+</ul>
+
+<p>If you’re considering back-end you don’t have to worry about HTML and CSS as much since your code isn’t directly interfacing with a browser. Instead, you’ll likely be replacing this with knowledge of databases since you’re going to be saving, updating, and retrieving data from databases. Here are a few popular options for databases:</p>
+
+<ul>
+  <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  <li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-2017">SQL Server</a></li>
+  <li>MySQL</li>
+  <li>MongoDB</li>
+</ul>
+
+<p>In addition to that, you will also need to learn a programming language along with a framework. A few of the current popular options are below:</p>
+
+<ul>
+  <li>Ruby on Rails (Ruby)</li>
+  <li>Express/Node.js (JavaScript)</li>
+  <li>Laravel (PHP)</li>
+  <li>Django (Python)</li>
+  <li>ASP.NET (VB, C#, etc)</li>
+  <li>Spring MVC, JSF (Java)</li>
+</ul>
+
+<p><strong>If I learn Angular do I need to learn React?</strong></p>
+
+<p>No. Once you’re proficient with a framework, you have the skillset you need to do back-end or front-end work with whatever framework it is that you know.</p>
+
+<div class="box">
+  <p>While there are some differences between frameworks, the job the frameworks were created to do is the exact same job so frameworks are interchangeable. If you know Ruby on Rails, you don’t need to learn Express. They do the exact same thing using different programming languages.</p>
+</div>
+
+<p><strong>So if I know JavaScript, why do I need to learn a framework? What does a framework even do?</strong></p>
+
+<p>If you’ve ever played a video game with a built-in level creator, you can think of frameworks as a level creator for the web. In a video game’s level creator, there are certain assets available for you to use such as structures, textures, enemies, items, and so on. You may even be given the option to build a structure from base components to create a new structure that you can re-use and even share with others. Web frameworks essentially do the same thing. But rather than providing us textures and structures that exist within the game’s universe, we’re given the various tools we need to create modern web applications such as routing, form builders, form validation, and services to abstract many of the details of making HTTP request from us. It provides us the basic building blocks for creating a web application.</p>
+
+<p>This is the reason why it’s always recommended to learn a language first, then a framework. Walk first, then run.</p>
+
+<p><strong>What is a tech stack?</strong></p>
+
+<p>A tech stack is simplay any variation of the three groups we described above: databases, back-end frameworks, and front-end frameworks. Since each framework or database generally does the same thing, that gives you (or a development team) the freedom to choose whatever tool you prefer for the job.</p>
+
+<p>Here are a few more sample “tech stacks” using some of the options listed earlier.</p>
+
+<ul>
+  <li>MongoDB — Ruby on Rails — Angular</li>
+  <li>PostgreSQL — Express — Vue.js</li>
+  <li>MySQL — Ruby on Rails — Ember.js</li>
+</ul>
+
+<p><strong>I’m not sure if I want to do front-end or back-end. What should I do first so I don’t waste any time learning?</strong></p>
+
+<p>Learn the fundamentals of programming and a programming language. Since frameworks (both back-end and front-end) are largely interchangeable, the underlying capabilities of the languages are mostly the same.</p>
+
+<p>This is why you may hear programmers occasionally say once you know one language you know them all. This isn’t 100% true but there is some truth to the saying. Programmers from one language can usually at least read and figure out what’s going on in a language they’ve never used. This is because the fundamentals between programming languages, and frameworks, are largely the same.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>At this point, I hope you have a better understanding of how the web works at a high level and how the various pieces of web development fit together.</p>
+
+<p>We’ve seen how front-end developers write code that’s executed on clients which make requests to servers. Once this request is received by a server, back-end developers write code to handle those requests sending back data to create web applications.</p>
+
+<p>We also introduced some of the various frameworks used by front-end and back-end developers as well as some of the databases you can expect to work with as a back-end developer.</p>
+
+<p>In the <a href="https://atom-morgan.github.io/web-development-hello-world/">next tutorial</a> we’ll begin our introduction to web development by writing a simple “Hello, world!” program using HTML and JavaScript.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Do you want to learn modern web development using the Angular framework?</h3>
+    <h3>Stop wasting your time with out of date tutorials.</h3>
+    <h3>Stop wasting your time with tutorials with code that doesn't work.</h3>
+    <h3>Stop wasting your time with tutorials that don't provide the skills you need to succeed on the job.</h3>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://www.dropbox.com/s/m4od0wphmv1trvs/the-angular-tutorial-preview.pdf?dl=0" class="image main" target="_blank" style="margin: 2rem auto;"><img src="../images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://www.dropbox.com/s/m4od0wphmv1trvs/the-angular-tutorial-preview.pdf?dl=0" target="_blank">CLICK HERE FOR A FREE 7 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>The Angular Tutorial teaches the Angular framework with an approach that simulates how a front-end developer would use Angular on the job. Many tutorials cut corners on specific concepts or features within a web framework which leave gaps between what is learned and what a developer can expect on the job. In The Angular Tutorial, you’ll be introduced to Angular in a way that’s as “real world” as possible.</p>
+  <p>In other books, interacting with a real API and database is often skipped with hard-coded values used as a substitute. Topics such as automated testing are usually skipped entirely. In The Angular Tutorial, you’ll be provided an API that you’ll setup just as you would as a front-end developer in a real job. Throughout the rest of the book you’ll then learn how to read the API’s documentation, creating and deploying a fully tested Angular application that interacts with a real database and API.</p>
+  
+  <ul class="actions fit">
+    <li><a href="http://angulartutorial.org" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+</p>
+      		</section>
+
+          <div class="comments-wrapper">
+          <div id="disqus_thread"></div>
+          <script>
+              /**
+               *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+               *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+               */
+
+              var disqus_config = function () {
+                  this.page.url = '/what-is-web-development/';  /*Replace PAGE_URL with your page's canonical URL variable*/
+                  this.page.identifier = '/what-is-web-development/'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
+              };
+
+              (function() {  /* dont endit below this line */
+                  var d = document, s = d.createElement('script');
+
+                  s.src = 'https://default.disqus.com/embed.js';
+
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div><!-- /.comments-wrapper -->
+
+
+					<!-- Footer -->
+						<footer>
+              <ul class="actions">
+                <li><a href="/blog/" class="button">Our Blog</a></li>
+              </ul>
+						</footer>
+					</div>
+
+				<!-- Footer -->
+        <footer id="footer">
+  <section>
+    <form method="POST" action="https://formspree.io/atom.morgan@gmail.com">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" />
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="3"></textarea>
+      </div>
+      <ul class="actions">
+        <li><input type="submit" value="Send Message" /></li>
+      </ul>
+    </form>
+  </section>
+  <section class="split contact">
+    <section class="alt">
+      <h3>Location</h3>
+      <p>Atlanta, GA</p>
+    </section>
+    <section>
+      <!-- <h3>Phone</h3>
+      <p><a href="tel:310-318-5555">310-318-5555</a></p> -->
+      <h3>Availability</h3>
+      <p>Remote, part-time only</p>
+    </section>
+    <section>
+      <h3>Email</h3>
+      <p><a href="mailto:atom.morgan@gmail.com">atom.morgan@gmail.com</a></p>
+    </section>
+    <section>
+      <h3>Social</h3>
+      <ul class="icons alt">
+        <li><a href="https://twitter.com/atommorgan" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
+        <li><a href="https://instagram.com/adamjmorgan" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/atom-morgan" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+      </ul>
+    </section>
+  </section>
+</footer>
+<!-- Copyright -->
+<div id="copyright">
+  <ul><li>&copy; HTML5 UP</li><li>Design by <a href="https://html5up.net" rel="nofollow">HTML5 UP</a></li><li>Jekyll Integration by <a href="https://soundgrail.com">SoundGrail</a></li></ul>
+</div>
+
+
+			</div>
+
+      <!-- Scripts -->
+  		<!-- DYN -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/jquery.scrolly.min.js"></script>
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+
+			<script async src="https://www.googletagmanager.com/gtag/js?id=default"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'default');
+</script>
+
+
+	</body>
+</html>

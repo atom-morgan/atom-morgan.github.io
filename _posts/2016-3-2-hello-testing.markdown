@@ -2,6 +2,8 @@
 layout: post
 title: "'Hello, Testing!' with Jasmine"
 date: 2016-03-02
+tag: tutorial
+excerpt: 'In the world of programming a “Hello, world” program allows us to create a very small working program to verify things are working correctly. If you’ve ever written JavaScript and you found yourself wishing there was a “Hello, world” equivalent for testing, this is it!'
 ---
 
 ## Goal
@@ -16,19 +18,19 @@ For this tutorial I'm going to assume you have a basic understanding of JavaScri
 
 First, let's create a directory that we'll work in for this tutorial.
 
-```
+```console
 mkdir js-testing && cd js-testing
 ```
 
 Next, we'll need to install [Node Version Manager](https://github.com/creationix/nvm) (NVM).
 
-```
+```console
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 ```
 
 Once that has finished, we'll also install [Node.js](https://nodejs.org/en/).
 
-```
+```console
 nvm install node
 ```
 
@@ -36,13 +38,13 @@ nvm install node
 
 With that, we're ready to create our first JavaScript file which we will eventually test. Similar to a "Hello, world" program we're going to keep the functionality very simple here. Let's start by creating a file where we'll place our to-be-tested code.
 
-```
+```console
 touch hello-testing.js
 ```
 
 Within this file, we're going to create a module with one method that returns a message when called.
 
-```
+```javascript
 var Hello = (function() {
   var testing = function() {
     return "Hello, testing!";
@@ -62,19 +64,19 @@ module.exports = Hello;
 
 Now that you've created the file we want to test let's install [Jasmine](http://jasmine.github.io/2.4/introduction.html), the testing framework we'll be using for our test.
 
-```
+```console
 npm install -g jasmine
 ```
 
 After that's finished installing, you'll need to initialize the project for Jasmine.
 
-```
+```console
 jasmine init
 ```
 
 After that, your file structure should look like this:
 
-```
+```console
 js-testing
 +-- hello-testing.js
 +-- node_modules
@@ -85,13 +87,13 @@ js-testing
 
 The command `jasmine init` created the `spec` directory for us. This is where you'll write your test file. So navigate to that directory and create your first test file.
 
-```
+```console
 cd spec && touch hello-testing.spec.js
 ```
 
 The first thing you'll do in this test file is `require()` the code from earlier so that we can actually use and test it and then we'll set up the test case:
 
-```
+```javascript
 var Hello = require("../hello-testing");
 
 describe("Hello module", function() {
@@ -109,7 +111,7 @@ After that is our `it` spec which describes what our code should actually do. In
 
 Finally, we hit our test's expectation in the form of:
 
-```
+```javascript
 expect(THIS).toEqual(THIS);
 ```
 
@@ -121,7 +123,7 @@ With that finished you can finally save this file, close it, and run your test!
 
 In the root directory (`js-testing` if you used the same names as me) run:
 
-```
+```console
 jasmine spec/hello-testing.spec.js
 ```
 
@@ -131,13 +133,13 @@ If everything is setup correctly, you should see a passing test similar to this:
 
 But how do we know that's actually testing our code? One quick way to find out is to modify our test to *expect a failing case*. Let's do that real quick by changing this line:
 
-```
+```javascript
 expect(Hello.testing()).toEqual('Hello, testing!');
 ```
 
 To this:
 
-```
+```javascript
 expect(Hello.testing()).not.toEqual('Hello, testing!');
 ```
 
@@ -159,7 +161,7 @@ First, we're goint to call this function with a specified start and end range ra
 
 So let's add an extra method to `hello-testing.js` which will solve the Fizz Buzz problem.
 
-```
+```javascript
 var Hello = (function() {
   var testing = function() {
     return "Hello, testing!";
@@ -195,7 +197,7 @@ module.exports = Hello;
 
 With that in place let's add a couple test cases to `hello-testing.spec.js` to test this new code.
 
-```
+```javascript
 var Hello = require("../hello-testing");
 
 describe("Hello module", function() {

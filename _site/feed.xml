@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-05-29T10:35:54-04:00</updated><id>/</id><title type="html">Adam Morgan</title><subtitle>Jekyll version of the Massively theme by HTML5UP</subtitle><entry><title type="html">Start Small and Show Up</title><link href="/start-small/" rel="alternate" type="text/html" title="Start Small and Show Up" /><published>2018-03-13T00:00:00-04:00</published><updated>2018-03-13T00:00:00-04:00</updated><id>/start-small</id><content type="html" xml:base="/start-small/">&lt;p&gt;I’ve previously shared some tactics I use to &lt;a href=&quot;http://atom-morgan.github.io/learning-and-motivation&quot; target=&quot;_blank&quot;&gt;motivate myself to learn&lt;/a&gt;. I thought I’d take some time to add some more detail to one of those sections, “Start small and show up”, which is a tactic I used when writing my book, &lt;a href=&quot;http://www.angulartutorial.org/&quot; target=&quot;_blank&quot;&gt;&lt;em&gt;The Angular Tutorial&lt;/em&gt;&lt;/a&gt;, which is scheduled to be released next month.&lt;/p&gt;
+
+&lt;p&gt;I think the biggest error people make when building a new habit is to go from 0 to 100 overnight. This approach is not only nearly impossible but demoralizing as well. Your first step towards a new habit will be a failure to take the first, gigantic step you’ve set up for yourself.&lt;/p&gt;
+
+&lt;p&gt;It’s far better to be realistic with your goals. It not only makes the first step attainable but it also gives you the positive feedback that will help motivate you to take another step.&lt;/p&gt;
+
+&lt;p&gt;I like using sports as my examples for performance because they’re just so hard to deny. Even the most fundamental advocates for gender and racial diversity &lt;em&gt;for the sake of diversity&lt;/em&gt; have a hard time making the case that diversifying the Golden State Warriors would lead to even better results.&lt;/p&gt;
+
+&lt;p&gt;If you were going to start working out, whether its cardio or weightlifting, even complete, uneducated amateurs know you don’t start day one by trying to run a 10k or trying to hit a 300lb squat. You start small and slowly increment your way to a higher number.&lt;/p&gt;
+
+&lt;p&gt;So what does this look like with a habit that isn’t physical? Something like writing more often or learning how to draw?&lt;/p&gt;
+
+&lt;p&gt;It’s essentially the exact same approach you would take with weightlifting in the way that you break up your lifts into “sets” and “reps”. You may do three sets of bench presses with six repetitions within each set.&lt;/p&gt;
+
+&lt;p&gt;You can take a similar approach with anything else, even if it isn’t physical. Let’s say you’re trying to write more often. First, start with a small goal. Don’t try writing for an entire hour your first day. Start with 20 minutes. Then, break this up into reps and sets. Rather than 1 set of a 20 minute rep, try 4 sets of 5 minute reps. So you write for 5 minutes, take a 2 minute break, then write for another 5 minutes, take a 2 minute break, and repeat.&lt;/p&gt;
+
+&lt;p&gt;Do this for a few days and once it feels comfortable, try writing for 30 minutes. Write for 7.5 minutes across 4 sets, or lower it to 3 sets and write for 10 minutes. Do whatever you think you can manage based on your previous days of writing.&lt;/p&gt;
+
+&lt;p&gt;You can’t just tell yourself, “I’m going to write more”. That’s an extremely vague goal. You have to have a specify a measurable goal. Jordan Peterson explains this point brilliantly in his latest book &lt;a href=&quot;https://www.amazon.com/12-Rules-Life-Antidote-Chaos-ebook/dp/B01FPGY5T0/ref=sr_1_1?ie=UTF8&amp;amp;qid=1519228758&amp;amp;sr=8-1&amp;amp;keywords=12+rules+for+life+an+antidote+to+chaos&quot; target=&quot;_blank&quot;&gt;&lt;em&gt;12 Rules for Life: An Antidote to Chaos&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Why refuse to specify, when specifying the problem would enable its solution? Because to specify the problem is to admit that it exists. Because to specify the problem is to allow yourself to know what you want…and then you will know, precisely, and cleanly, when you don’t get it, and that will hurt, sharply, and specifically.&lt;/p&gt;
+
+  &lt;p&gt;Why refuse to specify? Because while you are failing to define success (and thereby rendering it impossible) you are also refusing to define failure, to yourself, so that if and when you fail you won’t notice and it won’t hurt.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;With a goal like “write more often” you don’t end the week with a sense of success or failure. With a goal like writing 2 times a week for 20 minutes, you either succeed or you fail.&lt;/p&gt;
+
+&lt;p&gt;Don’t be too ambitious at first. Be realistic. But at the very least, specify a goal that defines what it would mean to fail.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you’re interested in learning web development I have a book, &lt;em&gt;The Angular Tutorial&lt;/em&gt;, that’s scheduled to be released in April. Sign up for the mailing list &lt;a href=&quot;http://www.angulartutorial.org/&quot;&gt;here&lt;/a&gt; to be notified when it’s available.&lt;/p&gt;</content><summary type="html">I’ve previously shared some tactics I use to motivate myself to learn. I thought I’d take some time to add some more detail to one of those sections, “Start small and show up”, which is a tactic I used when writing my book, The Angular Tutorial, which is scheduled to be released next month.</summary></entry><entry><title type="html">How I Motivate Myself to Learn</title><link href="/learning-and-motivation/" rel="alternate" type="text/html" title="How I Motivate Myself to Learn" /><published>2017-10-04T00:00:00-04:00</published><updated>2017-10-04T00:00:00-04:00</updated><id>/learning-and-motivation</id><content type="html" xml:base="/learning-and-motivation/">&lt;p&gt;There’s two skills I’ve developed over the past few years that I value more than almost anything else I’ve ever done: learning how to code and building a habit of working out.&lt;/p&gt;
+
+&lt;p&gt;These two have one big thing in common: nearly everybody wishes they could do them. Most people my age, Millennials, wish they knew how to code. They’d have an in demand skillset that is applicable to any industry and as a result they’d be making significantly more money than they are today.&lt;/p&gt;
+
+&lt;p&gt;The same thing applies to working out. The only proof you need is to walk in a gym after New Years. Everyone tells themselves, “A new year, a new me” and eventually, they quit.&lt;/p&gt;
+
+&lt;p&gt;The people who consistently go to the gym are probably the minority in your life. The same thing would apply to software engineers.&lt;/p&gt;
+
+&lt;p&gt;The reason people quit going to the gym and the reason people don’t know how to program is the same: it’s fucking tough and results don’t happen overnight. It takes a lot of discipline and patience to work at either one of these with so little feedback in the short-term. The result is nice, but the road to the result isn’t.&lt;/p&gt;
+
+&lt;p&gt;But somehow, I still made it happen. Looking back, I think there are a few mental tricks that helped me embrace the suck.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Start small and show up&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When I first started working out, I set up a schedule of three days a week. At first it was Monday, Wednesday, and Friday. It was small but &lt;a href=&quot;https://youtu.be/aVhj_phpAYQ?t=2m26s&quot;&gt;it seemed reasonable&lt;/a&gt;. It was a workout schedule I actually wanted. Starting with five days a week would have been overwhelming for a habit that was previously at zero.&lt;/p&gt;
+
+&lt;p&gt;But eventually those three days turned into a fraction in my head: 3/7. My three days aren’t even half of a week I thought. So I bumped it up to four days: Monday, Tuesday, Thursday, and Friday. I did that for a while and eventually my two straight days off, Saturday and Sunday, made me feel lazy. So I bumped that up to a five day schedule which I’m still on today.&lt;/p&gt;
+
+&lt;p&gt;I’ve recently started focusing on calisthenics in addition to weightlifting. One of the first movements I chose to develop is the &lt;a href=&quot;https://www.instagram.com/p/BZw4N_XBsr9/?taken-by=adamjmorgan&quot; target=&quot;_blank&quot;&gt;handstand&lt;/a&gt; and I decided to continue with the start small approach. I’d try to do a few handstands when I do upper body - Monday and Thursday. The first few days sucked because I barely knew what I was doing. I was still watching YouTube videos to learn how to practice a handstand. But after just a few days, I started noticing small improvements. When I started to fall, it was no longer a guarantee I was going to fall. I could now rebalance myself 1/20 times even if the rebalancing only lasted for another half second. 1/20 isn’t much, but it’s better than 0.&lt;/p&gt;
+
+&lt;p&gt;Once I feel this change from 0 to 1, my first bit of short-term feedback, I know I’m starting to build some momentum. This is the point where doing a few handstands on Monday and Thursday turns into me doing them three or four days a week because I’m starting to see results. Wait even longer and you’ll be doing handstands for the hell of it because it’s just an enjoyable thing to do when you no longer suck.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tell yourself you’re not average&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Remember when I said most people wish they knew how to code and wish they regularly went to the gym? I always kept that line in my head when I felt like quitting.&lt;/p&gt;
+
+&lt;p&gt;Let’s say on January 1 a gym has 100 people in it. The owners know from previous years that in a month that number will be 20. Do you want to be in the majority or the minority?&lt;/p&gt;
+
+&lt;p&gt;I simply refused to let myself settle for the majority. Every day I didn’t want to go to the gym I’d just tell myself, “This is the first step to being in the group of 80.” If that didn’t work I’d pretend I had to tell the hottest girl in the world I wasn’t going to the gym today because I was tired. There’s no way I could actually say that out loud to her so before I knew it I’d be on my way to the gym.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Approach it like a baby&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When you’re starting something new, picture yourself as a baby. If a baby is trying to learn to walk it doesn’t happen overnight. They don’t practice walking, take a few months off, and then try again. The reality is that the process takes time and the practice is relatively frequent.&lt;/p&gt;
+
+&lt;p&gt;Whenever I’m about to practice handstands, I take a moment to acknowledge the handstand is new to me and that I’m essentially a baby trying to learn how to stand on my hands. This puts the learning process in perspective which also reduces my stress so I’m not so hard on myself. Again, a baby doesn’t learn how to walk overnight and neither will I.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Experiment with practice&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Depending on what you’re doing, it’s worth spending some time experimenting with how you practice. When I first started working out I’d do my cardio at home on a stationary bike. To help with the cardio, I’d watch an episode of Lost at the same time. I was going to be on the bike for 40 minutes either way but I found one episode of Lost was easier to digest than 40 minutes.&lt;/p&gt;
+
+&lt;p&gt;I’ve found drastic differences within music as well. When I’m practicing painting, I’ve noticed one continuous piece of upbeat music to be much better for pushing me into flow state. EDM sets, followed by podcasts and audiobooks, have been my new go-to pairings with workouts or other habits which don’t require constant thinking.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reframe practice into different terms&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For some reason I thought building a habit of weightlifting was like beating the final boss in a game. I expected everything else that followed to feel much easier.&lt;/p&gt;
+
+&lt;p&gt;The reality is it’s a lot like any other skill that takes time to develop. So when you move on to something else, in my case it’s digital painting, you realize the entire process essentially starts over. You go back to sucking which means you go back to finding reasons to procrastinate.&lt;/p&gt;
+
+&lt;p&gt;The difference is that it’s just a little bit easier than it was the time before because you’ve pushed through in the past and you know the process takes time. You’ve already proven it to yourself at least once.&lt;/p&gt;
+
+&lt;p&gt;In this case, I actually reframe my new habit as my old one. Rather than tell myself I need to sit down and practice painting, I pretend I need to sit down at my computer and “go for a run”. That habit has been built and it’s rare for me to bitch out. For some bizarre reason walking up to my computer, opening Photoshop, and telling myself I just need to run actually makes it easier for me to do. It may not make sense, but I’ll run with it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Resources&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Coding&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Learn/JavaScript&quot;&gt;MDN - Learn Web Development&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://leanpub.com/mean-machine&quot;&gt;Mean Machine&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://scotch.io/&quot;&gt;Scotch.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nodeschool.io/&quot;&gt;NodeSchool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fitness&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/TheMiamiTrainer&quot;&gt;THENX&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/user/GeekAMD&quot;&gt;Austin Dunham&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.instagram.com/jtm_fit/&quot;&gt;jtm_fit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Supplements&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.com/gp/product/B01D20PJEG/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=B01D20PJEG&amp;amp;linkCode=as2&amp;amp;tag=atommorgan-20&amp;amp;linkId=2732a1b39b2fca642e8ea17b5027b64a&quot;&gt;Vital Proteins Grass-Fed, Pasture-Raised Organic Whey Protein&lt;/a&gt;&lt;img src=&quot;//ir-na.amazon-adsystem.com/e/ir?t=atommorgan-20&amp;amp;l=am2&amp;amp;o=1&amp;amp;a=B01D20PJEG&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; style=&quot;border:none !important; margin:0px !important;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.com/gp/product/B00K6JUG4K/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=B00K6JUG4K&amp;amp;linkCode=as2&amp;amp;tag=atommorgan-20&amp;amp;linkId=55512a6e9a7ccce1d9b25112869e142e&quot;&gt;Vital Proteins Pasture-Raised, Grass-Fed Collagen Peptides&lt;/a&gt;&lt;img src=&quot;//ir-na.amazon-adsystem.com/e/ir?t=atommorgan-20&amp;amp;l=am2&amp;amp;o=1&amp;amp;a=B00K6JUG4K&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; style=&quot;border:none !important; margin:0px !important;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.com/gp/product/B002DYIZEO/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=B002DYIZEO&amp;amp;linkCode=as2&amp;amp;tag=atommorgan-20&amp;amp;linkId=fd758ae120ba5ae63c561cfe09b0ea82&quot;&gt;Optimum Nutrition Creatine Powder&lt;/a&gt;&lt;img src=&quot;//ir-na.amazon-adsystem.com/e/ir?t=atommorgan-20&amp;amp;l=am2&amp;amp;o=1&amp;amp;a=B002DYIZEO&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; style=&quot;border:none !important; margin:0px !important;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Art&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.com/gp/product/1585429201/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=1585429201&amp;amp;linkCode=as2&amp;amp;tag=atommorgan-20&amp;amp;linkId=53737358addfe49363f5228081296e2c&quot;&gt;Drawing on the Right Side of the Brain&lt;/a&gt;&lt;img src=&quot;//ir-na.amazon-adsystem.com/e/ir?t=atommorgan-20&amp;amp;l=am2&amp;amp;o=1&amp;amp;a=1585429201&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; style=&quot;border:none !important; margin:0px !important;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ctrlpaint.com/&quot;&gt;CtrlPaint&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;EDM&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/SaUN0QHOkHk&quot;&gt;Above &amp;amp; Beyond - EDC Las Vegas 2015&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/A1oPoxKMMuA&quot;&gt;Kaskade - Ultra 2016&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/_F2KOULJJtk&quot;&gt;The Chainsmokers - Ultra 2016&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><summary type="html">There’s two skills I’ve developed over the past few years that I value more than almost anything else I’ve ever done: learning how to code and building a habit of working out.</summary></entry><entry><title type="html">The Political Pendulum</title><link href="/the-political-pendulum/" rel="alternate" type="text/html" title="The Political Pendulum" /><published>2017-09-23T00:00:00-04:00</published><updated>2017-09-23T00:00:00-04:00</updated><id>/the-political-pendulum</id><content type="html" xml:base="/the-political-pendulum/">&lt;p&gt;It’s been just over a month now since the Google Memo was first published by Gizmodo. Since then, we’ve already seen other companies such as YouTube, Eventbrite, and MailChimp take similar politically motivated actions like Google.&lt;/p&gt;
+
+&lt;p&gt;I believe Google’s move to fire James Damore is more ridiculous than most SJW-ish shit we’ve been seeing lately. One guy wrote a reasonable opinion piece (reasonable scientific citations removed from Gizmodo’s publication, bizarrely enough) at one of the largest companies in the world and nearly every media spin on the issue isn’t even close to representing what James actually said. A black person being shot by the police is a subjective situation with few witnesses or evidence of what happened. With James, we actually have his own words.&lt;/p&gt;
+
+&lt;p&gt;Google making the first move was validation. A startup firing an employee like James is an event that goes unnoticed. Google making this move is public and gives smaller players the validation to make similar moves. If Google can do it, why can’t they?&lt;/p&gt;
+
+&lt;p&gt;Well, why can’t they? And what does this mean for the future of the industry and social politics going forward? How far are we on the “swinging pendulum” of political correctness and what does the future look like if firings like the Google Memo become the norm? Where does this slippery slope go?&lt;/p&gt;
+
+&lt;p&gt;Let’s first go back to Hitler. This guy viewed people from an almost purely scientific lens. All but Aryans are genetically inferior. What was his method to achieve his goal? Killing them. Extremely fucked up and wrong.&lt;/p&gt;
+
+&lt;p&gt;The next step past this is enslavement. It’s still fucked up but at least there’s no murder. I imagine I’d rather be alive and a slave than dead.&lt;/p&gt;
+
+&lt;p&gt;Give history more time and you get discrimination and racism we’re all more familiar with. “Separate but equal” in American politics. Oppressed people are no longer slaves but they’re still disadvantaged and fucked over in a lot of ways. What’s the method here? Allow the oppressed to integrate into society but distinguish them from people in some way. Separate bathrooms, water fountains, schools, etc.&lt;/p&gt;
+
+&lt;p&gt;Take this one step further and I think we’ve essentially hit modern American society. Racism still exists but it’s no longer enforced by government through separate but equal. It’s largely private discrimination (no Christian cakes for gay people) or hate speech. In general, neither one is looked at in a positive light by most people even if they respect the freedoms of others to discriminate or use hate speech. Throw out “chink” or “nigger” in a reasonable discussion and you’ve stopped any chance of progress until an apology is made. In all fairness though, the “right” is more likely to let these private forms of discrimination slide.&lt;/p&gt;
+
+&lt;p&gt;Now what does the other side of the pendulum look like, how far on that side are we, and where does it go?&lt;/p&gt;
+
+&lt;p&gt;I think we’ve already made it to the “hate speech” equivalent. They don’t view it the same but the effect, a conversation ender, is the same in my opinion. I’m referring to terms like mansplaining or tactics like race or gender cards. On this side of the pendulum, your gender or race invalidates your opinion. It’s not as objectively insulting as calling someone a nigger but to say someone isn’t entitled to an opinion because they’re white? The person is substandard due to a characteristic, race or gender, that’s outside their control. Same shit, different rationale.&lt;/p&gt;
+
+&lt;p&gt;Take this side one step further and you get their version of separate but equal — government buy-in included in certain cases. Safe spaces, separate teams at work for underrepresented minorities, affirmative action, diversity and inclusion initiatives, etc. These groups are literally separated from others, sometimes purely through race, but the expectation is that everyone still view them as equals. I believe this is where we are at today.&lt;/p&gt;
+
+&lt;p&gt;Push this one step further (slavery on the opposite end of the pendulum) and what do I think we can expect? Rather than affirmative action or diversity and inclusion initiatives trying to get $MINORITY into engineering, why not push out from the other side? Instead of lowering the bar for minorities, why not cap the amount of white and Asian men who are interested in pursuing engineering or computer science? Some universities already require students to complete workshops which introduce students to “inclusive language” and “affirming belongingness”. Gender and sexual politics already have some who legitimately believe denying a four year old saying they’re transgender is a crime and the state should take the child away. We’re creeping towards their version of slavery.&lt;/p&gt;
+
+&lt;p&gt;But at the extreme, what’s their version of Hitler and what are their methods?&lt;/p&gt;</content><summary type="html">It’s been just over a month now since the Google Memo was first published by Gizmodo. Since then, we’ve already seen other companies such as YouTube, Eventbrite, and MailChimp take similar politically motivated actions like Google.</summary></entry></feed>

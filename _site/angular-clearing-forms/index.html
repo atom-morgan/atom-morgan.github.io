@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+  Jekyll integration by somiibo.com
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+<title>Angular Tutorial: Clearing Forms</title>
+<meta name="description" content="">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+<link rel="manifest" href="/assets/icon/manifest.json">
+<link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icon/favicon.ico">
+<meta name="msapplication-config" content="/assets/icon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/css/main.css" />
+<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+        <header id="header">
+          <a href="/" class="logo">Adam Morgan</a>
+        </header>
+
+				<!-- Nav -->
+					<nav id="nav">
+
+            <ul class="links">
+  <li class=""><a href="/">Home</a></li>
+  <li class=""><a href="/about/">About</a></li>
+  <li class=""><a href="/blog/">Blog</a></li>
+  <li class=""><a href="/tutorials/">Tutorials</a></li>
+  <li><a href="http://atommorgan.com" target="_blank">Portfolio</a></li>
+  <li><a href="https://itunes.apple.com/us/podcast/the-adam-morgan-show/id1088616591" target="_blank">Podcast</a></li>
+</ul>
+
+
+						<ul class="icons">
+              <li><a href="https://twitter.com/atommorgan" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
+              <li><a href="https://instagram.com/adamjmorgan" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
+              <li><a href="https://github.com/atom-morgan" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+				<div id="main">
+          <section class="post">
+    				<header class="major">
+      				<span class="date">16 Apr 2017</span>
+      				<h1>Angular Tutorial: Clearing Forms</h1>
+
+      			</header>
+      			<div class="image main"><img src="" alt=""></div>
+      			<p><p>I was recently working on an Angular (aka Angular2 aka Angular4) application where a user triggers a modal, completes a form within the modal, and submits. Unfortunately, the form wasn’t clearing after a form submission and manually resetting every <code class="highlighter-rouge">ngModel</code> seemed extremely tedious. Thankfully the solution to this problem is easy and takes just two lines of real code to get the job done.</p>
+
+<p>First, we’ll start with a basic component.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// src/app.component.ts</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">DummyService</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'./dummy.service'</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="s1">'app-root'</span><span class="p">,</span>
+  <span class="na">template</span><span class="p">:</span> <span class="err">`</span>
+    <span class="o">&lt;</span><span class="nx">form</span> <span class="err">#</span><span class="nx">myForm</span><span class="o">=</span><span class="s2">"ngForm"</span> <span class="p">(</span><span class="nx">ngSubmit</span><span class="p">)</span><span class="o">=</span><span class="s2">"submitForm(myForm.value)"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">"name"</span><span class="o">&gt;</span><span class="na">Name</span><span class="p">:</span> <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Name"</span>
+        <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span>
+        <span class="nx">id</span><span class="o">=</span><span class="s2">"name"</span>
+        <span class="nx">name</span><span class="o">=</span><span class="s2">"name"</span>
+        <span class="p">[(</span><span class="nx">ngModel</span><span class="p">)]</span><span class="o">=</span><span class="s2">"name"</span><span class="o">&gt;</span>
+
+      <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">"name"</span><span class="o">&gt;</span><span class="na">Title</span><span class="p">:</span> <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Title"</span>
+        <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span>
+        <span class="nx">id</span><span class="o">=</span><span class="s2">"title"</span>
+        <span class="nx">name</span><span class="o">=</span><span class="s2">"title"</span>
+        <span class="p">[(</span><span class="nx">ngModel</span><span class="p">)]</span><span class="o">=</span><span class="s2">"title"</span><span class="o">&gt;</span>
+
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"submit"</span><span class="o">&gt;</span><span class="nx">Submit</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">span</span> <span class="o">*</span><span class="nx">ngIf</span><span class="o">=</span><span class="s2">"submittedUser"</span><span class="o">&gt;&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>  <span class="err">`</span>
+<span class="p">})</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nl">submittedUser</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">dummyService</span><span class="err">:</span> <span class="nx">DummyService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">submitForm</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dummyService</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">submittedUser</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>In this component we’ve provided a form template with two inputs: <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">title</code>. Within the component class we’ve defined a private <code class="highlighter-rouge">dummyService</code> which we’ll use as a mock service to “<code class="highlighter-rouge">POST</code>” our form. When the user clicks “Submit”, <code class="highlighter-rouge">submitForm</code> will call <code class="highlighter-rouge">this.dummyService.create()</code> and we set the response to the <code class="highlighter-rouge">submittedUser</code> property which conditionally displays in our view through <code class="highlighter-rouge">&lt;span *ngIf="submittedUser"&gt;</code>.</p>
+
+<p>Complete the form below, click “Submit”, and you should see the conditional <code class="highlighter-rouge">&lt;span&gt;</code> display our response but the form inputs are still populated.</p>
+
+<iframe src="https://embed.plnkr.co/BTT0VX/?show=preview" frameborder="0" width="100%" height="500"></iframe>
+
+<p>To fix this, we’ll need to leverage Angular’s <a href="https://angular.io/docs/ts/latest/api/core/index/ViewChild-decorator.html">ViewChild</a> decorator. <code class="highlighter-rouge">ViewChild</code> allows us to query our view to get an element or directive of our choice. In this case, we want a <code class="highlighter-rouge">ViewChild</code> for our form.</p>
+
+<p>To do this, we’ll need to import <code class="highlighter-rouge">ViewChild</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// src/app.component.ts</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>Then in our component class, we can set a <code class="highlighter-rouge">ViewChild</code> property to our form’s template variable <code class="highlighter-rouge">myForm</code> which we declared earlier: <code class="highlighter-rouge">&lt;form #myForm="ngForm" (ngSubmit)="submitForm(myForm.value)"&gt;</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// src/app.component.ts</span>
+
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">ViewChild</span><span class="p">(</span><span class="s1">'myForm'</span><span class="p">)</span> <span class="nx">formValues</span><span class="p">;</span> <span class="c1">// Added this</span>
+  <span class="nl">submittedUser</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">dummyService</span><span class="err">:</span> <span class="nx">DummyService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="p">...</span>
+
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Now we can add the one line to clear our form on a successful response.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// src/app.component.ts</span>
+
+<span class="p">...</span>
+
+<span class="nx">submitForm</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">dummyService</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">submittedUser</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">formValues</span><span class="p">.</span><span class="nx">resetForm</span><span class="p">();</span> <span class="c1">// Added this</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Try it again below and experience the magic of <code class="highlighter-rouge">resetForm()</code>.</p>
+
+<iframe src="https://embed.plnkr.co/4WyfEc/?show=preview" frameborder="0" width="100%" height="500"></iframe>
+
+<hr />
+
+<p>Hat tip to <a href="https://twitter.com/chrisoncode">Chris Sevilleja</a> for introducing me to ViewChild.</p>
+</p>
+      		</section>
+
+          <div class="comments-wrapper">
+          <div id="disqus_thread"></div>
+          <script>
+              /**
+               *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+               *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+               */
+
+              var disqus_config = function () {
+                  this.page.url = '/angular-clearing-forms/';  /*Replace PAGE_URL with your page's canonical URL variable*/
+                  this.page.identifier = '/angular-clearing-forms/'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
+              };
+
+              (function() {  /* dont endit below this line */
+                  var d = document, s = d.createElement('script');
+
+                  s.src = 'https://default.disqus.com/embed.js';
+
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div><!-- /.comments-wrapper -->
+
+
+					<!-- Footer -->
+						<footer>
+              <ul class="actions">
+                <li><a href="/blog/" class="button">Our Blog</a></li>
+              </ul>
+						</footer>
+					</div>
+
+				<!-- Footer -->
+        <footer id="footer">
+  <section>
+    <form method="POST" action="https://formspree.io/atom.morgan@gmail.com">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" />
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="3"></textarea>
+      </div>
+      <ul class="actions">
+        <li><input type="submit" value="Send Message" /></li>
+      </ul>
+    </form>
+  </section>
+  <section class="split contact">
+    <section class="alt">
+      <h3>Location</h3>
+      <p>Atlanta, GA</p>
+    </section>
+    <section>
+      <!-- <h3>Phone</h3>
+      <p><a href="tel:310-318-5555">310-318-5555</a></p> -->
+      <h3>Availability</h3>
+      <p>Remote, part-time only</p>
+    </section>
+    <section>
+      <h3>Email</h3>
+      <p><a href="mailto:atom.morgan@gmail.com">atom.morgan@gmail.com</a></p>
+    </section>
+    <section>
+      <h3>Social</h3>
+      <ul class="icons alt">
+        <li><a href="https://twitter.com/atommorgan" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
+        <li><a href="https://instagram.com/adamjmorgan" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/atom-morgan" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+      </ul>
+    </section>
+  </section>
+</footer>
+<!-- Copyright -->
+<div id="copyright">
+  <ul><li>&copy; HTML5 UP</li><li>Design by <a href="https://html5up.net" rel="nofollow">HTML5 UP</a></li><li>Jekyll Integration by <a href="https://soundgrail.com">SoundGrail</a></li></ul>
+</div>
+
+
+			</div>
+
+      <!-- Scripts -->
+  		<!-- DYN -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/jquery.scrolly.min.js"></script>
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+
+			<script async src="https://www.googletagmanager.com/gtag/js?id=default"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'default');
+</script>
+
+
+	</body>
+</html>

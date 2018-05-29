@@ -69,8 +69,8 @@ The academic results of single parent households aren't promising either.
 >* The school dropout rate for children in single-mother families is twice as high as the rate for children in two-parent families.
 >* Children in one-parent families have lower grade point averages and poorer school attendance records.
 >* As adults, they are less likely to graduate from college and more likely to become single parents themselves.
-
->Source: [Psychology Today](https://www.psychologytoday.com/articles/199605/double-the-trouble)
+> 
+> Source: [Psychology Today](https://www.psychologytoday.com/articles/199605/double-the-trouble)
 
 By no means are stable households with Asian values the only driving factor for their well-being in America or for their representation within tech. But when every conversation around diversity boils down to an atmosphere of white guys not welcoming anyone who doesn't look like them, why ignore a minority group that doesn't fit the narrative in nearly every measurable way?
 

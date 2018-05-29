@@ -1,10 +1,60 @@
-name: "Adam Morgan"
-markdown: redcarpet
-highlighter: pygments
-permalink: :title
-exclude: [README.md, LICENSE, Makefile]
+# Site
+title:              Adam Morgan
+bio:                'Jekyll version of the Massively theme by HTML5UP'
+description:        "Jekyll version of the Massively theme by HTML5UP"
+locale:             en_US
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 
-# Information for the Atom feed
-gereksiz:
-   author: "Adam Morgan"
-   email: "atom.morgan@gmail.com"
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    permalink: "/:title/"
+    layout: post
+    author:
+
+# Jekyll
+permalink:          /:title/
+markdown:           kramdown
+highlighter:        rouge
+kramdown:
+  input: GFM
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  enable_coderay:   false
+mathjax:            true
+sass:
+  sass_dir:         _sass
+  style:            compressed
+
+# Comments
+disqus_shortname:   default
+
+# Social
+analytics-id:       "default"
+twitter:            atommorgan
+facebook:           default
+instagram:          adamjmorgan
+github:             atom-morgan
+
+# personal
+location:           Atlanta, GA
+phone:              310-318-5555
+email:              atom.morgan@gmail.com
+
+# Gems
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+# Exclude list
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]

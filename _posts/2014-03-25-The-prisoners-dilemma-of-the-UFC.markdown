@@ -36,4 +36,4 @@ Extend the weigh-in process and we could see fights with healthier and stronger 
 
 - - -
 
-Thanks to Logan Jones and [Joey Morgan](https://twitter.com/MBucks1) for reading drafts of this post.
+Thanks to Logan Jones and Joey Morgan for reading drafts of this post.

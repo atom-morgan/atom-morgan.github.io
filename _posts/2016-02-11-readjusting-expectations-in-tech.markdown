@@ -5,7 +5,7 @@ date: 2016-02-11
 ---
 
 > "If a student of any discipline could avoid ever repeating the same mistake twice, they would skyrocket to the top of their field."
-
+> 
 > -Josh Waitzkin, [_The Art of Learning_](http://www.amazon.com/The-Art-Learning-Journey-Performance/dp/0743277465)
 
 I remember growing up always thinking the next stage of my life was what was going to end me. As I was finishing up 6th grade ready to start junior high I had teachers telling me, "You thought 6th grade was hard? Wait until junior high school!" I think it took a week into 7th grade before I realized that comment was bullshit. 7th grade was 6th grade with a few more teachers and a few more rooms. What a relief.
