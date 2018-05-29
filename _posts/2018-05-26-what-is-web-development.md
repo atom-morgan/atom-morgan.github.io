@@ -136,6 +136,6 @@ We've seen how front-end developers write code that's executed on clients which 
 
 We also introduced some of the various frameworks used by front-end and back-end developers as well as some of the databases you can expect to work with as a back-end developer.
 
-In the [next tutorial](https://atom-morgan.github.io/web-development-hello-world/) we'll begin our introduction to web development by writing a simple "Hello, world!" program using HTML and JavaScript.
+In the [next tutorial](https://atom-morgan.github.io/hello-world-in-javascript/) we'll begin our introduction to web development by writing a simple "Hello, world!" program using HTML and JavaScript.
 
 {% include book-plug.html %}
