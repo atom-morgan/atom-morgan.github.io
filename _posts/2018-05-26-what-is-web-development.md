@@ -77,26 +77,26 @@ Yes. If you're going to learn a framework it's best to start off with the progra
 
 If you're considering front-end then learning HTML, CSS, and JavaScript is a must-have. Since so much of front-end development happens in a browser, you have to learn how to work with browser technology such as HTML, CSS, and JavaScript. Once you've gotten a grasp of these then you can move on to one of the popular front-end frameworks listed below: 
 
-* Angular
-* React
-* Ember.js
-* Vue.js
+* [Angular](https://angular.io/)
+* [React](https://reactjs.org/)
+* [Ember.js](https://www.emberjs.com/)
+* [Vue.js](https://vuejs.org/)
 
 If you're considering back-end you don't have to worry about HTML and CSS as much since your code isn't directly interfacing with a browser. Instead, you'll likely be replacing this with knowledge of databases since you're going to be saving, updating, and retrieving data from databases. Here are a few popular options for databases:
 
 * [PostgreSQL](https://www.postgresql.org/)
 * [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2017)
-* MySQL
-* MongoDB
+* [MySQL](https://www.mysql.com/)
+* [MongoDB](https://www.mongodb.com/)
 
 In addition to that, you will also need to learn a programming language along with a framework. A few of the current popular options are below:
 
-* Ruby on Rails (Ruby)
-* Express/Node.js (JavaScript)
-* Laravel (PHP)
-* Django (Python)
-* ASP.NET (VB, C#, etc)
-* Spring MVC, JSF (Java)
+* [Ruby on Rails](https://rubyonrails.org/) (Ruby)
+* [Express/Node.js](https://expressjs.com/) (JavaScript)
+* [Laravel](https://laravel.com/) (PHP)
+* [Django](https://www.djangoproject.com/) (Python)
+* [ASP.NET](https://www.asp.net/) (VB, C#, etc)
+* [Spring MVC](https://spring.io/) (Java)
 
 **If I learn Angular do I need to learn React?**
 
