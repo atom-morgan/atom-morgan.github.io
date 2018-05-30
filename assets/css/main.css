@@ -4511,6 +4511,7 @@ p img {
 }
 
 /* Code */
+/* https://gist.github.com/rubyhero/5a10efe8c609cfd4e991af582a76eb64 */
 
 .highlight code, .highlight pre {
 color:#fdce93;
@@ -4553,7 +4554,8 @@ color:red;
 }
 
 .highlight .go {
-color:gray;
+/* color:gray; */
+color:#fdce93;
 }
 
 .highlight .gs {
