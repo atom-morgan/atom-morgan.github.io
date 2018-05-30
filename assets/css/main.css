@@ -1768,7 +1768,7 @@
 	}
 
 	code {
-		border: solid 2px;
+		/* border: solid 2px; */
 		font-family: "Courier New", monospace;
 		font-size: 0.9rem;
 		margin: 0 0.25rem;
