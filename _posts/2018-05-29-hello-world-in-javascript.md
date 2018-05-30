@@ -7,11 +7,11 @@ excerpt: 'Learn web development with an introduction to JavaScript by creating t
 image: "/images/hello-world/tutorial-hello-world.png"
 ---
 
-<!-- ## Video
+## Video
 
 <div class="videoWrapper">
-
-</div> -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Llze9Pq76sE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 ## Introduction
 
