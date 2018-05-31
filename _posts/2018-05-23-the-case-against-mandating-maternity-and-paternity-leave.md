@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'The Case against Mandating Maternity and Paternity Leave'
+title: 'The Case Against Mandating Maternity and Paternity Leave'
 date: 2018-05-23
 tag: career
 excerpt: "In many ways the tech industry serves as the one to push the boundaries of the workplace. From in-office amenities, gym memberships, catered lunches, and a variety of other benefits the tech industry leads and others follow. The one benefit that seems to have the most traction at the moment is mandated maternity and paternity leave."
@@ -9,9 +9,7 @@ image: ""
 
 In many ways the tech industry serves as the one to push the boundaries of the workplace. From in-office amenities, gym memberships, catered lunches, and a variety of other benefits the tech industry leads and others follow. The one benefit that seems to have the most traction at the moment is mandated maternity and paternity leave.
 
-But there's a point where constantly trying to push the bar eventually contradicts other pieces of advice often given to tech companies.
-
-The most common one, especially within the startup world, is to keep your burn rate low. This has been applied to both startups and individuals looking to bootstrap a startup. 
+But there's a point where constantly trying to push the bar eventually contradicts other pieces of advice often given to tech companies. The most common one, especially within the startup world, is to keep your burn rate low. This has been applied to both startups and individuals looking to bootstrap a startup. 
 
 The logic makes perfect sense. Whether you already have a startup or you're in the process of building one, money will be tight and must be managed accordingly. Despite this advice there's still a lot of momentum within the industry to not only mandate paid time off for new parents but also increase the amount of time off they're given.
 
