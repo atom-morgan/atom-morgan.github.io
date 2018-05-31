@@ -7,7 +7,7 @@ excerpt: "If you're trying to get into tech and you have an offer from a company
 image: ""
 ---
 
-One of the worst pieces of advice I often see people give is to "never work for less than $X". People, often with an already proven track record within their industry, will say that newbies in the industry should not allow themselves to be taken advantage of by employers. The common way to avoid this is by setting a price floor that all should never dip below.
+One of the worst pieces of advice I often see people give is to "never work for less than $X". Certain people, often with an already proven track record within their industry, will say that newbies in the industry should not allow themselves to be taken advantage of by employers. The common way to avoid this is by setting a price floor that all should never dip below.
 
 If you're trying to get into tech and you have an offer from a company, *do not* listen to this type of advice. Don't think back on a Medium article you saw that said developers should never accept less than $70,000 a year because anything lower than that is ripping you off. That may be true for the author, but is it true for you?
 
@@ -21,7 +21,7 @@ Is the value provided to you by the company, in addition to the pay, enough for 
 
 It's a cliche but it's true. So you have to ask yourself, what else is this company offering me? What benefits should I consider that may make that offer more appealing? Here's a few examples:
 
-1. If you've always done front-end development but the company is looking for a designer, this may be the time for a small role change within your career. Opportunities like this don't happen everyday, so maybe the "lower than $X" salary they offered seems worthwhile.
+1. If you've always done front-end development but the company is looking for a designer, this may be the time for a small role change within your career. Opportunities like this don't happen everyday, so maybe the "lower than $X" salary they offered seems worthwhile to pick up a new set of skills on the job.
 
 2. The offer is lower than that Medium article you read and even a little lower than your previous job. However, it provides the opportunity to work remotely 3-4 days a week. You won't have the same amount of cash being sent to your bank every two weeks but you will have the time savings of avoiding traffic going to and from work. Your quality of life may improve working from home or coffee shops instead of a noisy office. You may even have some freedom setting your own schedule.
 
@@ -42,5 +42,7 @@ This isn't unlike a completely inexperienced teenager looking for work. They nee
 ![Cycle of Teenage Unemployment](http://i.imgur.com/ar8pNbb.jpg)
 
 As many teenagers often find by working minimum wage or under the table jobs, pay is their bargaining chip and their way into the job market. From there, increasing pay gets easier with real work experience.
+
+Don't let someone else's salary requirements get in the way of what may be a good career move. Do what's best for you.
 
 {% include book-plug.html %}
