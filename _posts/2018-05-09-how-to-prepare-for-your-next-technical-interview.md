@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Prepare for Your Next Technical Interview"
-date: 2018-05-23
+date: 2018-05-09
 tag: career
 excerpt: "Technical interviews aren't fun. Every single person I know in the industry hates how companies conduct technical interviews but they all keep doing the same thing. So until things change, how should you prepare for the interview? Here are a few tips I've learned since I entered the industry."
 image: ""
@@ -19,13 +19,15 @@ Would you ever ask them to describe the difference between a gerund phrase and a
 
 You maybe be able to wire up an AngularJS route, factory, controller, and view but if you don't know the differences between CSS2 and CSS3 off the top of your head, are you really a front-end developer?
 
+As frustrating as it may be expect your interview to be more like the English grammar test than the request for a writing sample and plan accordingly.
+
 ### Approach the interview as an investor
 
 I know a lot of people who say they struggle coming up with questions to ask in their interviews. To help with this, imagine you had to invest your own real money into the company. What would you want to know before writing them a check?
 
 It may seem silly to treat yourself as an investor. After all, you're not investing your money into the business. But you are investing your time and you can't get that back.
 
-Framing the interview in this context is usually all people need to start sourcing better questions. Think about the specific industry the company is in and do some research. If you show up asking how their company's software will address a new emerging trend in their industry, you've already set yourself apart from the average developer who only asks forced questions like which version of Node or Rails they're using.
+Framing the interview in this context is usually all people need to start sourcing better questions. Think about the specific industry the company is in and do some research. If you show up asking how their company's software will address a new emerging trend in their industry, you've already set yourself apart from the average developer who only asks forced questions like which version of Node.js or Rails they're using.
 
 ### Interview the company
 
