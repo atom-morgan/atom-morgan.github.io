@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Startups vs. Corporations vs. Agencies: What's Best for You?"
-date: 2018-05-23
+date: 2018-05-16
 tag: career
 excerpt: "Whether you're already working in tech or you're looking to in the near future at some point you'll have to decide where you want to work. Thankfully I've had the opportunity to work in a variety of different companies and environments to see the pros and cons of each. So here's list of my pros and cons between startups, corporations, and agencies."
 image: ""
 ---
 
-Whether you're already working in tech or you're looking to in the near future at some point you'll have to decide where you want to work. Thankfully I've had the opportunity to work in a variety of different companies and environments to see the pros and cons of each. So here's list of my pros and cons between startups, corporations, and agencies.
+Whether you're already working in tech or you're looking to in the near future at some point you'll have to decide where you want to work. Over the past few years I've had the opportunity to work in a variety of different companies and environments to see the pros and cons of each. So here's list of my pros and cons between startups, corporations, and agencies.
 
 ### Startups (Pros)
 
@@ -95,7 +95,7 @@ If your agency is doing work for Procter & Gamble for a new product release, the
 
 **Learning**
 
-When an agency does one thing realy well they tend to continue doing that one thing. If the agency regularly runs online contests using social media that process has slowly been creeping towards automation. You may want to use Angular2 but if it's been delivered ten times in the past with Angular1 or jQuery get ready to re-skin an existing solution.
+When an agency does one thing realy well they tend to continue doing that one thing. If the agency regularly runs online contests using social media that process has slowly been creeping towards automation. You may want to use [Angular](https://angular.io/) but if it's been delivered ten times in the past with [AngularJS](https://angularjs.org/) or jQuery get ready to re-skin an existing solution.
 
 **Repetition**
 
