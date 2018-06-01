@@ -4,7 +4,7 @@ title: "Five Tips for Learning How to Code"
 date: 2018-06-01
 tag: career
 excerpt: "You've made your decision to learn how to code and now it's time to get started. But how do you do it? As a self-taught programmer I've been through the struggle of learning how to code and if I had to do it again, this is how I'd do it."
-image: ""
+image: "/images/blog-five-tips.png"
 ---
 
 You've made your decision to learn how to code and now it's time to get started. But how do you do it? As a self-taught programmer I've been through the struggle of learning how to code and if I had to do it again, this is how I'd do it.
