@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Five Tips for Learning How to Code"
-date: 2018-05-23
+date: 2018-06-01
 tag: career
 excerpt: "You've made your decision to learn how to code and now it's time to get started. But how do you do it? As a self-taught programmer I've been through the struggle of learning how to code and if I had to do it again, this is how I'd do it."
 image: ""
@@ -15,9 +15,11 @@ We're creatures of habit and the more something becomes a part of *who you are* 
 
 The best method for me to create a habit is to start small. If I decided I wanted to start running today, I would start with 2-3 scheduled days a week where I run no matter what. At first, I know it'll suck. But after a couple months you hit a point where *not* running on your days makes you feel bad. *I've gone running for the past month, why am I being lazy today and making excuses?*
 
-> If this type of method doesn't work for you, experiment! If you know you may end up saying "I'll just do it tomorrow" on one of your scheduled days, maybe a smaller amount of work *everyday* (Jerry Seinfeld's ["Don't Break the Chain"](http://lifehacker.com/281626/jerry-seinfelds-productivity-secret)) will work better for you. 
+Apply the same mindset to learning how to code. Set aside a few hours a few times a week where you do at least one thing related to coding. If you're just not in the mood to read through a chapter of a programming book that day, it's okay. Watch a tech talk on YouTube instead!
 
-Apply the same mindset to learning how to code. Set aside a few hours a few times a week where you do at least one thing related to coding. If you're just not in the mood to read through a chapter of a programming book that day, it's okay. Watch a tech talk on YouTube instead! 
+<div class="box" markdown="1">
+If this type of method doesn't work for you, experiment! If you know you may end up saying "I'll just do it tomorrow" on one of your scheduled days, maybe a smaller amount of work *everyday* (Jerry Seinfeld's ["Don't Break the Chain"](http://lifehacker.com/281626/jerry-seinfelds-productivity-secret)) will work better for you.
+</div>
 
 ### Break up Your Work
 
@@ -27,7 +29,9 @@ Instead of sitting down to work on programming for 2 hours straight, why not do 
 
 This technique is known as the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique). In addition to being a good way to get me started on work, I've also discovered it's a great way to get into [flow state](https://en.wikipedia.org/wiki/Flow_(psychology)). I'll do my first 25 minute interval, rest, do my second and by the time the timer has gone off for my second break I'm focused enough that I don't need it anymore.
 
-> If you're looking for a Pomodoro Timer I recommend [Be Focused](https://itunes.apple.com/us/app/be-focused-focus-timer-goal/id973134470?mt=12) which is available on all Mac products.
+<div class="box" markdown="1">
+If you're looking for a Pomodoro Timer I recommend [Be Focused](https://itunes.apple.com/us/app/be-focused-focus-timer-goal/id973134470?mt=12) which is available on all Mac products.
+</div>
 
 If I'm learning a new skill, Pomodoro is a must. But if I just need to do work related to something I'm already good at, Pomodoro is a kick start to get me on task.
 
@@ -35,7 +39,9 @@ If I'm learning a new skill, Pomodoro is a must. But if I just need to do work r
 
 Learning to program is tough enough already if you're doing it by yourself so why not do it with a friend instead? This will not only give you two brains to try and make sense of new concepts but it's also more enjoyable and motivating to learn with someone else too.
 
-> Group fitness classes have never been bigger and I imagine this is at least part of the reason why.
+<div class="box">
+Group fitness classes have never been bigger and I imagine this is at least part of the reason why.
+</div>
 
 Learning with a friend will make you accountable to each other which will hopefully make the both of you less likely to quit. It will also provide the ability for the two of you to talk through problems together and share what you do and don't understand. Even if one of you is learning front-end development while the other is learning back-end, the two still share much in common and the interaction between the two will only help solidify the concepts for the both of you.
 
@@ -53,7 +59,7 @@ Don't let being new to programming hold you back either. If you started programm
 
 ### Be Patient
 
-Perhaps the most important part of any goal in life is to *be patient*. Think long term. Pursue programming knowing that consistent, repeated effort towards learning will eventually lead to success. Nothing is going to happen overnight.
+Perhaps the most important part of any goal in life is to *be patient*. Think long term. Pursue programming knowing that consistent, repeated effort towards learning will eventually lead to success. Nothing is going to happen overnight. Learning and progress isn't linear.
 
 You'll have good days and bad days. Don't dwell on the bad days. Accept it happened, try to avoid them if you can, and move on.
 
