@@ -353,7 +353,7 @@ let user = 'Adam';
 if (user) {
   console.log('Goodbye, ' + user + '!');
 } else {
-  console.log('Goodbye!')
+  console.log('Goodbye!');
 }
 ```
 
