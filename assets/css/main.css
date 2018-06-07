@@ -4510,6 +4510,12 @@ p img {
   margin: 0 auto;
 }
 
+/* Fix for blockquotes */
+
+blockquote > p {
+  margin-bottom: 0;
+}
+
 /* Code */
 /* https://gist.github.com/rubyhero/5a10efe8c609cfd4e991af582a76eb64 */
 
