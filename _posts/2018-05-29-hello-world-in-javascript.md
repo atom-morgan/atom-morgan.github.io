@@ -19,6 +19,8 @@ In this tutorial we'll take our first glance at web development by creating thre
 
 Once you've finished, you'll have three different methods at your disposal to start writing JavaScript that we'll continue to explore in future tutorials.
 
+{% include discord.html %}
+
 ## Setup
 
 Before we get started there's a few things you'll need to download.

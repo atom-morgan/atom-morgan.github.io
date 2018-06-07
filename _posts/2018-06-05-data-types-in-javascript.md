@@ -19,6 +19,8 @@ In the [previous tutorial](http://atom-morgan.github.io/hello-world-in-javascrip
 
 In this tutorial we're going to take another look at the JavaScript we wrote and introduce some of the other data types that are available to us.
 
+{% include discord.html %}
+
 ## Comments
 
 It's worth mentioning that similar to the comments we used in our `.html` file, we can also add comments in JavaScript as well.
