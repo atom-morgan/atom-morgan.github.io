@@ -400,7 +400,7 @@ A few `for` loops are listed below that use different data types, methods, and o
 let names = ['   john', 'jane   ', '  jeff  '];
 names.pop();
 
-for (let i =0; i < names.length; i++) {
+for (let i = 0; i < names.length; i++) {
   names[i] = names[i].trim();
 }
 console.log(names);
