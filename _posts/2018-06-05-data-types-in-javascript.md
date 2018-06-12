@@ -15,7 +15,7 @@ image: '/images/data-types/tutorial-data-types.png'
 
 ## Introduction
 
-In the [previous tutorial](http://atom-morgan.github.io/hello-world-in-javascript/) we took our first look at JavaScript by writing three variations of a "Hello, world" program using JavaScript in a `.html` file, JavaScript in a REPL, and finally JavaScript in a `.js` file. In those programs we briefly introduced the concept of a string by passing the string `'Hello, world!'` to `console.log()`.
+In the [previous tutorial](http://atom-morgan.github.io/hello-world-in-javascript/) we took our first look at JavaScript by writing three variations of a "Hello, world" program using JavaScript in a `.html` file, JavaScript in a REPL, and finally JavaScript in a `.js` file. In those programs we briefly introduced the concept of a string by passing the string `Hello, world!` to `console.log()`.
 
 In this tutorial we're going to take another look at the JavaScript we wrote and introduce some of the other data types that are available to us.
 
@@ -63,7 +63,7 @@ Then add some code that's similar to where we left off last time.
 console.log('Hello, world!');
 ```
 
-In this program, we're passing a string as an argument to `console.log()`. However there's a part of JavaScript (and programming languages in general) that allows us to essentially store this string in a container. These containers are known as variables. Let's update the program above to use a variable for the greeting message `'Hello, world!'`.
+In this program, we're passing a string as an argument to `console.log()`. However there's a part of JavaScript (and programming languages in general) that allows us to essentially store this string in a container. These containers are known as variables. Let's update the program above to use a variable for the greeting message `Hello, world!`.
 
 ```javascript
 // Declare a variable and assign it a value
@@ -71,11 +71,11 @@ let greeting = 'Hello, world!';
 console.log(greeting);
 ```
 
-Now our program is utilizing a variable named `greeting` which has been assigned the value `'Hello, world!'`. Similar to our function call, we can break down this variable declaration into a few parts.
+Now our program is utilizing a variable named `greeting` which has been assigned the value `Hello, world!`. Similar to our function call, we can break down this variable declaration into a few parts.
 
 ![Variable declaration](/images/data-types/variable-declaration.png)
 
-When we create variables we begin with what's known as a "declaration". In this case we've used the keyword `let` for our variable declaration. Following that is the "identifier" or what's more commonly referred to as the name for the variable: `greeting`. After the variable name we add the assignment operator, `=`, and set it to its value. In this example the value that is assigned to `greeting` is the string `'Hello, world!'`. Finally, we end our statement with a semicolon.
+When we create variables we begin with what's known as a "declaration". In this case we've used the keyword `let` for our variable declaration. Following that is the "identifier" or what's more commonly referred to as the name for the variable: `greeting`. After the variable name we add the assignment operator, `=`, and set it to its value. In this example the value that is assigned to `greeting` is the string `Hello, world!`. Finally, we end our statement with a semicolon.
 
 It's also possible to simply declare a variable without assigning a value to it. We can see this in the following example.
 
@@ -94,7 +94,7 @@ Run this and you'll notice the code runs without any errors. However the first `
 
 So why do we need variables in the first place?
 
-Working with variables in programming allows us to work with symbolic identifiers rather than actual values. Imagine the greeting `'Hello, world!'` was used multiple times throughout a program. Rather than repeatedly typing `'Hello, world!'` every time we need that value we can instead assign it to a variable such as `greeting` and then reference `greeting` instead.
+Working with variables in programming allows us to work with symbolic identifiers rather than actual values. Imagine the greeting `Hello, world!` was used multiple times throughout a program. Rather than repeatedly typing `Hello, world!` every time we need that value we can instead assign it to a variable such as `greeting` and then reference `greeting` instead.
 
 Our new variable would also give us some flexibility in the future in the event that we decided to change the content of our greeting. Without variables, we'd have to find and replace every instance of our old greeting. With a variable, we make the update once and any references to the variable `greeting` will now use the updated greeting message.
 
@@ -333,13 +333,13 @@ if (userObject.age >= 21) {
 }
 ```
 
-Run this program and you should see `'This user can drink!'` logged to the screen. Update the value of age to `18`, run it again, and you'll see `'This user cannot drink!'` logged to the screen. So how does this work?
+Run this program and you should see `This user can drink!` logged to the screen. Update the value of age to `18`, run it again, and you'll see `This user cannot drink!` logged to the screen. So how does this work?
 
 <!-- *figure for if...else statement* -->
 
 The `if` statement begins with the keyword `if` followed by an open and close parenthesis. Within these parenthesis is where we provide an expression that evaluates to either a "truthy" or "falsy" value (more on that in a bit).
 
-In our example, we provided the expression `userObject.age >= 21` using the new "greater than or equal to" operator. Assuming `userObject.age` is the original value of `28` our condition evaluates to `28 >= 21` which is "truthy". As a result, the code within the `if` statement is executed which logs `'This user can drink!'`. If the condition is "falsy" the code within the `if` statement is ignored and the code within `else` is executed logging `'This user cannot drink!'` instead.
+In our example, we provided the expression `userObject.age >= 21` using the new "greater than or equal to" operator. Assuming `userObject.age` is the original value of `28` our condition evaluates to `28 >= 21` which is "truthy". As a result, the code within the `if` statement is executed which logs `This user can drink!`. If the condition is "falsy" the code within the `if` statement is ignored and the code within `else` is executed logging `This user cannot drink!` instead.
 
 <div class="box" markdown="1">
 The operators we saw earlier (`+`, `-`, `*`, `/`) are known as [arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators). Those are operators we use to perform math within JavaScript. Operators such as `>=` are known as comparison operators which compares two values. You can see a complete list [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators).
@@ -357,7 +357,7 @@ if (user) {
 }
 ```
 
-Run this program and you should see `'Goodbye, Adam!'` printed to the screen.
+Run this program and you should see `Goodbye, Adam!` printed to the screen.
 
 <div class="box" markdown="1">
 Just a minute ago a link was provided containing a complete list of [arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators) including `+`. However, we can see in the example above that the `+` operator is being used with strings.
@@ -377,7 +377,7 @@ if (user) {
 }
 ```
 
-Run this program and you should see `'Goodbye!'` printed to the screen.
+Run this program and you should see `Goodbye!` printed to the screen.
 
 As you can now see, removing the value assignment from our variable declaration has resulted in `user` now being evaluted as "falsy" rather than "truthy". That's a result of `user` now being `undefined` which is a "falsy" value in JavaScript. The list below is what's ["falsy" in JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/Falsy).
 
@@ -446,6 +446,6 @@ console.log(userObject.computer[0].manufacturer); // ?
 console.log(userObject.computer[1].manufacturer); // ?
 ```
 
-In the next tutorial we'll take a look at some of the properties provided to us by data types. We'll also take a closer look at functions by writing some of our own.
+In the [next tutorial](http://atom-morgan.github.io/properties-and-methods/) we'll take a look at some of the properties provided to us by data types. We'll also take a closer look at functions by writing some of our own.
 
 {% include book-plug.html %}

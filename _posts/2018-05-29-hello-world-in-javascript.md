@@ -153,7 +153,7 @@ When we call a function there's a certain structure to how it's called. First th
 
 ![Function anatomy](/images/hello-world/function-anatomy.png)
 
-In our case we began with our function name `alert` followed by an open parenthesis. Then we provided our function a single argument in the form of a [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String): `'Hello, world!'`. After the single argument we finish our function call with a closing parenthesis and a semicolon.
+In our case we began with our function name `alert` followed by an open parenthesis. Then we provided our function a single argument in the form of a [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String): `Hello, world!`. After the single argument we finish our function call with a closing parenthesis and a semicolon.
 
 We've now written our first program in an HTML page. In the next section, we'll introduce another way to write and run JavaScript code using what's known as a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).
 
@@ -263,7 +263,7 @@ Now that these changes have been pushed to GitHub your code is accessible to you
 
 At this point it would be worth spending some time exploring the HTML page, the REPL, and the JavaScript file you just created. Think of these as your personal sandbox. Just play around and see what happens.
 
-Experiment with arguments other than `'Hello, world!'`. What happens if you pass two strings to `alert()`? What happens if you pass two strings to `console.log()`?
+Experiment with arguments other than `Hello, world!`. What happens if you pass two strings to `alert()`? What happens if you pass two strings to `console.log()`?
 
 ```javascript
 alert('First', 'Second');
