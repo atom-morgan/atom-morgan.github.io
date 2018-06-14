@@ -9,8 +9,6 @@ image: '/images/properties-and-methods/tutorial-properties-and-methods.png'
 
 ## Video
 
-Coming soon! [Subscribe on YouTube](https://www.youtube.com/c/adammorganshow) to be notified when it's released! 
-
 <div class="videoWrapper">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/HlGpWv1_lfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
