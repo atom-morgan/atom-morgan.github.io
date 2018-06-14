@@ -9,8 +9,18 @@ sitemap:
 ---
 ## About Me
 
-<span class="image left"><img src="{{ "/images/adam-korea.png" | absolute_url }}" alt="" /></span>
+Hi, I'm Adam Morgan. Here's some additional information about me.
 
-I started my career in marketing consulting working with a variety of Fortune 500 companies. My main focus was data analysis but after coding a few internal tools I eventually decided to quit my job and enter the tech industry.
+<p style="margin-bottom: 1rem;"><a href="http://www.angulartutorial.org/" target="_blank">My book, "The Angular Tutorial", (digital version)</a></p>
 
-Since then I spend most of my time working with JavaScript and MEAN stacks. I've worked in a variety of environments ranging from Fortune 500 companies to startups and creative agencies. Across these companies, I've taken various roles ranging from full-stack development to UI design and UX research.
+<p style="margin-bottom: 1rem;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&ie=UTF8&qid=1529003994&sr=1-1" target="_blank">My book, "The Angular Tutorial", on Amazon</a></p>
+
+<p style="margin-bottom: 1rem;"><a href="https://itunes.apple.com/us/podcast/the-adam-morgan-show/id1088616591" target="_blank">Podcast</a></p>
+
+<p style="margin-bottom: 1rem;"><a href="http://youtube.com/c/adammorganshow" target="_blank">YouTube</a></p>
+
+<p style="margin-bottom: 1rem;"><a href="http://atom-morgan.github.io/tutorials/" target="_blank">Programming tutorials</a></p>
+
+<p style="margin-bottom: 1rem;"><a href="http://atom-morgan.github.io/blog/" target="_blank">Writing</a></p>
+
+<p style="margin-bottom: 1rem;"><a href="http://atommorgan.com/" target="_blank">Portfolio</a></p>
