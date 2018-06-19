@@ -86,6 +86,8 @@ if (username.length < 5) {
 
 Here we've used the `length` property in the expression of our `if` statement. If the length of `username` is less than (`<`) 5 characters, we print a message to the user notifying them of the length requirement. Otherwise, we let the user know their username is valid.
 
+{% include email-list.html %}
+
 ### Properties and Logical Operators
 
 In addition to the [comparison operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) we used in the example above, we also have [logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators) at our disposal which we can leverage at times like this.

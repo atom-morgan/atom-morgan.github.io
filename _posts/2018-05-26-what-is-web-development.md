@@ -67,6 +67,8 @@ The distinction between front-end and back-end is dilineated by the client that'
 
 Front-end is what you see, back-end is what you don't see.
 
+{% include email-list.html %}
+
 ## Frequently Asked Questions
 
 Once the division between front-end and back-end has been established, there are a couple common questions about programming languages and frameworks that I typically see such as these:

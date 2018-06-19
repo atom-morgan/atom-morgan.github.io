@@ -202,6 +202,8 @@ You've likely encountered this online as well. If you view the website of a brew
 
 Up until now every variable we've created has had a single value such as a string, number, or boolean. What if we need to store multiple values in a single variable? That's where arrays come in.
 
+{% include email-list.html %}
+
 Arrays are an ordered collection of data that is used to store multiple values.
 
 ```javascript

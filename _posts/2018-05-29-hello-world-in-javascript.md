@@ -84,6 +84,8 @@ git add .
 git commit -m "Initialize repository"
 ```
 
+{% include email-list.html %}
+
 ## Web browser
 
 At this point we're ready to take a look at our "Hello, world" program using the `index.html` file we just created. Open that file in a text editor such as Visual Studio Code or Sublime Text and add the following text to the file.
