@@ -29,6 +29,8 @@ After I finished college, I was originally working in marketing consulting as a 
 
 Now I'm a self-taught, full-stack software engineer who's been working in the industry for the past 5 years.
 
+{% include email-list.html %}
+
 You can hear the full story in [this video](https://youtu.be/u6Egm0bIP7k) where I walk you through every job on my resume and provide lessons I learned along the way including **how I negotiated a job offer that doubled my salary overnight**.
 
 ### Do they have a resume with proven experience?
