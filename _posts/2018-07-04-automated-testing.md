@@ -9,7 +9,9 @@ image: '/images/automated-testing/tutorial-cover.png'
 
 ## Video
 
-Coming soon! [Subscribe on YouTube](https://www.youtube.com/c/adammorganshow) to be notified when it's released!
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/M02PkvLeCmY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 ## Introduction
 
