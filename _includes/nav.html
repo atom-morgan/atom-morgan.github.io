@@ -1,8 +1,9 @@
 <ul class="links">
   <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}">Home</a></li>
-  <li class="{% if page.url contains '/about/' %} active {% endif %}"><a href="{{ "/about/" | absolute_url }}">About</a></li>
   <li class="{% if page.url contains '/blog/' %} active {% endif %}"><a href="{{ "/blog/" | absolute_url }}">Blog</a></li>
   <li class="{% if page.url contains '/tutorials/' %} active {% endif %}"><a href="{{ "/tutorials/" | absolute_url }}">Tutorials</a></li>
-  <li><a href="http://atommorgan.com" target="_blank">Portfolio</a></li>
+  <li class="{% if page.url contains '/newsletter/' %} active {% endif %}"><a href="{{ "/newsletter/" | absolute_url }}">Newsletter</a></li>
+  <li class="{% if page.url contains '/about/' %} active {% endif %}"><a href="{{ "/about/" | absolute_url }}">About</a></li>
   <li><a href="https://itunes.apple.com/us/podcast/the-adam-morgan-show/id1088616591" target="_blank">Podcast</a></li>
+  <li><a href="http://atommorgan.com" target="_blank">Portfolio</a></li>
 </ul>
