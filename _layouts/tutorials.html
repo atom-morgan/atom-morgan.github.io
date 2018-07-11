@@ -46,7 +46,7 @@
           <section class="posts">
             {% for post in site.posts %}
             {% assign mod3 = forloop.index | modulo: 3 %}
-              {% if post.tag == 'tutorial' %}
+              {% if post.tag contains 'tutorial' %}
               <article>
                 <header>
                   <span class="date">{{ post.date | date_to_string }}</span>
@@ -59,7 +59,7 @@
                 </ul>
               </article>
               {% endif %}
-              {% if mod3 == 0 and forloop.index >= 3 and post.tag == 'tutorial' %}
+              {% if mod3 == 0 and forloop.index >= 3 and post.tag contains 'tutorial' %}
               <article>
                 <header>
                   <h2><a href="#">Sponsored</a></h2>
