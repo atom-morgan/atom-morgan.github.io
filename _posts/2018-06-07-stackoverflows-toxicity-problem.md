@@ -3,7 +3,7 @@ layout: post
 title: "Stack Overflow\'s Toxicity Problem"
 date: 2018-06-07
 tag: post
-image: 'Stack Overflow has been getting a lot of heat lately for being a toxic and hostile community, specifically towards beginners. What people aren’t mentioning is that everyone who’s used Stack Overflow, to a certain degree, is at fault for it being perceived as unfriendly towards beginners.'
+image: "Stack Overflow has been getting a lot of heat lately for being a toxic and hostile community, specifically towards beginners. What people aren’t mentioning is that everyone who’s used Stack Overflow, to a certain degree, is at fault for it being perceived as unfriendly towards beginners."
 ---
 
 Stack Overflow has been getting a lot of heat lately for being a toxic and hostile community, specifically towards beginners. It's hostile towards anyone who isn't a straight white male as well but everybody already knew that, right?
