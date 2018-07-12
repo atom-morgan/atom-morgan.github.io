@@ -38,7 +38,7 @@
 
           <article class="featured">
 						<p>
-              My blog posts I’ve published ranging from political and social commentary to programming tutorials. <br/>
+              My blog posts I’ve published ranging from political and social commentary to career advice in tech. <br/>
               If you're looking for programming tutorials a curated list is <a href="http://atom-morgan.github.io/tutorials/">here</a>.
 						<p>
 
@@ -46,28 +46,32 @@
 					<!-- Post -->
 					<section class="posts">
 						{% for post in site.posts %}
-						{% assign mod3 = forloop.index | modulo: 3 %}
-							<article>
-								<header>
-									<span class="date">{{ post.date | date_to_string }}</span>
-									<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-								</header>
-								<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
-								<p>{{ post.excerpt }}</p>
-								<ul class="actions">
-									<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
-								</ul>
-							</article>
-							{% if mod3 == 0 %}
-							<article>
-								<header>
-									<h2><a href="#">Sponsored</a></h2>
-								</header>
-                <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image fit" target="_blank"><img src="/images/angular-tutorial-preview.png" alt="" /></a>
-                <ul class="actions">
-                  <li><a href="http://angulartutorial.org" class="button" target="_blank">Buy Now!</a></li>
-                </ul>
-							</article>
+            {% assign mod3 = forloop.index | modulo: 4 %}
+              {% unless post.tag contains 'tutorial' %}
+                <article>
+                  <header>
+                    <span class="date">{{ post.date | date_to_string }}</span>
+                    <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+                  </header>
+                  <a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
+                  <p>{{ post.excerpt }}</p>
+                  <ul class="actions">
+                    <li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
+                  </ul>
+                </article>
+              {% endunless %}
+              {% if mod3 == 0 and forloop.index >= 4 %}
+                {% unless post.tag contains 'tutorial' %}
+                <article>
+                  <header>
+                    <h2><a href="#">Sponsored</a></h2>
+                  </header>
+                  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image fit" target="_blank"><img src="/images/angular-tutorial-preview.png" alt="" /></a>
+                  <ul class="actions">
+                    <li><a href="http://angulartutorial.org" class="button" target="_blank">Buy Now!</a></li>
+                  </ul>
+                </article>
+                {% endunless %}
 							{% endif %}
 						{% endfor %}
 
