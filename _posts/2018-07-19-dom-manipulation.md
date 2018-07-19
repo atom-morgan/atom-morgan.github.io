@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Code Companion #8: DOM Manipulation'
+title: 'Code Companion #9: DOM Manipulation'
 date: 2018-07-19
 tag: tutorial
 excerpt: "In this tutorial we're going to begin making our programs a bit more web-like. Up until this point we've been writing JavaScript and logging the results of our programs to a terminal or browser console using console.log(). Now we're going to begin working with HTML to add some interactivity to our programs with a UI."
