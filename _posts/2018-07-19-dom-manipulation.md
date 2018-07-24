@@ -9,7 +9,9 @@ image: '/images/dom-manipulation/tutorial-cover.png'
 
 ## Video
 
-Coming soon! [Subscribe on YouTube](https://www.youtube.com/c/adammorganshow) to be notified when it's released!
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/p8ytrJ1ryBQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 ## Introduction
 
