@@ -4,7 +4,7 @@ title: "Startups vs. Corporations vs. Agencies: What's Best for You?"
 date: 2018-05-16
 tag: career
 excerpt: "Whether you're already working in tech or you're looking to in the near future at some point you'll have to decide where you want to work. Thankfully I've had the opportunity to work in a variety of different companies and environments to see the pros and cons of each. So here's list of my pros and cons between startups, corporations, and agencies."
-image: ""
+image: '/images/startups-corporations-agencies/cover.png'
 ---
 
 Whether you're already working in tech or you're looking to in the near future at some point you'll have to decide where you want to work. Over the past few years I've had the opportunity to work in a variety of different companies and environments to see the pros and cons of each. So here's list of my pros and cons between startups, corporations, and agencies.
