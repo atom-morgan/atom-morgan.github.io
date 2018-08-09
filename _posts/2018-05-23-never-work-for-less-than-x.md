@@ -4,7 +4,7 @@ title: 'Why "Never Work for Less Than $X" Is Horrible Advice'
 date: 2018-05-23
 tag: career
 excerpt: "If you're trying to get into tech and you have an offer from a company, *do not* listen to this type of advice. Don't think back on a Medium article you saw that said developers should never accept less than $70,000 a year because anything lower than that is ripping you off. That may be true for the author, but is it true for you?"
-image: ""
+image: '/images/never-work-for-less-than-x/teenage-unemployment.png'
 ---
 
 One of the worst pieces of advice I often see people give is to "never work for less than $X". Certain people, often with an already proven track record within their industry, will say that newbies in the industry should not allow themselves to be taken advantage of by employers. The common way to avoid this is by setting a price floor that all should never dip below.
@@ -39,7 +39,7 @@ If a company is interested in you in either scenario they'll likely have other c
 
 This isn't unlike a completely inexperienced teenager looking for work. They need work experience to prove to employers they're a good hire but they have trouble finding a job because they don't have work experience.
 
-![Cycle of Teenage Unemployment](http://i.imgur.com/ar8pNbb.jpg)
+![Cycle of Teenage Unemployment]({{ site.url }}/images/never-work-for-less-than-x/teenage-unemployment.png)
 
 As many teenagers often find by working minimum wage or under the table jobs, pay is their bargaining chip and their way into the job market. From there, increasing pay gets easier with real work experience.
 
