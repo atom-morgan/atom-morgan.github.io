@@ -53,7 +53,7 @@ Be mindful of the fact that some companies may only have a name for themselves w
 
 **Non-monetary benefits**
 
-Dry cleaning, food courts, bonuses, and coffee shops. You may not like being a part of a company with thousands of people but with it comes a lot of on campus ammenities you may not get elsewhere.
+Dry cleaning, food courts, bonuses, and coffee shops. You may not like being a part of a company with thousands of people but with it comes a lot of on campus amenities you may not get elsewhere.
 
 ### Corporations (Cons)
 
@@ -99,7 +99,7 @@ When an agency does one thing realy well they tend to continue doing that one th
 
 **Repetition**
 
-While there is a variety of work at an agency things can get a little repetive. As I just mentioned there are occasionally "core competency" projects an agency will have. Once you do your first P&G social media campaign you may find yourself doing a few more for other brands or companies. If the differences between project aren't that big you can find yourself getting bored pretty quick.
+While there is a variety of work at an agency things can get a little repetitive. As I just mentioned there are occasionally "core competency" projects an agency will have. Once you do your first P&G social media campaign you may find yourself doing a few more for other brands or companies. If the differences between project aren't that big you can find yourself getting bored pretty quick.
 
 ---
 
