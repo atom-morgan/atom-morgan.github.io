@@ -2,7 +2,7 @@
 layout: post
 title: 'WTF is Code Companion?'
 date: 2018-06-15
-tag: tutorial
+tag: [tutorial, cc]
 excerpt: "When I first started learning how to program I remember taking a lot of time to research my sources before I started. I would ask myself questions like: Who is this person? Do they have a resume with credible experience and projects? Do other people enjoy this person's tutorials? What is their teaching style? How are they different from other teachers? Are they committed to this project or will these tutorials stop coming in a month? So to help you I'm going to answer these questions for you upfront."
 image: '/images/blog-code-companion.png'
 ---

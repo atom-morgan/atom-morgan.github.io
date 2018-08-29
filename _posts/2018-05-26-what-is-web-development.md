@@ -2,7 +2,7 @@
 layout: post
 title: "Code Companion #1: What is Web Development?"
 date: 2018-05-26
-tag: tutorial
+tag: [tutorial, cc]
 excerpt: "I'll never forget the overwhelming feeling when I first started learning web development. There were terms I'd never heard of, multiple programming languages, front-end development, back-end development, and web frameworks. In this tutorial we're going to clarify web development terms such as HTML, CSS, JavaScript, server-side programming, client-side programming, databases, JSON, and so on to give you a grasp of how everything fits together at a high level."
 image: "/images/what-is-web-dev/tutorial-what-is-web-dev.png"
 ---

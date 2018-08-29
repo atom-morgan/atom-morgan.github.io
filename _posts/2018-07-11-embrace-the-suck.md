@@ -2,7 +2,7 @@
 layout: post
 title: 'Code Companion #8: Embrace the Suck'
 date: 2018-07-11
-tag: [post, tutorial]
+tag: [post, tutorial, cc]
 image: '/images/embrace-the-suck/blog-embrace-the-suck.png'
 ---
 

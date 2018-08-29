@@ -2,7 +2,7 @@
 layout: post
 title: 'Code Companion #3: Data Types in JavaScript'
 date: 2018-06-05
-tag: tutorial
+tag: [tutorial, cc]
 excerpt: "In this tutorial we're going to take a closer look at the JavaScript and introduce some of the data types that are available to us."
 image: '/images/data-types/tutorial-data-types.png'
 ---
