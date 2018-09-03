@@ -18,7 +18,7 @@
 <meta property="og:description" content="Learn web development">
 {% if page.image contains '.png' %}
 <meta property="og:image" content="{{ 'http://atom-morgan.github.io' | append: page.image }}">
-{% if page.tag contains 'cc' %}
+{% elsif page.url contains 'javascript' %}
 <meta name="twitter:image" content="http://atom-morgan.github.io/images/javascript-card.png">
 {% else %}
 <meta property="og:image" content="http://atom-morgan.github.io/images/card.png">
@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="Learn web development">
 {% if page.image contains '.png' %}
 <meta name="twitter:image" content="{{ 'http://atom-morgan.github.io' | append: page.image }}">
-{% if page.tag contains 'cc' %}
+{% elsif page.url contains 'javascript' %}
 <meta name="twitter:image" content="http://atom-morgan.github.io/images/javascript-card.png">
 {% else %}
 <meta name="twitter:image" content="http://atom-morgan.github.io/images/card.png">
