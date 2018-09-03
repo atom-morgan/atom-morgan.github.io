@@ -19,7 +19,7 @@
 {% if page.image contains '.png' %}
 <meta property="og:image" content="{{ 'http://atom-morgan.github.io' | append: page.image }}">
 {% elsif page.url contains 'javascript' %}
-<meta name="og:image" content="http://atom-morgan.github.io/images/javascript-card.png">
+<meta property="og:image" content="http://atom-morgan.github.io/images/javascript-card.png">
 {% else %}
 <meta property="og:image" content="http://atom-morgan.github.io/images/card.png">
 {% endif %}
