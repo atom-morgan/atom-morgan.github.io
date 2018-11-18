@@ -111,7 +111,7 @@ We'll begin by updating `app.component.html` with the most basic structure of ou
 
 Within this form we have three inputs for name, email, and password along with a submit button.
 
-Let's breakdown some of the new syntax within this form from top to bottom..
+Let's breakdown some of the new syntax within this form from top to bottom.
 
 * `#templateForm="ngForm"` - By default, Angular attaches the `ngForm` directive to HTML forms. Here, we create a reference to the form with our template reference variable `#templateForm`. This allows us to access the form's values and state which we'll see shortly.
 * `(ngSubmit)="onSubmit(templateForm.value)"` - This is what makes our form useful. Here we use Angular's `ngSubmit` event property which is fired when our form is submitted. When the `ngSubmit` event is triggered, it will call the `onSubmit` method (which we'll create in our component) with our form's values. Note how our form's values are passed into `onSubmit` using the template reference variable we created earlier, `templateForm`.
