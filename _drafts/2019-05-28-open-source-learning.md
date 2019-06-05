@@ -6,19 +6,17 @@ tag: post
 excerpt: ""
 ---
 
-Over the past few years there have been a handful of difficult skills I've picked up along the way.
-
-Drumming. Programming. Drawing. Gymnastics/calisthenics.
+Over the past 10 years or so there have been a handful of difficult skills I've picked up along the way: drumming, programming, drawing, and gymnastics/calisthenics.
 
 Get good at anything and eventually you'll get the inevitable questions like, "Hey I'm thinking about learning ${skill}. Got any tips?"
 
 I'm all for avoiding wasted effort in the early stages but more often than not a lot of people simply don't know how to get started. They have a goal but even with a search engine they have no clue on what the first steps might be. Most people simply don't know *how* to learn.
 
-The world is moving faster than ever. Relevant skills today may not be relevant in a year or two. Adjusting your skillset accordingly is a must if you want to be marketable.
+<!--The world is moving faster than ever. Relevant skills today may not be relevant in a year or two. Adjusting your skillset accordingly is a must if you want to be marketable.-->
 
-If you're a self starter, this isn't an issue. But if you're someone who asks the type of question I mentioned above, you'll probably never achieve your goal.
+<!--If you're a self starter, this isn't an issue. But if you're someone who asks the type of question I mentioned above, you'll probably never achieve your goal.-->
 
-The ability to teach yourself something new may be the most important skill to have. You'll not only be in a minority of people who can do it but you're self-sufficient.
+<!--The ability to teach yourself something new may be the most important skill to have. You'll not only be in a minority of people who can do it but you're self-sufficient.-->
 
 I feel like I've done my part with software development. I self-published a book covering a popular web framework that's over 500 pages. This gives people looking to learn a new skill some guidance and the reception so far has been great.
 
