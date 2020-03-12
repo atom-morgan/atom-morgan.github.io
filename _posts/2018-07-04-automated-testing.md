@@ -43,6 +43,8 @@ Within this directory, create the new file for your code.
 touch webdev-testing.js
 ```
 
+{% include request-tutorial.html %}
+
 ## Jasmine
 
 To test our code we'll need to leverage a testing framework. A testing framework provides us the tools we need to test our code without having to write all of it ourselves. The one we'll be using for this tutorial is [Jasmine](https://jasmine.github.io/).

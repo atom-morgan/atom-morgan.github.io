@@ -73,6 +73,8 @@ console.log(greeting);
 
 Now our program is utilizing a variable named `greeting` which has been assigned the value `Hello, world!`. Similar to our function call, we can break down this variable declaration into a few parts.
 
+{% include request-tutorial.html %}
+
 ![Variable declaration](/images/data-types/variable-declaration.png)
 
 When we create variables we begin with what's known as a "declaration". In this case we've used the keyword `let` for our variable declaration. Following that is the "identifier" or what's more commonly referred to as the name for the variable: `greeting`. After the variable name we add the assignment operator, `=`, and set it to its value. In this example the value that is assigned to `greeting` is the string `Hello, world!`. Finally, we end our statement with a semicolon.

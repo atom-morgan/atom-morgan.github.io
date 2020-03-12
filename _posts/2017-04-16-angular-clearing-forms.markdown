@@ -63,6 +63,8 @@ Complete the form below, click "Submit", and you should see the conditional `<sp
 
 To fix this, we'll need to leverage Angular's [ViewChild](https://angular.io/docs/ts/latest/api/core/index/ViewChild-decorator.html) decorator. `ViewChild` allows us to query our view to get an element or directive of our choice. In this case, we want a `ViewChild` for our form.
 
+{% include request-tutorial.html %}
+
 To do this, we'll need to import `ViewChild` (Thanks to [Chris Sevilleja](https://twitter.com/chrisoncode) for introducing me to ViewChild).
 
 ```javascript

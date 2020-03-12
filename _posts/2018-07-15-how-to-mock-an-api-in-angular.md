@@ -119,6 +119,8 @@ First we create a new `fighters` property which we'll set to the result of our s
 
 Then we update `AppComponent` to implement `OnInit` and add the `ngOnInit` lifecycle hook. Within `ngOnInit` we call our service method, subscribe to the observable, and set the result to `fighters`.
 
+{% include request-tutorial.html %}
+
 Now that our component has data to render to the view, we can update the template in `app.component.html` (I add this in place of the existing "links to help you start". Feel free to replace the entire template if you want).
 
 ```html

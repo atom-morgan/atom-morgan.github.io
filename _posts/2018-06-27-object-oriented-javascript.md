@@ -43,6 +43,8 @@ Within this directory, create the new file for your code.
 touch oo-javascript.js
 ```
 
+{% include request-tutorial.html %}
+
 ## Function declarations and expressions
 
 Before we get to our new type of objects we have to cover a slightly different way of defining functions. Up until this point, we've been creating function declarations as shown below:

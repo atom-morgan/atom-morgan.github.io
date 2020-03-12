@@ -41,6 +41,8 @@ Within this directory, create the new file for your code.
 touch functions.js
 ```
 
+{% include request-tutorial.html %}
+
 ## Creating functions
 
 In JavaScript, function calls consists of zero or more arguments enclosed in parentheses. Two examples illustrating this are listed below:

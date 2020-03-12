@@ -21,6 +21,8 @@ Learning how each of these various pieces fit together wasn't easy and there was
 
 In this tutorial we're going to clarify web development terms such as HTML, CSS, JavaScript, server-side programming, client-side programming, databases, JSON, and so on to give you a grasp of how everything fits together at a high level.
 
+{% include request-tutorial.html %}
+
 ## How does the web work?
 
 First we need to start with how the web works.

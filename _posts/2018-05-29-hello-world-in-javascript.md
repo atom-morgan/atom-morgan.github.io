@@ -159,6 +159,8 @@ In our case we began with our function name `alert` followed by an open parenthe
 
 We've now written our first program in an HTML page. In the next section, we'll introduce another way to write and run JavaScript code using what's known as a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).
 
+{% include request-tutorial.html %}
+
 ## REPL
 
 In our second example of the "Hello, world" program we're going to use an interactive programming environment known as a REPL (pronounced "repple") which stands for read, evaluate, print, and loop. The REPL environment that we'll be using first **reads** our input, then it **evaluates** our input, then it **prints** any results and finally loops back to the first **read** step. Let's see what this looks like in action.

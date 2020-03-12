@@ -15,6 +15,8 @@ In this tutorial we'll learn how to generate a new Angular project using the [An
 * Bulma 0.7.1
 * Font Awesome 5.0.13
 
+{% include request-tutorial.html %}
+
 ## Angular Setup
 
 The first thing you'll need to do is install the latest version of the Angular CLI.

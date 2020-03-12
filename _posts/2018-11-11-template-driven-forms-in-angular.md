@@ -63,6 +63,8 @@ export class AppModule { }
 
 With `FormsModule` imported we're now ready to move on to creating our form.
 
+{% include request-tutorial.html %}
+
 ## Registration Form
 
 We'll begin by updating `app.component.html` with the most basic structure of our template-driven form. From there, we'll continue to add more functionality to our form.

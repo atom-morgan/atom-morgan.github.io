@@ -78,6 +78,8 @@ First we import the two components. Then we update `routes` setting `Unrestricte
 
 Run your application with `ng serve` and you should now see the default templates for these two components when you access their routes.
 
+{% include request-tutorial.html %}
+
 ## Auth service
 
 Before we get to the guard, we'll create a simple auth service that will be used to simulate authentication within our app.

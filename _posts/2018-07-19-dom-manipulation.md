@@ -34,6 +34,8 @@ Within this directory we'll create two new files, an HTML file and a JavaScript 
 touch main.js index.html
 ```
 
+{% include request-tutorial.html %}
+
 ## Event Listener
 
 Our goal for this application is to present the user a button that when clicked displays a prompt to the user for input. Once the user enters some text, we'll then add that text to the HTML to display it back to the them.
