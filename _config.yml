@@ -1,0 +1,79 @@
+title: Stackbit Exto Theme
+baseurl: /
+permalink: '/:title/'
+collections:
+  posts:
+    permalink: '/posts/:title/'
+description: A portfolio theme with a blog
+color_scheme: light
+accent_color: pink
+header:
+  title: Exto
+  has_nav: true
+  nav_links:
+    - label: Home
+      url: /
+      style: link
+    - label: Portfolio
+      url: /portfolio/
+      style: link
+    - label: Blog
+      url: /blog/
+      style: link
+    - label: Style Guide
+      url: /style-guide/
+      style: link
+    - label: About
+      url: /about/
+      style: link
+    - label: Contact
+      url: /contact/
+      style: link
+footer:
+  content: '&copy; Stackbit-Exto. All rights reserved.'
+  links:
+    - label: Made with Stackbit.
+      url: 'https://www.stackbit.com'
+      style: link
+      new_window: true
+  has_social: true
+  social_links:
+    - label: Twitter
+      url: 'https://twitter.com/'
+      style: icon
+      icon_class: fa-twitter
+      new_window: true
+    - label: Instagram
+      url: 'https://www.instagram.com/'
+      style: icon
+      icon_class: fa-instagram
+      new_window: true
+    - label: Dribbble
+      url: 'https://dribbble.com/'
+      style: icon
+      icon_class: fa-dribbble
+      new_window: true
+    - label: LinkedIn
+      url: 'https://www.linkedin.com/'
+      style: icon
+      icon_class: fa-linkedin
+      new_window: true
+sass:
+  indentWidth: 4
+  style: nested
+  precision: 10
+plugins:
+  - jekyll-menus
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - README.md
+  - netlify.toml
+  - stackbit-build.sh
+  - stackbit-pull.js

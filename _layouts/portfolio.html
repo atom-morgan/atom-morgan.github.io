@@ -1,0 +1,45 @@
+---
+layout: body
+---
+
+<div class="inner outer">
+
+  <header class="page-header inner-sm">
+    <h1 class="page-title line-top">{{ page.title }}</h1>
+    {% assign subtitle_is_not_empty = page.subtitle | is_not_empty %}
+    {% if subtitle_is_not_empty %}
+    <p class="page-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </header><!--.page-header -->
+
+  <div class="portfolio-feed layout-{{ page.layout_style }}">
+    {% assign display_projects = '/portfolio' | get_pages | sort: 'date' | reverse %}
+    {% for post in display_projects %}
+    <article class="project">
+      <a href="{{ post.url | relative_url }}" class="project-link">
+        {% assign thumb_image_is_not_empty = post.thumb_image | is_not_empty %}
+        {% if thumb_image_is_not_empty %}
+        <div class="project-thumbnail">
+          <img src="{{ post.thumb_image | relative_url }}" alt="{{ post.title }}" />
+        </div>
+        {% endif %}
+        <header class="project-header">
+          <h2 class="project-title">{{ post.title }}</h2>
+        </header>
+      </a>
+    </article><!-- .project -->
+    {% endfor %}
+  </div><!-- .portfolio-feed -->
+
+  <!-- Pagination TBD -->
+  <!--
+  <nav class="pagination inner-sm">
+    <div class="nav-links">
+      <a class="newer-posts button" href="#"><span class="icon-angle-left" aria-hidden="true"></span><span class="screen-reader-text">Prev</span></a>
+      <span class="page-number">Showing page X of Y</span>
+      <a class="older-posts button" href="#"><span class="screen-reader-text">Next</span><span class="icon-angle-right" aria-hidden="true"></span></a>
+    </div>
+  </nav>
+  -->
+
+</div><!-- .inner -->

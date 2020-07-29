@@ -1,0 +1,55 @@
+---
+layout: body
+---
+
+<div class="inner outer">
+
+  <header class="page-header inner-sm{% assign hide_title_is_not_empty = page.hide_title | is_not_empty %}{% if hide_title_is_not_empty %} screen-reader-text{% endif %}">
+    <h1 class="page-title line-top">{{ page.title }}</h1>
+    {% assign subtitle_is_not_empty = page.subtitle | is_not_empty %}
+    {% if subtitle_is_not_empty %}
+    <div class="page-subtitle">
+      {{ page.subtitle }}
+    </div>
+    {% endif %}
+  </header><!-- .page-header -->
+
+  <div class="post-feed grid{% if page.col_number == 'two' %} grid-col-2{% endif %}{% if page.col_number == 'three' %} grid-col-3{% endif %}">
+    {% assign display_posts = '/blog' | get_pages | sort: 'date' | reverse %}
+    {% for post in display_posts %}
+    <article class="post grid-item">
+      <div class="post-inside">
+        {% assign thumb_image_is_not_empty = post.thumb_image | is_not_empty %}
+        {% if thumb_image_is_not_empty %}
+        <a class="post-thumbnail" href="{{ post.url | relative_url }}">
+          <img src="{{ post.thumb_image | relative_url }}" alt="{{ post.title }}" />
+        </a>
+        {% endif %}
+        <header class="post-header">
+          <h2 class="post-title"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a></h2>
+          <div class="post-meta">
+            <time class="published"
+              datetime="{{ post.date | date: '%Y-%m-%d %H:%M' }}">{{ post.date | date: '%B %d, %Y' }}</time>
+          </div>
+        </header>
+        {% assign excerpt_is_not_empty = post.excerpt | is_not_empty %}
+        {% if excerpt_is_not_empty %}
+        <p class="post-content">
+          {{ post.excerpt }}
+        </p>
+        {% endif %}
+      </div>
+    </article><!-- .post -->
+    {% endfor %}
+  </div><!-- .post-feed -->
+
+  <!-- Pagination TBD -->
+  <!--
+  <nav class="pagination inner-sm">
+    <a class="newer-posts button" href="#"><span class="icon-angle-left" aria-hidden="true"></span><span class="screen-reader-text">Prev</span></a>
+    <span class="page-number">Showing page X of Y</span>
+    <a class="older-posts button" href="#"><span class="screen-reader-text">Next</span><span class="icon-angle-right" aria-hidden="true"></span></a>
+  </nav>
+  -->
+
+</div><!-- .inner-->

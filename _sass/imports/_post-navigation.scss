@@ -1,0 +1,52 @@
+/**
+ * Post Navigation
+ */
+.pagination {
+  margin-bottom: 1.66667em;
+  margin-top: 1.66667em;
+  position: relative;
+  text-align: center;
+
+  .page-number {
+    color: _palette(charcoal-light-40);
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 0.07em;
+    line-height: 1.5;
+    padding: 0.67857em 50px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .newer-posts,
+  .older-posts {
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+  }
+
+  .older-posts {
+    right: 0;
+  }
+
+  .newer-posts {
+    left: 0;
+  }
+}
+
+.read-next {
+  margin-top: 2.5em;
+}
+
+.read-next-title {
+  font-size: 1.66667em;
+  margin: 0 0 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  .read-next {
+    margin-top: 2em;
+  }
+}

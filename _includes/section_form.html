@@ -1,0 +1,36 @@
+{% assign section = include.section %}
+<section id="{{ section.section_id }}" class="block block-form outer">
+  <div class="inner">
+    {% if section.title or section.subtitle %}
+    <div class="block-header inner-sm">
+      {% assign title_is_not_empty = section.title | is_not_empty %}
+      {% if title_is_not_empty %}
+      <h2 class="block-title line-top">{{ section.title }}</h2>
+      {% endif %}
+      {% assign subtitle_is_not_empty = section.subtitle | is_not_empty %}
+      {% if subtitle_is_not_empty %}
+      <p class="block-subtitle">{{ section.subtitle }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="block-content inner-sm">
+      {% assign content_is_not_empty = section.content | is_not_empty %}
+      {% if content_is_not_empty %}
+      {{ section.content | markdownify }}
+      {% endif %}
+      <form name="{{ section.form_id }}" id="{{ section.form_id }}" {% assign form_action_is_not_empty = section.form_action | is_not_empty %}{% if form_action_is_not_empty %} action="{{ section.form_action }}" {% endif %}method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <div class="screen-reader-text">
+          <label id="{{ section.form_id }}-bot-label">Don't fill this out if you're human: <input aria-labelledby="{{ section.form_id }}-bot-label" name="bot-field" /></label>
+        </div>
+        <input type="hidden" aria-label="{{ section.form_id }}-name" name="form-name" value="{{ section.form_id }}" />
+        {% for field in section.form_fields %}
+          
+          {% include form_field.html field=field %}
+        {% endfor %}
+        <div class="form-submit">
+          <button type="submit" class="button">{{ section.submit_label }}</button>
+        </div>
+      </form>
+    </div>
+  </div><!-- .inner -->
+</section><!-- .block -->

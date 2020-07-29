@@ -1,0 +1,256 @@
+/**
+ * Palettes
+ */
+.palette-dark {
+  background: _palette(charcoal);
+  color: _palette(charcoal-light-60);
+
+  pre {
+    background: _palette(charcoal-light-3);
+  }
+
+  hr,
+  th,
+  td,
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search"],
+  input[type="url"],
+  select,
+  textarea,
+  .site-header,
+  .site-footer,
+  .grid-item-counter:before,
+  .grid-item-counter:after {
+    border-color: _palette(charcoal-light-7);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  th,
+  label {
+    color: #fff;
+  }
+
+  a:not(.button):hover,
+  a:not(.button):focus {
+    color: _palette(charcoal-light-60);
+  }
+
+  caption,
+  .page-subtitle,
+  .post-subtitle,
+  .post-meta,
+  .pagination .page-number
+  .block-subtitle,
+  .testimonial-author {
+    color: _palette(charcoal-light-25);
+  }
+
+  ::-webkit-input-placeholder {
+    color: _palette(charcoal-light-25);
+  }
+  
+  ::-moz-placeholder {
+    color: _palette(charcoal-light-25);
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    color: _palette(charcoal-light-25);
+  }
+  
+  ::-ms-input-placeholder {
+    color: _palette(charcoal-light-25);
+  }
+  
+  ::placeholder {
+    color: _palette(charcoal-light-25);
+  }
+
+  @media only screen and (max-width: 800px) {
+    .site-header:after {
+      background: rgba(_palette(charcoal-dark-15),.6);
+    }
+  
+    .site-navigation {
+      background:_palette(charcoal);
+    }
+  
+    .menu-item,
+    .menu-item:not(.menu-button):last-child {
+      border-color: _palette(charcoal-light-7);
+    }
+  }
+}
+
+.accent-green {
+  a,
+  blockquote:before,
+  .menu-item.current-menu-item,
+  .menu-item a:not(.button):hover,
+  .view-all-button,
+  #colophon a:not(.button):hover {
+    color: _palette(accent-green);
+  }
+
+  .form-group .animate-border,
+  .site-title a {
+    background: _palette(accent-green);
+  }
+
+  button,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  .button {
+    border-color: _palette(accent-green);
+    color: _palette(accent-green);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: _palette(accent-green);
+    }
+  }
+
+  a.button:before,
+  a.button:after,
+  button.button:before,
+  button.button:after,
+  .view-all-button:before,
+  .view-all-button:after,
+  .line-top:before {
+    border-color: _palette(accent-green);
+  }
+}
+
+.accent-blue {
+  a,
+  blockquote:before,
+  .menu-item.current-menu-item,
+  .menu-item a:not(.button):hover,
+  .view-all-button,
+  #colophon a:not(.button):hover {
+    color: _palette(accent-blue);
+  }
+
+  .form-group .animate-border,
+  .site-title a {
+    background: _palette(accent-blue);
+  }
+
+  button,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  .button {
+    border-color: _palette(accent-blue);
+    color: _palette(accent-blue);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: _palette(accent-blue);
+    }
+  }
+
+  a.button:before,
+  a.button:after,
+  button.button:before,
+  button.button:after,
+  .view-all-button:before,
+  .view-all-button:after,
+  .line-top:before {
+    border-color: _palette(accent-blue);
+  }
+}
+
+.accent-violet {
+  a,
+  blockquote:before,
+  .menu-item.current-menu-item,
+  .menu-item a:not(.button):hover,
+  .view-all-button,
+  #colophon a:not(.button):hover {
+    color: _palette(accent-violet);
+  }
+
+  .form-group .animate-border,
+  .site-title a {
+    background: _palette(accent-violet);
+  }
+
+  button,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  .button {
+    border-color: _palette(accent-violet);
+    color: _palette(accent-violet);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: _palette(accent-violet);
+    }
+  }
+
+  a.button:before,
+  a.button:after,
+  button.button:before,
+  button.button:after,
+  .view-all-button:before,
+  .view-all-button:after,
+  .line-top:before {
+    border-color: _palette(accent-violet);
+  }
+}
+
+.accent-yellow {
+  a,
+  blockquote:before,
+  .menu-item.current-menu-item,
+  .menu-item a:not(.button):hover,
+  .view-all-button,
+  #colophon a:not(.button):hover {
+    color: _palette(accent-yellow);
+  }
+
+  .form-group .animate-border,
+  .site-title a {
+    background: _palette(accent-yellow);
+  }
+
+  button,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  .button {
+    border-color: _palette(accent-yellow);
+    color: _palette(accent-yellow);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: _palette(accent-yellow);
+    }
+  }
+
+  a.button:before,
+  a.button:after,
+  button.button:before,
+  button.button:after,
+  .view-all-button:before,
+  .view-all-button:after,
+  .line-top:before {
+    border-color: _palette(accent-yellow);
+  }
+}
