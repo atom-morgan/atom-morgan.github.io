@@ -26,6 +26,10 @@
             <a class="post-thumbnail" href="{{ post.url | relative_url }}">
               <img src="{{ post.thumb_image | relative_url }}" alt="{{ post.title }}" />
             </a>
+            {% else %}
+            <a class="post-thumbnail" href="{{ post.url | relative_url }}">
+              <img src="/images/11.jpg" alt="{{ post.title }}" />
+            </a>
             {% endif %}
             <header class="post-header">
               <h3 class="post-title"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a>
