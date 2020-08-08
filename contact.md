@@ -1,5 +1,13 @@
 ---
 title: Contact
+# subtitle: This is a short page about us and our work.
+# image: images/about.jpg
+layout: page
+---
+
+Hi there! Thank you so much for your interest in working together. Please contact me via email at [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com){:target="_blank"}.
+
+<!-- title: Contact
 hide_title: false
 sections:
   - section_id: contact-form
@@ -39,5 +47,4 @@ sections:
           I understand that this form is storing my submitted information so I
           can be contacted.
     submit_label: Send Message
-layout: advanced
----
+layout: advanced -->
