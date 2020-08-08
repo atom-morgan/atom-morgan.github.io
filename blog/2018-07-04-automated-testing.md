@@ -7,6 +7,7 @@ excerpt: >-
   In this tutorial we're going to take a look at automated testing. Automated testing is a way for us to automate the testing of our code—something we've been doing manually up until this point.
 image: '/images/automated-testing/tutorial-cover.png'
 thumb_image: '/images/automated-testing/tutorial-cover.png'
+style: code
 ---
 
 ## Video

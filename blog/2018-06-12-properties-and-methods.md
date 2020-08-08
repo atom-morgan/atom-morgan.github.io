@@ -7,6 +7,7 @@ excerpt: >-
   In this tutorial we're going to introduce some of the properties and methods exposed to us by the data types in JavaScript. Finally, we'll wrap up by taking our first look at iteration.
 image: '/images/properties-and-methods/tutorial-properties-and-methods.png'
 thumb_image: '/images/properties-and-methods/tutorial-properties-and-methods.png'
+style: code
 ---
 
 ## Video

@@ -7,6 +7,7 @@ excerpt: >-
   In this tutorial we'll learn the basics of template-driven forms in Angular by creating a user signup page with three fields: name, email, and password.
 image: '/images/template-forms/tutorial-cover.png'
 thumb_image: '/images/template-forms/tutorial-cover.png'
+style: code
 ---
 
 ## Introduction

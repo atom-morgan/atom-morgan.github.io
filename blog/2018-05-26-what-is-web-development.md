@@ -7,6 +7,7 @@ excerpt: >-
   In this tutorial we're going to clarify web development terms such as HTML, CSS, JavaScript, server-side programming, client-side programming, databases, JSON, and so on to give you a grasp of how everything fits together at a high level.
 image: "/images/what-is-web-dev/tutorial-what-is-web-dev.png"
 thumb_image: "/images/what-is-web-dev/tutorial-what-is-web-dev.png"
+style: code
 ---
 
 ## Video

@@ -7,6 +7,7 @@ excerpt: >-
   In this tutorial you'll learn how to setup an Angular v6 application using the Angular CLI and mock an observable API for your application.
 image: '/images/mocking-angular-api/tutorial-cover.png'
 thumb_image: '/images/mocking-angular-api/tutorial-cover.png'
+style: code
 ---
 
 ## Introduction

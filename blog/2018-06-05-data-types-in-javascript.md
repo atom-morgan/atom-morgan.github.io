@@ -7,6 +7,7 @@ excerpt: >-
   In this tutorial we're going to take a closer look at the JavaScript and introduce some of the data types that are available to us.
 image: '/images/data-types/tutorial-data-types.png'
 thumb_image: '/images/data-types/tutorial-data-types.png'
+style: code
 ---
 
 ## Video

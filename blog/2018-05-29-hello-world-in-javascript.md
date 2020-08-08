@@ -7,6 +7,7 @@ excerpt: >-
   Learn web development with an introduction to JavaScript by creating three variations of the classic "Hello, world" program.
 image: "/images/hello-world/tutorial-hello-world.png"
 thumb_image: "/images/hello-world/tutorial-hello-world.png"
+style: code
 ---
 
 ## Video

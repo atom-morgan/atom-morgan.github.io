@@ -7,6 +7,7 @@ excerpt: >-
   In this tutorial you'll learn how to test a CanActivate route guard in Angular v6.
 image: '/images/angular-canactivate/tutorial-cover.png'
 thumb_image: '/images/angular-canactivate/tutorial-cover.png'
+style: code
 ---
 
 ## Introduction

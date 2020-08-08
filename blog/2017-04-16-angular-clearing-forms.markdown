@@ -7,6 +7,7 @@ image: '/images/clearing-forms-in-angular/tutorial-clearing-forms.png'
 thumb_image: '/images/clearing-forms-in-angular/tutorial-clearing-forms.png'
 excerpt: >-
   Thankfully the solution to this problem is easy and takes just two lines of real code to get the job done.
+style: code
 ---
 
 I was recently working on an Angular (aka Angular2 aka Angular4 aka Angular 6) application where a user triggers a modal, completes a form within the modal, and submits. Unfortunately, the form wasn't clearing after a form submission and manually resetting every `ngModel` seemed extremely tedious. Thankfully the solution to this problem is easy and takes just two lines of real code to get the job done.

@@ -7,6 +7,7 @@ image: "/images/scotch-1.png"
 layout: post
 excerpt: >-
   One part of my AngularJS testing tutorials for Scotch.io
+style: code
 ---
 
 <ul class="actions fit">
