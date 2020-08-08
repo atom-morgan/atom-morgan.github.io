@@ -24,7 +24,7 @@ You can take a similar approach with anything else, even if it isn't physical. L
 
 Do this for a few days and once it feels comfortable, try writing for 30 minutes. Write for 7.5 minutes across 4 sets, or lower it to 3 sets and write for 10 minutes. Do whatever you think you can manage based on your previous days of writing.
 
-You can't just tell yourself, "I'm going to write more". That's an extremely vague goal. You have to have a specify a measurable goal. Jordan Peterson explains this point brilliantly in his latest book <a href="https://www.amazon.com/12-Rules-Life-Antidote-Chaos-ebook/dp/B01FPGY5T0/ref=sr_1_1?ie=UTF8&qid=1519228758&sr=8-1&keywords=12+rules+for+life+an+antidote+to+chaos" target="_blank">*12 Rules for Life: An Antidote to Chaos*</a>.
+You can't just tell yourself, "I'm going to write more". That's an extremely vague goal. You have to have a specify a measurable goal. Jordan Peterson explains this point brilliantly in his latest book <a href="https://amzn.to/2XDQnLV" target="_blank">*12 Rules for Life: An Antidote to Chaos*</a>.
 
 > Why refuse to specify, when specifying the problem would enable its solution? Because to specify the problem is to admit that it exists. Because to specify the problem is to allow yourself to know what you want...and then you will know, precisely, and cleanly, when you don't get it, and that will hurt, sharply, and specifically.
 >

@@ -150,3 +150,14 @@ code {
 code.highlighter-rouge {
   padding: 0.20rem 0.35rem;
 }
+
+.box {
+  border: solid 2px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-color: #eee;
+
+  p {
+    margin: 0;
+  }
+}
