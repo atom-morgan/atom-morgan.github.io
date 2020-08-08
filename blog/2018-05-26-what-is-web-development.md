@@ -30,11 +30,11 @@ In this tutorial we're going to clarify web development terms such as HTML, CSS,
 
 First we need to start with how the web works.
 
-Let's think about a site like Twitter. When you access someone's Twitter account, let's use @realDonaldTrump as an example, the main content you see is a feed of tweets from Donald Trump. You see a feed of Trump's tweets by accessing his Twitter URL: [https://twitter.com/realDonaldTrump](https://twitter.com/realDonaldTrump).
+Let's think about a site like Twitter. When you access someone's Twitter account, let's use @realDonaldTrump as an example, the main content you see is a feed of tweets from Donald Trump. You see a feed of Trump's tweets by accessing his Twitter URL: [https://twitter.com/realDonaldTrump](https://twitter.com/realDonaldTrump){:target="_blank"}.
 
 When you enter this URL into the browser you've made what's known as an HTTP request to Twitter's servers. That HTTP request is then received by Twitter and it's their job to handle this request. In this case Twitter sees you're trying to access @realDonaldTrump's account so they query their database to get any of @realDonaldTrump's data that is needed to view this page such as his name, tweets, following count, follower count, and any other information that's used to populate his page.
 
-Once Twitter finishes querying their database for this information, they respond to the browser's request (the one you originally made when you entered in the URL [https://twitter.com/realDonaldTrump](https://twitter.com/realDonaldTrump)) by sending back the data from their database. 
+Once Twitter finishes querying their database for this information, they respond to the browser's request (the one you originally made when you entered in the URL [https://twitter.com/realDonaldTrump](https://twitter.com/realDonaldTrump){:target="_blank"}) by sending back the data from their database. 
 
 <div class="box" markdown="1">
 If you've ever seen or heard the term [JSON](https://en.wikipedia.org/wiki/JSON), that's the file format that's typically used to send this data but more on that in a later tutorial.
@@ -84,26 +84,26 @@ Yes. If you're going to learn a framework it's best to start off with the progra
 
 If you're considering front-end then learning HTML, CSS, and JavaScript is a must-have. Since so much of front-end development happens in a browser, you have to learn how to work with browser technology such as HTML, CSS, and JavaScript. Once you've gotten a grasp of these then you can move on to one of the popular front-end frameworks listed below: 
 
-* [Angular](https://angular.io/)
-* [React](https://reactjs.org/)
-* [Ember.js](https://www.emberjs.com/)
-* [Vue.js](https://vuejs.org/)
+* [Angular](https://angular.io/){:target="_blank"}
+* [React](https://reactjs.org/){:target="_blank"}
+* [Ember.js](https://www.emberjs.com/){:target="_blank"}
+* [Vue.js](https://vuejs.org/){:target="_blank"}
 
 If you're considering back-end you don't have to worry about HTML and CSS as much since your code isn't directly interfacing with a browser. Instead, you'll likely be replacing this with knowledge of databases since you're going to be saving, updating, and retrieving data from databases. Here are a few popular options for databases:
 
-* [PostgreSQL](https://www.postgresql.org/)
-* [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2017)
-* [MySQL](https://www.mysql.com/)
-* [MongoDB](https://www.mongodb.com/)
+* [PostgreSQL](https://www.postgresql.org/){:target="_blank"}
+* [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2017){:target="_blank"}
+* [MySQL](https://www.mysql.com/){:target="_blank"}
+* [MongoDB](https://www.mongodb.com/){:target="_blank"}
 
 In addition to that, you will also need to learn a programming language along with a framework. A few of the current popular options are below:
 
-* [Ruby on Rails](https://rubyonrails.org/) (Ruby)
-* [Express/Node.js](https://expressjs.com/) (JavaScript)
-* [Laravel](https://laravel.com/) (PHP)
-* [Django](https://www.djangoproject.com/) (Python)
-* [ASP.NET](https://www.asp.net/) (VB, C#, etc)
-* [Spring MVC](https://spring.io/) (Java)
+* [Ruby on Rails](https://rubyonrails.org/){:target="_blank"} (Ruby)
+* [Express/Node.js](https://expressjs.com/){:target="_blank"} (JavaScript)
+* [Laravel](https://laravel.com/){:target="_blank"} (PHP)
+* [Django](https://www.djangoproject.com/){:target="_blank"} (Python)
+* [ASP.NET](https://www.asp.net/){:target="_blank"} (VB, C#, etc)
+* [Spring MVC](https://spring.io/){:target="_blank"} (Java)
 
 **If I learn Angular do I need to learn React?**
 
@@ -143,6 +143,6 @@ We've seen how front-end developers write code that's executed on clients which 
 
 We also introduced some of the various frameworks used by front-end and back-end developers as well as some of the databases you can expect to work with as a back-end developer.
 
-In the [next tutorial](https://atom-morgan.github.io/hello-world-in-javascript/) we'll begin our introduction to web development by writing a simple "Hello, world!" program using HTML and JavaScript.
+In the [next tutorial](https://atom-morgan.github.io/hello-world-in-javascript/){:target="_blank"} we'll begin our introduction to web development by writing a simple "Hello, world!" program using HTML and JavaScript.
 
 {% include book-plug.html %}

@@ -31,7 +31,7 @@ mkdir dom-manipulation
 cd dom-manipulation
 ```
 
-Within this directory we'll create two new files, an HTML file and a JavaScript file similar to what we did way back in [Code Companion #2](https://atom-morgan.github.io/hello-world-in-javascript/).
+Within this directory we'll create two new files, an HTML file and a JavaScript file similar to what we did way back in [Code Companion #2](https://atom-morgan.github.io/hello-world-in-javascript/){:target="_blank"}.
 
 ```console
 touch main.js index.html
@@ -60,10 +60,10 @@ First we'll start with a simple HTML page.
 </html>
 ```
 
-The noteworthy part here is the `script` element (sometimes referred to as tags) with the `src` attribute set to the `main.js` file we created. Unlike our `script` tag in [Code Companion #2](https://atom-morgan.github.io/hello-world-in-javascript/), we'll be writing our JavaScript in a separate file.
+The noteworthy part here is the `script` element (sometimes referred to as tags) with the `src` attribute set to the `main.js` file we created. Unlike our `script` tag in [Code Companion #2](https://atom-morgan.github.io/hello-world-in-javascript/){:target="_blank"}, we'll be writing our JavaScript in a separate file.
 
 <div class="box" markdown="1">
-If you want a description of the various elements in our HTML page such as `html`, `head`, and `<!DOCTYPE html>`, the Mozilla Developer Network's [Anatomy of an HTML Document](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics#Anatomy_of_an_HTML_document) has a great list describing each of these in detail.
+If you want a description of the various elements in our HTML page such as `html`, `head`, and `<!DOCTYPE html>`, the Mozilla Developer Network's [Anatomy of an HTML Document](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics#Anatomy_of_an_HTML_document){:target="_blank"} has a great list describing each of these in detail.
 </div>
 
 To verify everything is working correctly, we can update `main.js` with a "Hello, world" using `console.log()`.
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-First we remove the previous `console.log()`. In its place we use the `prompt()` function which [prompts the user for input](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt). We pass it a string containing a message we want displayed to the user within the prompt and set its return value to the variable `input`. Then we `console.log()` the user's input.
+First we remove the previous `console.log()`. In its place we use the `prompt()` function which [prompts the user for input](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt){:target="_blank"}. We pass it a string containing a message we want displayed to the user within the prompt and set its return value to the variable `input`. Then we `console.log()` the user's input.
 
 Go to your browser, click the button, and you should see the prompt displayed to you asking for input. Enter some text, click OK, and you should see your input logged to the console.
 
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-First we create another object, `view`, using `document.getElementById()` once again to access our new element. Then within the event handler for `click` we access the `innerHTML` property of view and set it to `input`. (A full list of element properties can be found [here](https://developer.mozilla.org/en-US/docs/Web/API/Element).)
+First we create another object, `view`, using `document.getElementById()` once again to access our new element. Then within the event handler for `click` we access the `innerHTML` property of view and set it to `input`. (A full list of element properties can be found [here](https://developer.mozilla.org/en-US/docs/Web/API/Element){:target="_blank"}.)
 
 {% include discord.html %}
 
@@ -209,7 +209,7 @@ Go back to your browser, enter text into the prompt, and you should see the resu
 
 ## List of Pokemon
 
-Now that we can succesfully add a user's input to the DOM, we're going to update the HTML removing the `p` tag in favor of `ul` so that we can have a list of multiple Pokemon instead.
+Now that we can successfully add a user's input to the DOM, we're going to update the HTML removing the `p` tag in favor of `ul` so that we can have a list of multiple Pokemon instead.
 
 ```html
 <body>

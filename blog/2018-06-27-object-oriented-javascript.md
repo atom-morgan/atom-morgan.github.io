@@ -20,7 +20,7 @@ style: code
 
 We've covered a lot of the basics of JavaScript up to this point. These are the building blocks—the fundamentals needed for programming. But we're now at a point where we can start using all of this to write simplified versions of programs you and I might actually use.
 
-In this tutorial, we're going to look at JavaScript by creating objects that we can instantiate using the `new` keyword as we saw in the [last tutorial](https://atom-morgan.github.io/functions/) when we were working with `Date`.
+In this tutorial, we're going to look at JavaScript by creating objects that we can instantiate using the `new` keyword as we saw in the [last tutorial](https://atom-morgan.github.io/functions/){:target="_blank"} when we were working with `Date`.
 
 It won't be much longer before we're adding some of this functionality to an HTML page.
 
@@ -91,7 +91,7 @@ console.log(user.name); // Adam
 console.log(user.age); // 28
 ```
 
-Then in the [previous tutorial](https://atom-morgan.github.io/functions/) we saw a new way of creating objects using the `new` keyword as we did with `Date`.
+Then in the [previous tutorial](https://atom-morgan.github.io/functions/){:target="_blank"} we saw a new way of creating objects using the `new` keyword as we did with `Date`.
 
 ```javascript
 let now = new Date();
@@ -240,7 +240,7 @@ However, we want to add a small update to this. We want a small motiviational me
 
 ## Comparison Operators
 
-To do this, we'll use what are known as [equality operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Equality_operators).
+To do this, we'll use what are known as [equality operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Equality_operators){:target="_blank"}.
 
 What we're concerned with specifically are the equality (`==`) and strict equality (`===`) operators.
 
@@ -330,7 +330,7 @@ For this exercise, add an additional method to `Trainer` to remove a task from `
 
 {% include discord.html %}
 
-Two array methods worth looking into to accomplish this are [`indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) and [`splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice).
+Two array methods worth looking into to accomplish this are [`indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf){:target="_blank"} and [`splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice){:target="_blank"}.
 
 ```javascript
 function Trainer(name, tasks = []) {
@@ -369,7 +369,7 @@ console.log(tasks); // [ 'laundry', 'dishes' ]
 
 Since the task `oil change` doesn't exist in `tasks` the `splice()` method instead removes an element from the end of the array as described in the documentation for the `start` parameter of `splice()`.
 
-> Index at which to start changing the array (with origin 0). If greater than the length of the array, actual starting index will be set to the length of the array. **If negative, will begin that many elements from the end of the array (with origin -1)** and will be set to 0 if absolute value is greater than the length of the array. [Source](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice#Parameters)
+> Index at which to start changing the array (with origin 0). If greater than the length of the array, actual starting index will be set to the length of the array. **If negative, will begin that many elements from the end of the array (with origin -1)** and will be set to 0 if absolute value is greater than the length of the array. [Source](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice#Parameters){:target="_blank"}
 
 See if you can fix this bug. If the task doesn't exist in `tasks`, print a message notifying the user of the non-existent task instead.
 

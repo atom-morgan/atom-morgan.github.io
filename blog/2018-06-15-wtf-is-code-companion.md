@@ -10,9 +10,9 @@ thumb_image: '/images/blog-code-companion.png'
 style: code
 ---
 
-Last year I quit my full-time job to write my book, [The Angular Tutorial](http://www.angulartutorial.org/). Once that was finished and available for purchase I started looking for my next project.
+Last year I quit my full-time job to write my book, [The Angular Tutorial](http://www.angulartutorial.org/){:target="_blank"}. Once that was finished and available for purchase I started looking for my next project.
 
-Now I'm working on a **free blog and screencast series** teaching JavaScript and web development to complete beginners in programming ([screencasts here](https://www.youtube.com/watch?v=qgkEjEA23L4&list=PLsZjlbJIu0a9W8otpkC9bDKMcRb24DpbC), [blogs here](http://atom-morgan.github.io/tutorials/)).
+Now I'm working on a **free blog and screencast series** teaching JavaScript and web development to complete beginners in programming ([screencasts here](https://www.youtube.com/watch?v=qgkEjEA23L4&list=PLsZjlbJIu0a9W8otpkC9bDKMcRb24DpbC){:target="_blank"}, [blogs here](http://atom-morgan.github.io/tutorials/){:target="_blank"}).
 
 Thinking back on my own experiences as a beginner I remember taking a lot of time to research my sources before I started. I would ask myself questions like:
 
@@ -34,7 +34,7 @@ Now I'm a self-taught, full-stack software engineer who's been working in the in
 
 {% include email-list.html %}
 
-You can hear the full story in [this video](https://youtu.be/u6Egm0bIP7k) where I walk you through every job on my resume and provide lessons I learned along the way including **how I negotiated a job offer that doubled my salary overnight**.
+You can hear the full story in [this video](https://youtu.be/u6Egm0bIP7k){:target="_blank"} where I walk you through every job on my resume and provide lessons I learned along the way including **how I negotiated a job offer that doubled my salary overnight**.
 
 ### Do they have a resume with proven experience?
 
@@ -58,7 +58,7 @@ As far as projects go, here are two of the coolest ones I worked on.
 
 ### Do other people enjoy this person's tutorials?
 
-Yes! I've previously written for the website [Scotch.io](https://scotch.io/@adam-morgan) covering automated testing in AngularJS. In fact, the overwhelming positive feedback I received is what inspired me to write my book [The Angular Tutorial](http://www.angulartutorial.org/).
+Yes! I've previously written for the website [Scotch.io](https://scotch.io/@adam-morgan){:target="_blank"} covering automated testing in AngularJS. In fact, the overwhelming positive feedback I received is what inspired me to write my book [The Angular Tutorial](http://www.angulartutorial.org/){:target="_blank"}.
 
 Here's what readers have to say:
 
@@ -72,13 +72,13 @@ Here's what readers have to say:
 
 ### What's their teaching style? How are they different from other teachers?
 
-For my **free, beginner-friendly material** I'm releasing content in both **written and video** form. The videos on [YouTube](https://www.youtube.com/watch?v=qgkEjEA23L4&list=PLsZjlbJIu0a9W8otpkC9bDKMcRb24DpbC) cover the same material in the blog posts but I occassionally go into more details.
+For my **free, beginner-friendly material** I'm releasing content in both **written and video** form. The videos on [YouTube](https://www.youtube.com/watch?v=qgkEjEA23L4&list=PLsZjlbJIu0a9W8otpkC9bDKMcRb24DpbC){:target="_blank"} cover the same material in the blog posts but I occasionally go into more details.
 
 My approach to teaching programming is one that's practical and correlates to how I've worked as a software engineer for the past 5 years.
 
 When I'm illustrating a concept, I do everything I can to give **realistic, real-world problems** that we solve with code. Programming examples with variables like "foo", "bar", and "baz" have never helped me so you **won't see them here**. That means coding samples will be **easier for you to understand and remember**. Problems can be told as stories and stories are easy to remember.
 
-You can also join my [Discord server](https://discord.gg/xMc7n3Z) where you can ask questions directly to the person who wrote the material you're reading (me!).
+You can also join my [Discord server](https://discord.gg/xMc7n3Z){:target="_blank"} where you can ask questions directly to the person who wrote the material you're reading (me!).
 
 ### Are they committed to this project or will these tutorials stop coming in a month?
 
@@ -86,10 +86,10 @@ As I mentioned earlier, I quit my full-time job for this last year :)
 
 I'm now self-employed working on creating educational programming content full-time.
 
-Since then I [published my first book](https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&ie=UTF8&qid=1529067875&sr=1-1) (500 pages!) teaching front-end development and automated testing using Angular and Cypress. It's a full course that teaches you how to build, test, and deploy an Angular application from scratch.
+Since then I [published my first book](https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&ie=UTF8&qid=1529067875&sr=1-1){:target="_blank"} (500 pages!) teaching front-end development and automated testing using Angular and Cypress. It's a full course that teaches you how to build, test, and deploy an Angular application from scratch.
 
-Now I've decided to move on to **free, beginner friendly content** for people who aren't quite ready for a book like [The Angular Tutorial](http://www.angulartutorial.org/). Check out the Code Companion series [here](http://atom-morgan.github.io/tutorials/).
+Now I've decided to move on to **free, beginner friendly content** for people who aren't quite ready for a book like [The Angular Tutorial](http://www.angulartutorial.org/){:target="_blank"}. Check out the Code Companion series [here](http://atom-morgan.github.io/tutorials/){:target="_blank"}.
 
-If you have any questions, you can reach me on [Discord](https://discord.gg/xMc7n3Z) or on [Twitter](https://twitter.com/atommorgan).
+If you have any questions, you can reach me on [Discord](https://discord.gg/xMc7n3Z){:target="_blank"} or on [Twitter](https://twitter.com/atommorgan){:target="_blank"}.
 
 {% include book-plug.html %}

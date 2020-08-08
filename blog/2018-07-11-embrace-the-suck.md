@@ -44,7 +44,7 @@ People who aren't programmers think what we do is insanely difficult. They think
 Ask yourself who thinks going to the gym just doesn't work for their body type? 
 
 1. The person who tried and quit after a few weeks.
-2. The person who stuck to it and has the results to show off after a ton of hard work? (I would know—a few years ago I couldn't do a single pull-up. [Not anymore](https://www.instagram.com/p/BkdKiQynT_Y/?taken-by=adamjmorgan).)
+2. The person who stuck to it and has the results to show off after a ton of hard work? (I would know—a few years ago I couldn't do a single pull-up. [Not anymore](https://www.instagram.com/p/BkdKiQynT_Y/?taken-by=adamjmorgan){:target="_blank"}.)
 
 If you're being honest you know the answer even if you've never worked out a day in your life.
 

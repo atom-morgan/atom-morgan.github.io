@@ -20,6 +20,6 @@ But Glass is cool. It provides us with POV videos of people doing really cool th
 
 The iPhone didn’t change mobile technology because it was cool. Sure, it did cool things but it did much more than that. It changed your life. Living without an iPhone after regular use is terrifying because it’s become a part of everything we do.
 
-Glass is ahead of its time by introducing a product before the technology exists to allow us to effectively communicate with these devices. Applications should open via eye-tracking or telepathically using an embedded [fMRI](http://singularityhub.com/2011/10/05/technological-telepathy-scientists-scan-your-brain-to-watch-the-movies-playing-in-your-mind/). An interface such as this would solve all of Glass' current shortcomings.
+Glass is ahead of its time by introducing a product before the technology exists to allow us to effectively communicate with these devices. Applications should open via eye-tracking or telepathically using an embedded [fMRI](http://singularityhub.com/2011/10/05/technological-telepathy-scientists-scan-your-brain-to-watch-the-movies-playing-in-your-mind/){:target="_blank"}. An interface such as this would solve all of Glass' current shortcomings.
 
 Glass would change from a cool piece of technology to show family and friends to a device that changed the world. 

@@ -16,7 +16,7 @@ The day before a UFC fight, both fighters weigh in to ensure they are within the
 
 Let’s assume two fighters are competing in the welterweight division. Before the day of the fight, both fighters must weigh-in at or below 170 pounds. What’s important here for the fighters are the days leading up to the weigh-in along with the 24-hour period after the weigh-in before they enter the octagon to fight.
 
-In the days leading up to the fight, the fighters begin the process of “cutting weight”. From a dietary standpoint, the fighters slowly reduce water intake to flush out their body. They also avoid carbs, fruits, sugars, salt, and starch. Combine this with hot baths and saunas and fighters can lose anywhere from [10-30 pounds in just five days](www.fourhourworkweek.com/blog/2013/05/06/how-to-cut-weight-ufc/).
+In the days leading up to the fight, the fighters begin the process of “cutting weight”. From a dietary standpoint, the fighters slowly reduce water intake to flush out their body. They also avoid carbs, fruits, sugars, salt, and starch. Combine this with hot baths and saunas and fighters can lose anywhere from [10-30 pounds in just five days](www.fourhourworkweek.com/blog/2013/05/06/how-to-cut-weight-ufc/){:target="_blank"}.
 
 Immediately after the weigh-in, fighters reverse the entire process. They start drinking water again, fill themselves with carbs, proteins, and fats, and add salt to everything they eat to help their body retain water. In just a 24-hour period, the fighters who weighed in at 170 pounds will walk out to fight that night weighing anywhere between 180-200 pounds.
 

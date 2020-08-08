@@ -24,13 +24,13 @@ First, let's create a directory that we'll work in for this tutorial.
 mkdir js-testing && cd js-testing
 ```
 
-Next, we'll need to install [Node Version Manager](https://github.com/creationix/nvm) (NVM).
+Next, we'll need to install [Node Version Manager](https://github.com/creationix/nvm){:target="_blank"} (NVM).
 
 ```console
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 ```
 
-Once that has finished, we'll also install [Node.js](https://nodejs.org/en/).
+Once that has finished, we'll also install [Node.js](https://nodejs.org/en/){:target="_blank"}.
 
 ```console
 nvm install node
@@ -60,11 +60,11 @@ var Hello = (function() {
 module.exports = Hello;
 ```
 
->If this pattern looks a little odd, I'd highly recommend reading Todd Motto's blog post [Mastering the Module Pattern](https://toddmotto.com/mastering-the-module-pattern/).
+>If this pattern looks a little odd, I'd highly recommend reading Todd Motto's blog post [Mastering the Module Pattern](https://toddmotto.com/mastering-the-module-pattern/){:target="_blank"}.
 
 ## Jasmine
 
-Now that you've created the file we want to test let's install [Jasmine](http://jasmine.github.io/2.4/introduction.html), the testing framework we'll be using for our test.
+Now that you've created the file we want to test let's install [Jasmine](http://jasmine.github.io/2.4/introduction.html){:target="_blank"}, the testing framework we'll be using for our test.
 
 ```console
 npm install -g jasmine
@@ -220,4 +220,4 @@ Save that file, run `jasmine spec/hello-testing.spec.js`, and you should see two
 
 ## Summary
 
-Hopefully you now know how to install Jasmine, setup a test file, and test a piece of code. If you have any questions or feedback feel free to reach out to me on Twitter [@atommorgan](http://twitter.com/atommorgan).
+Hopefully you now know how to install Jasmine, setup a test file, and test a piece of code. If you have any questions or feedback feel free to reach out to me on Twitter [@atommorgan](http://twitter.com/atommorgan){:target="_blank"}.

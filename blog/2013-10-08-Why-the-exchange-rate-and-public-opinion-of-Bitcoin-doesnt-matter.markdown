@@ -26,4 +26,4 @@ I can’t help but feel that we’re in a similar state right now with Bitcoin. 
 
 - - -
 
-Originally posted on [Medium](https://medium.com/@atommorgan/why-the-exchange-rate-and-public-opinion-of-bitcoin-doesnt-matter-5df18ceb214a)
+Originally posted on [Medium](https://medium.com/@atommorgan/why-the-exchange-rate-and-public-opinion-of-bitcoin-doesnt-matter-5df18ceb214a){:target="_blank"}

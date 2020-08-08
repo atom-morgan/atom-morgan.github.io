@@ -18,7 +18,7 @@ style: code
 
 ## Introduction
 
-In the [previous tutorial](http://atom-morgan.github.io/data-types-in-javascript/) we took a closer look at the data types available to us in JavaScript and the variables, or containers, we use to store those values. We also saw how we can use conditionals, using `if` and `else`, to control the flow of our programs.
+In the [previous tutorial](http://atom-morgan.github.io/data-types-in-javascript/){:target="_blank"} we took a closer look at the data types available to us in JavaScript and the variables, or containers, we use to store those values. We also saw how we can use conditionals, using `if` and `else`, to control the flow of our programs.
 
 In this tutorial we're going to introduce some of the properties and methods exposed to us by the data types in JavaScript. Finally, we'll wrap up by taking our first look at iteration.
 
@@ -46,7 +46,7 @@ touch properties-and-methods.js
 
 ## Properties
 
-At the end of the [previous tutorial](http://atom-morgan.github.io/data-types-in-javascript/) we created a few objects and accessed their properties using dot notatation as shown below.
+At the end of the [previous tutorial](http://atom-morgan.github.io/data-types-in-javascript/){:target="_blank"} we created a few objects and accessed their properties using dot notation as shown below.
 
 ```javascript
 let myUser = {
@@ -93,7 +93,7 @@ Here we've used the `length` property in the expression of our `if` statement. I
 
 ### Properties and Logical Operators
 
-In addition to the [comparison operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) we used in the example above, we also have [logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators) at our disposal which we can leverage at times like this.
+In addition to the [comparison operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators){:target="_blank"} we used in the example above, we also have [logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators){:target="_blank"} at our disposal which we can leverage at times like this.
 
 The first operator we'll look at is the logical AND (`&&`) operator. When you're comparing two booleans with `&&`, both have to be `true` for the combination to be `true`.
 
@@ -110,7 +110,7 @@ console.log(false && true); // false
 console.log(false && false); // false
 ```
 
-As you can see, unless *both* sides of the `&&` operator are `true`, the result is `false`. The combintation of possibilities above is what's known as a ["truth table"](https://en.wikipedia.org/wiki/Truth_table).
+As you can see, unless *both* sides of the `&&` operator are `true`, the result is `false`. The combination of possibilities above is what's known as a ["truth table"](https://en.wikipedia.org/wiki/Truth_table){:target="_blank"}.
 
 Now, we can combine the logical `&&` operator with the `length` property and comparison operator we used earlier for a more comprehensive example.
 
@@ -216,15 +216,15 @@ console.log(username.toLowerCase()); // adam
 console.log(username.toUpperCase()); // ADAM
 ```
 
-Unlike properties which are values, a method is a function that we call with parentheses (like we do with `console.log()`) to get the value we want. These are just two of the string methods available to us and you can see a complete list of string methods [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2).
+Unlike properties which are values, a method is a function that we call with parentheses (like we do with `console.log()`) to get the value we want. These are just two of the string methods available to us and you can see a complete list of string methods [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2){:target="_blank"}.
 
 <!-- [Upper case vs lower case](http://3.bp.blogspot.com/__uJC-guN1CM/TJdusqqrE1I/AAAAAAAAARk/qVSelaSBGFc/s1600/9_29+Upper+%26+Lower+Case.JPG). -->
 
-As a programmer, learning how to read documentation is an extremely important skill to develop. Let's explore the documentation for [array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2).
+As a programmer, learning how to read documentation is an extremely important skill to develop. Let's explore the documentation for [array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2){:target="_blank"}.
 
 ![Array methods](/images/properties-and-methods/array-methods.png)
 
-In this image are just a few of the array methods available to us. Let's take a closer look at the `pop()` method. As the description says `pop()` "removes the last element from an array and returns that element." You can [click the method name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) in the list and see even more details along with a few examples demonstrating how `pop()` works.
+In this image are just a few of the array methods available to us. Let's take a closer look at the `pop()` method. As the description says `pop()` "removes the last element from an array and returns that element." You can [click the method name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop){:target="_blank"} in the list and see even more details along with a few examples demonstrating how `pop()` works.
 
 We can create our own example to illustrate the effects of `pop()`.
 
@@ -252,9 +252,9 @@ console.log(returnedValue); // 4
 
 ## Iteration
 
-The last topic we're going to cover is known as iteration. Iteration in programming is the techinque of repeating one or many statements for a defined number of repetitions with each repetition known as an iteration.
+The last topic we're going to cover is known as iteration. Iteration in programming is the technique of repeating one or many statements for a defined number of repetitions with each repetition known as an iteration.
 
-Let's build up to this idea by first taking a look at the `charAt()` [string method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt).
+Let's build up to this idea by first taking a look at the `charAt()` [string method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt){:target="_blank"}.
 
 ```javascript
 let name = 'Adam';
@@ -433,7 +433,7 @@ for (let i = 0; i < title.length; i++) {
 }
 ```
 
-For additional practice, try writing a few `for` loops of your own. Pick an [array method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2) to see how it works.
+For additional practice, try writing a few `for` loops of your own. Pick an [array method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2){:target="_blank"} to see how it works.
 
 <!-- In the next tutorial we'll take a look at some of the properties provided to us by data types. We'll also take a closer look at functions by writing some of our own. -->
 

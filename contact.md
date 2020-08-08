@@ -7,7 +7,7 @@ sections:
     content: >-
       Hi there! Thank you so much for your interest in working together. Please
       fill the contact form below or send me an email at
-      [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com).
+      [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com){:target="_blank"}.
     form_id: contactForm
     form_action: /thank-you
     form_fields:

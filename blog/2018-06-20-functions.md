@@ -18,7 +18,7 @@ style: code
 
 ## Introduction
 
-In the [previous tutorial](https://atom-morgan.github.io/properties-and-methods/) we introduced properties and methods such as `.length` and `.charAt()` as well as the logical operators AND and OR. We finished by writing our first iterative code using the `for` loop.
+In the [previous tutorial](https://atom-morgan.github.io/properties-and-methods/){:target="_blank"} we introduced properties and methods such as `.length` and `.charAt()` as well as the logical operators AND and OR. We finished by writing our first iterative code using the `for` loop.
 
 Up until this point we've been calling functions (also referred to as methods) like `console.log()` and `.charAt()`. In this tutorial we're going to switch from *calling* functions to *writing* them as well.
 
@@ -73,11 +73,11 @@ function evaluateString(string) {
 }
 ```
 
-To declare a function we begin with the name of the function, `evaluateString`, followed by a comma seperated list of parameters enclosed in parentheses. In this function declaration, we have a single parameter named `string`. Following the function name and parameters are the open and close braces (`{}`). Within this block is where we write the code we want to be executed when our function is called.
+To declare a function we begin with the name of the function, `evaluateString`, followed by a comma separated list of parameters enclosed in parentheses. In this function declaration, we have a single parameter named `string`. Following the function name and parameters are the open and close braces (`{}`). Within this block is where we write the code we want to be executed when our function is called.
 
 <!--![Function declaration](/images/functions/function-declaration.png)-->
 
-In our example we first check if the parameter `string` is truthy (has a value) and use `return` to specificy a *return value* of the function: `The string has a value!`. If it's falsy, the function's return value is `What string?`.
+In our example we first check if the parameter `string` is truthy (has a value) and use `return` to specify a *return value* of the function: `The string has a value!`. If it's falsy, the function's return value is `What string?`.
 
 Now that we have our first function declaration, we need to call it.
 

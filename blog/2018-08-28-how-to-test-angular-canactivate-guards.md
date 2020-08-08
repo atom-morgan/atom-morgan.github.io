@@ -12,11 +12,11 @@ style: code
 
 ## Introduction
 
-In this tutorial you'll learn how to test a [CanActivate](https://angular.io/api/router/CanActivate) route guard within Angular. We'll create two separate routed components and apply this guard to one of the routes that will restrict it to authorized users.
+In this tutorial you'll learn how to test a [CanActivate](https://angular.io/api/router/CanActivate){:target="_blank"} route guard within Angular. We'll create two separate routed components and apply this guard to one of the routes that will restrict it to authorized users.
 
 ## Setup
 
-First, we'll create a new application using the [Angular CLI](https://cli.angular.io/) adding the `--routing` flag to generate a routing module for us.
+First, we'll create a new application using the [Angular CLI](https://cli.angular.io/){:target="_blank"} adding the `--routing` flag to generate a routing module for us.
 
 ```console
 ng new guard-testing --routing

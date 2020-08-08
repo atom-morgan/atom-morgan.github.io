@@ -18,7 +18,7 @@ But somehow, I still made it happen. Looking back, I think there are a few menta
 
 **Start small and show up**
 
-When I first started working out, I set up a schedule of three days a week. At first it was Monday, Wednesday, and Friday. It was small but [it seemed reasonable](https://youtu.be/aVhj_phpAYQ?t=2m26s). It was a workout schedule I actually wanted. Starting with five days a week would have been overwhelming for a habit that was previously at zero.
+When I first started working out, I set up a schedule of three days a week. At first it was Monday, Wednesday, and Friday. It was small but [it seemed reasonable](https://youtu.be/aVhj_phpAYQ?t=2m26s){:target="_blank"}. It was a workout schedule I actually wanted. Starting with five days a week would have been overwhelming for a habit that was previously at zero.
 
 But eventually those three days turned into a fraction in my head: 3/7. My three days aren't even half of a week I thought. So I bumped it up to four days: Monday, Tuesday, Thursday, and Friday. I did that for a while and eventually my two straight days off, Saturday and Sunday, made me feel lazy. So I bumped that up to a five day schedule which I'm still on today.
 
@@ -62,16 +62,16 @@ In this case, I actually reframe my new habit as my old one. Rather than tell my
 
 Coding
 
-* [MDN - Learn Web Development](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
-* [Mean Machine](https://leanpub.com/mean-machine)
-* [Scotch.io](https://scotch.io/)
-* [NodeSchool](https://nodeschool.io/)
+* [MDN - Learn Web Development](https://developer.mozilla.org/en-US/docs/Learn/JavaScript){:target="_blank"}
+* [Mean Machine](https://leanpub.com/mean-machine){:target="_blank"}
+* [Scotch.io](https://scotch.io/){:target="_blank"}
+* [NodeSchool](https://nodeschool.io/){:target="_blank"}
 
 Fitness
 
-* [THENX](https://www.youtube.com/user/TheMiamiTrainer)
-* [Austin Dunham](https://www.youtube.com/user/GeekAMD)
-* [jtm_fit](https://www.instagram.com/jtm_fit/)
+* [THENX](https://www.youtube.com/user/TheMiamiTrainer){:target="_blank"}
+* [Austin Dunham](https://www.youtube.com/user/GeekAMD){:target="_blank"}
+* [jtm_fit](https://www.instagram.com/jtm_fit/){:target="_blank"}
 
 Supplements
 
@@ -86,6 +86,6 @@ Art
 
 EDM
 
-* [Above & Beyond - EDC Las Vegas 2015](https://youtu.be/SaUN0QHOkHk)
-* [Kaskade - Ultra 2016](https://youtu.be/A1oPoxKMMuA)
-* [The Chainsmokers - Ultra 2016](https://youtu.be/_F2KOULJJtk)
+* [Above & Beyond - EDC Las Vegas 2015](https://youtu.be/SaUN0QHOkHk){:target="_blank"}
+* [Kaskade - Ultra 2016](https://youtu.be/A1oPoxKMMuA){:target="_blank"}
+* [The Chainsmokers - Ultra 2016](https://youtu.be/_F2KOULJJtk){:target="_blank"}

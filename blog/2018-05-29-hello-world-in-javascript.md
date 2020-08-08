@@ -18,7 +18,7 @@ style: code
 
 ## Introduction
 
-In this tutorial we'll take our first glance at web development by creating three variations of the classic ["Hello, world" program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) using JavaScript. First we'll do this in a web browser. Then we'll create the same program using what's known as a REPL. Finally, we'll wrap up by writing the program in a JavaScript file.
+In this tutorial we'll take our first glance at web development by creating three variations of the classic ["Hello, world" program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program){:target="_blank"} using JavaScript. First we'll do this in a web browser. Then we'll create the same program using what's known as a REPL. Finally, we'll wrap up by writing the program in a JavaScript file.
 
 Once you've finished, you'll have three different methods at your disposal to start writing JavaScript that we'll continue to explore in future tutorials.
 
@@ -30,17 +30,17 @@ Before we get started there's a few things you'll need to download.
 
 ### Text editor
 
-One of the first things you'll need before we begin writing code is a text editor to write your code in. Two popular choices at the moment are [Visual Studio Code](https://code.visualstudio.com/) and [Sublime Text](https://www.sublimetext.com/3). Either one of these will do just fine—they're largely a matter of personal preference.
+One of the first things you'll need before we begin writing code is a text editor to write your code in. Two popular choices at the moment are [Visual Studio Code](https://code.visualstudio.com/){:target="_blank"} and [Sublime Text](https://www.sublimetext.com/3){:target="_blank"}. Either one of these will do just fine—they're largely a matter of personal preference.
 
 Visual Studio Code is 100% free and open-source. Sublime Text is free to download as well but there is an $80 fee for a license which you'll inevitably see in a prompt if you use Sublime Text long enough.
 
 ### Terminal
 
-Next you'll need to get a terminal emulator for the command-line work we'll be doing. If you're on Mac, I'd recommend [iTerm2](https://www.iterm2.com/) but you're welcome to use the default terminal application provided by Apple.
+Next you'll need to get a terminal emulator for the command-line work we'll be doing. If you're on Mac, I'd recommend [iTerm2](https://www.iterm2.com/){:target="_blank"} but you're welcome to use the default terminal application provided by Apple.
 
 ### Git
 
-The last thing you'll need to do is install [Git](https://git-scm.com/). Git is an open source version control system which allows you to track changes in source code and coordinate working on these files among a team. You'll be using Git to push your code to [Github](https://github.com) and to clone (or download) existing code repostories that other developers have created. For now, we'll be using Git and Github to manage the code we write in this tutorial.
+The last thing you'll need to do is install [Git](https://git-scm.com/){:target="_blank"}. Git is an open source version control system which allows you to track changes in source code and coordinate working on these files among a team. You'll be using Git to push your code to [Github](https://github.com){:target="_blank"} and to clone (or download) existing code repositories that other developers have created. For now, we'll be using Git and Github to manage the code we write in this tutorial.
 
 <div class="box">
 Don't stress too much about Git at the moment. The commands you'll need to use Git will be provided for you in this tutorial. We'll take a closer look at Git in a later tutorial.
@@ -144,7 +144,7 @@ So how does this work? Let's start by looking at the five lines we just added.
 <!--end javascript-->
 ```
 
-This section of code begins and ends with what's known as an [HTML comment](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#HTML_comments). This is a way for us to write text in our code which are both ignored by the browser and invisible to the user. In this case, we've added two comments to show us where our JavaScript code begins and ends.
+This section of code begins and ends with what's known as an [HTML comment](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#HTML_comments){:target="_blank"}. This is a way for us to write text in our code which are both ignored by the browser and invisible to the user. In this case, we've added two comments to show us where our JavaScript code begins and ends.
 
 Following that is our `<script>` element which is what allows us to embed JavaScript code within HTML. We put any JavaScript code we want to execute below `<script>` and above its closing tag `</script>`. In this case, we've added the following code:
 
@@ -158,9 +158,9 @@ When we call a function there's a certain structure to how it's called. First th
 
 ![Function anatomy](/images/hello-world/function-anatomy.png)
 
-In our case we began with our function name `alert` followed by an open parenthesis. Then we provided our function a single argument in the form of a [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String): `Hello, world!`. After the single argument we finish our function call with a closing parenthesis and a semicolon.
+In our case we began with our function name `alert` followed by an open parenthesis. Then we provided our function a single argument in the form of a [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String){:target="_blank"}: `Hello, world!`. After the single argument we finish our function call with a closing parenthesis and a semicolon.
 
-We've now written our first program in an HTML page. In the next section, we'll introduce another way to write and run JavaScript code using what's known as a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).
+We've now written our first program in an HTML page. In the next section, we'll introduce another way to write and run JavaScript code using what's known as a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop){:target="_blank"}.
 
 {% include request-tutorial.html %}
 
@@ -181,7 +181,7 @@ If you'd like to avoid an alert modal every time you call `alert` you can print 
 ![Developer tools](/images/hello-world/chrome-console-log.png)
 
 <div class="box" markdown="1">
-If you're wondering why `console.log()` has a period in the middle while `alert()` is just one word, that's totally normal and it's good you noticed the difference between the two function calls. Since this is an introduction, the difference between the two is out of scope for this tutorial but it will be covered when we get to [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) and [objects](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics).
+If you're wondering why `console.log()` has a period in the middle while `alert()` is just one word, that's totally normal and it's good you noticed the difference between the two function calls. Since this is an introduction, the difference between the two is out of scope for this tutorial but it will be covered when we get to [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions){:target="_blank"} and [objects](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics){:target="_blank"}.
 </div>
 
 ## JavaScript file
@@ -277,13 +277,13 @@ alert('First', 'Second');
 console.log('First', 'Second');
 ```
 
-What happens if you pass a [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) to `alert()` or `console.log()`?
+What happens if you pass a [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number){:target="_blank"} to `alert()` or `console.log()`?
 
 ```javascript
 alert(1);
 console.log(1);
 ```
 
-In the [next tutorial](http://atom-morgan.github.io/data-types-in-javascript/) we'll take a look at some of the data types (we've already used strings and numbers) available to us in JavaScript.
+In the [next tutorial](http://atom-morgan.github.io/data-types-in-javascript/){:target="_blank"} we'll take a look at some of the data types (we've already used strings and numbers) available to us in JavaScript.
 
 {% include book-plug.html %}

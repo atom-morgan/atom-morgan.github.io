@@ -65,11 +65,11 @@ Complete the form below, click "Submit", and you should see the conditional `<sp
 
 <iframe src="https://stackblitz.com/edit/clearing-forms-problem?ctl=1&embed=1&file=src/main.ts&hideExplorer=1&view=preview" frameborder="0" width="100%" height="500"></iframe>
 
-To fix this, we'll need to leverage Angular's [ViewChild](https://angular.io/docs/ts/latest/api/core/index/ViewChild-decorator.html) decorator. `ViewChild` allows us to query our view to get an element or directive of our choice. In this case, we want a `ViewChild` for our form.
+To fix this, we'll need to leverage Angular's [ViewChild](https://angular.io/docs/ts/latest/api/core/index/ViewChild-decorator.html){:target="_blank"} decorator. `ViewChild` allows us to query our view to get an element or directive of our choice. In this case, we want a `ViewChild` for our form.
 
 {% include request-tutorial.html %}
 
-To do this, we'll need to import `ViewChild` (Thanks to [Chris Sevilleja](https://twitter.com/chrisoncode) for introducing me to ViewChild).
+To do this, we'll need to import `ViewChild` (Thanks to [Chris Sevilleja](https://twitter.com/chrisoncode){:target="_blank"} for introducing me to ViewChild).
 
 ```javascript
 // src/app.component.ts

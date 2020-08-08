@@ -12,7 +12,7 @@ style: code
 
 ## Introduction
 
-In this tutorial we'll learn how to generate a new Angular project using the [Angular CLI](https://github.com/angular/angular-cli) and style it using the [Bulma](https://bulma.io/) framework.
+In this tutorial we'll learn how to generate a new Angular project using the [Angular CLI](https://github.com/angular/angular-cli){:target="_blank"} and style it using the [Bulma](https://bulma.io/){:target="_blank"} framework.
 
 * Angular CLI 6.0.0
 * Bulma 0.7.1
@@ -71,13 +71,13 @@ ng serve -o
 
 ## Bulma Setup
 
-Now that our Angular project has been created, we can move on to [Bulma](https://bulma.io/). First, we'll need to install it.
+Now that our Angular project has been created, we can move on to [Bulma](https://bulma.io/){:target="_blank"}. First, we'll need to install it.
 
 ```console
 npm install bulma --save
 ```
 
-Once that has finished, we'll need to install [Font Awesome](https://www.npmjs.com/package/@fortawesome/angular-fontawesome).
+Once that has finished, we'll need to install [Font Awesome](https://www.npmjs.com/package/@fortawesome/angular-fontawesome){:target="_blank"}.
 
 ```
 npm install @fortawesome/fontawesome-svg-core --save
@@ -123,7 +123,7 @@ export class AppModule { }
 ```
 
 <div class="box" markdown="1">
-In the example above we imported *all* of the icon styles which may not be necessary depending on your needs. If you only need a certain subset you can specify those as [stated in the documentation](https://www.npmjs.com/package/@fortawesome/angular-fontawesome#using-the-icon-library).
+In the example above we imported *all* of the icon styles which may not be necessary depending on your needs. If you only need a certain subset you can specify those as [stated in the documentation](https://www.npmjs.com/package/@fortawesome/angular-fontawesome#using-the-icon-library){:target="_blank"}.
 </div>
 
 Finally, we can see Bulma's styling in action by updating `app.component.html` with the following markup.

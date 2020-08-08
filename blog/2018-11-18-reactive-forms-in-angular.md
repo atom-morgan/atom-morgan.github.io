@@ -12,13 +12,13 @@ style: code
 
 ## Introduction
 
-In a [previous tutorial](https://atom-morgan.github.io/template-driven-forms-in-angular/) we took a closer look at template-driven forms. This is one of two approaches available to us as developers to create forms in Angular.
+In a [previous tutorial](https://atom-morgan.github.io/template-driven-forms-in-angular/){:target="_blank"} we took a closer look at template-driven forms. This is one of two approaches available to us as developers to create forms in Angular.
 
 In this tutorial we'll learn the basics of Angular's other approach to forms, reactive forms. Similar to the previous tutorial, we'll do this by creating a user signup page with the same three fields: name, email, and password.
 
 ## Setup
 
-If you haven't already, you'll first need to install the [Angular CLI](https://cli.angular.io/).
+If you haven't already, you'll first need to install the [Angular CLI](https://cli.angular.io/){:target="_blank"}.
 
 ```console
 npm install -g @angular/cli
@@ -155,7 +155,7 @@ Here we've created a `createForm` function that will create the `FormGroup` obje
 
 The key for each `FormControl` maps to the names we provided in our template to `formControlName`. After each key is an array with its first value, an empty string, being the initial value for the form control.
 
-> It's worth noting you can import `FormControl` and create them explicitly as shown [here](https://angular.io/api/forms/FormControl#usage-notes). However, when using `FormBuilder` you can just use the object passed in to `.group()` as shorthand.
+> It's worth noting you can import `FormControl` and create them explicitly as shown [here](https://angular.io/api/forms/FormControl#usage-notes){:target="_blank"}. However, when using `FormBuilder` you can just use the object passed in to `.group()` as shorthand.
 
 Now when you go back to your browser you should have a form visible with no errors now that our `FormGroup` has been initialized.
 
@@ -244,7 +244,7 @@ createForm() {
 
 To add more validators to a `FormControl` we simply add any additional validators to the desired control's second argument. As you can see, if a `FormControl` has more than one validator we simply provide it an array of validators instead.
 
-> You can see a complete list of Angular's built-in validators [here](https://angular.io/api/forms/Validators).
+> You can see a complete list of Angular's built-in validators [here](https://angular.io/api/forms/Validators){:target="_blank"}.
 
 ## Error messages
 
@@ -280,7 +280,7 @@ Now that we have multiple validators on some of our form's controls, it might be
 
 Below each input we've added a conditional error message. For an input like name, we display the message if the value is `invalid` and its control isn't `pristine` meaning its value has changed.
 
-> You can see a full list of `FormControl` properties such as `pristine` and their descriptions [here](https://angular.io/api/forms/AbstractControl#properties).
+> You can see a full list of `FormControl` properties such as `pristine` and their descriptions [here](https://angular.io/api/forms/AbstractControl#properties){:target="_blank"}.
 
 For inputs such as email and password that have multiple validators there's an extra step. Similar to name we only display the messages if the value is invalid and if the controls' values has changed.
 
@@ -312,7 +312,7 @@ Now when you go back to your browser, you should see error messages displayed in
 
 At this point our form is complete but it could use some visual work.
 
-> Since this is outside the scope of this tutorial I won't explain everything in detail but you can read my Bulma tutorial [here](https://atom-morgan.github.io/styling-angular-v6-apps-with-bulma/).
+> Since this is outside the scope of this tutorial I won't explain everything in detail but you can read my Bulma tutorial [here](https://atom-morgan.github.io/styling-angular-v6-apps-with-bulma/){:target="_blank"}.
 
 First, we'll update our template with some of Bulma's classes.
 

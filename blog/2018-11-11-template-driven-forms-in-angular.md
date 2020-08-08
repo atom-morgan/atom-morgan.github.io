@@ -18,7 +18,7 @@ In this tutorial we'll learn the basics of template-driven forms in Angular by c
 
 ## Setup
 
-If you haven't already, you'll first need to install the [Angular CLI](https://cli.angular.io/).
+If you haven't already, you'll first need to install the [Angular CLI](https://cli.angular.io/){:target="_blank"}.
 
 ```console
 npm install -g @angular/cli
@@ -286,7 +286,7 @@ Now you should be able to type into your form, remove values, and see error mess
 
 At this point our form is complete but it could use some visual work.
 
-> Since this is outside the scope of this tutorial I won't explain everything in detail but you can read my Bulma tutorial [here](https://atom-morgan.github.io/styling-angular-v6-apps-with-bulma/).
+> Since this is outside the scope of this tutorial I won't explain everything in detail but you can read my Bulma tutorial [here](https://atom-morgan.github.io/styling-angular-v6-apps-with-bulma/){:target="_blank"}.
 
 First, we'll update our template with some of Bulma's classes.
 

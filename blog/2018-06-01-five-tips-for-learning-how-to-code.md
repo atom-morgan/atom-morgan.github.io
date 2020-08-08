@@ -20,7 +20,7 @@ The best method for me to create a habit is to start small. If I decided I wante
 Apply the same mindset to learning how to code. Set aside a few hours a few times a week where you do at least one thing related to coding. If you're just not in the mood to read through a chapter of a programming book that day, it's okay. Watch a tech talk on YouTube instead!
 
 <div class="box" markdown="1">
-If this type of method doesn't work for you, experiment! If you know you may end up saying "I'll just do it tomorrow" on one of your scheduled days, maybe a smaller amount of work *everyday* (Jerry Seinfeld's ["Don't Break the Chain"](http://lifehacker.com/281626/jerry-seinfelds-productivity-secret)) will work better for you.
+If this type of method doesn't work for you, experiment! If you know you may end up saying "I'll just do it tomorrow" on one of your scheduled days, maybe a smaller amount of work *everyday* (Jerry Seinfeld's ["Don't Break the Chain"](http://lifehacker.com/281626/jerry-seinfelds-productivity-secret){:target="_blank"}) will work better for you.
 </div>
 
 ### Break up Your Work
@@ -29,10 +29,10 @@ You don't have to be the biggest gym rat to know that you don't do all of your l
 
 Instead of sitting down to work on programming for 2 hours straight, why not do 25 minutes of work followed by 5 minutes of rest, 4 times? Not only is this mentally less daunting but I think it's a great way to force yourself to get started on work. When you sit down to begin and you have 2 hours of work ahead of you, procrastination comes much easier than when there's only 25 minutes.
 
-This technique is known as the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique). In addition to being a good way to get me started on work, I've also discovered it's a great way to get into [flow state](https://en.wikipedia.org/wiki/Flow_(psychology)). I'll do my first 25 minute interval, rest, do my second and by the time the timer has gone off for my second break I'm focused enough that I don't need it anymore.
+This technique is known as the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique){:target="_blank"}. In addition to being a good way to get me started on work, I've also discovered it's a great way to get into [flow state](https://en.wikipedia.org/wiki/Flow_(psychology){:target="_blank"}). I'll do my first 25 minute interval, rest, do my second and by the time the timer has gone off for my second break I'm focused enough that I don't need it anymore.
 
 <div class="box" markdown="1">
-If you're looking for a Pomodoro Timer I recommend [Be Focused](https://itunes.apple.com/us/app/be-focused-focus-timer-goal/id973134470?mt=12) which is available on all Mac products.
+If you're looking for a Pomodoro Timer I recommend [Be Focused](https://itunes.apple.com/us/app/be-focused-focus-timer-goal/id973134470?mt=12){:target="_blank"} which is available on all Mac products.
 </div>
 
 If I'm learning a new skill, Pomodoro is a must. But if I just need to do work related to something I'm already good at, Pomodoro is a kick start to get me on task.
@@ -57,7 +57,7 @@ Do a search on Stack Overflow to see if anyone has questions or is looking for c
 
 Write a blog post explaining the concept. Writing and explaining programming to others has been one of the most valuable experiences for me. It helps others while pushing me to really solidify my understanding.
 
-Don't let being new to programming hold you back either. If you started programming last week, there's someone who's starting today. A blog post written by a newbie who doesn't suffer from the [curse of knowledge](https://en.wikipedia.org/wiki/Curse_of_knowledge) may be exactly what they're looking for.
+Don't let being new to programming hold you back either. If you started programming last week, there's someone who's starting today. A blog post written by a newbie who doesn't suffer from the [curse of knowledge](https://en.wikipedia.org/wiki/Curse_of_knowledge){:target="_blank"} may be exactly what they're looking for.
 
 ### Be Patient
 

@@ -6,7 +6,7 @@ excerpt: >-
   Why are we still living with outdated child labor laws? If an ambitious teenager learns Photoshop and Illustrator why should anybody stop them from making money simply because they're under a certain age? 
 ---
 
-I recently managed to find [two](http://web.archive.org/web/20090830202605/http://geocities.com/ajmorgan25/) [screenshots](http://web.archive.org/web/20040511180502/http://www.geocities.com/ajmorgan25/) from the first website I ever made when I was around 12 years old. I have no idea what was going on in my brain at the time but for whatever reason I wanted to make my own website and design my own "forum sigs".
+I recently managed to find [two](http://web.archive.org/web/20090830202605/http://geocities.com/ajmorgan25/){:target="_blank"} [screenshots](http://web.archive.org/web/20040511180502/http://www.geocities.com/ajmorgan25/){:target="_blank"} from the first website I ever made when I was around 12 years old. I have no idea what was going on in my brain at the time but for whatever reason I wanted to make my own website and design my own "forum sigs".
 
 The website I made as a 12 year old and all my design work was a result of free resources. I wasn't learning this stuff in school and I wasn't paying anybody to teach me. It was an enjoyable hobby at the time and I discovered pleasure in making things that other people I knew online were using. Unfortunately, I think I was too young at the time to realize the potential of the work I was doing. The Internet was young and so was I. I believe those two factors combined led to me thinking I couldn't make something out of it.
 
@@ -20,15 +20,15 @@ If an ambitious teenager learns Photoshop and Illustrator why should anybody sto
 
 The number one fact people overlook when talking about child labor is that if children are working, often in developing nations, it's because their family has no other choice. One can argue about whether this is an inevitable stage in a developing country but the fact remains that children are often sent to work *by their parents*, not some white executive at Walmart. Children used to work on farms because there was a lot of work to be done. There was no other choice.
 
-Thankfully this hard physical labor isn't necessary for many of us today. We have a lot more options available to us. The means of production are becoming cheaper and more accessible every single day. Physical distance is becoming increasingly irrelevant. Even the very nature of what activities can earn a living are starting to be redefined. Just a few years ago telling someone you stream yourself playing video games would have seemed like a weird hobby. Today people make serious money [doing exactly that](https://www.twitch.tv/).
+Thankfully this hard physical labor isn't necessary for many of us today. We have a lot more options available to us. The means of production are becoming cheaper and more accessible every single day. Physical distance is becoming increasingly irrelevant. Even the very nature of what activities can earn a living are starting to be redefined. Just a few years ago telling someone you stream yourself playing video games would have seemed like a weird hobby. Today people make serious money [doing exactly that](https://www.twitch.tv/){:target="_blank"}.
 
 Nobody predicted any of this.
 
 We have no idea what the world is going to look like tomorrow. Child labor laws exist so we don't feel like barbarians. But in practice we don't care most of the time.
 
-We already make plenty of exceptions today. Is anyone going to stop a high schooler from earning ad revenue on YouTube for makeup tutorials? Is anyone going to stop the amibitious teenager who manages to convince a few local businesses to update their website? We even use the word child in certain job titles: child actor.
+We already make plenty of exceptions today. Is anyone going to stop a high schooler from earning ad revenue on YouTube for makeup tutorials? Is anyone going to stop the ambitious teenager who manages to convince a few local businesses to update their website? We even use the word child in certain job titles: child actor.
 
-I believe we [treat our youth like children](https://www.youtube.com/watch?v=_z4zGMGSS38) for far too long. They sit in classrooms listening, sitting still, and studying for 12+ years learning few practical skills. Child labor laws keep them out of the workforce. Minimum wage laws make inexperienced labor expensive and risky. Federally subsidized loans provide us all with the same "valuable" piece of paper with thousands of dollars in debt. And most college graduates are working shit jobs.
+I believe we [treat our youth like children](https://www.youtube.com/watch?v=_z4zGMGSS38){:target="_blank"} for far too long. They sit in classrooms listening, sitting still, and studying for 12+ years learning few practical skills. Child labor laws keep them out of the workforce. Minimum wage laws make inexperienced labor expensive and risky. Federally subsidized loans provide us all with the same "valuable" piece of paper with thousands of dollars in debt. And most college graduates are working shit jobs.
 
 Millennials were fucked from the start. Unfortunately a lot of people my age want to continue, or even amplify, this trend.
 
@@ -38,4 +38,4 @@ It shouldn't require four years for you to be a journalist at a media company. I
 
 ---
 
-If you made it this far and you like this post I talk about similar topics on my new podcast, The Adam Morgan Show. I wrote about starting it [here](http://atom-morgan.github.io/I-Started-a-Podcast) and you can find me on iTunes [here](https://itunes.apple.com/us/podcast/the-adam-morgan-show/id1088616591). If you decide to listen let me know [via Twitter](https://twitter.com/atommorgan) and I'll buy you a coffee/beer. For reals.
+If you made it this far and you like this post I talk about similar topics on my new podcast, The Adam Morgan Show. I wrote about starting it [here](http://atom-morgan.github.io/I-Started-a-Podcast){:target="_blank"} and you can find me on iTunes [here](https://itunes.apple.com/us/podcast/the-adam-morgan-show/id1088616591){:target="_blank"}. If you decide to listen let me know [via Twitter](https://twitter.com/atommorgan){:target="_blank"} and I'll buy you a coffee/beer. For reals.

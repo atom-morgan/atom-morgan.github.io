@@ -22,7 +22,7 @@ In this tutorial we're going to take a look at automated testing. Automated test
 
 Think about the functions we've written so far. We write a bit of code, we run it, and then we manually verify the code is giving us the result we expect. With automated testing, we can automate *ourselves* out of this process.
 
-We'll be taking a [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) (TDD) approach meaning we'll write our tests first. These tests will initially be failing (referred to as red in TDD) because the actual code hasn't been written yet. Then we'll write the code, run the test again, and (hopefully) verify that our tests are passing (referred to as green in TDD).
+We'll be taking a [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development){:target="_blank"} (TDD) approach meaning we'll write our tests first. These tests will initially be failing (referred to as red in TDD) because the actual code hasn't been written yet. Then we'll write the code, run the test again, and (hopefully) verify that our tests are passing (referred to as green in TDD).
 
 {% include email-list.html %}
 
@@ -50,9 +50,9 @@ touch webdev-testing.js
 
 ## Jasmine
 
-To test our code we'll need to leverage a testing framework. A testing framework provides us the tools we need to test our code without having to write all of it ourselves. The one we'll be using for this tutorial is [Jasmine](https://jasmine.github.io/).
+To test our code we'll need to leverage a testing framework. A testing framework provides us the tools we need to test our code without having to write all of it ourselves. The one we'll be using for this tutorial is [Jasmine](https://jasmine.github.io/){:target="_blank"}.
 
-Since our code has a dependency, Jasmine, we'll start by creating a `package.json` file using the `npm init` command (npm was installed way back when we installed Node.js in [Code Companion #2](https://atom-morgan.github.io/hello-world-in-javascript/)). Run the following command in the `webdev-testing` directory.
+Since our code has a dependency, Jasmine, we'll start by creating a `package.json` file using the `npm init` command (npm was installed way back when we installed Node.js in [Code Companion #2](https://atom-morgan.github.io/hello-world-in-javascript/){:target="_blank"}). Run the following command in the `webdev-testing` directory.
 
 ```console
 npm init
@@ -145,7 +145,7 @@ Here we create a variable `myValue` and assign it the value `true`. Then we call
 Following that is what's known as a "matcher", `toBe()`. The value provided here is the "expected value". So our test in plain English is, "Expect `myValue` to be `false`".
 
 <div class="box" markdown="1">
-The matcher `toBe()` is just one of many matchers provided to us by Jasmine which you can see [here](https://jasmine.github.io/api/edge/matchers.html).
+The matcher `toBe()` is just one of many matchers provided to us by Jasmine which you can see [here](https://jasmine.github.io/api/edge/matchers.html){:target="_blank"}.
 </div>
 
 To run this test open a terminal and navigate to the `webdev-testing` directory. Then run `jasmine`.
@@ -169,7 +169,7 @@ With the value of `myValue` updated to `false` we can now run Jasmine again with
 
 ## Updating Date
 
-Let's continue by writing a test for a new and better `Date`, specifically a function to provide us with the current day of the week in English as we did in [Code Companion #5](https://atom-morgan.github.io/functions/).
+Let's continue by writing a test for a new and better `Date`, specifically a function to provide us with the current day of the week in English as we did in [Code Companion #5](https://atom-morgan.github.io/functions/){:target="_blank"}.
 
 First, we'll start by writing a failing (red) test for our code.
 
@@ -208,7 +208,7 @@ describe('BetterDate', function() {
 });
 ```
 
-In this constructor function is a `now` property that's set to an instance of `Date` using the `date` parameter. Then we define the `getDay` function with an implementation that should look similar to one we wrote in [Code Companion #5](https://atom-morgan.github.io/functions/).
+In this constructor function is a `now` property that's set to an instance of `Date` using the `date` parameter. Then we define the `getDay` function with an implementation that should look similar to one we wrote in [Code Companion #5](https://atom-morgan.github.io/functions/){:target="_blank"}.
 
 Run `jasmine` and you should now see this test in a passing (green) state.
 

@@ -6,14 +6,14 @@ excerpt: >-
   The issue here is that Peter Thiel does not conform to the politics of the Valley and they want him out.
 ---
 
-The political and social climate of Silicon Valley was summed up perfectly today. Investor Peter Thiel, a man who [has gay sex but isn't gay](http://www.advocate.com/commentary/2016/10/14/peter-thiel-shows-us-theres-difference-between-gay-sex-and-gay), spoke at the National Press Club to defend his decision to support Donald Trump. He's the only prominent figure within tech, and industry at the forefront of diversity and inclusion, to publicly support Donald Trump and the backlash was so severe he's forced to *defend* it.
+The political and social climate of Silicon Valley was summed up perfectly today. Investor Peter Thiel, a man who [has gay sex but isn't gay](http://www.advocate.com/commentary/2016/10/14/peter-thiel-shows-us-theres-difference-between-gay-sex-and-gay){:target="_blank"}, spoke at the National Press Club to defend his decision to support Donald Trump. He's the only prominent figure within tech, and industry at the forefront of diversity and inclusion, to publicly support Donald Trump and the backlash was so severe he's forced to *defend* it.
 
 The issue here is that Peter Thiel does not conform to the politics of the Valley and they want him out. They'll even make things up to defame him.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Why is it hard to understand why Thiel supports Trump? <br><br>He doesn&#39;t think women should vote. How could he think one should be President?</p>&mdash; Aditya Sood (@adityasood) <a href="https://twitter.com/adityasood/status/793107590880165888">October 31, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Just Google "Peter Thiel Women" and you'll see [plenty](http://www.huffingtonpost.com/entry/peter-thiel-women-democracy_us_5747079be4b03ede4413f6f5) [of](http://gawker.com/5231390/facebook-backer-wishes-women-couldnt-vote) [articles](https://mic.com/articles/156922/peter-thiel-facebook-donald-trump-donation-diversity-inclusion#.YM4qGv0Ry) with similar claims that Thiel is against women having the right to vote.
+Just Google "Peter Thiel Women" and you'll see [plenty](http://www.huffingtonpost.com/entry/peter-thiel-women-democracy_us_5747079be4b03ede4413f6f5){:target="_blank"} [of](http://gawker.com/5231390/facebook-backer-wishes-women-couldnt-vote){:target="_blank"} [articles](https://mic.com/articles/156922/peter-thiel-facebook-donald-trump-donation-diversity-inclusion#.YM4qGv0Ry){:target="_blank"} with similar claims that Thiel is against women having the right to vote.
 
 Here's the statement they're referring to:
 

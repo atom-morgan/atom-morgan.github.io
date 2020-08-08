@@ -18,13 +18,13 @@ When I first started learning front-end development using AngularJS, I would wor
 
 ## Setup
 
-If you haven't already, you'll first need to install the [Angular CLI](https://cli.angular.io/).
+If you haven't already, you'll first need to install the [Angular CLI](https://cli.angular.io/){:target="_blank"}.
 
 ```console
 npm install -g @angular/cli
 ```
 
-If you never worked with AngularJS, you have no idea how much easier this CLI makes it for beginners who are just starting out. I wish there was an equivelant back then!
+If you never worked with AngularJS, you have no idea how much easier this CLI makes it for beginners who are just starting out. I wish there was an equivalent back then!
 
 Once the CLI is installed, you can then create a new application.
 
@@ -67,7 +67,7 @@ export class FightersService {
 }
 ```
 
-Within this file we need to import `of` from `rxjs`. This is what allows us to create an observable—the [default return value](https://angular.io/tutorial/toh-pt6#http-methods-return-one-value) in Angular for HTTP requests.
+Within this file we need to import `of` from `rxjs`. This is what allows us to create an observable—the [default return value](https://angular.io/tutorial/toh-pt6#http-methods-return-one-value){:target="_blank"} in Angular for HTTP requests.
 
 ```typescript
 import { of } from 'rxjs';

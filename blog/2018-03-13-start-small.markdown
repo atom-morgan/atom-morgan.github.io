@@ -36,4 +36,4 @@ Don't be too ambitious at first. Be realistic. But at the very least, specify a 
 
 ---
 
-If you're interested in learning web development I have a book, *The Angular Tutorial*, that's scheduled to be released in April. Sign up for the mailing list [here](http://www.angulartutorial.org/) to be notified when it's available.
+If you're interested in learning web development I have a book, *The Angular Tutorial*, that's scheduled to be released in April. Sign up for the mailing list [here](http://www.angulartutorial.org/){:target="_blank"} to be notified when it's available.

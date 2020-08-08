@@ -18,7 +18,7 @@ style: code
 
 ## Introduction
 
-In the [previous tutorial](http://atom-morgan.github.io/hello-world-in-javascript/) we took our first look at JavaScript by writing three variations of a "Hello, world" program using JavaScript in a `.html` file, JavaScript in a REPL, and finally JavaScript in a `.js` file. In those programs we briefly introduced the concept of a string by passing the string `Hello, world!` to `console.log()`.
+In the [previous tutorial](http://atom-morgan.github.io/hello-world-in-javascript/){:target="_blank"} we took our first look at JavaScript by writing three variations of a "Hello, world" program using JavaScript in a `.html` file, JavaScript in a REPL, and finally JavaScript in a `.js` file. In those programs we briefly introduced the concept of a string by passing the string `Hello, world!` to `console.log()`.
 
 In this tutorial we're going to take another look at the JavaScript we wrote and introduce some of the other data types that are available to us.
 
@@ -119,7 +119,7 @@ console.log(lastName);
 Enter `node data-types.js` to run this program and you'll see both `firstName` and `lastName` are printed to the screen even though one string was enclosed in single quotes and the other in double quotes.
 
 <div class="box" markdown="1">
-The identifiers here are written using what's known as [Camel case](https://en.wikipedia.org/wiki/Camel_case). This helps make identifiers a bit more legible at first glance. For example, compare the identifier `firstname` with `firstName`. Both identifiers are valid identifiers but it's common within the JavaScript world to use camel case.
+The identifiers here are written using what's known as [Camel case](https://en.wikipedia.org/wiki/Camel_case){:target="_blank"}. This helps make identifiers a bit more legible at first glance. For example, compare the identifier `firstname` with `firstName`. Both identifiers are valid identifiers but it's common within the JavaScript world to use camel case.
 </div>
 
 The one scenario where strings can get a little weird is when you have single or double quotes inside of a string.
@@ -160,7 +160,7 @@ Neither option is right or wrong, it's purely a matter of personal preference. Y
 
 ### Number
 
-The next data type available to us is the number type. Unlike strings which have no real parallel in the real world (we don't refer to characters, words, or sentences as strings) numbers are a bit more straightfoward.
+The next data type available to us is the number type. Unlike strings which have no real parallel in the real world (we don't refer to characters, words, or sentences as strings) numbers are a bit more straightforward.
 
 ```javascript
 let pi = 3.14;
@@ -182,7 +182,7 @@ console.log(3 / 4); // 0.75
 ```
 
 <div class="box" markdown="1">
-These are just some of the mathematical operators available to us in JavaScript and you can see a more complete list [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators). We'll start to introduce more of these as we progress.
+These are just some of the mathematical operators available to us in JavaScript and you can see a more complete list [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators){:target="_blank"}. We'll start to introduce more of these as we progress.
 </div>
 
 ### Boolean
@@ -386,7 +386,7 @@ if (user) {
 
 Run this program and you should see `Goodbye!` printed to the screen.
 
-As you can now see, removing the value assignment from our variable declaration has resulted in `user` now being evaluted as "falsy" rather than "truthy". That's a result of `user` now being `undefined` which is a "falsy" value in JavaScript. The list below is what's ["falsy" in JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/Falsy).
+As you can now see, removing the value assignment from our variable declaration has resulted in `user` now being evaluted as "falsy" rather than "truthy". That's a result of `user` now being `undefined` which is a "falsy" value in JavaScript. The list below is what's ["falsy" in JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/Falsy){:target="_blank"}.
 
 ```javascript
 // Falsy values in JavaScript
@@ -453,6 +453,6 @@ console.log(userObject.computer[0].manufacturer); // ?
 console.log(userObject.computer[1].manufacturer); // ?
 ```
 
-In the [next tutorial](http://atom-morgan.github.io/properties-and-methods/) we'll take a look at some of the properties provided to us by data types. We'll also take a closer look at functions by writing some of our own.
+In the [next tutorial](http://atom-morgan.github.io/properties-and-methods/){:target="_blank"} we'll take a look at some of the properties provided to us by data types. We'll also take a closer look at functions by writing some of our own.
 
 {% include book-plug.html %}

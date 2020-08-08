@@ -9,17 +9,17 @@ image: '/images/learning-korean-on-twitch.png'
 thumb_image: '/images/learning-korean-on-twitch.png'
 ---
 
-Over the past 10 years or so there have been a handful of difficult skills I've picked up along the way: drumming, programming, drawing, and [gymnastics/calisthenics](https://www.instagram.com/adamjmorgan/).
+Over the past 10 years or so there have been a handful of difficult skills I've picked up along the way: drumming, programming, drawing, and [gymnastics/calisthenics](https://www.instagram.com/adamjmorgan/){:target="_blank"}.
 
 Get good at anything and eventually you'll get the inevitable questions like, "Hey I'm thinking about learning ${skill}. Got any tips?"
 
 I'm all for avoiding wasted effort in the early stages but more often than not a lot of people simply don't know how to get started. Most people don't know *how to learn*.
 
-When it comes to drawing or calisthenics, I'll point them towards some resources I've used or tell them to check my [Instagram](https://www.instagram.com/adamjmorgan/) to see my progression over the past few years.
+When it comes to drawing or calisthenics, I'll point them towards some resources I've used or tell them to check my [Instagram](https://www.instagram.com/adamjmorgan/){:target="_blank"} to see my progression over the past few years.
 
 But recently I decided I want to take an entirely different approach with a completely new skill by learning a foreign language—Korean. More importantly, I'm going to be doing it all publicly. For lack of a better term, I'm "open sourcing" the entire learning process.
 
-Rather than learning a new language on my own and then publishing a blog post or YouTube video about the process once I'm fluent detailing how I did it, I've decided to [livestream the entire process on Twitch](https://www.twitch.tv/clo5ure).
+Rather than learning a new language on my own and then publishing a blog post or YouTube video about the process once I'm fluent detailing how I did it, I've decided to [livestream the entire process on Twitch](https://www.twitch.tv/clo5ure){:target="_blank"}.
 
 I'll be learning publicly and failing publicly. Live.
 
@@ -31,7 +31,7 @@ I imagine many people tuning into my stream will either know Korean already or b
 
 ### Accountability
 
-Doing this publicly will make me more disciplined about learning Korean. I'll not only want to keep my audience happy by continuing to stream my process but publicly stating a goal puts your name and reputation on the goal. It worked for [self-publishing my first book](https://www.theangulartutorial.org/) so I figured it can't hurt to do it here either.
+Doing this publicly will make me more disciplined about learning Korean. I'll not only want to keep my audience happy by continuing to stream my process but publicly stating a goal puts your name and reputation on the goal. It worked for [self-publishing my first book](https://www.theangulartutorial.org/){:target="_blank"} so I figured it can't hurt to do it here either.
 
 ### Novelty
 
@@ -45,4 +45,4 @@ Whether it's experimenting with different resources, describing how I memorize o
 
 #### Find me on Twitch
 
-If you want to follow along, feel free to follow me on Twitch at [https://www.twitch.tv/clo5ure](https://www.twitch.tv/clo5ure). I stream almost daily but even if I don't stream, I find the time to study Korean everyday.
+If you want to follow along, feel free to follow me on Twitch at [https://www.twitch.tv/clo5ure](https://www.twitch.tv/clo5ure){:target="_blank"}. I stream almost daily but even if I don't stream, I find the time to study Korean everyday.

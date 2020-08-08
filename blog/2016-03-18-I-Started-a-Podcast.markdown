@@ -16,4 +16,4 @@ Eventually it started to gain some traction. It had a bigger following than ever
 
 Unfortunately I started to lose interest in the blog and the platform after some time and I recently deleted it. Now, just like in college, I'm at a point where I want to continue sharing my thoughts. Programming as a career isn't the fairy tale tech tries to sell you. Millennials are fucked in a lot of ways. The economy and higher education are in a horrible state where most people my age are tens of thousands in debt with a piece of paper that gets them nothing. But I don't like writing enough just to do that.
 
-A podcast it is, then. If you like my writing, tweets, or you're curious about my thoughts on current events, politics, and technology you can find my podcast [The Adam Morgan Show](http://goo.gl/xzalp1) on iTunes.
+A podcast it is, then. If you like my writing, tweets, or you're curious about my thoughts on current events, politics, and technology you can find my podcast [The Adam Morgan Show](http://goo.gl/xzalp1){:target="_blank"} on iTunes.

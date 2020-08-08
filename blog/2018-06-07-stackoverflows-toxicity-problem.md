@@ -40,12 +40,12 @@ Yeah, that's real. And guess what? I have no problem describing it as a horrible
 
 1. **Provide context** - Does changing your password work when hitting the API directly using something like Postman or cURL? If so, say so. It helps isolate the problem.
 1. **Show your code** - It's hard to help if you don't provide code. Make it as easy as possible for the person helping to actually be able to run your code too.
-1. **Use code formatting** - Places like Stack Overflow allow you to format your code using backticks (`` ` ``). Use them. Nobody wants to read through a wall of unformatted code. (Thanks to Stack Overflow I learned [how to escape a backtick within backticks](https://stackoverflow.com/a/25943045/2501330) while writing this avoiding yet another question about it.)
+1. **Use code formatting** - Places like Stack Overflow allow you to format your code using backticks (`` ` ``). Use them. Nobody wants to read through a wall of unformatted code. (Thanks to Stack Overflow I learned [how to escape a backtick within backticks](https://stackoverflow.com/a/25943045/2501330){:target="_blank"} while writing this avoiding yet another question about it.)
 1. **What have you tried?** - Similar to context, provide some details about what you've already tried to resolve the issue.
 
 All of these go a long way towards showing that you actually care and appreciate the help. You took the time to craft a question and it's usually much easier to answer a well crafted question than that "question" I listed earlier.
 
-Take a look at [this question](https://stackoverflow.com/questions/18803371/my-get-request-isnt-found-in-my-urls-py) I asked back in 2013. I provide context about what it is I'm trying to accomplish, I use code formatting, I show the code in question with an external link to more code, and I provide a brief summary of how I've tried to debug the issue. And yet, despite it being a beginner question, I received a very friendly [answer](https://stackoverflow.com/a/18803401/2501330).
+Take a look at [this question](https://stackoverflow.com/questions/18803371/my-get-request-isnt-found-in-my-urls-py){:target="_blank"} I asked back in 2013. I provide context about what it is I'm trying to accomplish, I use code formatting, I show the code in question with an external link to more code, and I provide a brief summary of how I've tried to debug the issue. And yet, despite it being a beginner question, I received a very friendly [answer](https://stackoverflow.com/a/18803401/2501330){:target="_blank"}.
 
 ### Don't be the "use X instead" comment
 
@@ -55,7 +55,7 @@ Guess what? Beginners don't even understand how a for loop works. That's why the
 
 But instead of helping them, you whip out your dick and knowledge drop map. Guess what? Now the person asking about the for loop is questioning the tutorial or book or video course they're using because some people on Stack Overflow are saying real developers don't use for loops. Now they're questioning whether to continue learning because they don't want to waste their time.
 
-Help the beginner learn how a fucking for loop works. They're not ready for map. If you don't understand how that can be possible, you're [cursed with knowledge](https://en.wikipedia.org/wiki/Curse_of_knowledge).
+Help the beginner learn how a fucking for loop works. They're not ready for map. If you don't understand how that can be possible, you're [cursed with knowledge](https://en.wikipedia.org/wiki/Curse_of_knowledge){:target="_blank"}.
 
 ### You'll never make everyone happy
 
