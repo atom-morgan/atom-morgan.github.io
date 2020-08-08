@@ -5,6 +5,8 @@ layout: post
 tag: [post, tutorial, cc]
 image: '/images/embrace-the-suck/blog-embrace-the-suck.png'
 thumb_image: '/images/embrace-the-suck/blog-embrace-the-suck.png'
+excerpt: >-
+  Learning how to code is like exercise. It's affordable, it's accessible, and the benefits are amazing. But it also takes self-discipline and a lot of patience. So before people ever see results, they quit.
 ---
 
 Learning a new skill is difficult. It's easy to give up and it's easy to beat yourself up. So this week and I want to take a quick break from coding to offer you some words of encouragement. Hopefully this will help you solidify your drive to learn how to program.

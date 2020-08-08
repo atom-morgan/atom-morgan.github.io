@@ -2,6 +2,8 @@
 title: "Why Ideas Are Cheap"
 date: '2015-01-26'
 layout: post
+excerpt: >-
+  If I won't part with $25 dollars without confirmation that a product has been validated by the market on Amazon, why would an investor hand you hundreds of thousands of dollars for a business idea with no users?
 ---
 
 I was recently contacted by someone looking for help with their startup. They're planning on releasing an alpha version within the next few weeks and they wanted me to help polish things up on the front-end and potentially join their team to lead their front-end development. We set up a time to talk and started going into the details of their business. It didn't take long before I asked them how they planned on making money [1].
@@ -14,7 +16,7 @@ I just recently ordered tea online from a company a friend recommended. I didn't
 
 Shortly after, I decided I needed to either buy a tea infuser or a travel mug with an internal tea infuser since I'd never purchased loose leaf tea in the past. Since I decided I'd probably want to have a few glasses throughout the day at work, I decided to purchase a travel mug.
 
-So I went on Amazon and did a quick search. I scrolled through the first page openeing a new tab for each mug that looked nice and had at least a 4 star rating. Then I took a little more time to skim through the product descriptions and read some of the top voted user reviews.
+So I went on Amazon and did a quick search. I scrolled through the first page opening a new tab for each mug that looked nice and had at least a 4 star rating. Then I took a little more time to skim through the product descriptions and read some of the top voted user reviews.
 
 The most any of these travel mugs would cost me is about $25. Just $25 dollars on a travel mug for my new tea and I made it a point to do some research on a few mugs as well as read a handful of reviews for each one. These reviews are the key point of my purchase because it proves market acceptance. These people already own the product and speak highly of it. They even took the time to write a review about it. Hundreds or even thousands of people have given positive feedback about this item.
 

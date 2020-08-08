@@ -2,6 +2,8 @@
 title: "In Defense of Douglas Crockford"
 date: '2016-09-03'
 layout: post
+excerpt: >-
+  Two days ago the tech conference Nodevember announced that they would be removing a keynote speaker from their lineup in an effort to make their conference a more comfortable environment for all attendees.
 ---
 
 Two days ago the tech conference Nodevember announced that they would be removing a keynote speaker from their lineup in an effort to make their conference a more comfortable environment for all attendees.

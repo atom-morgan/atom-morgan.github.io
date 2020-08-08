@@ -2,6 +2,8 @@
 title: "Exclusion in Diversity and Inclusion Initiatives"
 date: '2016-12-02'
 layout: post
+excerpt: >-
+  All of these groups and many others seem to ignore the fact that any group, no matter how hard you try, will be exclusionary to some degree.
 ---
 
 The two biggest virtue signaling buzzwords in tech right now are "diversity" and "inclusion". Tech is supposedly an industry rampant with racist and misogynistic white men using despicable hiring criteria like "culture fit" – how dare you want to work with people you'd enjoy being around five days a week – which does nothing but deter people within underrepresented groups from tech.

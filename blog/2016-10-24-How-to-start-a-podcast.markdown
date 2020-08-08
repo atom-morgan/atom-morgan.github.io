@@ -3,6 +3,8 @@ title: "How to Start a Podcast"
 date: '2016-10-24'
 layout: post
 tag: tutorial
+excerpt: >-
+  Two guides (bare minimum and advanced) for getting up and running with a podcast
 ---
 
 I've had some people reach out to me asking how I went about starting my podcast. *What equipment do you use? What do I need to get started? How much does it cost? How do I get on iTunes?* To help anyone who wants to start a podcast I decided to write a guide on how to get started with the knowledge I've acquired over the past 9 months that I've been podcasting.

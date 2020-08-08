@@ -2,6 +2,8 @@
 title: "The prisoner's dilemma of the UFC"
 date: '2014-03-25'
 layout: post
+excerpt: >-
+  While there were many legitimate reasons for introducing weight classes, it has produced unintended consequences that affect the health of the fighters.
 ---
 
 Since the UFC’s debut in 1993, the sport has seen many changes in its rules both for entertainment purposes as well as a means to increase the level of protection for the fighters. In the early days of the UFC, fighters entered the octagon without gloves and would fight to the finish. A fight could only end through submission, knockout, a referee stoppage, or the classic throwing of the towel. Fighters today wear gloves and compete in fights that are typically three or five rounds that last five minutes each. Perhaps the most significant change was the introduction of weight classes. Now, fighters are matched against other fighters of similar and nearly identical weight.

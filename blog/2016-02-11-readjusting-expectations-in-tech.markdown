@@ -2,6 +2,8 @@
 title: "Readjusting Expectations in Tech"
 date: '2016-02-11'
 layout: post
+excerpt: >-
+  Just as I'd expected something different transitioning from grade to grade in school, I'd done the same switching companies and industries. I'd expected something to change and the only real difference was my work.
 ---
 
 > "If a student of any discipline could avoid ever repeating the same mistake twice, they would skyrocket to the top of their field."

@@ -2,6 +2,8 @@
 title: "What Peter Thiel Never Said"
 date: '2016-10-31'
 layout: post
+excerpt: >-
+  The issue here is that Peter Thiel does not conform to the politics of the Valley and they want him out.
 ---
 
 The political and social climate of Silicon Valley was summed up perfectly today. Investor Peter Thiel, a man who [has gay sex but isn't gay](http://www.advocate.com/commentary/2016/10/14/peter-thiel-shows-us-theres-difference-between-gay-sex-and-gay), spoke at the National Press Club to defend his decision to support Donald Trump. He's the only prominent figure within tech, and industry at the forefront of diversity and inclusion, to publicly support Donald Trump and the backlash was so severe he's forced to *defend* it.

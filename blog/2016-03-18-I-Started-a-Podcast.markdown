@@ -2,6 +2,8 @@
 layout: post
 title: "I Started a Podcast"
 date: '2016-03-18'
+excerpt: >-
+  If you like my writing, tweets, or you're curious about my thoughts on current events, politics, and technology you can find my podcast The Adam Morgan Show on iTunes.
 ---
 
 I started a podcast. I've wanted to start my own for a long time but as usual I tend to sit on an idea for a long time before I finally act on it. Sometimes I think this is a bad trait but I wonder if it serves as a mechanism for me to internally test my level of commitment before jumping in.

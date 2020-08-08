@@ -2,11 +2,13 @@
 title: "Start Small and Show Up"
 date: '2018-03-13'
 layout: post
+excerpt: >-
+  The biggest error people make when building a new habit is to go from 0 to 100 overnight.
 ---
 
 I've previously shared some tactics I use to <a href="http://atom-morgan.github.io/learning-and-motivation" target="_blank">motivate myself to learn</a>. I thought I'd take some time to add some more detail to one of those sections, "Start small and show up", which is a tactic I used when writing my book, <a href="http://www.angulartutorial.org/" target="_blank">*The Angular Tutorial*</a>, which is scheduled to be released next month.
 
-I think the biggest error people make when building a new habit is to go from 0 to 100 overnight. This approach is not only nearly impossible but demoralizing as well. Your first step towards a new habit will be a failure to take the first, gigantic step you've set up for yourself.
+The biggest error people make when building a new habit is to go from 0 to 100 overnight. This approach is not only nearly impossible but demoralizing as well. Your first step towards a new habit will be a failure to take the first, gigantic step you've set up for yourself.
 
 It's far better to be realistic with your goals. It not only makes the first step attainable but it also gives you the positive feedback that will help motivate you to take another step.
 

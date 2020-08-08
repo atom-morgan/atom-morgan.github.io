@@ -4,7 +4,7 @@ date: '2018-05-09'
 layout: post
 tag: career
 excerpt: >-
-  Technical interviews aren't fun. Every single person I know in the industry hates how companies conduct technical interviews but they all keep doing the same thing. So until things change, how should you prepare for the interview? Here are a few tips I've learned since I entered the industry.
+  Technical interviews aren't fun. Here are a few tips I've learned since I entered the industry.
 image: ""
 ---
 

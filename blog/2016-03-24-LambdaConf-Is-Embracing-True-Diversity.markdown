@@ -2,6 +2,8 @@
 title: "LambdaConf Is Embracing True Diversity"
 date: '2016-03-24'
 layout: post
+excerpt: >-
+  Most initiatives for diversity in tech are political in nature. It has nothing to do with true diversity and inclusion as we're seeing with the backlash against LamdbaConf.
 ---
 
 Tech is a weird place right now. There aren't enough programmers who are women, gay, or people of races other than white and Asian. Diversity is great as long as you agree with the conventional definition of diversity. How inclusive, right?

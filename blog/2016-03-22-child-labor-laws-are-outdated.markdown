@@ -2,6 +2,8 @@
 title: "Child Labor Laws Are Outdated"
 date: '2016-03-22'
 layout: post
+excerpt: >-
+  Why are we still living with outdated child labor laws? If an ambitious teenager learns Photoshop and Illustrator why should anybody stop them from making money simply because they're under a certain age? 
 ---
 
 I recently managed to find [two](http://web.archive.org/web/20090830202605/http://geocities.com/ajmorgan25/) [screenshots](http://web.archive.org/web/20040511180502/http://www.geocities.com/ajmorgan25/) from the first website I ever made when I was around 12 years old. I have no idea what was going on in my brain at the time but for whatever reason I wanted to make my own website and design my own "forum sigs".

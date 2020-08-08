@@ -2,6 +2,8 @@
 title: "Asians: Tech's Invisible Minority"
 date: '2016-05-09'
 layout: post
+excerpt: >-
+  So what's causing Asian men and Asian women to outperform whites? And more importantly, why isn't this racial discrepancy being addressed when we're talking about white privilege and a lack of diversity?
 ---
 
 Another day in tech is another day with a [new initiative](http://techcrunch.com/2016/05/03/ellen-pao-freada-kapor-klein-and-others-form-tech-diversity-and-inclusion-war-room/) advocating for more diversity and inclusion within the industry. This initiative, [Project Include](http://projectinclude.org/), is being led by well-known women in tech who seem to be working towards making entire careers out of this made up problem.
@@ -20,7 +22,7 @@ Project Include's [case studies](http://projectinclude.org/case_studies/) provid
 
 > If a nonbinary employee has come out or is experiencing problems at work, do not belittle, undermine, or invalidate their gender. Instead of guessing about the language a nonbinary employee uses to describe themselves, managers should simply ask. Managers should be aware that phrases suggesting that gender is a choice  —  like “identifies as” or “prefers to be called”  —  can feel dismissive to some nonbinary people. Affirmative, clear phrases like “she uses female pronouns” or “her name is Belinda” set an inclusive example for the team.
 
-Ignoring the possiblity that some nonbinary people probably don't give a fuck about something like this (find any gay person who no longer cares about the word fag) why wouldn't a group like Project Include strive to include *all* people who feel belittled by their peers regardless of what that reason may be?
+Ignoring the possibility that some nonbinary people probably don't give a fuck about something like this (find any gay person who no longer cares about the word fag) why wouldn't a group like Project Include strive to include *all* people who feel belittled by their peers regardless of what that reason may be?
 
 Facebook has made news recently with two examples that aren't much different than the case study example if you don't assume that gender identity is inherently more important than political affiliation.
 

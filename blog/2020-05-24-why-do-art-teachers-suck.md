@@ -6,6 +6,8 @@ tag: post
 excerpt: ""
 image: '/images/why-do-art-teachers-suck.png'
 thumb_image: '/images/why-do-art-teachers-suck.png'
+excerpt: >-
+  If a kid spends all of their creative time drawing Iron Man and The Hulk, why are they learning about Pablo Picasso on Day 1 of art class? Shouldn't they be spending more time drawing exactly what they want to draw?
 ---
 
 I was recently listening to David Choe on The Joe Rogan Experience. He's the guy who made millions painting Facebook's office, way before they were big, in exchange for stock.

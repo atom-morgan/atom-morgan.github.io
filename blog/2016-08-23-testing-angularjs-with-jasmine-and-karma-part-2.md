@@ -5,6 +5,8 @@ tag: tutorial
 thumb_image: "/images/scotch-2.png"
 image: "/images/scotch-2.png"
 layout: post
+excerpt: >-
+  One part of my AngularJS testing tutorials for Scotch.io
 ---
 
 <ul class="actions fit">
