@@ -5,10 +5,8 @@ title: About Me
 layout: page
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel venenatis augue. Suspendisse tincidunt, nibh eget sodales eleifend, lectus magna elementum lorem, ut bibendum tellus turpis quis risus. Vivamus sagittis enim est, et semper lectus hendrerit ut.
+I started my career in marketing consulting working with a variety of Fortune 500 companies. My main focus was data analysis but after coding a few internal tools I eventually decided to quit my job and enter the tech industry.
 
->The world always seems brighter when you’ve just made something that wasn’t there before. - Neil Gaiman
+Since then I spend most of my time working with JavaScript and MEAN stacks. I've worked in a variety of environments ranging from Fortune 500 companies to startups and creative agencies. Across these companies, I've taken various roles ranging from full-stack development to UI design and UX research.
 
-In sollicitudin imperdiet turpis quis accumsan. Pellentesque euismod turpis et nisi fermentum accumsan. Sed mollis vehicula augue sit amet accumsan. Nunc mollis, risus sed ullamcorper bibendum, odio est molestie tellus, venenatis rutrum mauris nibh at nibh. In a auctor leo, eu pretium ante. Quisque faucibus tincidunt fringilla. Donec tempor accumsan ante, in cursus metus tincidunt at. Proin sit amet ligula sed libero consequat consectetur eu tincidunt nulla. 
-
-*Thank You for reading!*
+If you'd like to get in touch feel free to send me an email at [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com){:target="_blank"}. You can also follow me on <a href="https://twitter.com/atommorgan" target="_blank">Twitter</a> and <a href="https://github.com/atom-morgan" target="_blank">Github</a>.
