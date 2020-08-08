@@ -1,14 +1,14 @@
-title: Stackbit Exto Theme
+title: Adam Morgan
 baseurl: /
 permalink: '/:title/'
 collections:
   posts:
     permalink: '/posts/:title/'
-description: A portfolio theme with a blog
+description: Adam Morgan - Software Engineer and Designer
 color_scheme: light
-accent_color: pink
+accent_color: blue
 header:
-  title: Exto
+  title: Adam
   has_nav: true
   nav_links:
     - label: Home
@@ -20,9 +20,9 @@ header:
     - label: Blog
       url: /blog/
       style: link
-    - label: Style Guide
-      url: /style-guide/
-      style: link
+    # - label: Style Guide
+    #   url: /style-guide/
+    #   style: link
     - label: About
       url: /about/
       style: link
@@ -30,36 +30,36 @@ header:
       url: /contact/
       style: link
 footer:
-  content: '&copy; Stackbit-Exto. All rights reserved.'
-  links:
-    - label: Made with Stackbit.
-      url: 'https://www.stackbit.com'
-      style: link
-      new_window: true
+  content: 'Adam Morgan'
+  # links:
+  #   - label: Made with Stackbit.
+  #     url: 'https://www.stackbit.com'
+  #     style: link
+  #     new_window: true
   has_social: true
   social_links:
     - label: Twitter
-      url: 'https://twitter.com/'
+      url: 'https://twitter.com/atommorgan'
       style: icon
       icon_class: fa-twitter
       new_window: true
     - label: Instagram
-      url: 'https://www.instagram.com/'
+      url: 'https://www.instagram.com/adamjmorgan/'
       style: icon
       icon_class: fa-instagram
       new_window: true
     - label: Dribbble
-      url: 'https://dribbble.com/'
+      url: 'https://dribbble.com/atommorgan'
       style: icon
       icon_class: fa-dribbble
       new_window: true
     - label: LinkedIn
-      url: 'https://www.linkedin.com/'
+      url: 'https://www.linkedin.com/in/atommorgan/'
       style: icon
       icon_class: fa-linkedin
       new_window: true
 sass:
-  indentWidth: 4
+  indentWidth: 2
   style: nested
   precision: 10
 plugins:
