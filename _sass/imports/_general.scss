@@ -18,7 +18,7 @@ body {
 }
 
 a {
-  border-bottom: 1px solid currentColor;
+  // border-bottom: 1px solid currentColor;
   color: _palette(accent);
   text-decoration: none;
   -webkit-transition: .3s ease;
@@ -143,6 +143,24 @@ blockquote {
     &:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+.code blockquote {
+  font-size: 1.44em;
+  margin: 3em 0;
+
+  &:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f05a";
+    color: _palette(accent);
+    font-size: 1.3em;
+    position: absolute;
+    top: 4px;
+  }
+
+  p {
+    margin-left: 8px;
   }
 }
 
