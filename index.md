@@ -4,10 +4,9 @@ hide_title: true
 sections:
   - section_id: hero
     type: section_hero
-    title: 'Hi, I''m Stackbit Exto Portfolio Theme.'
+    title: 'Hi, I''m Adam Morgan.'
     content: >-
-      This section can contain a subtitle or tagline. The recommended length is
-      one to three sentences, but can be changed as you prefer.
+      I'm a full-stack software engineer and designer.
     actions:
       - label: Let's talk
         url: /contact
@@ -22,8 +21,8 @@ sections:
     view_all_url: portfolio
   - section_id: services
     type: section_grid
-    title: What We Do
-    subtitle: An optional subtitle of the section
+    title: What I Do
+    # subtitle: An optional subtitle of the section
     col_number: two
     is_numbered: true
     grid_items:
@@ -49,7 +48,7 @@ sections:
   - section_id: testimonials
     type: section_testimonials
     title: Testimonials
-    subtitle: An optional subtitle of the section
+    # subtitle: An optional subtitle of the section
     col_number: three
     testimonials:
       - author: Sean Salazar
@@ -71,7 +70,7 @@ sections:
   - section_id: latest-posts
     type: section_posts
     title: Latest from the Blog
-    subtitle: An optional subtitle of the section
+    # subtitle: An optional subtitle of the section
     posts_number: 3
     col_number: three
     actions:

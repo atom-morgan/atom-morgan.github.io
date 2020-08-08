@@ -1,6 +1,6 @@
 ---
 title: Blog
-subtitle: 'News, tips and highlights'
+subtitle: 'Knowledge and opinions I found interesting enough to share'
 hide_title: false
 col_number: three
 layout: blog
