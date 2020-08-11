@@ -1,9 +1,9 @@
 ---
-title: Project Title 6
-subtitle: Optional Project Subtitle
+title: The Angular Tutorial
+subtitle: Amazon's highest rated book on Angular and automated testing
 date: '2018-12-18'
-thumb_image: images/6_thumb.jpg
-image: images/6.jpg
+thumb_image: images/portfolio/book.jpg
+image: images/portfolio/book.jpg
 layout: project
 ---
 

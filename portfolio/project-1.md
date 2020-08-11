@@ -1,9 +1,9 @@
 ---
-title: Project Title 1
-subtitle: Optional Project Subtitle
+title: Seraph Group Investment Firm
+subtitle: Remote pitching for investors and entrepreneurs
 date: '2019-05-10'
-thumb_image: images/1_thumb.jpg
-image: images/1.jpg
+thumb_image: images/portfolio/seraph.jpg
+image: images/portfolio/seraph.jpg
 layout: project
 ---
 

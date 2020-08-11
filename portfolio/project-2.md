@@ -1,9 +1,9 @@
 ---
-title: Project Title 2
-subtitle: Optional Project Subtitle
+title: Shocase Sports
+subtitle: Web platform for athletes to promote their talent, enter regional challenges, and connect with talent scouts
 date: '2019-04-30'
-thumb_image: images/2_thumb.jpg
-image: images/2.jpg
+thumb_image: images/portfolio/shocase.jpg
+image: images/portfolio/shocase.jpg
 layout: project
 ---
 

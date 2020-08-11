@@ -1,9 +1,9 @@
 ---
-title: Project Title 5
-subtitle: Optional Project Subtitle
+title: Allied Security Trust
+subtitle: Patent holding company that helps protect members from patent infringement lawsuits by non-practicing entities
 date: '2019-01-05'
-thumb_image: images/5_thumb.jpg
-image: images/5.jpg
+thumb_image: images/portfolio/ast.jpg
+image: images/portfolio/ast.jpg
 layout: project
 ---
 
