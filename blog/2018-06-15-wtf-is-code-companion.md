@@ -7,7 +7,6 @@ excerpt: >-
   What the **** is Code Companion?
 image: '/images/blog-code-companion.png'
 thumb_image: '/images/blog-code-companion.png'
-style: code
 ---
 
 Last year I quit my full-time job to write my book, [The Angular Tutorial](http://www.angulartutorial.org/){:target="_blank"}. Once that was finished and available for purchase I started looking for my next project.

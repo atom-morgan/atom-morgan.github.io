@@ -17,11 +17,11 @@ I recently came across this tweet that got a lot of people in our industry upset
 
 The responses to this are what you'd expect.
 
-> *"Your privilege...it's showing."*
+> — *Your privilege...it's showing.*
 >
-> *"That's easy for a white male to say."*
+> — *That's easy for a white male to say.*
 >
-> *"Don't mistake low barriers for you as low barriers for everyone else."*
+> — *Don't mistake low barriers for you as low barriers for everyone else.*
 
 But guess what? He's right and he's more right than people want to believe regardless of how many excuses and forms of privilege they'll throw at you to convince you otherwise.
 

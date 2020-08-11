@@ -18,6 +18,12 @@
   max-width: 750px;
 }
 
+.block-posts {
+  .block-buttons.inner-sm {
+    margin-left: 0px;
+  }
+}
+
 .site {
   min-height: 100vh;
   overflow: hidden;
