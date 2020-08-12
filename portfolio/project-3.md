@@ -2,8 +2,8 @@
 title: CNNgo for DirecTV
 subtitle: CNNgo TV application for DirecTV set-top boxes
 date: '2019-04-08'
-thumb_image: images/portfolio/cnn-4.png
-image: images/portfolio/cnn-4.png
+thumb_image: images/portfolio/cnn.png
+image: images/portfolio/cnn.png
 layout: project
 ---
 
