@@ -491,6 +491,18 @@ img {
   }
 }
 
+.line-bottom {
+  position: relative;
+
+  &:after {
+    border-left: 45px solid _palette(accent);
+    content: "";
+    display: block;
+    height: 3px;
+    margin-top: 0.83333rem;
+  }
+}
+
 /* Grid */
 .grid {
   display: -webkit-box;

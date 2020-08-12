@@ -127,7 +127,8 @@
   button.button:after,
   .view-all-button:before,
   .view-all-button:after,
-  .line-top:before {
+  .line-top:before,
+  .line-bottom:after {
     border-color: _palette(accent-green);
   }
 }
@@ -168,7 +169,8 @@
   button.button:after,
   .view-all-button:before,
   .view-all-button:after,
-  .line-top:before {
+  .line-top:before,
+  .line-bottom:after {
     border-color: _palette(accent-blue);
   }
 }
@@ -209,7 +211,8 @@
   button.button:after,
   .view-all-button:before,
   .view-all-button:after,
-  .line-top:before {
+  .line-top:before,
+  .line-bottom:after {
     border-color: _palette(accent-violet);
   }
 }
@@ -250,7 +253,8 @@
   button.button:after,
   .view-all-button:before,
   .view-all-button:after,
-  .line-top:before {
+  .line-top:before,
+  .line-bottom:after {
     border-color: _palette(accent-yellow);
   }
 }
