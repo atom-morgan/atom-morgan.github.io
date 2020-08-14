@@ -154,3 +154,17 @@
     }
   }
 }
+
+.post-content > ul {
+  list-style: none;
+  padding-left: 0px;
+
+  li {
+    &:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f105";
+      color: _palette(accent-blue);
+      padding-right: 8px;
+    }
+  }
+}
