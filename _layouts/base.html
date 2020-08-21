@@ -43,5 +43,15 @@
         <!-- Scripts -->
         <script src="{{ 'assets/js/plugins.js' | relative_url }}"></script>
         <script src="{{ 'assets/js/main.js' | relative_url }}"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{site.analytics-id}}"></script>
+        <script>
+          if (window.location.host==="atom-morgan.github.io" || window.location.host==="www.atom-morgan.github.io") {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
+
+            gtag('config', '{{site.analytics-id}}');
+          }
+        </script>
     </body> 
 </html>
