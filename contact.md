@@ -2,10 +2,26 @@
 title: Contact
 # subtitle: This is a short page about us and our work.
 # image: images/about.jpg
-layout: page
+layout: wide-page
 ---
 
-Hi there! Thank you so much for your interest in working together. Please contact me via email at [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com){:target="_blank"}.
+Hi there! Thank you so much for your interest in working together. Please contact me via email at [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com){:target="_blank"} or [click here](https://calendly.com/atom-morgan){:target="_blank"} to set up a call.
+
+<div class="logo-header">
+  <p>Brands I've Worked With</p>
+</div>
+
+<div class="logos" style="max-width: 900px">
+  <div class="logo-container">
+    <img src="/images/logos/logo-dtv.svg" />
+    <img src="/images/logos/logo-depot.svg" />
+    <img src="/images/logos/logo-cnn.svg" />
+  </div>
+  <div class="logo-container">
+    <img src="/images/logos/logo-nbc.svg" />
+    <img src="/images/logos/logo-turner.svg" />
+  </div>
+</div>
 
 <!-- title: Contact
 hide_title: false

@@ -17,6 +17,9 @@ header:
     - label: Portfolio
       url: /portfolio/
       style: link
+    - label: Training
+      url: /training/
+      style: link
     - label: Blog
       url: /blog/
       style: link

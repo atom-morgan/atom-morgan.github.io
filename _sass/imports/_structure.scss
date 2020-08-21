@@ -18,6 +18,17 @@
   max-width: 750px;
 }
 
+.page-wide {
+  .post-title,
+  .post-content > p {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .inner-sm {
+    max-width: 900px;
+  }
+}
+
 .block-posts {
   .block-buttons.inner-sm {
     margin-left: 0px;
