@@ -11,7 +11,7 @@ layout: project
   <h2 class="block-title line-top">Contributions</h2>
 </div>
 
-Working with Seraph Group Investment Firm, I was the sole developer building an internal video conferencing application to allow startup entrepreneurs to remotely pitch investors. Application features I built include live video streaming, screen sharing, real-time chat, along with Google Chrome and Mozilla Firefox extensions.
+I was the sole developer building an internal video conferencing application to allow startup entrepreneurs to remotely pitch investors. Application features I built include live video streaming, screen sharing, real-time chat, along with Google Chrome and Mozilla Firefox extensions.
 
 I was also responsible for refactoring an entire AngularJS application towards a component-based architecture along with their internal CSS framework by isolating styles to components or pages, removing all unnecessary inline styles, and leveraging many other UI best practices.
 

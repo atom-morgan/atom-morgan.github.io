@@ -1,7 +1,7 @@
 ---
 title: Shocase Sports
 subtitle: Web platform for athletes to promote their talent, enter regional challenges, and connect with talent scouts
-date: '2019-04-30'
+date: '2020-01-30'
 thumb_image: images/portfolio/shocase.jpg
 image: images/portfolio/shocase.jpg
 layout: project

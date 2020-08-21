@@ -17,7 +17,7 @@ I self-published a 500+ page book teaching the Angular framework and automated t
 
 It is currently the highest rated book on Amazon covering Angular and automated testing and the feedback from readers has been very positive.
 
-If you're interested in learning more about Angular, automated testing, or hiring me for Angular workshops, feel free to contact me via email at [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com){:target="_blank"}.
+If you're interested in learning more about Angular, automated testing, or hiring me for Angular workshops, feel free to contact me via email at [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com){:target="_blank"} or [click here](https://calendly.com/atom-morgan){:target="_blank"} to set up a call.
 
 <div class="block-header inner-sm" style="margin-bottom: 1.5em">
   <h2 class="block-title line-top">Technology</h2>

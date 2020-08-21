@@ -11,7 +11,7 @@ layout: project
   <h2 class="block-title line-top">Contributions</h2>
 </div>
 
-Working with DirecTV and CNN, I was on a small to tasked to create the “CNNgo” application on DirecTV’s set-top boxes for their 39 million subscribers.
+Working with DirecTV and CNN, I was on a team of 3 developers tasked to create the “CNNgo” application on DirecTV’s set-top boxes for their 39 million subscribers.
 
 Within the CNNgo application, I was solely responsible for building the user navigation, photo gallery, and all related content video streaming services.
 

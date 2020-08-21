@@ -1,7 +1,7 @@
 ---
 title: Allied Security Trust
 subtitle: Patent holding company that helps protect members from patent infringement lawsuits by non-practicing entities
-date: '2019-01-05'
+date: '2020-02-05'
 thumb_image: images/portfolio/ast.jpg
 image: images/portfolio/ast.jpg
 layout: project
@@ -13,11 +13,11 @@ layout: project
 
 At Allied Security Trust, I was brought in during the very early stages of developing their MVP. One of my first tasks was to migrate their old MVP codebase to a new application architecture, update their UI from Angular Material to Clarity Design System, and migrate their old GraphQL queries to Hasura.
 
-Within the data and document heavy application, I also had the opportunity to leverage ag-Grid to present this information in a digestible way with the freedom for users to customize and save their UI preferences.
+Within the data and document heavy application, I used ag-Grid to present this information in a digestible way building additional functionality to provide freedom for users to customize and save their UI preferences. This provides all of AST's users the option to fully customize the UI to their own specific needs.
 
-Given the amount of data manipulation being done within these features, managing state when users are switching back and forth between tasks was a necessity. I was responsible for implementing a state management system with our Elasticsearch driven patent search page.
+Given the amount of data manipulation being done within these features, managing state when users are switching back and forth between tasks was a necessity. I was responsible for implementing a state management system to integrate with the Elasticsearch driven patent search page.
 
-I also implemented an app wide alert service to integrate the two different alert styles used for desktop and mobile users. This service automated displaying alerts based on screen size with an option to preserve alerts on page redirect.
+I also implemented an app wide alert service to combine the two different alert styles used for desktop and mobile users. This service automated displaying alerts based on screen size with an option to preserve alerts after a user has been redirected to a new page.
 
 <div class="block-header inner-sm" style="margin-bottom: 1.5em">
   <h2 class="block-title line-top">Technology</h2>
