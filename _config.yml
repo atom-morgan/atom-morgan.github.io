@@ -23,6 +23,9 @@ header:
     - label: Blog
       url: /blog/
       style: link
+    # - label: Style Guide
+    #   url: /style-guide/
+    #   style: link
     - label: About
       url: /about/
       style: link
@@ -31,6 +34,11 @@ header:
       style: link
 footer:
   content: 'Adam Morgan'
+  # links:
+  #   - label: Made with Stackbit.
+  #     url: 'https://www.stackbit.com'
+  #     style: link
+  #     new_window: true
   has_social: true
   social_links:
     - label: Twitter
