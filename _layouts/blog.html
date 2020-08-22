@@ -1,92 +1,59 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-  Jekyll integration by somiibo.com
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-    {% include head.html %}
+---
+layout: body
+---
 
-	</head>
-	<body class="is-loading">
+<div class="inner outer">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  <header class="page-header inner-sm{% assign hide_title_is_not_empty = page.hide_title | is_not_empty %}{% if hide_title_is_not_empty %} screen-reader-text{% endif %}">
+    <h1 class="page-title line-top">{{ page.title }}</h1>
+    {% assign subtitle_is_not_empty = page.subtitle | is_not_empty %}
+    {% if subtitle_is_not_empty %}
+    <div class="page-subtitle">
+      {{ page.subtitle }}
+    </div>
+    {% endif %}
+  </header><!-- .page-header -->
 
-				<!-- Header -->
-				<header id="header">
-					<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
-				</header>
+  <div class="post-feed grid{% if page.col_number == 'two' %} grid-col-2{% endif %}{% if page.col_number == 'three' %} grid-col-3{% endif %}">
+    {% assign display_posts = '/blog' | get_pages | sort: 'date' | reverse %}
+    {% for post in display_posts %}
+    <article class="post grid-item">
+      <div class="post-inside">
+        {% assign thumb_image_is_not_empty = post.thumb_image | is_not_empty %}
+        {% if thumb_image_is_not_empty %}
+        <a class="post-thumbnail" href="{{ post.url | relative_url }}">
+          <img src="{{ post.thumb_image | relative_url }}" alt="{{ post.title }}" />
+        </a>
+        {% else %}
+        <a class="post-thumbnail" href="{{ post.url | relative_url }}">
+          <img src="/images/placeholder.jpg" alt="{{ post.title }}" />
+        </a>
+        {% endif %}
+        <header class="post-header">
+          <h2 class="post-title"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title }}</a></h2>
+          <div class="post-meta">
+            <time class="published"
+              datetime="{{ post.date | date: '%Y-%m-%d %H:%M' }}">{{ post.date | date: '%B %d, %Y' }}</time>
+          </div>
+        </header>
+        {% assign excerpt_is_not_empty = post.excerpt | is_not_empty %}
+        {% if excerpt_is_not_empty %}
+        <p class="post-content">
+          {{ post.excerpt }}
+        </p>
+        {% endif %}
+      </div>
+    </article><!-- .post -->
+    {% endfor %}
+  </div><!-- .post-feed -->
 
+  <!-- Pagination TBD -->
+  <!--
+  <nav class="pagination inner-sm">
+    <a class="newer-posts button" href="#"><span class="icon-angle-left" aria-hidden="true"></span><span class="screen-reader-text">Prev</span></a>
+    <span class="page-number">Showing page X of Y</span>
+    <a class="older-posts button" href="#"><span class="screen-reader-text">Next</span><span class="icon-angle-right" aria-hidden="true"></span></a>
+  </nav>
+  -->
 
-				<!-- Nav -->
-					<nav id="nav">
-
-            {% include nav.html %}
-
-						<ul class="icons">
-              <!-- <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li> -->
-              <li><a href="https://instagram.com/{{site.instagram}}" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
-              <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-				<div id="main">
-
-          <article class="featured">
-						<p>
-              My blog posts I’ve published ranging from political and social commentary to career advice in tech. <br/>
-              If you're looking for programming tutorials a curated list is <a href="http://atom-morgan.github.io/tutorials/">here</a>.
-						<p>
-
-          </article>
-					<!-- Post -->
-					<section class="posts">
-						{% for post in site.posts %}
-            {% assign mod3 = forloop.index | modulo: 4 %}
-              {% unless post.tag contains 'tutorial' %}
-                <article>
-                  <header>
-                    <span class="date">{{ post.date | date_to_string }}</span>
-                    <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-                  </header>
-                  <a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
-                  <p>{{ post.excerpt }}</p>
-                  <ul class="actions">
-                    <li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
-                  </ul>
-                </article>
-              {% endunless %}
-              {% if mod3 == 0 and forloop.index >= 4 %}
-                {% unless post.tag contains 'tutorial' %}
-                <article>
-                  <header>
-                    <h2><a href="#">Learn Angular Today</a></h2>
-                  </header>
-                  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image fit" target="_blank"><img src="/images/angular-tutorial-preview.png" alt="" /></a>
-                  <ul class="actions">
-                    <li><a href="http://angulartutorial.org" class="button" target="_blank">Buy Now!</a></li>
-                  </ul>
-                </article>
-                {% endunless %}
-							{% endif %}
-						{% endfor %}
-
-					</section>
-
-					</div>
-
-				<!-- Footer -->
-        {% include foot.html %}
-
-			</div>
-
-			<!-- Scripts -->
-			{% include scripts-main.html %}
-			{% include tracking.html %}
-
-	</body>
-</html>
+</div><!-- .inner-->

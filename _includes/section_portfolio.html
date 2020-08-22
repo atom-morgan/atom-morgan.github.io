@@ -1,0 +1,51 @@
+{% assign section = include.section %}
+<section id="{{ section.section_id }}" class="block-portfolio block outer">
+  <div class="inner">
+    {% if section.title or section.subtitle %}
+    <div class="block-header inner-sm">
+      {% assign title_is_not_empty = section.title | is_not_empty %}
+      {% if title_is_not_empty %}
+      <h2 class="block-title line-top">{{ section.title }}</h2>
+      {% endif %}
+      {% assign subtitle_is_not_empty = section.subtitle | is_not_empty %}
+      {% if subtitle_is_not_empty %}
+      <p class="block-subtitle">{{ section.subtitle }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="block-content">
+      <div class="portfolio-feed layout-{{ section.layout_style }}">
+        {% assign display_projects = '/portfolio' | get_pages | sort: 'date' | reverse %}
+        {% assign slice_length = section.projects_number | minus: 0 %}
+        {% assign recent_projects = display_projects | slice: 0, slice_length %}
+        {% for post in recent_projects %}
+        <article class="project">
+          {% if forloop.last and section.view_all_label and section.view_all_url %}
+          <a href="{{ section.view_all_url | relative_url }}" class="project-link view-all-link">
+            {% assign thumb_image_is_not_empty = post.thumb_image | is_not_empty %}
+            {% if thumb_image_is_not_empty %}
+            <div class="project-thumbnail">
+              <img src="{{ post.thumb_image | relative_url }}" alt="{{ post.title }}" />
+            </div>
+            {% endif %}
+            <span class="view-all-button">{{ section.view_all_label }}</span>
+          </a>
+          {% else %}
+          <a href="{{ post.url | relative_url }}" class="project-link">
+            {% assign thumb_image_is_not_empty = post.thumb_image | is_not_empty %}
+            {% if thumb_image_is_not_empty %}
+            <div class="project-thumbnail">
+              <img src="{{ post.thumb_image | relative_url }}" alt="{{ post.title }}" />
+            </div>
+            {% endif %}
+            <header class="project-header">
+              <h3 class="project-title">{{ post.title }}</h3>
+            </header>
+          </a>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div><!-- .inner -->
+</section><!-- .block -->

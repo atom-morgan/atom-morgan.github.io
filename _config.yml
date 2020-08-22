@@ -1,60 +1,82 @@
-# Site
-title:              Adam Morgan
-bio:                'The practical approach to learning web development'
-description:        "The practical approach to learning web development"
-locale:             en_US
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-
-defaults:
-- scope:
-    path: ''
-    type: posts
-  values:
-    permalink: "/:title/"
-    layout: post
-    author:
-
-# Jekyll
-permalink:          /:title/
-markdown:           kramdown
-highlighter:        rouge
-kramdown:
-  input: GFM
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  enable_coderay:   false
-mathjax:            true
+title: Adam Morgan
+baseurl: /
+permalink: '/:title/'
+collections:
+  posts:
+    permalink: '/posts/:title/'
+description: Adam Morgan - Software Engineer and Designer
+color_scheme: light
+accent_color: blue
+header:
+  title: Adam
+  has_nav: true
+  nav_links:
+    - label: Home
+      url: /
+      style: link
+    - label: Portfolio
+      url: /portfolio/
+      style: link
+    - label: Training
+      url: /training/
+      style: link
+    - label: Blog
+      url: /blog/
+      style: link
+    # - label: Style Guide
+    #   url: /style-guide/
+    #   style: link
+    - label: About
+      url: /about/
+      style: link
+    - label: Contact
+      url: /contact/
+      style: link
+footer:
+  content: 'Adam Morgan'
+  # links:
+  #   - label: Made with Stackbit.
+  #     url: 'https://www.stackbit.com'
+  #     style: link
+  #     new_window: true
+  has_social: true
+  social_links:
+    - label: Twitter
+      url: 'https://twitter.com/atommorgan'
+      style: icon
+      icon_class: fa-twitter
+      new_window: true
+    - label: Instagram
+      url: 'https://www.instagram.com/adamjmorgan/'
+      style: icon
+      icon_class: fa-instagram
+      new_window: true
+    - label: Dribbble
+      url: 'https://dribbble.com/atommorgan'
+      style: icon
+      icon_class: fa-dribbble
+      new_window: true
+    - label: LinkedIn
+      url: 'https://www.linkedin.com/in/atommorgan/'
+      style: icon
+      icon_class: fa-linkedin
+      new_window: true
 sass:
-  sass_dir:         _sass
-  style:            compressed
-
-# Comments
-disqus_shortname:   default
-
-# Social
-analytics-id:       "UA-44709867-1"
-twitter:            atommorgan
-facebook:           default
-instagram:          adamjmorgan
-github:             atom-morgan
-
-# personal
-location:           Atlanta, GA
-phone:              310-318-5555
-email:              atom.morgan@gmail.com
-
-# Gems
-gems:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-
-paginate: 6
-paginate_path: "/blog/page:num/"
-
-# Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
+  indentWidth: 2
+  style: nested
+  precision: 10
+plugins:
+  - jekyll-menus
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - README.md
+  - netlify.toml
+  - stackbit-build.sh
+  - stackbit-pull.js

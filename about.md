@@ -1,26 +1,13 @@
 ---
+title: About Me
+# subtitle: This is a short page about us and our work.
+image: images/me.jpg
 layout: page
-title: Adam Morgan - About
-description: When building a website it's helpful to see what the focus of your site is. This page is an example of how to show a website's focus.
-sitemap:
-    priority: 0.7
-    lastmod: 2017-11-02
-    changefreq: weekly
+style: about
 ---
-## About Me
 
-Hi, I'm Adam Morgan. Here's some additional information about me.
+I started my career in marketing consulting working with a variety of Fortune 500 companies. My main focus was data analysis but after coding a few internal tools I eventually decided to quit my job and enter the tech industry.
 
-<p style="margin-bottom: 1rem;"><a href="http://www.angulartutorial.org/" target="_blank">My book, "The Angular Tutorial", (digital version)</a></p>
+Since then I spend most of my time working with JavaScript/TypeScript and MEAN stacks. I've worked in a variety of environments ranging from Fortune 500 companies to startups and creative agencies. Across these companies, I've taken various roles ranging from full-stack development to UI design and UX research.
 
-<p style="margin-bottom: 1rem;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&ie=UTF8&qid=1529003994&sr=1-1" target="_blank">My book, "The Angular Tutorial", on Amazon</a></p>
-
-<p style="margin-bottom: 1rem;"><a href="https://www.twitch.tv/clo5ure" target="_blank">Twitch</a></p>
-
-<!-- <p style="margin-bottom: 1rem;"><a href="http://youtube.com/c/adammorganshow" target="_blank">YouTube</a></p> -->
-
-<p style="margin-bottom: 1rem;"><a href="http://atom-morgan.github.io/tutorials/" target="_blank">Programming tutorials</a></p>
-
-<p style="margin-bottom: 1rem;"><a href="http://atom-morgan.github.io/blog/" target="_blank">Writing</a></p>
-
-<p style="margin-bottom: 1rem;"><a href="http://atommorgan.com/" target="_blank">Portfolio</a></p>
+If you'd like to get in touch feel free to send me an email at [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com){:target="_blank"}. You can also follow me on <a href="https://twitter.com/atommorgan" target="_blank">Twitter</a> and <a href="https://github.com/atom-morgan" target="_blank">Github</a>.
