@@ -38,4 +38,4 @@ Original setup can be found [here](https://stackoverflow.com/questions/28249255/
 
 Develop locally on the `sources` branch. When finished run `bundle exec jekyll build`, commit work as usual, and push up to the `sources` branch.
 
-Then checkout the `gh-pages` branch, `cd` into `_site`, commit changes, and push to the `gh-pages` branch.
+Then `cd` into `_site` (which should put you on the `gh-pages` branch), commit changes, and push to the `gh-pages` branch.
