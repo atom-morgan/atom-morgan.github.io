@@ -7,7 +7,7 @@ layout: wide-page
 
 Hi there! Thank you so much for your interest in working together. Please contact me via email at [atom.morgan@gmail.com](mailto:atom.morgan@gmail.com){:target="_blank"} or [click here](https://calendly.com/atom-morgan){:target="_blank"} to set up a call.
 
-<div class="logo-header">
+<!-- <div class="logo-header">
   <p>Brands I've Worked With</p>
 </div>
 
@@ -21,7 +21,7 @@ Hi there! Thank you so much for your interest in working together. Please contac
     <img src="/images/logos/logo-nbc.svg" />
     <img src="/images/logos/logo-turner.svg" />
   </div>
-</div>
+</div> -->
 
 <!-- title: Contact
 hide_title: false
