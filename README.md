@@ -31,3 +31,11 @@ Stackbit Exto Theme original README is located [here](./README.theme.md).
         bundle exec jekyll serve
 
 1. Browse to [http://localhost:4000](http://localhost:4000)
+
+# GitHub Pages
+
+Original setup can be found [here](https://stackoverflow.com/questions/28249255/how-do-i-configure-github-to-use-non-supported-jekyll-site-plugins/28252200#28252200).
+
+Develop locally on the `sources` branch. When finished run `bundle exec jekyll build`, commit work as usual, and push up to the `sources` branch.
+
+Then checkout the `gh-pages` branch, `cd` into `_site`, commit changes, and push to the `gh-pages` branch.
