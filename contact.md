@@ -11,7 +11,7 @@ Hi there! Thank you so much for your interest in working together. Please contac
   <p>Brands I've Worked With</p>
 </div>
 
-<div class="logos" style="max-width: 900px">
+<div class="logos">
   <div class="logo-container">
     <img src="/images/logos/logo-dtv.svg" />
     <img src="/images/logos/logo-depot.svg" />
