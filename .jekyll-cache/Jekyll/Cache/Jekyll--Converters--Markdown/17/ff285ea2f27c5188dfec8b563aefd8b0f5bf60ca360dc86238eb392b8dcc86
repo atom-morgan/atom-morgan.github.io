@@ -1,0 +1,104 @@
+I"-&<p>You’ve made your decision to learn how to code and now it’s time to get started. But how do you do it? As a self-taught programmer I’ve been through the struggle of learning how to code and if I had to do it again, this is how I’d do it.</p>
+
+<h3 id="make-it-a-habit">Make It a Habit</h3>
+
+<p>We’re creatures of habit and the more something becomes a part of <em>who you are</em> or <em>what you do</em> the easier it is to do that thing regularly. Habits can be good like running everyday but they can also be bad like following up that run with a bowl of ice-cream because you “earned it” with lost calories.</p>
+
+<p>The best method for me to create a habit is to start small. If I decided I wanted to start running today, I would start with 2-3 scheduled days a week where I run no matter what. At first, I know it’ll suck. But after a couple months you hit a point where <em>not</em> running on your days makes you feel bad. <em>I’ve gone running for the past month, why am I being lazy today and making excuses?</em></p>
+
+<p>Apply the same mindset to learning how to code. Set aside a few hours a few times a week where you do at least one thing related to coding. If you’re just not in the mood to read through a chapter of a programming book that day, it’s okay. Watch a tech talk on YouTube instead!</p>
+
+<div class="box">
+  <p>If this type of method doesn’t work for you, experiment! If you know you may end up saying “I’ll just do it tomorrow” on one of your scheduled days, maybe a smaller amount of work <em>everyday</em> (Jerry Seinfeld’s <a href="http://lifehacker.com/281626/jerry-seinfelds-productivity-secret" target="_blank">“Don’t Break the Chain”</a>) will work better for you.</p>
+</div>
+
+<h3 id="break-up-your-work">Break up Your Work</h3>
+
+<p>You don’t have to be the biggest gym rat to know that you don’t do all of your lifts at once. You typically break up a lift into sets. So you bench press 10 times, rest for a minute, and repeat that 3 times. Why should intellectual goals be any different?</p>
+
+<p>Instead of sitting down to work on programming for 2 hours straight, why not do 25 minutes of work followed by 5 minutes of rest, 4 times? Not only is this mentally less daunting but I think it’s a great way to force yourself to get started on work. When you sit down to begin and you have 2 hours of work ahead of you, procrastination comes much easier than when there’s only 25 minutes.</p>
+
+<p>This technique is known as the <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Pomodoro Technique</a>. In addition to being a good way to get me started on work, I’ve also discovered it’s a great way to get into <a href="https://en.wikipedia.org/wiki/Flow_(psychology){:target=&quot;_blank&quot;}">flow state</a>. I’ll do my first 25 minute interval, rest, do my second and by the time the timer has gone off for my second break I’m focused enough that I don’t need it anymore.</p>
+
+<div class="box">
+  <p>If you’re looking for a Pomodoro Timer I recommend <a href="https://itunes.apple.com/us/app/be-focused-focus-timer-goal/id973134470?mt=12" target="_blank">Be Focused</a> which is available on all Mac products.</p>
+</div>
+
+<p>If I’m learning a new skill, Pomodoro is a must. But if I just need to do work related to something I’m already good at, Pomodoro is a kick start to get me on task.</p>
+
+<h3 id="the-buddy-system">The Buddy System</h3>
+
+<p>Learning to program is tough enough already if you’re doing it by yourself so why not do it with a friend instead? This will not only give you two brains to try and make sense of new concepts but it’s also more enjoyable and motivating to learn with someone else too.</p>
+
+<div class="box">
+Group fitness classes have never been bigger and I imagine this is at least part of the reason why.
+</div>
+
+<p>Learning with a friend will make you accountable to each other which will hopefully make the both of you less likely to quit. It will also provide the ability for the two of you to talk through problems together and share what you do and don’t understand. Even if one of you is learning front-end development while the other is learning back-end, the two still share much in common and the interaction between the two will only help solidify the concepts for the both of you.</p>
+
+<p>The downside to learning with someone else is you need someone to learn with who you know doesn’t suck. You need to find someone who’s as serious about your new goal as you are. So if you do decide to learn with a friend, don’t hesitate to set a high bar for this partner.</p>
+
+<h3 id="write-about-it">Write About It</h3>
+
+<p>If you learned a new programming concept that still isn’t 100% clear, write about it.</p>
+
+<p>Do a search on Stack Overflow to see if anyone has questions or is looking for clarification and contribute with your own answer. If you’re wrong, it may lead to a discussion which will help your understanding. If you’re right, you’re making progress and you just helped someone else.</p>
+
+<p>Write a blog post explaining the concept. Writing and explaining programming to others has been one of the most valuable experiences for me. It helps others while pushing me to really solidify my understanding.</p>
+
+<p>Don’t let being new to programming hold you back either. If you started programming last week, there’s someone who’s starting today. A blog post written by a newbie who doesn’t suffer from the <a href="https://en.wikipedia.org/wiki/Curse_of_knowledge" target="_blank">curse of knowledge</a> may be exactly what they’re looking for.</p>
+
+<h3 id="be-patient">Be Patient</h3>
+
+<p>Perhaps the most important part of any goal in life is to <em>be patient</em>. Think long term. Pursue programming knowing that consistent, repeated effort towards learning will eventually lead to success. Nothing is going to happen overnight. Learning and progress isn’t linear.</p>
+
+<p>You’ll have good days and bad days. Don’t dwell on the bad days. Accept it happened, try to avoid them if you can, and move on.</p>
+
+<p>The highs and lows of trying something new is just a fact of life. It’s basically a meme. Maybe you’ve seen learning curves like this one for golf.</p>
+
+<p><img src="https://byronkalies.files.wordpress.com/2010/04/learningcurveplus1.jpg" alt="Learning Curve" /></p>
+
+<p>The point is that it doesn’t matter if you golf, program, paint, or run. The labels on the curve will be different, but the <em>feeling</em> of the curve will be the same.</p>
+
+<p>Be patient, make your programming goals a habit, and the slope of that curve will trend upwards.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

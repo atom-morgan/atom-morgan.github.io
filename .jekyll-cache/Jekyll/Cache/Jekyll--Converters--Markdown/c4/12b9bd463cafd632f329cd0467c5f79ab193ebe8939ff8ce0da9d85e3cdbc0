@@ -1,0 +1,210 @@
+I"+N<h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial we’ll be building off of the previous tutorial updating our user prompt to a more familiar web UI—forms.</p>
+
+<p>From here on we’ll be continually adding features to this application building a full blown Pokedex.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>First we’ll make a new folder for our project.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">mkdir forms
+cd forms
+</span></code></pre></div></div>
+
+<p>Within this directory we’ll create two new files, an HTML file and a JavaScript file similar to what we did previously in <a href="https://atom-morgan.github.io/dom-manipulation/" target="_blank">Code Companion #9</a>.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch main.js index.html
+</span></code></pre></div></div>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="form">Form</h2>
+
+<p>The first thing we’ll do is add our HTML, including a form, to <code class="language-plaintext highlighter-rouge">index.html</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Code Companion - Forms<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"main.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"pokedex"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Pokemon name:<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"pokemon"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;p&gt;</span>Description:<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">rows=</span><span class="s">"10"</span> <span class="na">cols=</span><span class="s">"30"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+
+      <span class="nt">&lt;br&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Add to Pokedex<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+
+    <span class="nt">&lt;h2&gt;</span>Pokemon:<span class="nt">&lt;/h2&gt;</span>
+
+    <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"pokemon-list"</span><span class="nt">&gt;&lt;/ul&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>First we begin with a <code class="language-plaintext highlighter-rouge">form</code> tag setting its <code class="language-plaintext highlighter-rouge">id</code> attribute to <code class="language-plaintext highlighter-rouge">pokedex</code>. This <code class="language-plaintext highlighter-rouge">id</code> is what we’ll be using to access the values a user enters into the form.</p>
+
+<p>Within the form we’ve added two inputs: one using the <code class="language-plaintext highlighter-rouge">input</code> tag and another using the <code class="language-plaintext highlighter-rouge">textarea</code> tag. The noteworthy parts here are the <code class="language-plaintext highlighter-rouge">name</code> attributes. The values set to <code class="language-plaintext highlighter-rouge">name</code> are what we’ll use to access the specific values within the form. Finally, we have a <code class="language-plaintext highlighter-rouge">button</code> that will be used to submit the form.</p>
+
+<p>Below our form we also have an unordered list which should look familiar if you worked through <a href="https://atom-morgan.github.io/dom-manipulation/" target="_blank">Code Companion #9</a>.</p>
+
+<h2 id="event-listener">Event Listener</h2>
+
+<p>Now that we have our form setup we can setup an event listener for the form.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addToPokedex</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">event </span><span class="dl">'</span><span class="p">,</span> <span class="nx">event</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokedex</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">addToPokedex</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>First we add an event listener for <code class="language-plaintext highlighter-rouge">DOMContentLoaded</code>. Within this event we add another event listener for our form. Unlike our previous example where we were listening to a <code class="language-plaintext highlighter-rouge">click</code> event, we’re now waiting for the <code class="language-plaintext highlighter-rouge">submit</code> event.</p>
+
+<p>Once this event has fired we call the <code class="language-plaintext highlighter-rouge">addToPokedex</code> function passing it <code class="language-plaintext highlighter-rouge">event</code> which is an object representing the event of the event listener. This object contains <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event#Properties" target="_blank">multiple properties</a> including a property that allows us to access the values in the form which we’ll get to shortly.</p>
+
+<p>Within our <code class="language-plaintext highlighter-rouge">addToPokedex</code> function we first call <code class="language-plaintext highlighter-rouge">event.preventDefault()</code> which prevents the default form event from firing. In this case, we’re preventing our form from initiating a request to a backend since we don’t have one. For now, we’re doing everything client-side.</p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">index.html</code> in Chrome, add some values to the form, click submit, and you should see the <code class="language-plaintext highlighter-rouge">event</code> object logged to the console.</p>
+
+<p><img src="/images/forms/event-object.png" alt="Logging the event object" /></p>
+
+<h2 id="accessing-form-values">Accessing form values</h2>
+
+<p>Now that our function has access to the event object, we can access the values within our form.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addToPokedex</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">description</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Name is </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Description is </span><span class="p">${</span><span class="nx">description</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To access our form object we use <code class="language-plaintext highlighter-rouge">event.target</code>. Following target are the <code class="language-plaintext highlighter-rouge">name</code> attributes we specified within our form (<code class="language-plaintext highlighter-rouge">pokemon</code> and <code class="language-plaintext highlighter-rouge">description</code>) with <code class="language-plaintext highlighter-rouge">.value</code> after each name to get the value of each input. We then log the values for <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">description</code> to verify we’re getting the values we expect.</p>
+
+<p>Refresh your page, complete the form again, and you should see your values printed to the console.</p>
+
+<p><img src="/images/forms/event-object.png" alt="Logging the event object" /></p>
+
+<p>Now that we have the values within our form, we can create a new list element and add it to the unordered list.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addToPokedex</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">description</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">listItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">li</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokemon-list</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">listItem</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">description</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="nx">list</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">listItem</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Go back to Chrome, complete the form, and you should see the list update with your Pokemon.</p>
+
+<p><img src="/images/forms/add-to-list.png" alt="Add Pokemon to list" /></p>
+
+<h2 id="resetting-the-form">Resetting the Form</h2>
+
+<p>Our list is now updating correctly but our form maintains its original state with the user’s values within the form’s inputs. Let’s add an update to clear this form once the form has been submitted.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">clearForm</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokedex</span><span class="dl">'</span><span class="p">).</span><span class="nx">reset</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokedex</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">addToPokedex</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+    <span class="nx">clearForm</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Here we’ve added a <code class="language-plaintext highlighter-rouge">clearForm</code> function that uses <code class="language-plaintext highlighter-rouge">getElementById</code> to access the form. We then call <code class="language-plaintext highlighter-rouge">.reset()</code> to reset the form and call <code class="language-plaintext highlighter-rouge">clearForm()</code> within the event listener for <code class="language-plaintext highlighter-rouge">submit</code>.</p>
+
+<p>Now when you submit the form the list should populate with your values and reset the form for the user.</p>
+
+<p><img src="/images/forms/clear-form.png" alt="Resetting the form" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Before we finish, add your latest changes to Git.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init
+git add .
+</span></code></pre></div></div>
+
+<p>Then add a commit message.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git commit -m "Add forms"
+</span></code></pre></div></div>
+
+<p>Then push these changes up to GitHub.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git push origin master
+</span></code></pre></div></div>
+
+<h2 id="exercise">Exercise</h2>
+
+<p>For some extra practice, see if you can update <code class="language-plaintext highlighter-rouge">main.js</code> to avoid adding empty list elements to the DOM if the user submits an empty form.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

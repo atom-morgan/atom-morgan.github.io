@@ -1,0 +1,27 @@
+<!-- begin author -->
+<section class="author">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="author__inner">
+
+          <div class="author__left">
+            <h1 class="author__name">{{ site.data.settings.author.title }}</h1>
+            <p class="author__bio">{{ site.data.settings.author.bio }}</p>
+            <a class="author__btn" href="#projects">
+              <span class="circle-bg"><i class="ion ion-md-arrow-down button-arrow"></i></span> {{ site.data.settings.author.button__text }}
+            </a>
+          </div>
+
+          <div class="author__right">
+            <div class="author__image">
+              <img class="lazy" data-src="{{ site.data.settings.author.image }}" alt="{{site.author.name}}'s Picture">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end author -->

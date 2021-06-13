@@ -1,0 +1,133 @@
+/* Buttons */
+.button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 800;
+  border-radius: 30px;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: $white;
+  background: linear-gradient(90deg, $primary-color 0%, $secondary-color 167%);
+  transition: all .25s ease;
+
+  &:hover {
+    color: $white !important;
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    will-change: transform;
+    transition: opacity 0.35s;
+    background: linear-gradient(90deg, $primary-color 0%, $secondary-color 107%);
+  }
+
+  &:active {
+    transform: translateY(2px) scale(0.98);
+  }
+
+  &--small {
+    font-size: 15px;
+    padding: 16px 24px;
+  }
+
+  &--middle {
+    min-width: 200px;
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  &--big {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+  }
+}
+
+/* MailerLite Embedded Form Button */
+
+#mlb2-4255225.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+  position: relative;
+  z-index: 1;
+  // display: inline-flex;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 800;
+  border-radius: 30px;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: $white;
+  background: linear-gradient(90deg, $primary-color 0%, $secondary-color 167%);
+  transition: all .25s ease;
+
+  width: 100% !important;
+  padding: 20px !important;
+  font-size: 18px !important;
+
+  display: flex;
+  margin: 0 auto;
+
+  &:hover {
+    color: $white !important;
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    will-change: transform;
+    transition: opacity 0.35s;
+    background: linear-gradient(90deg, $primary-color 0%, $secondary-color 107%);
+  }
+
+  &:active {
+    transform: translateY(2px) scale(0.98);
+  }
+
+  &--small {
+    font-size: 15px;
+    padding: 16px 24px;
+  }
+
+  &--middle {
+    min-width: 200px;
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  &--big {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+  }
+}

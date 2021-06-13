@@ -1,0 +1,32 @@
+I"�<!-- <div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/project-6.jpg" alt="Project">
+    <img src="/images/project-8.jpg" alt="Project">
+    <img src="/images/project-7.jpg" alt="Project">
+  </div>
+  <em>Projects / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
+</div> -->
+
+<div class="block-header inner-sm" style="margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Contributions</h2>
+</div>
+
+<p>Shortly after Angular’s release, I took time off day-to-day work to focus on writing a book.</p>
+
+<p>I self-published a 500+ page book teaching the Angular framework and automated testing. The book teaches how to create, develop, test, and deploy Angular applications using the Angular CLI, Jasmine, and Cypress.</p>
+
+<p>It is currently the highest rated book on Amazon covering Angular and automated testing and the feedback from readers has been very positive.</p>
+
+<p>If you’re interested in learning more about Angular, automated testing, or hiring me for Angular workshops, feel free to contact me via email at <a href="mailto:atom.morgan@gmail.com" target="_blank">atom.morgan@gmail.com</a> or <a href="https://calendly.com/atom-morgan" target="_blank">click here</a> to set up a call.</p>
+
+<div class="block-header inner-sm" style="margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Technology</h2>
+</div>
+
+<ul>
+  <li>Angular 5-9</li>
+  <li>Karma</li>
+  <li>Jasmine</li>
+  <li>Cypress</li>
+</ul>
+:ET

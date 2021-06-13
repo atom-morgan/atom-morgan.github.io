@@ -1,28 +1,40 @@
 ---
-layout: body
+layout: default
 ---
 
-<div class="inner outer">
+<div class="container">
 
-  <article class="post post-full">
-    <header class="post-header inner-sm">
-      <h1 class="post-title line-top">{{ page.title }}</h1>
-      {% assign subtitle_is_not_empty = page.subtitle | is_not_empty %}
-      {% if subtitle_is_not_empty %}
-      <div class="post-subtitle">
-        {{ page.subtitle }}
-      </div>
-      {% endif %}
-    </header>
-    {% assign image_is_not_empty = page.image | is_not_empty %}
-    {% if image_is_not_empty %}
-    <div class="post-image">
-      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
-    </div><!-- .post-image -->
+  <div class="page-head">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="project-subtitle">{{ page.subtitle }}</p>
     {% endif %}
-    <div class="post-content inner-sm">
-      {{ content }}
-    </div>
-  </article><!-- .post -->
+  </div>
 
-</div><!-- .inner -->
+  {% if page.image %}
+  <div class="row">
+    <div class="col col-12">
+      <div class="page-image">
+        <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+  
+  {% if page.previous.url %}
+  <div class="project__navigation">
+    <a class="project__prev" href="{{page.previous.url}}">
+      <div class="project__box">
+        <span class="project__nav__info">Next Project</span>
+        <h2 class="project__nav__title">{{page.previous.title}}<i class="ion ion-md-arrow-round-forward arrow-right"></i></h2>
+      </div>
+    </a>
+  </div>
+  {% endif %}
+
+</div>
+

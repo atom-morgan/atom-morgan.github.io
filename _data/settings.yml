@@ -1,0 +1,141 @@
+#-------------------------------
+# Site Settings
+
+title: Adam
+tab__title: Adam Morgan - Web Developer and Designer
+logo: # You can add own logo. For example '/images/logo.png'.
+description: Adam Morgan – Full Stack Software Engineer and Web Designer
+
+menu__settings:
+  menu__items:
+    - title: 'Home'
+      url: '/'
+    - title: 'Projects'
+      url: '/projects/'
+    - title: 'Blog'
+      url: '/blog/'
+    - title: 'About'
+      url: '/about'
+    - title: 'Contact'
+      url: '/contact'
+    # - title: 'Pages'
+    #   submenu:
+    #   - url: '/about'
+    #     title: 'About'
+    #   - url: '/elements'
+    #     title: 'Elements'
+
+# Call to action button
+cta__button__text: Get in touch
+cta__button_url: 'https://calendly.com/atom-morgan'
+
+# Add global cover image (This field adds a background to the top and bottom of the site.)
+cover__image: '/images/cover-image.jpg'
+
+
+#-------------------------------
+# Author Settings
+
+author:
+  name: Adam Morgan
+  title: Hello I’m Adam Morgan
+  # bio: Art Director & Graphic Designer based in Australia, crafting beautiful and functional websites and mobile apps. When I’m not working, I’m probably listening to relaxing music or traveling somewhere.
+  bio: "
+    I'm a freelance Web Designer and Full-Stack Developer based in Atlanta.
+    I enjoy building everything from small business sites to interactive web apps.<br/><br/>
+    If you're interested you can schedule a preliminary call with me here.
+    "
+  image: '/images/adam-full.png'
+  avatar: '/images/adam-avatar.jpeg'
+  button__text: See my work
+
+
+#-------------------------------
+# Projects Settings
+
+projects__settings:
+  projects__title: Latest <span class="text-span">Work</span> # Add a 'text-span' class to highlight text.
+  projects__description: "
+    Whether you need a personal website or a fully featured web app, I can help you meet your business needs.
+    "
+
+
+#-------------------------------
+# Testimonials Section
+
+testimonial__title: My Happy <span class="text-span">Clients</span> # Add a 'text-span' class to highlight text.
+
+testimonial-items:
+  - name: "Levi Robertson"
+    image: "/images/testimonial-levi.jpeg"
+    designation : "Host of JAMstack Phoenix."
+    content : "The Angular Tutorial along with Adam’s advice has completely changed my career..."
+
+  - name: "Kaeside Iwuagwu"
+    image: "/images/testimonial-kaeside.jpeg"
+    designation : "Implementation Manager at WebMD"
+    content : "Adam has a knack for breaking down complex topics while using relatable topics and keeps learning Angular fun."
+
+  - name: "Matthew Knowles"
+    image: "/images/testimonial-matthew.jpeg"
+    designation : "Software Engineer"
+    content : "If you are using Angular in a professional setting I can not recommend The Angular Tutorial highly enough."
+
+  # - name: "Julie Arnold"
+  #   image: "/images/client-4.jpg"
+  #   designation : "Full stack developer"
+  #   content : "Quamquam id quidem, infinitum est in hac urbe, Ita multo sanguine profuso in laetitia et in victoria est mortuus. Atqui pugnantibus et contrariis consiliisque."
+
+
+#-------------------------------
+# Blog Section
+
+blog__settings:
+  blog__title: Recent <span class="text-span">Blog</span> Posts # Add a 'text-span' class to highlight text.
+  blog__description:
+
+
+#-------------------------------
+# Contact Settings
+
+contact__settings:
+  contact__email: atom.morgan@gmail.com # Add your email for contact form
+  contact__title: <span class="text-span">Get</span> in touch # Add a title to your form
+  contact__description: Need some work? I'm your guy. # Add a description to your form
+
+# NOTE
+# Avenco comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want.
+
+
+#-------------------------------
+# Newsletter Settings
+mailchimp__settings:
+  mailchimp__title: <span class="text-span">Join</span> my mailing list # Add your title
+  mailchimp__text: " 'Get inspiration, updates and', 'cool stuff about web development!' " # Add descriptions to the form by wrapping the text in single quotes. If you want to use more than one sentence, be sure to separate them with a comma.
+  mailchimp__identifier: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
+  mailchimp__button__text: Subscribe # Add your button text
+
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: # add your shortname for Disqus Comment. For example anvodstudio-demo
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: UA-63422466-1 # Add your identifier. For example UA-99631805-1.
+
+
+#-------------------------------
+# Footer Settings
+# Social Links
+# Example of adding a new link to the footer - {icon: "ion-logo-facebook", link: "https://facebook.com"}
+# Other icons can be found at https://ionicons.com/v4/
+social:
+- {icon: "ion-logo-twitter", link: "https://twitter.com/atommorgan"}
+- {icon: "ion-logo-github", link: "https://github.com/atom-morgan"}
+- {icon: "ion-logo-instagram", link: "https://instagram.com/adamjmorgan"}
+# - {icon: "ion-logo-pinterest", link: "https://pinterest.com"}
+# - {icon: "ion-logo-codepen", link: "https://codepen.io"}
+# - {icon: "ion-logo-vimeo", link: "https://vimeo.com"}
+# - {icon: "ion-logo-youtube", link: "https://youtube.com"}

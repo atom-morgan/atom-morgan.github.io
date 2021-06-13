@@ -1,0 +1,194 @@
+I"�H<h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial you’ll learn how to setup an Angular v6 application using the Angular CLI and mock an observable API for your application.</p>
+
+<p>When I first started learning front-end development using AngularJS, I would work through tutorials and felt I had a grasp on the basics to start working on my own applications. However, most tutorials use synchronous data and I at least wanted the <em>feeling</em> of hitting an API even if I wasn’t. If you’re looking to do the same, this tutorial is for you.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>If you haven’t already, you’ll first need to install the <a href="https://cli.angular.io/" target="_blank">Angular CLI</a>.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">npm install -g @angular/cli
+</span></code></pre></div></div>
+
+<p>If you never worked with AngularJS, you have no idea how much easier this CLI makes it for beginners who are just starting out. I wish there was an equivalent back then!</p>
+
+<p>Once the CLI is installed, you can then create a new application.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ng new mocked-api
+cd mocked-api
+</span></code></pre></div></div>
+
+<p>Once your application has been created, you can run the application.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ng serve
+</span></code></pre></div></div>
+
+<p>Open a browser to <code class="language-plaintext highlighter-rouge">http://localhost:4200</code> and you should see the default Angular application as shown below.</p>
+
+<p><img src="/images/mocking-angular-api/starter-app.png" alt="Default Angular application" /></p>
+
+<h2 id="creating-a-service">Creating a service</h2>
+
+<p>Now we can move on to creating a service for our observable which will serve as our mocked API.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ng g service services/fighters/fighters
+</span></code></pre></div></div>
+
+<p>Here we’ve created a new Angular service prefixing our service name with a new path: <code class="language-plaintext highlighter-rouge">services/fighters</code>. I prefer to keep my services grouped together within a <code class="language-plaintext highlighter-rouge">services</code> directory. Without it, Angular would default to placing services into <code class="language-plaintext highlighter-rouge">src/app</code> and that directory can get polluted rather quickly.</p>
+
+<p>Open our new service in <code class="language-plaintext highlighter-rouge">src/app/services/fighters</code> and you should see the auto-generated service below.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span>
+  <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">FightersService</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Within this file we need to import <code class="language-plaintext highlighter-rouge">of</code> from <code class="language-plaintext highlighter-rouge">rxjs</code>. This is what allows us to create an observable—the <a href="https://angular.io/tutorial/toh-pt6#http-methods-return-one-value" target="_blank">default return value</a> in Angular for HTTP requests.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="k">of</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>From here, we add a new <code class="language-plaintext highlighter-rouge">fighters</code> property to the service containing the data we want to serve as our mocked response. Then we add a <code class="language-plaintext highlighter-rouge">get</code> method that returns <code class="language-plaintext highlighter-rouge">fighters</code> as an observable by leveraging <code class="language-plaintext highlighter-rouge">of</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">FightersService</span> <span class="p">{</span>
+  <span class="nl">fighters</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Conor McGregor</span><span class="dl">'</span><span class="p">,</span> <span class="na">wins</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="na">losses</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Tony Ferguson</span><span class="dl">'</span><span class="p">,</span> <span class="na">wins</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="na">losses</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Max Holloway</span><span class="dl">'</span><span class="p">,</span> <span class="na">wins</span><span class="p">:</span> <span class="mi">19</span><span class="p">:</span> <span class="na">losses</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Jon Jones</span><span class="dl">'</span><span class="p">,</span> <span class="na">wins</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="na">losses</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Daniel Cormier</span><span class="dl">'</span><span class="p">,</span> <span class="na">wins</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="na">losses</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Brock Lesnar</span><span class="dl">'</span><span class="p">,</span> <span class="na">wins</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="na">losses</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
+  <span class="p">];</span>
+
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="kd">get</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">of</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fighters</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now our service is ready to be consumed by our application. Within <code class="language-plaintext highlighter-rouge">app.component.ts</code> we can import our new service as well as the <code class="language-plaintext highlighter-rouge">OnInit</code> lifecycle hook from <code class="language-plaintext highlighter-rouge">@angular/core</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FightersService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./services/fighters/fighters.service</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Now we can update <code class="language-plaintext highlighter-rouge">AppComponent</code> to consume our service.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="k">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nl">fighters</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">fightersService</span><span class="p">:</span> <span class="nx">FightersService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fightersService</span><span class="p">.</span><span class="kd">get</span><span class="p">().</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">fighters</span> <span class="o">=</span> <span class="nx">res</span><span class="p">;</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>First we create a new <code class="language-plaintext highlighter-rouge">fighters</code> property which we’ll set to the result of our service call. Then we use dependency injection to inject our service into the component’s constructor.</p>
+
+<p>Then we update <code class="language-plaintext highlighter-rouge">AppComponent</code> to implement <code class="language-plaintext highlighter-rouge">OnInit</code> and add the <code class="language-plaintext highlighter-rouge">ngOnInit</code> lifecycle hook. Within <code class="language-plaintext highlighter-rouge">ngOnInit</code> we call our service method, subscribe to the observable, and set the result to <code class="language-plaintext highlighter-rouge">fighters</code>.</p>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<p>Now that our component has data to render to the view, we can update the template in <code class="language-plaintext highlighter-rouge">app.component.html</code> (I add this in place of the existing “links to help you start”. Feel free to replace the entire template if you want).</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Wins<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Losses<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">*ngFor=</span><span class="s">"let fighter of fighters"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{fighter.name}}<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{fighter.wins}}<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{fighter.losses}}<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+
+<p>To wrap this up, we’ll add some CSS to <code class="language-plaintext highlighter-rouge">app.component.css</code> to clean up our table a bit.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">table</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">border-collapse</span><span class="p">:</span> <span class="nb">collapse</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">td</span><span class="o">,</span> <span class="nt">th</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#DDD</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#DDD</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Save that and you should now see a table displaying data using our mocked API.</p>
+
+<p><img src="/images/mocking-angular-api/final-app.png" alt="Angular application displaying mocked data" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You’ve now learned how to create an app using the CLI, create a new service, and mock an API using <code class="language-plaintext highlighter-rouge">of</code>.</p>
+
+<p>If you found this valuable and would like to see more, feel free to let me know <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a>.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

@@ -1,0 +1,134 @@
+I"�<p>A paragraph looks like this — dolor amet cray stumptown fingerstache neutra food truck seitan poke cardigan waistcoat VHS snackwave celiac hella. Godard seitan shoreditch flexitarian next level trust fund man braid vegan listicle keytar bitters. Disrupt cray fashion axe unicorn lomo shaman poke glossier keffiyeh snackwave austin tattooed seitan hexagon lo-fi. Lumbersexual irony vaporware, butcher shaman church-key iceland.</p>
+
+<hr />
+
+<h2 id="headings-by-default">Headings by default:</h2>
+
+<h1 id="h1-default-styles-for-headings">H1 Default styles for headings</h1>
+<h2 id="h2-default-styles-for-headings">H2 Default styles for headings</h2>
+<h3 id="h3-default-styles-for-headings">H3 Default styles for headings</h3>
+<h4 id="h4-default-styles-for-headings">H4 Default styles for headings</h4>
+<h5 id="h5-default-styles-for-headings">H5 Default styles for headings</h5>
+<h6 id="h6-default-styles-for-headings">H6 Default styles for headings</h6>
+
+<hr />
+
+<h2 id="lists">Lists</h2>
+
+<h4 id="ordered-list-example">Ordered list example:</h4>
+
+<ol>
+  <li>Poutine drinking vinegar bitters.</li>
+  <li>Coloring book distillery fanny pack.</li>
+  <li>Venmo biodiesel gentrify enamel pin meditation.</li>
+  <li>Jean shorts shaman listicle pickled portland.</li>
+  <li>Salvia mumblecore brunch iPhone migas.</li>
+</ol>
+
+<hr />
+
+<h4 id="unordered-list-example">Unordered list example:</h4>
+
+<ul>
+  <li>Bitters semiotics vice thundercats synth.</li>
+  <li>Literally cred narwhal bitters wayfarers.</li>
+  <li>Kale chips chartreuse paleo tbh street art marfa.</li>
+  <li>Mlkshk polaroid sriracha brooklyn.</li>
+  <li>Pug you probably haven’t heard of them air plant man bun.</li>
+</ul>
+
+<hr />
+
+<h2 id="table">Table</h2>
+
+<div class="table-container">
+  <table>
+    <tr><th>Header 1</th><th>Header 2</th><th>Header 3</th><th>Header 4</th><th>Header 5</th></tr>
+    <tr><td>Row:1 Cell:1</td><td>Row:1 Cell:2</td><td>Row:1 Cell:3</td><td>Row:1 Cell:4</td><td>Row:1 Cell:5</td></tr>
+    <tr><td>Row:2 Cell:1</td><td>Row:2 Cell:2</td><td>Row:2 Cell:3</td><td>Row:2 Cell:4</td><td>Row:2 Cell:5</td></tr>
+    <tr><td>Row:3 Cell:1</td><td>Row:3 Cell:2</td><td>Row:3 Cell:3</td><td>Row:3 Cell:4</td><td>Row:3 Cell:5</td></tr>
+    <tr><td>Row:4 Cell:1</td><td>Row:4 Cell:2</td><td>Row:4 Cell:3</td><td>Row:4 Cell:4</td><td>Row:4 Cell:5</td></tr>
+    <tr><td>Row:5 Cell:1</td><td>Row:5 Cell:2</td><td>Row:5 Cell:3</td><td>Row:5 Cell:4</td><td>Row:5 Cell:5</td></tr>
+    <tr><td>Row:6 Cell:1</td><td>Row:6 Cell:2</td><td>Row:6 Cell:3</td><td>Row:6 Cell:4</td><td>Row:6 Cell:5</td></tr>
+  </table>
+</div>
+
+<hr />
+
+<h2 id="quotes">Quotes</h2>
+
+<h4 id="a-quote-looks-like-this">A quote looks like this:</h4>
+
+<blockquote>
+  <p>The longer I live, the more I realize that I am never wrong about anything, and that all the pains I have so humbly taken to verify my notions have only wasted my time!</p>
+
+  <p><cite>George Bernard Shaw</cite></p>
+</blockquote>
+
+<hr />
+
+<h2 id="syntax-highlighter">Syntax Highlighter</h2>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100vw</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#1c2021</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">li</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="nl">min-height</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#000</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">top</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.top</span><span class="dl">'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">html, body</span><span class="dl">'</span><span class="p">).</span><span class="nx">stop</span><span class="p">().</span><span class="nx">animate</span><span class="p">({</span> <span class="na">scrollTop</span><span class="p">:</span> <span class="mi">0</span> <span class="p">},</span> <span class="dl">'</span><span class="s1">slow</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">swing</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">&gt;</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">height</span><span class="p">())</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.top</span><span class="dl">'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">"</span><span class="s2">top-active</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.top</span><span class="dl">'</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="dl">"</span><span class="s2">top-active</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">};</span>
+  <span class="p">});</span></code></pre></figure>
+
+<hr />
+
+<h2 id="images">Images</h2>
+
+<div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/02.jpg" />
+    <img src="/images/10.jpg" />
+    <img src="/images/11.jpg" />
+    <img src="/images/12.jpg" />
+    <img src="/images/14.jpg" />
+    <img src="/images/27.jpg" />
+  </div>
+  <em>Gallery / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
+</div>
+
+<p><img src="/images/16.jpg" alt="Caffe" />
+<em>Photo by <a href="https://unsplash.com/photos/T-G9PVLOfOY">Matthew Henry</a> on Unsplash</em></p>
+
+<hr />
+
+<h2 id="youtube-embed">Youtube Embed</h2>
+
+<p><iframe src="https://www.youtube.com/embed/QyQ85DEVpbc" frameborder="0" allowfullscreen=""></iframe></p>
+
+<hr />
+
+<h2 id="vimeo-embed">Vimeo Embed</h2>
+
+<p><iframe src="https://player.vimeo.com/video/107654760" width="640" height="360" frameborder="0" allowfullscreen=""></iframe></p>
+
+<hr />
+:ET

@@ -1,0 +1,52 @@
+<!-- begin testimonials -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="section__info">
+          <div class="section__head">
+            <h2 class="section__title">{{ site.data.settings.testimonial__title }}</h2>
+            <ul class="controls list-reset" id="customize-controls" aria-label="Slider Navigation" tabindex="0">
+              <li class="prev" data-controls="prev" aria-controls="customize" tabindex="-1">
+                <i class="ion ion-ios-arrow-back"></i>
+              </li>
+              <li class="next" data-controls="next" aria-controls="customize" tabindex="-1">
+                <i class="ion ion-ios-arrow-forward"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="testimonials__slider my-slider">
+          {% for testimonial-item in site.data.settings.testimonial-items %}
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                {% if testimonial-item.content %}
+                  <p class="client-text">{{ testimonial-item.content }}</p>
+                {% endif %}
+                <div class="client-meta">
+                  {% if testimonial-item.image %}
+                    <div class="image-container">
+                      <img class="client-avatar" src="{{ testimonial-item.image | relative_url }}" alt="{{ testimonial-item.name }}">
+                    </div>
+                  {% endif %}
+                  <div class="client-info">
+                    {% if testimonial-item.name %}
+                      <h3 class="client-name">{{ testimonial-item.name }}</h3>
+                    {% endif %}
+                    {% if testimonial-item.designation %}
+                      <p class="client-designation">{{ testimonial-item.designation }}</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end testimonials -->

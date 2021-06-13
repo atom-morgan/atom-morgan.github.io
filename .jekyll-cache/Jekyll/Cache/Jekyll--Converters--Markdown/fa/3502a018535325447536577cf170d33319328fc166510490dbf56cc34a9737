@@ -1,0 +1,431 @@
+I" �<h2 id="video">Video</h2>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/M02PkvLeCmY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial we’re going to take a look at automated testing. Automated testing is a way for us to automate the testing of our code—something we’ve been doing manually up until this point.</p>
+
+<p>Think about the functions we’ve written so far. We write a bit of code, we run it, and then we manually verify the code is giving us the result we expect. With automated testing, we can automate <em>ourselves</em> out of this process.</p>
+
+<p>We’ll be taking a <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">test-driven development</a> (TDD) approach meaning we’ll write our tests first. These tests will initially be failing (referred to as red in TDD) because the actual code hasn’t been written yet. Then we’ll write the code, run the test again, and (hopefully) verify that our tests are passing (referred to as green in TDD).</p>
+
+<div class="box box-dark">
+  <p>I taught myself to code and now I’m a self-employed remote freelancer. I know what it takes to get here and I can teach you how to do it too.
+  Click <a href="https://landing.mailerlite.com/webforms/landing/d9l9q6" target="_blank">here</a> to join my email list where I share my career tips
+  and keep you up-to-date with my latest tutorials.</p>
+</div>
+
+<h2 id="setup">Setup</h2>
+
+<p>Before we get into the code, create a new directory for the code we’ll write in this tutorial.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">mkdir webdev-testing
+</span></code></pre></div></div>
+
+<p>Then use <code class="language-plaintext highlighter-rouge">cd</code> to move into your new directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd webdev-testing
+</span></code></pre></div></div>
+
+<p>Within this directory, create the new file for your code.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch webdev-testing.js
+</span></code></pre></div></div>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="jasmine">Jasmine</h2>
+
+<p>To test our code we’ll need to leverage a testing framework. A testing framework provides us the tools we need to test our code without having to write all of it ourselves. The one we’ll be using for this tutorial is <a href="https://jasmine.github.io/" target="_blank">Jasmine</a>.</p>
+
+<p>Since our code has a dependency, Jasmine, we’ll start by creating a <code class="language-plaintext highlighter-rouge">package.json</code> file using the <code class="language-plaintext highlighter-rouge">npm init</code> command (npm was installed way back when we installed Node.js in <a href="https://atom-morgan.github.io/hello-world-in-javascript/" target="_blank">Code Companion #2</a>). Run the following command in the <code class="language-plaintext highlighter-rouge">webdev-testing</code> directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">npm init
+</span></code></pre></div></div>
+
+<p>Run that and you should see a prompt asking you for input such as the project’s name, version, description, git repository, etc. Feel free to simply hit <code class="language-plaintext highlighter-rouge">Enter</code> to these to leave them with their default values.</p>
+
+<p><img src="/images/automated-testing/npm-init.png" alt="npm init prompt" /></p>
+
+<p>After that is finished you should now see a <code class="language-plaintext highlighter-rouge">package.json</code> file in your directory. This file contains details about our code such as its dependencies (like Jasmine) and metadata such as the project’s description and author. Assuming another developer looked at this project they wouldn’t need to ask which testing framwork was used. They could simply look at <code class="language-plaintext highlighter-rouge">package.json</code> and see for themselves.</p>
+
+<p>So now let’s install Jasmine and add it to <code class="language-plaintext highlighter-rouge">package.json</code>. First we’ll install Jasmine globally to give us access to the Jasmine CLI.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">npm install jasmine -g
+</span></code></pre></div></div>
+
+<p>Then we’ll add Jasmine to our project’s development dependencies using the <code class="language-plaintext highlighter-rouge">-D</code> flag.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">npm install jasmine -D
+</span></code></pre></div></div>
+
+<p>A development dependency simply means that the dependency is necessary for development purposes. Testing code is something that’s done in <em>development</em> before code is released to the world (production). So the <code class="language-plaintext highlighter-rouge">-D</code> flag is a way to signify that this dependency isn’t needed for our code to actually run, only to aid us as we’re writing the code.</p>
+
+<p>From here we can initialize the project for Jasmine by running <code class="language-plaintext highlighter-rouge">jasmine init</code> to create our testing directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">jasmine init
+</span></code></pre></div></div>
+
+<p>After that has finished your directory should now look like this:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">webdev-testing
++-- node_modules
++-- package.json
++-- spec
++-- webdev-testing.js
+</span></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">package.json</code> file was created earlier when we ran <code class="language-plaintext highlighter-rouge">npm init</code>. Then when we installed Jasmine as a project dependency, it created the <code class="language-plaintext highlighter-rouge">node_modules</code> folder which contains Jasmine and all of <em>its</em> dependencies. Finally, we have the new <code class="language-plaintext highlighter-rouge">spec</code> directory that was created with <code class="language-plaintext highlighter-rouge">jasmine init</code>. This is where we will write our tests.</p>
+
+<p>Move into this directory and create a new file. Unlike the file for our code, <code class="language-plaintext highlighter-rouge">webdev-testing.js</code>, this file should have the extension <code class="language-plaintext highlighter-rouge">.spec.js</code>. This is the file extension Jasmine looks for when it runs tests.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd spec
+touch webdev-testing.spec.js
+</span></code></pre></div></div>
+
+<p>With that file in place you can now run <code class="language-plaintext highlighter-rouge">jasmine</code> in your terminal to run the tests.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">jasmine
+</span></code></pre></div></div>
+
+<p><img src="/images/automated-testing/no-specs.png" alt="Jasmine no tests" /></p>
+
+<p>The output from that command should say something like “No specs found”. That’s because we haven’t written any tests. So let’s start with our first automated test.</p>
+
+<h2 id="our-first-test">Our first test</h2>
+
+<p>We begin our automated tests by calling the <code class="language-plaintext highlighter-rouge">describe</code> function provided to us by Jasmine. This function is for naming a collection of tests and we provide it two arguments: the name of our collection of tests and a function.</p>
+
+<p>Within the function we call the <code class="language-plaintext highlighter-rouge">it</code> function. This is what’s known in Jasmine as a “spec”. Similar to <code class="language-plaintext highlighter-rouge">describe</code> it takes two arguments: the name or title of the spec and a function.</p>
+
+<p>Within the function passed into <code class="language-plaintext highlighter-rouge">it</code> is where we write our tests as shown below:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">A suite</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">contains a spec with an expectation</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Test code here</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>At the moment there isn’t any code. Let’s add something simple to show Jasmine in action.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">A suite</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">contains a spec with an expectation</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">myValue</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">myValue</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Here we create a variable <code class="language-plaintext highlighter-rouge">myValue</code> and assign it the value <code class="language-plaintext highlighter-rouge">true</code>. Then we call the <code class="language-plaintext highlighter-rouge">expect</code> function passing it what’s known as an “actual”. This is the bit of code we want to test.</p>
+
+<p>Following that is what’s known as a “matcher”, <code class="language-plaintext highlighter-rouge">toBe()</code>. The value provided here is the “expected value”. So our test in plain English is, “Expect <code class="language-plaintext highlighter-rouge">myValue</code> to be <code class="language-plaintext highlighter-rouge">false</code>”.</p>
+
+<div class="box">
+  <p>The matcher <code class="language-plaintext highlighter-rouge">toBe()</code> is just one of many matchers provided to us by Jasmine which you can see <a href="https://jasmine.github.io/api/edge/matchers.html" target="_blank">here</a>.</p>
+</div>
+
+<p>To run this test open a terminal and navigate to the <code class="language-plaintext highlighter-rouge">webdev-testing</code> directory. Then run <code class="language-plaintext highlighter-rouge">jasmine</code>.</p>
+
+<p><img src="/images/automated-testing/first-test-failing.png" alt="First test, failing state" /></p>
+
+<p>You should now see Jasmine highlighting errors in the test. On line 4 it expects <code class="language-plaintext highlighter-rouge">true</code> to be <code class="language-plaintext highlighter-rouge">false</code>. Our test is currently in a failing (red) state. So let’s get it to pass.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">A suite</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">contains a spec with an expectation</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">myValue</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">myValue</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>With the value of <code class="language-plaintext highlighter-rouge">myValue</code> updated to <code class="language-plaintext highlighter-rouge">false</code> we can now run Jasmine again with the <code class="language-plaintext highlighter-rouge">jasmine</code> command.</p>
+
+<p><img src="/images/automated-testing/first-test-passing.png" alt="First test, passing state" /></p>
+
+<h2 id="updating-date">Updating Date</h2>
+
+<p>Let’s continue by writing a test for a new and better <code class="language-plaintext highlighter-rouge">Date</code>, specifically a function to provide us with the current day of the week in English as we did in <a href="https://atom-morgan.github.io/functions/" target="_blank">Code Companion #5</a>.</p>
+
+<p>First, we’ll start by writing a failing (red) test for our code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">BetterDate</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should return the day of the week</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">betterDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BetterDate</span><span class="p">(</span><span class="dl">'</span><span class="s1">02 Jul 2018</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">betterDate</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">'</span><span class="s1">Monday</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>As you can see, we begin by creating a new instance of <code class="language-plaintext highlighter-rouge">BetterDate</code> passing it a date in string form. Then we call the <code class="language-plaintext highlighter-rouge">.getDay()</code> function within <code class="language-plaintext highlighter-rouge">expect()</code> and chain it with the <code class="language-plaintext highlighter-rouge">.toBe()</code> matcher providing it the expected value <code class="language-plaintext highlighter-rouge">Monday</code>.</p>
+
+<p>Run the <code class="language-plaintext highlighter-rouge">jasmine</code> command and you should see an error for our failing test because <code class="language-plaintext highlighter-rouge">BetterDate</code> is not defined.</p>
+
+<p><img src="/images/automated-testing/date-failing.png" alt="First test, failing state" /></p>
+
+<p>It’s worth noting <em>how</em> Jasmine prints errors as well. The first item under “Failures” reads “BetterDate should return the day of the week”. The strings we passed to <code class="language-plaintext highlighter-rouge">describe</code> and <code class="language-plaintext highlighter-rouge">it</code> combine to read like an English sentence. As these files grow in size, it’s helpful for identifying where the error occurs and giving us an easily digestible way of understanding <em>why</em> our code is failing.</p>
+
+<p>Now we can implement the constructor function <code class="language-plaintext highlighter-rouge">BetterDate</code> to get this test to pass. Just above <code class="language-plaintext highlighter-rouge">describe</code> add the following code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">BetterDate</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">getDay</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">days</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Sunday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Monday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Tuesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Wednesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Thursday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Friday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Saturday</span><span class="dl">'</span><span class="p">];</span>
+    <span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">now</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">days</span><span class="p">[</span><span class="nx">day</span><span class="p">];</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">BetterDate</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Code below omitted for brevity</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>In this constructor function is a <code class="language-plaintext highlighter-rouge">now</code> property that’s set to an instance of <code class="language-plaintext highlighter-rouge">Date</code> using the <code class="language-plaintext highlighter-rouge">date</code> parameter. Then we define the <code class="language-plaintext highlighter-rouge">getDay</code> function with an implementation that should look similar to one we wrote in <a href="https://atom-morgan.github.io/functions/" target="_blank">Code Companion #5</a>.</p>
+
+<p>Run <code class="language-plaintext highlighter-rouge">jasmine</code> and you should now see this test in a passing (green) state.</p>
+
+<p><img src="/images/automated-testing/date-passing.png" alt="First test, passing state" /></p>
+
+<p>However, when we write code we typically don’t add our code to test files. We have test files to <em>test</em> code but it doesn’t need to be in the exact same file. Instead, we’ll put the code for <code class="language-plaintext highlighter-rouge">BetterDate</code> into its own file and import it within our test file <code class="language-plaintext highlighter-rouge">webdev-testing.spec.js</code>.</p>
+
+<p>To do this, first move the <code class="language-plaintext highlighter-rouge">BetterDate</code> function into <code class="language-plaintext highlighter-rouge">webdev-testing.js</code> and add another line at the bottom to export it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">BetterDate</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">date</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">getDay</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">days</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Sunday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Monday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Tuesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Wednesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Thursday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Friday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Saturday</span><span class="dl">'</span><span class="p">];</span>
+    <span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">now</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">days</span><span class="p">[</span><span class="nx">day</span><span class="p">];</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">BetterDate</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The line <code class="language-plaintext highlighter-rouge">module.exports = BetterDate;</code> is the line that exports, or exposes, our code. It’s a special object provided to us by Node.js specifically for this purpose. Adding <code class="language-plaintext highlighter-rouge">BetterDate</code> to <code class="language-plaintext highlighter-rouge">module.exports</code> allows consumers of this code, such as our testing file, to use this constructor function.</p>
+
+<p>Unfortunately moving this function has reverted our test back to a failing (red) state. Running <code class="language-plaintext highlighter-rouge">jasmine</code> should now fail because <code class="language-plaintext highlighter-rouge">BetterDate</code> is no longer defined. To fix this we’ll need to import the file we just created.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">BetterDate</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../webdev-testing</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">BetterDate</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should return the day of the week</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">betterDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BetterDate</span><span class="p">();</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">betterDate</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="dl">'</span><span class="s1">Monday</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Here we use the <code class="language-plaintext highlighter-rouge">require()</code> function (also provided to us by Node.js) to import the file we just created setting it to the variable <code class="language-plaintext highlighter-rouge">BetterDate</code>. We provide <code class="language-plaintext highlighter-rouge">require()</code> the path to the file <code class="language-plaintext highlighter-rouge">webdev-testing.js</code> (the <code class="language-plaintext highlighter-rouge">.js</code> in <code class="language-plaintext highlighter-rouge">require</code> is optional).</p>
+
+<p>Run <code class="language-plaintext highlighter-rouge">jasmine</code> again and the test should now be back to a passing (green) state.</p>
+
+<h2 id="file-paths">File paths</h2>
+
+<p>You may be wondering about the <code class="language-plaintext highlighter-rouge">../</code> that precedes <code class="language-plaintext highlighter-rouge">webdev-testing</code> in <code class="language-plaintext highlighter-rouge">require()</code>.</p>
+
+<p>Since our testing file <code class="language-plaintext highlighter-rouge">webdev-testing.spec.js</code> lives in <code class="language-plaintext highlighter-rouge">webdev-testing/spec</code> we need to move up one directory to access <code class="language-plaintext highlighter-rouge">webdev-testing.js</code>. For that reason we add <code class="language-plaintext highlighter-rouge">../</code> which gets us one directory higher than where the file lives.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">webdev-testing
++-- node_modules
++-- package.json
++-- spec
+  +-- webdev-testing.spec.js
++-- webdev-testing.js
+</span></code></pre></div></div>
+
+<p>You can see this in command-line form in your terminal. If you’re in <code class="language-plaintext highlighter-rouge">webdev-testing</code> run the following commands:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd spec
+cd ..
+cd spec
+cd ..
+</span></code></pre></div></div>
+
+<p>Once you’re in <code class="language-plaintext highlighter-rouge">spec</code> the <code class="language-plaintext highlighter-rouge">..</code> allows you to move back into <code class="language-plaintext highlighter-rouge">webdev-testing</code>. The <code class="language-plaintext highlighter-rouge">../</code> in <code class="language-plaintext highlighter-rouge">require('../webdev-testing');</code> is doing the same thing.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Before we finish, add your latest changes to Git.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init
+git add .
+</span></code></pre></div></div>
+
+<p>Then add a commit message.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git commit -m "Add automated testing"
+</span></code></pre></div></div>
+
+<p>Then push these changes up to GitHub.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git push origin master
+</span></code></pre></div></div>
+
+<h2 id="exercises">Exercises</h2>
+
+<p>For this exercise, create another test file in the <code class="language-plaintext highlighter-rouge">spec</code> directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch spec/trainer.spec.js
+</span></code></pre></div></div>
+
+<p>In that file add the following tests.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">Trainer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../trainer</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">Trainer</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should have a name</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trainer</span><span class="p">.</span><span class="nx">identify</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Trainer is Adam</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should capitalize the trainer</span><span class="se">\'</span><span class="s1">s name</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">adam</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trainer</span><span class="p">.</span><span class="nx">identify</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Trainer is Adam</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should have tasks</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">adam</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">]);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trainer</span><span class="p">.</span><span class="nx">printTasks</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Remaining tasks: Get a Pokemon</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should default to an empty array if no tasks are provided</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">adam</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trainer</span><span class="p">.</span><span class="nx">tasks</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">([]);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should print a message if no tasks remain</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">adam</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trainer</span><span class="p">.</span><span class="nx">printTasks</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">No tasks left!</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should add new tasks to the tasks array</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">adam</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">]);</span>
+    <span class="nx">trainer</span><span class="p">.</span><span class="nx">addTask</span><span class="p">(</span><span class="dl">'</span><span class="s1">Visit Professor Oak</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trainer</span><span class="p">.</span><span class="nx">printTasks</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Remaining tasks: Get a Pokemon, Visit Professor Oak</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should remove a task from a tasks</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">adam</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Visit Professor Oak</span><span class="dl">'</span><span class="p">]);</span>
+    <span class="nx">trainer</span><span class="p">.</span><span class="nx">removeTask</span><span class="p">(</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trainer</span><span class="p">.</span><span class="nx">printTasks</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Remaining tasks: Visit Professor Oak</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should verify the task exists before attempting to remove it</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">adam</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Visit Professor Oak</span><span class="dl">'</span><span class="p">]);</span>
+    <span class="nx">trainer</span><span class="p">.</span><span class="nx">removeTask</span><span class="p">(</span><span class="dl">'</span><span class="s1">Beat Brock</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">trainer</span><span class="p">.</span><span class="nx">printTasks</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Remaining tasks: Get a Pokemon, Visit Professor Oak</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Then create another file in <code class="language-plaintext highlighter-rouge">webdev-testing</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch trainer.js
+</code></pre></div></div>
+
+<p>Within that file, add the rough scaffolding for <code class="language-plaintext highlighter-rouge">Trainer</code> that’s shown below.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Trainer</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Your code here</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Trainer</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Run <code class="language-plaintext highlighter-rouge">jasmine</code> and you’ll see 8 failing tests. Write the code for <code class="language-plaintext highlighter-rouge">Trainer</code> to make all the tests pass.</p>
+
+<div class="box">
+  <p>Need some help? Click <a href="https://discord.gg/xMc7n3Z" target="_blank">here</a> to join a Discord server created exclusively for this series.</p>
+</div>
+
+<p>If you only want <code class="language-plaintext highlighter-rouge">jasmine</code> to run the tests within <code class="language-plaintext highlighter-rouge">trainer.spec.js</code> you can update the <code class="language-plaintext highlighter-rouge">describe</code> function to <code class="language-plaintext highlighter-rouge">fdescribe</code>. This will “focus” Jasmine to this set of tests ignoring the tests in other files such as <code class="language-plaintext highlighter-rouge">webdev-testing.spec.js</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">Trainer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">../trainer</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">fdescribe</span><span class="p">(</span><span class="dl">'</span><span class="s1">Trainer</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Just remember to change it back to <code class="language-plaintext highlighter-rouge">describe</code> once you’re done to see <em>all</em> of your tests in a passing state!</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+
+<!-- ANSWER
+
+```javascript
+function Trainer(name, tasks = []) {
+  this.name = name;
+  this.tasks = tasks;
+  this.identify = function() {
+    return `Trainer is ${this.capitalize(this.name)}`;
+  };
+  this.capitalize = function(word) {
+    return word.slice(0, 1).toUpperCase() + word.slice(1);
+  };
+  this.printTasks = function() {
+    if (this.tasks.length) {
+      return `Remaining tasks: ${this.tasks.join(', ')}`;
+    } else {
+      return 'No tasks left!';
+    }
+  };
+  this.addTask = function(task) {
+    this.tasks.push(task);
+  };
+  this.removeTask = function(task) {
+    if (this.tasks.indexOf(task) !== -1) {
+      this.tasks.splice(this.tasks.indexOf(task), 1);
+    }
+  };
+}
+
+module.exports = Trainer;
+``` -->
+:ET

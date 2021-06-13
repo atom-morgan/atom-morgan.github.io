@@ -1,25 +1,21 @@
-<footer id="colophon" class="site-footer outer">
-  <div class="inner">
-    <div class="site-footer-inside">
-      <div class="site-info">
-        {% assign content_is_not_empty = site.footer.content | is_not_empty %}
-        {% if content_is_not_empty %}
-        <span class="copyright">{{ site.footer.content }}</span>
-        {% endif %}
-        {% for action in site.footer.links %}
-          
-          {% include action_link.html action=action %}
-        {% endfor %}
-      </div><!-- .site-info -->
-      {% assign has_social_is_not_empty = site.footer.has_social | is_not_empty %}
-      {% if has_social_is_not_empty %}
-      <div class="social-links">
-        {% for action in site.footer.social_links %}
-          
-          {% include action_link.html action=action %}
-        {% endfor %}
-      </div><!-- .social-links -->
-      {% endif %}
-    </div><!-- .site-footer-inside -->
-  </div><!-- .inner -->
-</footer><!-- .site-footer -->
+<!-- begin footer -->
+<footer class="footer">
+
+  {% if site.data.settings.cover__image %}
+    <div class="footer-cover">
+      <div class="cover-image">
+        <img class="lazy" data-src="{{site.data.settings.cover__image}}" alt="{{site.data.settings.title}}">
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        {% include social-link.html %}
+        <div class="copyright">&copy; {{site.time | date: '%Y'}}. Built by <a href="https://atom-morgan.github.io/">Adam Morgan</a>.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->

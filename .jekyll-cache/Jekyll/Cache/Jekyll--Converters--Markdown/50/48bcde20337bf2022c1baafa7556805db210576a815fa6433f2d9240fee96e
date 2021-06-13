@@ -1,0 +1,189 @@
+I"(<<h2 id="video">Video</h2>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/qgkEjEA23L4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="goal">Goal</h2>
+
+<p>I’ll never forget the overwhelming feeling when I first started learning web development. There were terms I’d never heard of, multiple programming languages, front-end development, back-end development, and web frameworks.</p>
+
+<p>Learning how each of these various pieces fit together wasn’t easy and there was always the fear that I’d be wasting my time learning something I didn’t need to learn.</p>
+
+<p>In this tutorial we’re going to clarify web development terms such as HTML, CSS, JavaScript, server-side programming, client-side programming, databases, JSON, and so on to give you a grasp of how everything fits together at a high level.</p>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="how-does-the-web-work">How does the web work?</h2>
+
+<p>First we need to start with how the web works.</p>
+
+<p>Let’s think about a site like Twitter. When you access someone’s Twitter account, let’s use @realDonaldTrump as an example, the main content you see is a feed of tweets from Donald Trump. You see a feed of Trump’s tweets by accessing his Twitter URL: <a href="https://twitter.com/realDonaldTrump" target="_blank">https://twitter.com/realDonaldTrump</a>.</p>
+
+<p>When you enter this URL into the browser you’ve made what’s known as an HTTP request to Twitter’s servers. That HTTP request is then received by Twitter and it’s their job to handle this request. In this case Twitter sees you’re trying to access @realDonaldTrump’s account so they query their database to get any of @realDonaldTrump’s data that is needed to view this page such as his name, tweets, following count, follower count, and any other information that’s used to populate his page.</p>
+
+<p>Once Twitter finishes querying their database for this information, they respond to the browser’s request (the one you originally made when you entered in the URL <a href="https://twitter.com/realDonaldTrump" target="_blank">https://twitter.com/realDonaldTrump</a>) by sending back the data from their database.</p>
+
+<div class="box">
+  <p>If you’ve ever seen or heard the term <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>, that’s the file format that’s typically used to send this data but more on that in a later tutorial.</p>
+</div>
+
+<p>Once this data is received by the browser, the HTML page you see in the browser is then constructed using the data sent back from Twitter.</p>
+
+<p><img src="/images/what-is-web-dev/trump-twitter.png" alt="Trump's Twitter" /></p>
+
+<h2 id="client-server-model">Client server model</h2>
+
+<p>This model—making a request to a site like Twitter and receiving data in response—is what’s known as a client-server model. We can see the previous example illustrated in the following image where the client is a web browser and the server is Twitter.</p>
+
+<div class="box">
+  <p>We use the term “client” here instead of something like “computer” to be a bit more general because the number of devices that can act as clients continues to grow. You can now access Twitter from your laptop, tablet, smartphone, TV, video game consoles, etc. All of these would classify as a “client” in the client-server model.</p>
+</div>
+
+<p><img src="/images/what-is-web-dev/client-server-user.png" alt="Client-Server User POV" /></p>
+
+<p>This shows a client-server model at a nearly technology agnostic level. We haven’t even talked programming languages or back-end vs front-end yet. So considering that all of these are used to make web applications such as Twitter, how do they fit in to this client-server model?</p>
+
+<p><img src="/images/what-is-web-dev/client-server-dev.png" alt="Client-Server Developer POV" /></p>
+
+<p>As you can see our previous labels for “Browser” and “Twitter” have been replaced with some underlying technologies that are used such as “React” and “Node.js”. This is where some of the various frameworks you may have heard of start to come in.</p>
+
+<p>In this hypothetical example, Twitter’s front-end application is built using React. This React application makes requests to a Node.js back-end that uses a MongoDB database to store any data.</p>
+
+<h2 id="front-end-vs-back-end">Front end vs. back end</h2>
+
+<p>Any code that’s running on a browser is “front-end” code using frameworks such as React, Angular, Vue.js, or Ember. Front-end developers write code that’s executed on a client, such as a web browser. It displays a web page to the user using HTML, CSS, and JavaScript.</p>
+
+<p>Any code that’s running on a server is “back-end” code using frameworks such as Ruby on Rails, Node.js, Laravel, or Django. Back-end developers write code that’s executed on a server responding to requests made by clients. Back-end developers will also work with a database if necessary to fulfill those requests.</p>
+
+<p>The distinction between front-end and back-end is delineated by the client that’s <strong><em>making the request</em></strong> and the server that’s sending a <strong><em>response to the request</em></strong> back to the client.</p>
+
+<p>Front-end is what you see, back-end is what you don’t see.</p>
+
+<div class="box box-dark">
+  <p>I taught myself to code and now I’m a self-employed remote freelancer. I know what it takes to get here and I can teach you how to do it too.
+  Click <a href="https://landing.mailerlite.com/webforms/landing/d9l9q6" target="_blank">here</a> to join my email list where I share my career tips
+  and keep you up-to-date with my latest tutorials.</p>
+</div>
+
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+
+<p>Once the division between front-end and back-end has been established, there are a couple common questions about programming languages and frameworks that I typically see such as these:</p>
+
+<p><strong>Should I learn a language before I learn a framework?</strong></p>
+
+<p>Yes. If you’re going to learn a framework it’s best to start off with the programming language that’s used within the framework first.</p>
+
+<p>If you’re considering front-end then learning HTML, CSS, and JavaScript is a must-have. Since so much of front-end development happens in a browser, you have to learn how to work with browser technology such as HTML, CSS, and JavaScript. Once you’ve gotten a grasp of these then you can move on to one of the popular front-end frameworks listed below:</p>
+
+<ul>
+  <li><a href="https://angular.io/" target="_blank">Angular</a></li>
+  <li><a href="https://reactjs.org/" target="_blank">React</a></li>
+  <li><a href="https://www.emberjs.com/" target="_blank">Ember.js</a></li>
+  <li><a href="https://vuejs.org/" target="_blank">Vue.js</a></li>
+</ul>
+
+<p>If you’re considering back-end you don’t have to worry about HTML and CSS as much since your code isn’t directly interfacing with a browser. Instead, you’ll likely be replacing this with knowledge of databases since you’re going to be saving, updating, and retrieving data from databases. Here are a few popular options for databases:</p>
+
+<ul>
+  <li><a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a></li>
+  <li><a href="https://www.microsoft.com/en-us/sql-server/sql-server-2017" target="_blank">SQL Server</a></li>
+  <li><a href="https://www.mysql.com/" target="_blank">MySQL</a></li>
+  <li><a href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
+</ul>
+
+<p>In addition to that, you will also need to learn a programming language along with a framework. A few of the current popular options are below:</p>
+
+<ul>
+  <li><a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a> (Ruby)</li>
+  <li><a href="https://expressjs.com/" target="_blank">Express/Node.js</a> (JavaScript)</li>
+  <li><a href="https://laravel.com/" target="_blank">Laravel</a> (PHP)</li>
+  <li><a href="https://www.djangoproject.com/" target="_blank">Django</a> (Python)</li>
+  <li><a href="https://www.asp.net/" target="_blank">ASP.NET</a> (VB, C#, etc)</li>
+  <li><a href="https://spring.io/" target="_blank">Spring MVC</a> (Java)</li>
+</ul>
+
+<p><strong>If I learn Angular do I need to learn React?</strong></p>
+
+<p>No. Once you’re proficient with a framework, you have the skillset you need to do back-end or front-end work with whatever framework it is that you know.</p>
+
+<div class="box">
+  <p>While there are some differences between frameworks, the job the frameworks were created to do is the exact same job so frameworks are interchangeable. If you know Ruby on Rails, you don’t need to learn Express. They do the exact same thing using different programming languages.</p>
+</div>
+
+<p><strong>So if I know JavaScript, why do I need to learn a framework? What does a framework even do?</strong></p>
+
+<p>If you’ve ever played a video game with a built-in level creator, you can think of frameworks as a level creator for the web. In a video game’s level creator, there are certain assets available for you to use such as structures, textures, enemies, items, and so on. You may even be given the option to build a structure from base components to create a new structure that you can re-use and even share with others. Web frameworks essentially do the same thing. But rather than providing us textures and structures that exist within the game’s universe, we’re given the various tools we need to create modern web applications such as routing, form builders, form validation, and services to abstract many of the details of making HTTP request from us. It provides us the basic building blocks for creating a web application.</p>
+
+<p>This is the reason why it’s always recommended to learn a language first, then a framework. Walk first, then run.</p>
+
+<p><strong>What is a tech stack?</strong></p>
+
+<p>A tech stack is simplay any variation of the three groups we described above: databases, back-end frameworks, and front-end frameworks. Since each framework or database generally does the same thing, that gives you (or a development team) the freedom to choose whatever tool you prefer for the job.</p>
+
+<p>Here are a few more sample “tech stacks” using some of the options listed earlier.</p>
+
+<ul>
+  <li>MongoDB — Ruby on Rails — Angular</li>
+  <li>PostgreSQL — Express — Vue.js</li>
+  <li>MySQL — Ruby on Rails — Ember.js</li>
+</ul>
+
+<p><strong>I’m not sure if I want to do front-end or back-end. What should I do first so I don’t waste any time learning?</strong></p>
+
+<p>Learn the fundamentals of programming and a programming language. Since frameworks (both back-end and front-end) are largely interchangeable, the underlying capabilities of the languages are mostly the same.</p>
+
+<p>This is why you may hear programmers occasionally say once you know one language you know them all. This isn’t 100% true but there is some truth to the saying. Programmers from one language can usually at least read and figure out what’s going on in a language they’ve never used. This is because the fundamentals between programming languages, and frameworks, are largely the same.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>At this point, I hope you have a better understanding of how the web works at a high level and how the various pieces of web development fit together.</p>
+
+<p>We’ve seen how front-end developers write code that’s executed on clients which make requests to servers. Once this request is received by a server, back-end developers write code to handle those requests sending back data to create web applications.</p>
+
+<p>We also introduced some of the various frameworks used by front-end and back-end developers as well as some of the databases you can expect to work with as a back-end developer.</p>
+
+<p>In the <a href="https://atom-morgan.github.io/hello-world-in-javascript/" target="_blank">next tutorial</a> we’ll begin our introduction to web development by writing a simple “Hello, world!” program using HTML and JavaScript.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

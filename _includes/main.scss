@@ -1,0 +1,118 @@
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+-------------------------------------------------------------------*/
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+:: Template name: Avenco
+:: Avenco is a modern and minimal portfolio theme for Jekyll. This theme was specially created to help show your work in a simple yet creative way. Also, the Avenco theme includes several basic and easily customizable sections such as Works, Testimonials, Blog, Contact and therefore will be a good choice for any freelancer, designer, or developer.
+:: Template Author: Artem Sheludko
+:: Version: 1.0
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>
+:: 1-Tools and Libs
+    1.1-Normalize
+    1.2-Reset
+    1.3-Shared
+    1.4-Syntax Highlighting
+    1.5-Grid
+    1.6-Tiny Slider
+    1.7-Animate
+:: 2-Base Styles
+    2.1-Base
+:: 3-Modules
+    3.1-Header
+    3.2-Pagination
+    3.3-Footer
+    3.4-Gallery
+    3.5-Social
+    3.6-Author
+    3.7-Sections
+    3.8-Projects
+    3.9-Testimonials
+    3.10-Article
+    3.11-Contact
+    3.12-Subscribe
+    3.13-Buttons
+    3.14-Scroll Button Top
+:: 4-Layouts
+    4.1-Post Page
+    4.2-Project Page
+    4.3-Tags Page
+<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+
+@import '0-settings/variables';
+@import '0-settings/color-scheme';
+@import '0-settings/mixins';
+@import '0-settings/helpers';
+
+
+/* =======================
+:: 1-Tools and Libs
+======================= */
+/* >>>>>>>>>>>>>> :: 1.1-Normalize <<<<<<<<<<<<<<< */
+@import '1-tools/normalize';
+/* >>>>>>>>>>>>>> :: 1.2-Reset <<<<<<<<<<<<<<< */
+@import '1-tools/reset';
+/* >>>>>>>>>>>>>> :: 1.3-Shared <<<<<<<<<<<<<<< */
+@import '1-tools/shared';
+/* >>>>>>>>>>>>>> :: 1.4-Syntax Highlighting <<<<<<<<<<<<<<< */
+@import '1-tools/syntax-highlighting';
+/* >>>>>>>>>>>>>> :: 1.5-Grid <<<<<<<<<<<<<<< */
+@import '1-tools/grid';
+/* >>>>>>>>>>>>>> :: 1.6-Tiny Slider <<<<<<<<<<<<<<< */
+@import '1-tools/tiny-slider';
+/* >>>>>>>>>>>>>> :: 1.6-Animate <<<<<<<<<<<<<<< */
+@import '1-tools/animate';
+
+
+/* =======================
+:: 2-Base Styles
+======================= */
+/* >>>>>>>>>>>>>> :: 2.1-Base <<<<<<<<<<<<<<< */
+@import '2-base/base';
+
+
+/* =======================
+:: 3-Modules
+======================= */
+/* >>>>>>>>>>>>>> :: 3.1-Header <<<<<<<<<<<<<<< */
+@import '3-modules/header';
+/* >>>>>>>>>>>>>> :: 3.2-Pagination <<<<<<<<<<<<<<< */
+@import '3-modules/pagination';
+/* >>>>>>>>>>>>>> :: 3.3-Footer <<<<<<<<<<<<<<< */
+@import '3-modules/footer';
+/* >>>>>>>>>>>>>> :: 3.4-Gallery <<<<<<<<<<<<<<< */
+@import '3-modules/gallery';
+/* >>>>>>>>>>>>>> :: 3.5-Social <<<<<<<<<<<<<<< */
+@import '3-modules/social';
+/* >>>>>>>>>>>>>> :: 3.6-Author <<<<<<<<<<<<<<< */
+@import '3-modules/author';
+/* >>>>>>>>>>>>>> :: 3.7-Sections <<<<<<<<<<<<<<< */
+@import '3-modules/sections';
+/* >>>>>>>>>>>>>> :: 3.8-Projects <<<<<<<<<<<<<<< */
+@import '3-modules/projects';
+/* >>>>>>>>>>>>>> :: 3.9-Testimonials <<<<<<<<<<<<<<< */
+@import '3-modules/testimonials';
+/* >>>>>>>>>>>>>> :: 3.10-Article <<<<<<<<<<<<<<< */
+@import '3-modules/article';
+/* >>>>>>>>>>>>>> :: 3.11-Contact <<<<<<<<<<<<<<< */
+@import '3-modules/contact';
+/* >>>>>>>>>>>>>> :: 3.12-Subscribe <<<<<<<<<<<<<<< */
+@import '3-modules/subscribe';
+/* >>>>>>>>>>>>>> :: 3.13-Buttons <<<<<<<<<<<<<<< */
+@import '3-modules/buttons';
+/* >>>>>>>>>>>>>> :: 3.14-Scroll Button Top <<<<<<<<<<<<<<< */
+@import '3-modules/scroll-button-top';
+
+
+/* =======================
+:: 4-Layouts
+======================= */
+/* >>>>>>>>>>>>>> :: 4.1-Post Page <<<<<<<<<<<<<<< */
+@import '4-layouts/post';
+/* >>>>>>>>>>>>>> :: 4.2-Project Page <<<<<<<<<<<<<<< */
+@import '4-layouts/project';
+/* >>>>>>>>>>>>>> :: 4.3-Tags Page <<<<<<<<<<<<<<< */
+@import '4-layouts/tags-page';

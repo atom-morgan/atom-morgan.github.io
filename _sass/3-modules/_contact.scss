@@ -1,0 +1,152 @@
+/* Contact */
+.contact-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: auto;
+  opacity: 0;
+  background: $white;
+  transition: all .25s ease;
+
+  &.is-visible {
+    z-index: 999;
+    opacity: 1;
+    transition: all .25s ease;
+  }
+
+  .container {
+    position: relative;
+  }
+}
+
+.contact-close {
+  position: absolute;
+  top: 40px;
+  right: $base-spacing-unit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba($primary-color, 0.08);
+
+  &:hover {
+    .ion-md-close {
+      transform: rotate(90deg);
+    }
+  }
+
+  .ion-md-close {
+    color: $primary-color;
+    transition: $global-transition;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.contact-head {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.contact-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 52px;
+  font-weight: 900;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -42%;
+    left: -16%;
+    transform: rotate(-45deg);
+    display: block;
+    width: 130px;
+    height: 100px;
+    background-image: -webkit-repeating-radial-gradient(center center, rgba($primary-color, .7), rgba($primary-color, .7) 2px, transparent 2px, transparent 100%);
+    background-image: -moz-repeating-radial-gradient(center center, rgba($primary-color, .7), rgba($primary-color, .7) 2px, transparent 2px, transparent 100%);
+    background-image: -ms-repeating-radial-gradient(center center, rgba($primary-color, .7), rgba($primary-color, .7) 2px, transparent 2px, transparent 100%);
+    background-image: repeating-radial-gradient(center center, rgba($primary-color, .7), rgba($primary-color, .7) 2px, transparent 2px, transparent 100%);
+    -webkit-background-size: 15px 15px;
+    -moz-background-size: 15px 15px;
+    background-size: 15px 15px;
+    opacity: 0.8;
+    user-select: none;
+  }
+
+}
+
+.contact-description {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 800;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.form-box {
+  max-width: 580px;
+  margin: 0 auto;
+  padding-top: 140px;
+}
+
+.form {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.form__group {
+  margin-bottom: 20px;
+
+  &.form__group-button {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+
+    button {
+      box-shadow: 0px 100px 80px rgba(98, 56, 189, 0.07), 0px 41.7776px 33.4221px rgba(98, 56, 189, 0.0503198), 0px 22.3363px 17.869px rgba(98, 56, 189, 0.0417275), 0px 12.5216px 10.0172px rgba(98, 56, 189, 0.035), 0px 6.6501px 5.32008px rgba(98, 56, 189, 0.0282725), 0px 2.76726px 2.21381px rgba(98, 56, 189, 0.0196802);
+
+      i {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+.form__input {
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 4px solid $border-color;
+  border-radius: 30px;
+  outline: none;
+  transition: $global-transition;
+  resize: vertical;
+  color: $text-color;
+  background: $background-color-alt;
+
+  &::placeholder {
+    color: $gray;
+  }
+
+  &:focus {
+    border-color: rgba($primary-color, 0.8);
+  }
+}

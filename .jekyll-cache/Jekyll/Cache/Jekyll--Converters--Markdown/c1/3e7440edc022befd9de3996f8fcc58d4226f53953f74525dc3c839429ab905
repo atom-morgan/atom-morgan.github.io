@@ -1,0 +1,392 @@
+I"�<h2 id="video">Video</h2>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/zFvxKn3DXqY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>We’ve covered a lot of the basics of JavaScript up to this point. These are the building blocks—the fundamentals needed for programming. But we’re now at a point where we can start using all of this to write simplified versions of programs you and I might actually use.</p>
+
+<p>In this tutorial, we’re going to look at JavaScript by creating objects that we can instantiate using the <code class="language-plaintext highlighter-rouge">new</code> keyword as we saw in the <a href="https://atom-morgan.github.io/functions/" target="_blank">last tutorial</a> when we were working with <code class="language-plaintext highlighter-rouge">Date</code>.</p>
+
+<p>It won’t be much longer before we’re adding some of this functionality to an HTML page.</p>
+
+<div class="box box-dark">
+  <p>I taught myself to code and now I’m a self-employed remote freelancer. I know what it takes to get here and I can teach you how to do it too.
+  Click <a href="https://landing.mailerlite.com/webforms/landing/d9l9q6" target="_blank">here</a> to join my email list where I share my career tips
+  and keep you up-to-date with my latest tutorials.</p>
+</div>
+
+<h2 id="setup">Setup</h2>
+
+<p>Before we get into the code, create a new directory for the code we’ll write in this tutorial.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">mkdir oo-javascript
+</span></code></pre></div></div>
+
+<p>Then use <code class="language-plaintext highlighter-rouge">cd</code> to move into your new directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd oo-javascript
+</span></code></pre></div></div>
+
+<p>Within this directory, create the new file for your code.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch oo-javascript.js
+</span></code></pre></div></div>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="function-declarations-and-expressions">Function declarations and expressions</h2>
+
+<p>Before we get to our new type of objects we have to cover a slightly different way of defining functions. Up until this point, we’ve been creating function declarations as shown below:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Function declaration</span>
+<span class="kd">function</span> <span class="nx">getArea</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">width</span> <span class="o">*</span> <span class="nx">height</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getArea</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span> <span class="c1">// 200</span>
+</code></pre></div></div>
+
+<p>However, you can also create what’s known as a function expression by assigning a function to a variable.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Function expression</span>
+<span class="kd">let</span> <span class="nx">getArea</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">width</span> <span class="o">*</span> <span class="nx">height</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getArea</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span> <span class="c1">// 200</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getArea</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span> <span class="c1">// 50</span>
+</code></pre></div></div>
+
+<p>While there are a few more technical details between the two, the primary difference we’re concerned with for now is that you can omit a function’s <em>name</em> from a function expression as shown in the example above by assigning it to a variable instead.</p>
+
+<p>As you progress as a programmer, you’ll see both function declarations and function expressions. But for the remainder of this tutorial, we’ll be leveraging function expressions.</p>
+
+<h2 id="creating-object-literals">Creating object literals</h2>
+
+<p>Up until this point we’ve been creating what are known as object literals. An example of one is shown below:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">28</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// Adam</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span> <span class="c1">// 28</span>
+</code></pre></div></div>
+
+<p>Then in the <a href="https://atom-morgan.github.io/functions/" target="_blank">previous tutorial</a> we saw a new way of creating objects using the <code class="language-plaintext highlighter-rouge">new</code> keyword as we did with <code class="language-plaintext highlighter-rouge">Date</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getDay</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">());</span>
+</code></pre></div></div>
+
+<p>So what’s going on here? Why aren’t we always using the <code class="language-plaintext highlighter-rouge">new</code> keyword?</p>
+
+<h2 id="constructor-functions">Constructor Functions</h2>
+
+<p>A function like <code class="language-plaintext highlighter-rouge">Date</code> is what’s known as a <em>constructor function</em>. When we call a function like <code class="language-plaintext highlighter-rouge">Date</code> and prefix it with the <code class="language-plaintext highlighter-rouge">new</code> keyword we’re telling JavaScript we would like to instantiate a new object using that constructor function. Let’s see what this looks like in code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Trainer</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">trainer</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// Adam</span>
+</code></pre></div></div>
+
+<p>Here we’ve defined a constructor function <code class="language-plaintext highlighter-rouge">Trainer</code> with a single parameter <code class="language-plaintext highlighter-rouge">name</code>. Inside the constructor (or constructor function) the keyword <code class="language-plaintext highlighter-rouge">this</code> references the new object that’s being created. So in the example a new <code class="language-plaintext highlighter-rouge">name</code> property is set to the value of the <code class="language-plaintext highlighter-rouge">name</code> parameter.</p>
+
+<p>Then we <em>instantiate the object</em> with the line: <code class="language-plaintext highlighter-rouge">let trainer = new Trainer('Adam');</code>. After that, <code class="language-plaintext highlighter-rouge">trainer</code> behaves just like any other object we’ve created so far.</p>
+
+<div class="box">
+  <p>It’s a popular convention in JavaScript to capitalize constructor functions. Any other function that isn’t a constructor function is camel cased like <code class="language-plaintext highlighter-rouge">getArea</code>.</p>
+</div>
+
+<h2 id="adding-functionality-to-constructor-functions">Adding functionality to Constructor Functions</h2>
+
+<p>Now let’s add some functionality to our constructor function by adding a function to print the name of the trainer.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Trainer</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">identify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The trainer is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">trainer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">trainer</span><span class="p">.</span><span class="nx">identify</span><span class="p">();</span> <span class="c1">// The trainer is Adam</span>
+</code></pre></div></div>
+
+<p>Here we create a new <code class="language-plaintext highlighter-rouge">identify</code> property set to a function expression. Within that function, we print out the trainer’s name by accessing the object’s <code class="language-plaintext highlighter-rouge">name</code> property using <code class="language-plaintext highlighter-rouge">this.name</code>. Call <code class="language-plaintext highlighter-rouge">trainer.identify()</code> and you should see the message printed to your screen.</p>
+
+<h2 id="creating-multiple-instances">Creating multiple instances</h2>
+
+<p>Now it’s time to see what makes this constructor function so powerful. With a constructor function we can instantiate multiple objects using the same constructor function. Let’s see how this works.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Trainer</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">identify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The trainer is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">ash</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Ash</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">gary</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Gary</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">ash</span><span class="p">.</span><span class="nx">identify</span><span class="p">();</span> <span class="c1">// The trainer is Ash</span>
+<span class="nx">gary</span><span class="p">.</span><span class="nx">identify</span><span class="p">();</span> <span class="c1">// The trainer is Gary</span>
+</code></pre></div></div>
+
+<p>We’ve left our constructor <code class="language-plaintext highlighter-rouge">Trainer</code> as it was before. But now we create <em>two</em> instances of <code class="language-plaintext highlighter-rouge">Trainer</code>, <code class="language-plaintext highlighter-rouge">ash</code> and <code class="language-plaintext highlighter-rouge">gary</code>, both using the <code class="language-plaintext highlighter-rouge">new</code> keyword. Now when we call <code class="language-plaintext highlighter-rouge">.identify()</code> on our two objects, each object will print their own respective name.</p>
+
+<p>The constructor function is essentially a blueprint and calling the function with <code class="language-plaintext highlighter-rouge">new</code> brings it to life as an object.</p>
+
+<h2 id="default-parameters">Default parameters</h2>
+
+<p>Similar to traditional functions we can create constructor functions with multiple parameters as well. Let’s add a new parameter and property for an array of tasks that our trainers must complete.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Trainer</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="p">[])</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tasks</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">identify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The trainer is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">ash</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Ash</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">gary</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Gary</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Visit Professor Oak</span><span class="dl">'</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ash</span><span class="p">.</span><span class="nx">tasks</span><span class="p">);</span> <span class="c1">// []</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gary</span><span class="p">.</span><span class="nx">tasks</span><span class="p">);</span> <span class="c1">// ['Visit Professor Oak']</span>
+</code></pre></div></div>
+
+<p>Here we added a new <code class="language-plaintext highlighter-rouge">tasks</code> parameter specifying a default value of an empty array if no value is passed in.</p>
+
+<p>Then we create two instances of <code class="language-plaintext highlighter-rouge">Trainer</code>, one without a second argument for <code class="language-plaintext highlighter-rouge">tasks</code> and another with it. Printing the contents of <code class="language-plaintext highlighter-rouge">tasks</code> for each trainer shows our default parameter in action.</p>
+
+<h2 id="add-tasks">Add tasks</h2>
+
+<p>Let’s continue by adding an <code class="language-plaintext highlighter-rouge">addTask</code> function to the constructor function <code class="language-plaintext highlighter-rouge">Trainer</code> to update the <code class="language-plaintext highlighter-rouge">tasks</code> property.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Trainer</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="p">[])</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tasks</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">identify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The trainer is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">addTask</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">task</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">ash</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Ash</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">ash</span><span class="p">.</span><span class="nx">addTask</span><span class="p">(</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ash</span><span class="p">.</span><span class="nx">tasks</span><span class="p">);</span> <span class="c1">// [ 'Get a Pokemon' ]</span>
+</code></pre></div></div>
+
+<p>Here we’ve added a new <code class="language-plaintext highlighter-rouge">addTask</code> function with a single <code class="language-plaintext highlighter-rouge">task</code> parameter. Within the function, we call the <code class="language-plaintext highlighter-rouge">push()</code> method to add the new <code class="language-plaintext highlighter-rouge">task</code> to the existing array.</p>
+
+<p>Then we create our new object, <code class="language-plaintext highlighter-rouge">ash</code>, and call <code class="language-plaintext highlighter-rouge">.addTask()</code> with the new task <code class="language-plaintext highlighter-rouge">Get a Pokemon</code>.</p>
+
+<h2 id="list-tasks">List tasks</h2>
+
+<p>We’ll finish with one last function to list the existing tasks.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Trainer</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="p">[])</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tasks</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">identify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The trainer is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">addTask</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">task</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">printTasks</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Remaining tasks: </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">ash</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Ash</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">ash</span><span class="p">.</span><span class="nx">addTask</span><span class="p">(</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">ash</span><span class="p">.</span><span class="nx">printTasks</span><span class="p">();</span> <span class="c1">// Remaining tasks: Get a Pokemon</span>
+</code></pre></div></div>
+
+<p>Just below <code class="language-plaintext highlighter-rouge">addTask</code> we added a new <code class="language-plaintext highlighter-rouge">printTasks</code> function that uses <code class="language-plaintext highlighter-rouge">console.log()</code> to print the <code class="language-plaintext highlighter-rouge">tasks</code> array.</p>
+
+<p>However, we want to add a small update to this. We want a small motiviational message to be displayed if the length of <code class="language-plaintext highlighter-rouge">tasks</code> is <code class="language-plaintext highlighter-rouge">1</code> (the trainer is nearly finished with their tasks).</p>
+
+<h2 id="comparison-operators">Comparison Operators</h2>
+
+<p>To do this, we’ll use what are known as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Equality_operators" target="_blank">equality operators</a>.</p>
+
+<p>What we’re concerned with specifically are the equality (<code class="language-plaintext highlighter-rouge">==</code>) and strict equality (<code class="language-plaintext highlighter-rouge">===</code>) operators.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Equality</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>    <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>  <span class="c1">// true</span>
+
+<span class="c1">// Strict equality</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span>   <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">1</span><span class="dl">"</span> <span class="o">===</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>The equality operator (<code class="language-plaintext highlighter-rouge">==</code>) converts both sides of the operator <em>if they are not the same type</em> then compares the two values returning <code class="language-plaintext highlighter-rouge">true</code> if they’re the same.</p>
+
+<p>The strict equality operator (<code class="language-plaintext highlighter-rouge">===</code>) compares both sides of the operator with <em>no type conversion</em>.</p>
+
+<p>In other words, equality is only concerned with values whereas strict equality compares values and data types.</p>
+
+<p>We can combine these with the logical NOT (<code class="language-plaintext highlighter-rouge">!</code>) operator which converts our equality operators to inequality operators.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Inequality</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>  <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">);</span>    <span class="c1">// true</span>
+
+<span class="c1">// Strict inequality</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">);</span>   <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>Within the JavaScript community the strict equality (<code class="language-plaintext highlighter-rouge">===</code>) operator is the preferred equality operator. Many advise you shouldn’t use equality (<code class="language-plaintext highlighter-rouge">==</code>) unless you have a good reason to do so since the equality operator (<code class="language-plaintext highlighter-rouge">==</code>) only compares values and not data types.</p>
+
+<p>Let’s now apply these operators to <code class="language-plaintext highlighter-rouge">printTasks</code> to print a message to the trainer if they’re nearly finished with their tasks.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Trainer</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="p">[])</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tasks</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">identify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The trainer is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">addTask</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">task</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">printTasks</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Nearly finished!</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Remaining tasks: </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">ash</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Ash</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">ash</span><span class="p">.</span><span class="nx">addTask</span><span class="p">(</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">ash</span><span class="p">.</span><span class="nx">printTasks</span><span class="p">();</span>
+<span class="c1">// Nearly finished!</span>
+<span class="c1">// Remaining tasks: Get a Pokemon</span>
+</code></pre></div></div>
+
+<p>The addition here now checks if <code class="language-plaintext highlighter-rouge">tasks.length</code> is equal to <code class="language-plaintext highlighter-rouge">1</code>. If it is, we print out the message <code class="language-plaintext highlighter-rouge">Nearly finished!</code> before printing the remaining tasks in <code class="language-plaintext highlighter-rouge">tasks</code>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Before we finish, add your latest changes to Git.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init
+git add .
+</span></code></pre></div></div>
+
+<p>Then add a commit message.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git commit -m "Add object oriented JavaScript"
+</span></code></pre></div></div>
+
+<p>Then push these changes up to GitHub.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git push origin master
+</span></code></pre></div></div>
+
+<h2 id="exercises">Exercises</h2>
+
+<p>For this exercise, add an additional method to <code class="language-plaintext highlighter-rouge">Trainer</code> to remove a task from <code class="language-plaintext highlighter-rouge">tasks</code>. A <code class="language-plaintext highlighter-rouge">Trainer</code> object is created below which calls the <code class="language-plaintext highlighter-rouge">removeTasks()</code> function you should implement.</p>
+
+<div class="box">
+  <p>Need some help? Click <a href="https://discord.gg/xMc7n3Z" target="_blank">here</a> to join a Discord server created exclusively for this series.</p>
+</div>
+
+<p>Two array methods worth looking into to accomplish this are <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank"><code class="language-plaintext highlighter-rouge">indexOf()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank"><code class="language-plaintext highlighter-rouge">splice()</code></a>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Trainer</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="p">[])</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span> <span class="o">=</span> <span class="nx">tasks</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">identify</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The trainer is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">addTask</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">task</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">printTasks</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Nearly finished!</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Remaining tasks: </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">ash</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Trainer</span><span class="p">(</span><span class="dl">'</span><span class="s1">Ash</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Leave Pallet Town</span><span class="dl">'</span><span class="p">]);</span>
+<span class="nx">ash</span><span class="p">.</span><span class="nx">removeTask</span><span class="p">(</span><span class="dl">'</span><span class="s1">Get a Pokemon</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Get this to work</span>
+<span class="nx">ash</span><span class="p">.</span><span class="nx">printTasks</span><span class="p">();</span>
+<span class="c1">// Nearly finished!</span>
+<span class="c1">// Remaining tasks: Leave Pallet Town</span>
+</code></pre></div></div>
+
+<h3 id="bonus">Bonus</h3>
+
+<p>Without the proper validation, <code class="language-plaintext highlighter-rouge">removeTask()</code> could remove the last element from an array by mistake as illustrated below.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">laundry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">dishes</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">vacuum</span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">tasks</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">oil change</span><span class="dl">'</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tasks</span><span class="p">);</span> <span class="c1">// [ 'laundry', 'dishes' ]</span>
+</code></pre></div></div>
+
+<p>Since the task <code class="language-plaintext highlighter-rouge">oil change</code> doesn’t exist in <code class="language-plaintext highlighter-rouge">tasks</code> the <code class="language-plaintext highlighter-rouge">splice()</code> method instead removes an element from the end of the array as described in the documentation for the <code class="language-plaintext highlighter-rouge">start</code> parameter of <code class="language-plaintext highlighter-rouge">splice()</code>.</p>
+
+<blockquote>
+  <p>Index at which to start changing the array (with origin 0). If greater than the length of the array, actual starting index will be set to the length of the array. <strong>If negative, will begin that many elements from the end of the array (with origin -1)</strong> and will be set to 0 if absolute value is greater than the length of the array. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice#Parameters" target="_blank">Source</a></p>
+</blockquote>
+
+<p>See if you can fix this bug. If the task doesn’t exist in <code class="language-plaintext highlighter-rouge">tasks</code>, print a message notifying the user of the non-existent task instead.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

@@ -1,0 +1,35 @@
+I"=<!-- <div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/project-6.jpg" alt="Project">
+    <img src="/images/project-5.jpg" alt="Project">
+    <img src="/images/project-7.jpg" alt="Project">
+  </div>
+  <em>Projects / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
+</div> -->
+
+<div class="block-header inner-sm" style="margin-top: 1.5em; margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Contributions</h2>
+</div>
+
+<p>At Gather, I was initially brought on to do frontend work with my prior experience using AngularJS. But in the fast-paced startup world, I was given the opportunity to expand my skillset and focus more on backend work.</p>
+
+<p>The first task was a temporary “hack” since our application was targeted towards desktop users. To get around this, I built a background job using Bull to allow restaurant vendors to reply to in-app messages via email when desktop access wasn’t available which would seamlessly integrate into the web view.</p>
+
+<p>I built another background job to integrate with FullContact’s API to provide contextual information about customers for restaurant event planners to remove any social friction once they’d arrived.</p>
+
+<p>After a few months on Gather’s main desktop application, I was chosen to lead alpha development for Gather’s hybrid iOS and Android application. During this process, I setup their first automated testing suite using Karma, Protractor, Jasmine, Mocha, and Chai.</p>
+
+<div class="block-header inner-sm" style="margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Technology</h2>
+</div>
+
+<p>This isn’t a comprehensive list of all technologies used for this project but some of the primary ones are listed below:</p>
+
+<ul>
+  <li>hapi.js</li>
+  <li>RethinkDB</li>
+  <li>Redis</li>
+  <li>AngularJS</li>
+  <li>Ionic</li>
+</ul>
+:ET

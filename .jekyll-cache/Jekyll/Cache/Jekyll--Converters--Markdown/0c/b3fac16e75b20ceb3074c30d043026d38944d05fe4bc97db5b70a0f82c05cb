@@ -1,0 +1,392 @@
+I"l�<h2 id="introduction">Introduction</h2>
+
+<p>Whether you’re creating a Twitter account or paying your bills online, at some point you’ve interacted with a form on the web. In Angular, we’re given two different approaches to developing forms: template-driven and reactive.</p>
+
+<p>In this tutorial we’ll learn the basics of template-driven forms in Angular by creating a user signup page with three fields: name, email, and password.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>If you haven’t already, you’ll first need to install the <a href="https://cli.angular.io/" target="_blank">Angular CLI</a>.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">npm install -g @angular/cli
+</span></code></pre></div></div>
+
+<p>Once the CLI is installed, you can then create a new application.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ng new template-forms
+cd template-forms
+</span></code></pre></div></div>
+
+<p>Once your application has been created, you can run the application.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ng serve
+</span></code></pre></div></div>
+
+<p>Open a browser to <code class="language-plaintext highlighter-rouge">http://localhost:4200</code> and you should see the default Angular application as shown below.</p>
+
+<p><img src="/images/template-forms/ng-new.png" alt="Default Angular application" /></p>
+
+<h2 id="formsmodule">FormsModule</h2>
+
+<p>Now that our application is created and ready, we can start working towards creating a template-driven form. Since template-driven forms are in their own module, we’ll need to import it.</p>
+
+<p>First, import <code class="language-plaintext highlighter-rouge">FormsModule</code> in <code class="language-plaintext highlighter-rouge">app.module.ts</code> and then add it to <code class="language-plaintext highlighter-rouge">imports</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/forms</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">AppComponent</span>
+  <span class="p">],</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">BrowserModule</span><span class="p">,</span>
+    <span class="nx">FormsModule</span>
+  <span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>With <code class="language-plaintext highlighter-rouge">FormsModule</code> imported we’re now ready to move on to creating our form.</p>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="registration-form">Registration Form</h2>
+
+<p>We’ll begin by updating <code class="language-plaintext highlighter-rouge">app.component.html</code> with the most basic structure of our template-driven form. From there, we’ll continue to add more functionality to our form.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">#templateForm</span><span class="err">="</span><span class="na">ngForm</span><span class="err">"</span> <span class="na">(ngSubmit)=</span><span class="s">"onSubmit(templateForm.value)"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+            <span class="na">type=</span><span class="s">"text"</span>
+            <span class="na">[(ngModel)]=</span><span class="s">"formUser.name"</span>
+            <span class="na">name=</span><span class="s">"name"</span>
+            <span class="na">#name</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+            <span class="na">required</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+            <span class="na">type=</span><span class="s">"text"</span>
+            <span class="na">[(ngModel)]=</span><span class="s">"formUser.email"</span>
+            <span class="na">name=</span><span class="s">"email"</span>
+            <span class="na">#email</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+            <span class="na">required</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"password"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+            <span class="na">type=</span><span class="s">"password"</span>
+            <span class="na">[(ngModel)]=</span><span class="s">"formUser.password"</span>
+            <span class="na">name=</span><span class="s">"password"</span>
+            <span class="na">#password</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+            <span class="na">required</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>  
+
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"button is-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>Within this form we have three inputs for name, email, and password along with a submit button.</p>
+
+<p>Let’s breakdown some of the new syntax within this form from top to bottom.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">#templateForm="ngForm"</code> - By default, Angular attaches the <code class="language-plaintext highlighter-rouge">ngForm</code> directive to HTML forms. Here, we create a reference to the form with our template reference variable <code class="language-plaintext highlighter-rouge">#templateForm</code>. This allows us to access the form’s values and state which we’ll see shortly.</li>
+  <li><code class="language-plaintext highlighter-rouge">(ngSubmit)="onSubmit(templateForm.value)"</code> - This is what makes our form useful. Here we use Angular’s <code class="language-plaintext highlighter-rouge">ngSubmit</code> event property which is fired when our form is submitted. When the <code class="language-plaintext highlighter-rouge">ngSubmit</code> event is triggered, it will call the <code class="language-plaintext highlighter-rouge">onSubmit</code> method (which we’ll create in our component) with our form’s values. Note how our form’s values are passed into <code class="language-plaintext highlighter-rouge">onSubmit</code> using the template reference variable we created earlier, <code class="language-plaintext highlighter-rouge">templateForm</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">[(ngModel)]="formUser.name"</code> - Fields in our form are bound to properties in our component class using this <code class="language-plaintext highlighter-rouge">[(ngModel)]</code> syntax which is known as “banana in a box” syntax. This creates two-way data binding between our template and component meaning that if a value is updated in our component, it will be reflected in our template and vice versa.</li>
+  <li><code class="language-plaintext highlighter-rouge">name="email"</code> - The <code class="language-plaintext highlighter-rouge">name</code> attribute is a requirement by template-driven forms in Angular for any form field using the <code class="language-plaintext highlighter-rouge">ngModel</code> directive. I personally prefer to set the <code class="language-plaintext highlighter-rouge">name</code> attribute to the same name as the <code class="language-plaintext highlighter-rouge">ngModel</code> value (<code class="language-plaintext highlighter-rouge">[(ngModel)]="formUser.email"</code>) but this isn’t required by Angular.</li>
+  <li><code class="language-plaintext highlighter-rouge">#password="ngModel"</code> - Similar to our previous template reference variable which set a reference to our form, this creates references for the individual fields within our form which we can use for tracking valid input. Once again, the name doesn’t have to match the values for <code class="language-plaintext highlighter-rouge">ngModel</code> or <code class="language-plaintext highlighter-rouge">name</code> but I prefer to have them all the same.</li>
+</ul>
+
+<p>At this point, our form template is setup correctly but we still have one small issue. Open the app in a browser, open the developer console, and you should see an error message such as “ERROR TypeError: Cannot read property ‘name’ of undefined”.</p>
+
+<p><img src="/images/template-forms/no-component-property.png" alt="Cannot read property name" /></p>
+
+<p>As mentioned earlier, our form’s fields are bound to properties in our component class using the banana in a box syntax, <code class="language-plaintext highlighter-rouge">[(ngModel)]</code>. Each <code class="language-plaintext highlighter-rouge">ngModel</code> directive in our form references an object <code class="language-plaintext highlighter-rouge">formUser</code> which doesn’t exist yet.</p>
+
+<p>To fix this we simply need to create a <code class="language-plaintext highlighter-rouge">formUser</code> property in our component class.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">template-forms</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// You can delete this if you want</span>
+  <span class="nx">formUser</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now when you go back to your browser you should have a form visible with no Angular errors displaying in the console.</p>
+
+<p><img src="/images/template-forms/no-component-property-fix.png" alt="Fix for cannot read property name" /></p>
+
+<h2 id="event-handler">Event Handler</h2>
+
+<p>Now that our form isn’t throwing any errors, we can work on handling the <code class="language-plaintext highlighter-rouge">ngSubmit</code> event of our form. As defined in our form, the <code class="language-plaintext highlighter-rouge">ngSubmit</code> event will call an <code class="language-plaintext highlighter-rouge">onSubmit</code> method which we’ll add to our component.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">onSubmit</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">form values </span><span class="dl">'</span><span class="p">,</span> <span class="nx">form</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we’ve created a simple <code class="language-plaintext highlighter-rouge">onSubmit</code> function that logs out the value of <code class="language-plaintext highlighter-rouge">form</code>. Remember, we receive these form values using our template reference variable in the form of <code class="language-plaintext highlighter-rouge">templateForm.value</code> which is passed to <code class="language-plaintext highlighter-rouge">onSubmit</code>.</p>
+
+<p>Now you can go back to your browser, complete the form, click submit, and you should see your input logged to the console.</p>
+
+<p><img src="/images/template-forms/form-submit.png" alt="Form submission" /></p>
+
+<h2 id="form-state">Form State</h2>
+
+<p>We now have a working form that successfully calls our <code class="language-plaintext highlighter-rouge">onSubmit</code> method with the form’s values. However, there are some shortcomings to our form.</p>
+
+<p>First, a user can submit the form without completing any fields. Second, if a user submits the form with empty fields, there’s no helpful error message to notify them of required fields.</p>
+
+<p>We can get some help with this by leveraging the template reference variables we created earlier. Immediately after our closing form tag, you can add the following markup to get real-time data about our form such as the values and validity of the form.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;pre&gt;</span>Form values: {{ templateForm.form.value | json }}<span class="nt">&lt;/pre&gt;</span> <span class="c">&lt;!-- Value of whole form --&gt;</span>
+<span class="nt">&lt;pre&gt;</span>Valid form? {{ templateForm.form.valid | json }}<span class="nt">&lt;/pre&gt;</span> <span class="c">&lt;!-- Validity of whole form --&gt;</span>
+</code></pre></div></div>
+
+<p>In addition to the form and its template reference variable, we can also use the reference variables we created for each input as well.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;pre&gt;</span>Form values: {{ templateForm.form.value | json }}<span class="nt">&lt;/pre&gt;</span> <span class="c">&lt;!-- Value of whole form --&gt;</span>
+<span class="nt">&lt;pre&gt;</span>Valid form? {{ templateForm.form.valid | json }}<span class="nt">&lt;/pre&gt;</span> <span class="c">&lt;!-- Validity of whole form --&gt;</span>
+<span class="nt">&lt;pre&gt;</span>Name: {{ name.value }}<span class="nt">&lt;/pre&gt;</span> <span class="c">&lt;!-- Value of name field --&gt;</span>
+<span class="nt">&lt;pre&gt;</span>Email: {{ email.value }}<span class="nt">&lt;/pre&gt;</span> <span class="c">&lt;!-- Value of email field --&gt;</span>
+</code></pre></div></div>
+
+<p>Finally, in addition to inspecting the values and validity of our form or inputs we can access the state of our inputs as well.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;pre&gt;</span>Name value: {{ name.value }}<span class="nt">&lt;/pre&gt;</span>
+<span class="nt">&lt;pre&gt;</span>Name valid?: {{ name.valid }}<span class="nt">&lt;/pre&gt;</span>
+<span class="nt">&lt;pre&gt;</span>Name pristine?: {{ name.pristine }}<span class="nt">&lt;/pre&gt;</span>
+<span class="nt">&lt;pre&gt;</span>Name touched?: {{ name.touched }}<span class="nt">&lt;/pre&gt;</span>
+</code></pre></div></div>
+
+<p>Here’s a quick description of these states:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">valid</code> - The control’s value is valid.</li>
+  <li><code class="language-plaintext highlighter-rouge">pristine</code> - The control’s value has not changed.</li>
+  <li><code class="language-plaintext highlighter-rouge">touched</code> - The control has been focused and then blurred.</li>
+</ul>
+
+<p>Open your browser and interact the form (clicking and typing) to see how these values change as a user interacts with your form.</p>
+
+<p><img src="/images/template-forms/tracking-form-values.png" alt="Tracking form values" /></p>
+
+<h2 id="styling-and-states">Styling and States</h2>
+
+<p>Now that we’ve seen the various states available to us using our template reference variables, let’s use them to add some functionality to our form.</p>
+
+<p>First, we’ll disable our submit button until the form is valid.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">[disabled]=</span><span class="s">"!templateForm.form.valid"</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"button is-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+
+<p>To do this we simply set the button’s <code class="language-plaintext highlighter-rouge">disabled</code> property to <code class="language-plaintext highlighter-rouge">!templateForm.form.valid</code> so that it’s only enabled once the form is valid.</p>
+
+<p>Go back to your browser and you should see a disabled submit button. Complete the form and you’ll see the button enabled once all fields have a value.</p>
+
+<p>In addition to disabling the submit button, we can use <code class="language-plaintext highlighter-rouge">valid</code> and <code class="language-plaintext highlighter-rouge">pristine</code> to show and hide error messages as well.</p>
+
+<p>Just below our input for name we’ll add a <code class="language-plaintext highlighter-rouge">p</code> tag that will be conditionally displayed depending on the state of our input.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+          <span class="na">type=</span><span class="s">"text"</span>
+          <span class="na">[(ngModel)]=</span><span class="s">"formUser.name"</span>
+          <span class="na">name=</span><span class="s">"name"</span>
+          <span class="na">#name</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+          <span class="na">required</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">[hidden]=</span><span class="s">"name.valid || name.pristine"</span> <span class="na">class=</span><span class="s">"is-size-6 has-text-danger"</span><span class="nt">&gt;</span>Name is required.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Here we set the <code class="language-plaintext highlighter-rouge">hidden</code> property to the values of <code class="language-plaintext highlighter-rouge">.valid</code> or <code class="language-plaintext highlighter-rouge">.pristine</code> meaning if the control’s values are valid <em>or</em> unchanged our message will not display.</p>
+
+<p>From here we can update our other inputs with similar error messages.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+          <span class="na">type=</span><span class="s">"text"</span>
+          <span class="na">[(ngModel)]=</span><span class="s">"formUser.name"</span>
+          <span class="na">name=</span><span class="s">"name"</span>
+          <span class="na">#name</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+          <span class="na">required</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">[hidden]=</span><span class="s">"name.valid || name.pristine"</span> <span class="na">class=</span><span class="s">"is-size-6 has-text-danger"</span><span class="nt">&gt;</span>Name is required.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+          <span class="na">type=</span><span class="s">"text"</span>
+          <span class="na">[(ngModel)]=</span><span class="s">"formUser.email"</span>
+          <span class="na">name=</span><span class="s">"email"</span>
+          <span class="na">#email</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+          <span class="na">required</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">[hidden]=</span><span class="s">"email.valid || email.pristine"</span> <span class="na">class=</span><span class="s">"is-size-6 has-text-danger"</span><span class="nt">&gt;</span>Email is required.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"password"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+          <span class="na">type=</span><span class="s">"password"</span>
+          <span class="na">[(ngModel)]=</span><span class="s">"formUser.password"</span>
+          <span class="na">name=</span><span class="s">"password"</span>
+          <span class="na">#password</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+          <span class="na">required</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">[hidden]=</span><span class="s">"password.valid || password.pristine"</span> <span class="na">class=</span><span class="s">"is-size-6 has-text-danger"</span><span class="nt">&gt;</span>Password is required.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Now you should be able to type into your form, remove values, and see error messages appear notifying users of required fields.</p>
+
+<p><img src="/images/template-forms/error-messages.png" alt="Error messages" /></p>
+
+<h2 id="add-css">Add CSS</h2>
+
+<p>At this point our form is complete but it could use some visual work.</p>
+
+<blockquote>
+  <p>Since this is outside the scope of this tutorial I won’t explain everything in detail but you can read my Bulma tutorial <a href="https://atom-morgan.github.io/styling-angular-v6-apps-with-bulma/" target="_blank">here</a>.</p>
+</blockquote>
+
+<p>First, we’ll update our template with some of Bulma’s classes.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"section"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"columns is-centered"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"column is-one-third"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;form</span> <span class="na">#templateForm</span><span class="err">="</span><span class="na">ngForm</span><span class="err">"</span> <span class="na">(ngSubmit)=</span><span class="s">"onSubmit(templateForm.value)"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+                  <span class="na">type=</span><span class="s">"text"</span>
+                  <span class="na">name=</span><span class="s">"name"</span>
+                  <span class="na">[(ngModel)]=</span><span class="s">"formUser.name"</span>
+                  <span class="na">#name</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+                  <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;p</span> <span class="na">[hidden]=</span><span class="s">"name.valid || name.pristine"</span> <span class="na">class=</span><span class="s">"is-size-6 has-text-danger"</span><span class="nt">&gt;</span>Name is required.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+                  <span class="na">type=</span><span class="s">"text"</span>
+                  <span class="na">name=</span><span class="s">"email"</span>
+                  <span class="na">[(ngModel)]=</span><span class="s">"formUser.email"</span>
+                  <span class="na">#email</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+                  <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;p</span> <span class="na">[hidden]=</span><span class="s">"email.valid || email.pristine"</span> <span class="na">class=</span><span class="s">"is-size-6 has-text-danger"</span><span class="nt">&gt;</span>Email is required.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"field"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"label"</span> <span class="na">for=</span><span class="s">"password"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"control"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"input"</span>
+                  <span class="na">type=</span><span class="s">"password"</span>
+                  <span class="na">[(ngModel)]=</span><span class="s">"formUser.password"</span>
+                  <span class="na">name=</span><span class="s">"password"</span>
+                  <span class="na">#password</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span>
+                  <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;p</span> <span class="na">[hidden]=</span><span class="s">"password.valid || password.pristine"</span> <span class="na">class=</span><span class="s">"is-size-6 has-text-danger"</span><span class="nt">&gt;</span>Password is required.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      
+        <span class="nt">&lt;button</span> <span class="na">[disabled]=</span><span class="s">"!templateForm.form.valid"</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"button is-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<p>Then we’ll install Bulma.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">npm install bulma --save
+</span></code></pre></div></div>
+
+<p>Once that has finished, we can add it to our project by updating the <code class="language-plaintext highlighter-rouge">styles</code> property in <code class="language-plaintext highlighter-rouge">angular.json</code>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"styles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"node_modules/bulma/css/bulma.min.css"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src/styles.css"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Restart your app using <code class="language-plaintext highlighter-rouge">ng serve</code>, open it up in a browser, and you should see your template-driven form styled with Bulma.</p>
+
+<p><img src="/images/template-forms/bulma-styling.png" alt="Bulma styling" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You’ve now learned the basics of template-driven forms in Angular. In the next tutorial we’ll recreate this form using Angular’s reactive form approach.</p>
+
+<p>If you found this valuable and would like to see more, feel free to let me know <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a>.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

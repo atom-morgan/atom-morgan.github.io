@@ -1,0 +1,31 @@
+I"�<!-- <div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/project-5.jpg" alt="Project">
+    <img src="/images/project-8.jpg" alt="Project">
+    <img src="/images/project-7.jpg" alt="Project">
+  </div>
+  <em>Projects / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
+</div> -->
+
+<div class="block-header inner-sm" style="margin-top: 1.5em; margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Contributions</h2>
+</div>
+
+<p>Working with DirecTV and CNN, I was on a team of 3 developers tasked to create the “CNNgo” application on DirecTV’s set-top boxes for their 39 million subscribers.</p>
+
+<p>Within the CNNgo application, I was solely responsible for building the user navigation, photo gallery, and all related content video streaming services.</p>
+
+<p>Given the unconventional hardware for this project the application was required to run under 8MBs to meet DirecTV’s hardware limitations.</p>
+
+<div class="block-header inner-sm" style="margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Technology</h2>
+</div>
+
+<p>This isn’t a comprehensive list of all technologies used for this project but some of the primary ones are listed below:</p>
+
+<ul>
+  <li>AngularJS</li>
+  <li>Sass</li>
+  <li>Grunt</li>
+</ul>
+:ET

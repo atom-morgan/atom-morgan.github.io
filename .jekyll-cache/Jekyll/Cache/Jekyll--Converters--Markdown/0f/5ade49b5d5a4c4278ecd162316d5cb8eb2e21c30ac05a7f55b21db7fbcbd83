@@ -1,0 +1,35 @@
+I"b<!-- <div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/project-5.jpg" alt="Project">
+    <img src="/images/project-8.jpg" alt="Project">
+    <img src="/images/project-6.jpg" alt="Project">
+  </div>
+  <em>Projects / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
+</div> -->
+
+<div class="block-header inner-sm" style="margin-top: 1.5em; margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Contributions</h2>
+</div>
+
+<p>I was the sole developer building an internal video conferencing application to allow startup entrepreneurs to remotely pitch investors. Application features I built include live video streaming, screen sharing, real-time chat, along with Google Chrome and Mozilla Firefox extensions.</p>
+
+<p>I was also responsible for refactoring an entire AngularJS application towards a component-based architecture along with their internal CSS framework by isolating styles to components or pages, removing all unnecessary inline styles, and leveraging many other UI best practices.</p>
+
+<p>Along with my development work, I also designed new features including an investment summary for limited partners, document management systems, and an entrepreneur portal.</p>
+
+<div class="block-header inner-sm" style="margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Technology</h2>
+</div>
+
+<p>This isn’t a comprehensive list of all technologies used for this project but some of the primary ones are listed below:</p>
+
+<ul>
+  <li>AngularJS</li>
+  <li>Angular 2+</li>
+  <li>Ruby on Rails</li>
+  <li>PostgreSQL</li>
+  <li>OpenTok</li>
+  <li>Chart.js</li>
+  <li>Sketch</li>
+</ul>
+:ET

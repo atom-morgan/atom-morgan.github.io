@@ -1,0 +1,164 @@
+/* Subscribe */
+.subscribe {
+  padding-bottom: 0;
+}
+
+.subscribe__inner {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.subscribe__info {
+  margin-bottom: 40px;
+  text-align: center;
+
+  .subscribe__title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 32px;
+    font-size: 56px;
+    font-weight: 900;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -34%;
+      left: -9%;
+      transform: rotate(-45deg);
+      display: block;
+      width: 130px;
+      height: 100px;
+      background-image: -webkit-repeating-radial-gradient(center center, rgba($primary-color, .7), rgba($primary-color, .7) 2px, transparent 2px, transparent 100%);
+      background-image: -moz-repeating-radial-gradient(center center, rgba($primary-color, .7), rgba($primary-color, .7) 2px, transparent 2px, transparent 100%);
+      background-image: -ms-repeating-radial-gradient(center center, rgba($primary-color, .7), rgba($primary-color, .7) 2px, transparent 2px, transparent 100%);
+      background-image: repeating-radial-gradient(center center, rgba($primary-color, .7), rgba($primary-color, .7) 2px, transparent 2px, transparent 100%);
+      -webkit-background-size: 15px 15px;
+      -moz-background-size: 15px 15px;
+      background-size: 15px 15px;
+      opacity: 0.8;
+      user-select: none;
+    }
+  }
+
+  .subscribe__subtitle {
+    margin: 0 auto;
+    max-width: 430px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    .subscribe__title {
+      font-size: 36px;
+
+      &::after {
+        top: -64%;
+        left: -11%;
+      }
+    }
+
+    .subscribe__subtitle {
+      #ityped {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    .subscribe__title {
+      &::after {
+        top: -34%;
+        left: -9%;
+      }
+    }
+  }
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  margin: 0 auto;
+
+  .subscribe-email {
+    padding: 18px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    border: 4px solid $border-color;
+    outline: none;
+    color: $text-color;
+    background: transparent;
+    transition: border-color .2s ease-in-out;
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &:focus {
+      border-color: rgba($primary-color, 0.7);
+    }
+  }
+}
+
+.ityped-cursor {
+  font-weight: 400;
+  animation: blink 0.4s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  0%, to {
+    color: transparent;
+  }
+
+  100% {
+    color: $primary-color;
+  }
+}
+
+@-webkit-keyframes blink {
+  0%, to {
+    color: transparent;
+  }
+
+  100% {
+    color: $primary-color;
+  }
+}
+
+/* MailerLite Embedded Form Button */
+
+.ml-block-form { // .subscribe-form
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  margin: 0 auto;
+
+  .form-control { // .subscribe-email
+    padding: 18px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    border: 4px solid $border-color;
+    outline: none;
+    color: $text-color;
+    background: transparent;
+    transition: border-color .2s ease-in-out;
+    width: 100%;
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &:focus {
+      border-color: rgba($primary-color, 0.7);
+    }
+  }
+}

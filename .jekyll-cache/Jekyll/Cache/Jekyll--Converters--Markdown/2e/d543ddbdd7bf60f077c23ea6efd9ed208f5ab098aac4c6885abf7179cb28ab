@@ -1,0 +1,566 @@
+I"h�<h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial we’ll be building off of the previous tutorial updating our form to make our first HTTP request.</p>
+
+<p>Everything up to this point has been relatively “static”. We’ve been working on the client side of the web (refer back to the “Client Server Model” section in <a href="http://atom-morgan.github.io/what-is-web-development/" target="_blank">Code Companion #1</a> if necessary). All of the data in our previous tutorials was either hard-coded or provided by user inputs. We now want to bring in the server side of the client server model by interacting with an API.</p>
+
+<p>The HTTP request we’ll create will be made to the <a href="https://pokeapi.co/" target="_blank">Pokeapi</a> to retrieve additional details about the Pokemon that was entered into the form. We’ll then extract the image of the Pokemon from these details and add it to the DOM.</p>
+
+<p>This HTTP request will be made using AJAX which stands for Asynchronous JavaScript And XML. One of the primary characteristics of AJAX is its asynchronous nature, meaning we will be able to make an HTTP request for the Pokemon image, receive the response from <a href="https://pokeapi.co/" target="_blank">Pokeapi</a>, and update the page without the user having to refresh the page.</p>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="setup">Setup</h2>
+
+<p>Since we’ll be building off of our previous code we’re going to start by “cloning” or copying your code from GitHub assuming you pushed it to GitHub at the end of the tutorial.</p>
+
+<p>First, find the URL for your repository by navigating to your repository page and clicking the green “Clone or download” button.</p>
+
+<p><img src="/images/ajax/git-clone.png" alt="Repository git url" /></p>
+
+<p>Then you can clone your project with the following command updating the URL to your own Git repository. This gives us a copy of our old code so that we can make add new features while leaving our <code class="language-plaintext highlighter-rouge">forms</code> project intact.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git clone https://github.com/adammorganshow/forms.git ajax
+</span></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">ajax</code> at the end specifies the directory name to place this project into saving us the steps of <code class="language-plaintext highlighter-rouge">mkdir ajax</code> and <code class="language-plaintext highlighter-rouge">cd ajax</code>.</p>
+
+<blockquote>
+  <p>If you didn’t push your project to GitHub and you don’t have your old code from Code Companion #10, feel free to use my repository which is listed in the <code class="language-plaintext highlighter-rouge">git clone</code> command above.</p>
+</blockquote>
+
+<h2 id="update-addtopokedex">Update addToPokedex</h2>
+
+<p>The first thing we’ll want to do is update our previous unordered list to a <code class="language-plaintext highlighter-rouge">div</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"pokemon-list"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>In the previous tutorial, we were simply adding the names of each Pokemon to the DOM which is a great use for an unordered list. But going forward, we’re going to have more details for each Pokemon and an unordered list is a bit too simplistic for our needs. Now our new <code class="language-plaintext highlighter-rouge">div</code> with the id <code class="language-plaintext highlighter-rouge">pokemon-list</code> will serve as the container for the Pokemon that are submitted using the form.</p>
+
+<p>Since we’ve updated the <code class="language-plaintext highlighter-rouge">ul</code> to a <code class="language-plaintext highlighter-rouge">div</code>, we’ll also need to make a few small edits to our <code class="language-plaintext highlighter-rouge">addToPokedex</code> function.</p>
+
+<p>First, we’ll remove the variable declaration and initialization for <code class="language-plaintext highlighter-rouge">listItem</code> which created a new <code class="language-plaintext highlighter-rouge">li</code> element for our unordered list which we just updated to a <code class="language-plaintext highlighter-rouge">div</code>. We’ll also remove the last two lines of our function which set the <code class="language-plaintext highlighter-rouge">innerHTML</code> of <code class="language-plaintext highlighter-rouge">listItem</code> and appended it to <code class="language-plaintext highlighter-rouge">pokemon-list</code>.</p>
+
+<p>At this point your <code class="language-plaintext highlighter-rouge">addToPokedex</code> function should look like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addToPokedex</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">description</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokemon-list</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now we want to update this function to add the <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">description</code> back to <code class="language-plaintext highlighter-rouge">pokemon-list</code> with an updated HTML structure.</p>
+
+<p>To do this, we’ll be creating a container (<code class="language-plaintext highlighter-rouge">div</code>) for each Pokemon with a <code class="language-plaintext highlighter-rouge">p</code> inside of it containing the Pokemon’s name and description. Then, we’ll add this container to <code class="language-plaintext highlighter-rouge">pokemon-list</code>. (Later on in this tutorial, we’ll also add the Pokemon image to this container (<code class="language-plaintext highlighter-rouge">div</code>)).</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addToPokedex</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">description</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">pokemonContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">pokemonContainer</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">pokemonContent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">p</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">pokemonContent</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">description</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="nx">pokemonContainer</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">pokemonContent</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokemon-list</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">list</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">pokemonContainer</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>First we create a new <code class="language-plaintext highlighter-rouge">div</code> element and set it to the <code class="language-plaintext highlighter-rouge">pokemonContainer</code> variable. Then we set the <code class="language-plaintext highlighter-rouge">id</code> of that <code class="language-plaintext highlighter-rouge">div</code> to the name of the Pokemon entered into the form using the <code class="language-plaintext highlighter-rouge">.toLowerCase()</code> method to lowercase the name (it’s common convention to avoid uppercase letters in CSS ids and classes).</p>
+
+<p>Then we create a <code class="language-plaintext highlighter-rouge">p</code> element, set it to the <code class="language-plaintext highlighter-rouge">pokemonContent</code> variable, and set its <code class="language-plaintext highlighter-rouge">innerHTML</code> to a template literal string containing the Pokemon’s name and description.</p>
+
+<p>Now that our two elements have been created we then add <code class="language-plaintext highlighter-rouge">pokemonContent</code> to <code class="language-plaintext highlighter-rouge">pokemonContainer</code> using <code class="language-plaintext highlighter-rouge">.appendChild()</code>. Finally, we add <code class="language-plaintext highlighter-rouge">pokemonContainer</code> to <code class="language-plaintext highlighter-rouge">pokemon-list</code> leveraging our local DOM object <code class="language-plaintext highlighter-rouge">list</code>.</p>
+
+<p>At this point you can go back to your browser, refresh, and verify everything is still working. The only difference will be the styling. Since we’re no longer using an unordered list, there won’t be bullets for each Pokemon entered—they’re now <code class="language-plaintext highlighter-rouge">p</code> tags.</p>
+
+<p><img src="/images/ajax/refactor.png" alt="DOM Refactor" /></p>
+
+<h2 id="anatomy-of-ajax">Anatomy of Ajax</h2>
+
+<p>Now that we’ve updated our HTML for our new structure with the appropriate changes in <code class="language-plaintext highlighter-rouge">addToPokedex</code> we can move on to AJAX which we’ll be using to make HTTP requests.</p>
+
+<p>Let’s take a look at AJAX requests breaking it down into the various pieces which serve as the anatomy of an AJAX request.</p>
+
+<h3 id="xmlhttprequest">XMLHttpRequest</h3>
+
+<p>To make an AJAX request we’ll be leveraging <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank">XMLHttpRequest</a> to create an XMLHttpRequest, or XHR, object. A simple example of this is shown below.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">httpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Similar to other <a href="http://atom-morgan.github.io/object-oriented-javascript/" target="_blank">constructor functions</a> such as <code class="language-plaintext highlighter-rouge">Date</code>, we create this object using the <code class="language-plaintext highlighter-rouge">new</code> keyword setting it to a variable that we can interact with.</p>
+
+<h3 id="response-handler">Response handler</h3>
+
+<p>Once we make a request using our new XHR object, we’ll eventually receive a response. To handle this response we’ll be using the <code class="language-plaintext highlighter-rouge">onreadystatechange</code> property.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">httpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Process the response here</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>As you can see, we set the <code class="language-plaintext highlighter-rouge">onreadystatechange</code> property to a function. Within that function is where we write our code to process the response we receive from our HTTP request.</p>
+
+<h3 id="request-options">Request options</h3>
+
+<p>At this point we’ve declared what happens when we receive a response from our request but now we need to actually make our request.</p>
+
+<p>First, we initialize our request using the <code class="language-plaintext highlighter-rouge">.open()</code> method.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">httpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">http://someurl.com</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Process the response here</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">open</code> method takes two parameters: the HTTP request method and the URL to send the request to.</p>
+
+<p>In the above example we’ve provided the request method <code class="language-plaintext highlighter-rouge">GET</code> which simply retrieves data from the requested resource our URL. In our case, the URL is a made up URL, <code class="language-plaintext highlighter-rouge">http://someurl.com</code>. (We’ll get to our Pokeapi example shortly.)</p>
+
+<blockquote>
+  <p>There are other HTTP request methods such as PUT, POST, PATCH, and DELETE which you can read about <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank">here</a>. We’ll take a closer look at those in future tutorials. For now, we’ll be working with GET since it’s the simplest one of them all and usually the first HTTP request you create in your career as a web developer.</p>
+</blockquote>
+
+<p>Now that we’ve specified our request method and the URL for our request, we can make the request using the <code class="language-plaintext highlighter-rouge">.send()</code> method.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">httpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">http://someurl.com</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+
+<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Process the response here</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>This is the basic structure of AJAX requests.</p>
+
+<ol>
+  <li>Create an XHR object using <code class="language-plaintext highlighter-rouge">XMLHttpRequest</code></li>
+  <li>Create a response handler using <code class="language-plaintext highlighter-rouge">onreadystatechange</code></li>
+  <li>Specify the request method and URL using <code class="language-plaintext highlighter-rouge">.open()</code></li>
+  <li>Make the request using <code class="language-plaintext highlighter-rouge">.send()</code></li>
+</ol>
+
+<h2 id="fetch-pokemon-ajax">Fetch Pokemon (AJAX)</h2>
+
+<p>Now that we’ve seen how to create AJAX requests, we can work towards creating one for our request to Pokeapi. We’ll be creating a separate function for this request so let’s start by outlining our requirements for this functionality.</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<ol>
+  <li>Create a new <code class="language-plaintext highlighter-rouge">fetchPokemon</code> function</li>
+  <li>Call our new <code class="language-plaintext highlighter-rouge">fetchPokemon</code> function in the form submit event handler</li>
+  <li>Get the Pokemon name from the the function parameter which will be passed in from the form submit event handler</li>
+  <li>Setup the AJAX request</li>
+  <li>Setup the response handler</li>
+</ol>
+
+<p>We’ll begin with requirement #1 by creating our new function.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fetchPokemon</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>With our new function defined, we can now call our new function to fulfill requirement #2.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokedex</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">submit</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">addToPokedex</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+    <span class="nx">fetchPokemon</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Now that our function is called with the <code class="language-plaintext highlighter-rouge">event</code> object as an argument, we can extract the Pokemon name from it in <code class="language-plaintext highlighter-rouge">fetchPokemon</code> function for requirement #3.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fetchPokemon</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">pokemon</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We now have the Pokemon name in our <code class="language-plaintext highlighter-rouge">fetchPokemon</code> function. Now we can setup our AJAX request for requirement #4.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fetchPokemon</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">pokemon</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+
+  <span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">`https://pokeapi.co/api/v2/pokemon/</span><span class="p">${</span><span class="nx">pokemon</span><span class="p">}</span><span class="s2">/`</span><span class="p">;</span>
+  <span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+  <span class="nx">request</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>First we create our XHR object. Then we create a <code class="language-plaintext highlighter-rouge">url</code> variable set to a template literal string of the Pokeapi endpoint which contains the <code class="language-plaintext highlighter-rouge">pokemon</code> variable we created earlier.</p>
+
+<!--More details about endpoints-->
+<!--https://pokeapi.co/docs/v2.html#pokemon-->
+
+<p>We then use <code class="language-plaintext highlighter-rouge">.open()</code> to specify our request method, <code class="language-plaintext highlighter-rouge">GET</code>, and the URL using our <code class="language-plaintext highlighter-rouge">url</code> variable. Finally, we call <code class="language-plaintext highlighter-rouge">.send()</code>.</p>
+
+<p>Now we can move on to requirement #5 by setting up our response handler.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fetchPokemon</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">pokemon</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+
+  <span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">`https://pokeapi.co/api/v2/pokemon/</span><span class="p">${</span><span class="nx">pokemon</span><span class="p">}</span><span class="s2">/`</span><span class="p">;</span>
+  <span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+  <span class="nx">request</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+
+  <span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Handle response here</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="add-pokemon-image-to-dom">Add Pokemon image to DOM</h2>
+
+<p>At this point we’re now ready to implement the functionality within our response handler. Once again, we’ll break this down into a series of requirements working towards our final goal of adding the Pokemon image from the response to the DOM.</p>
+
+<h3 id="requirements-1">Requirements</h3>
+
+<ol>
+  <li>Verify the server response was received</li>
+  <li>Check the response status code of the HTTP response</li>
+  <li>Handle any errors</li>
+  <li>Parse the response</li>
+  <li>Get the image from AJAX response</li>
+  <li>Get the pokemon name from AJAX response</li>
+  <li>Create the image element</li>
+  <li>Add image to DOM</li>
+</ol>
+
+<p>To start we’ll address requirement #1, verifying the response was received. To do this we’ll be checking the <code class="language-plaintext highlighter-rouge">readyState</code> property of our XHR object as follows.</p>
+
+<blockquote>
+  <p>Since the remainder of this code is handling the HTTP response within <code class="language-plaintext highlighter-rouge">onreadystatechange</code>, I’ll be omitting the rest of the code to keep the code blocks as small as possible.</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Request is finished. Response is ready!</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Here we check that <code class="language-plaintext highlighter-rouge">request.readyState</code> is equal to <code class="language-plaintext highlighter-rouge">4</code> which means that the request has completed.</p>
+
+<blockquote>
+  <p>You can read about the other <code class="language-plaintext highlighter-rouge">readyState</code> values <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started#Step_2_%E2%80%93_Handling_the_server_response" target="_blank">here</a>.</p>
+</blockquote>
+
+<p>Now that we have our conditional for a completed request, we can now check the status code of our response, a success or an error, which will address requirement #2.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Good to go!</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// There was a problem.</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Here we check for a successful response code using the <code class="language-plaintext highlighter-rouge">status</code> property. If it’s a <code class="language-plaintext highlighter-rouge">200</code> or <code class="language-plaintext highlighter-rouge">OK</code> response code, we’ve received a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Successful_responses" target="_blank">successful response</a>. Otherwise, there was an issue which we can address in our <code class="language-plaintext highlighter-rouge">else</code> statement.</p>
+
+<p>For now, we’ll simply write a message to the console if we receive any errors to address requirement #3.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Good to go!</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was a problem with the request.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Now we can move on to requirement #4, parsing the response from our HTTP request.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+      <span class="c1">// Add Pokemon image to DOM</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was a problem with the request.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Here we use <code class="language-plaintext highlighter-rouge">JSON.parse()</code> to parse the response from our request in the form of <code class="language-plaintext highlighter-rouge">request.responseText</code> which, according to the documentation for <code class="language-plaintext highlighter-rouge">responseText</code>, “contains the response to the request as text”. Wrapping that with <code class="language-plaintext highlighter-rouge">JSON.parse()</code> converts it to a JavaScript object that we set to <code class="language-plaintext highlighter-rouge">response</code>.</p>
+
+<blockquote>
+  <p>These properties are all listed within the documentation for <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#Properties" target="_blank">XMLHttpRequest</a> under the properties section. Over time, you may memorize some of these but when you’re just starting out it’s helpful to have documentation open so you know the various properties and methods that are exposed to you.</p>
+</blockquote>
+
+<p>Now that we have a response object we can interact with, we can begin to get the bits of data we need to add this to the DOM.</p>
+
+<p>First, we’ll get the image path and Pokemon name to address requirements #5 and #6.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+
+      <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_default</span><span class="p">;</span>
+      <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was a problem with the request.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Now we can create our <code class="language-plaintext highlighter-rouge">img</code> tag setting its <code class="language-plaintext highlighter-rouge">src</code> and <code class="language-plaintext highlighter-rouge">alt</code> attributes to address requirement #7.</p>
+
+<!--(alt tag - SEO and accessibility)-->
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+
+      <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_default</span><span class="p">;</span>
+      <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+
+      <span class="kd">let</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">img</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+      <span class="nx">image</span><span class="p">.</span><span class="nx">alt</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was a problem with the request.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Finally, we can add our new <code class="language-plaintext highlighter-rouge">image</code> object to the DOM to fulfill our last requirement.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+
+      <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_default</span><span class="p">;</span>
+      <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+
+      <span class="kd">let</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">img</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+      <span class="nx">image</span><span class="p">.</span><span class="nx">alt</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+
+      <span class="kd">let</span> <span class="nx">pokemonListItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
+      <span class="nx">pokemonListItem</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span>      
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was a problem with the request.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>At this point, you can refresh your browser, complete the form, and you should see the Pokemon image and description added to the DOM.</p>
+
+<p>To clean up our code a bit, we’ll move all of the functionality related to creating the Pokemon <code class="language-plaintext highlighter-rouge">img</code> element into its own function.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">placePokemonImage</span><span class="p">(</span><span class="nx">pokemonData</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">pokemonData</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_default</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">pokemonData</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">img</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+  <span class="nx">image</span><span class="p">.</span><span class="nx">alt</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">pokemonListItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
+  <span class="nx">pokemonListItem</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note the updated reference to <code class="language-plaintext highlighter-rouge">pokemonData</code> instead of <code class="language-plaintext highlighter-rouge">response</code> to match our function’s parameter name.</p>
+
+<p>Now we can update our request handler by removing all of the old code to call our <code class="language-plaintext highlighter-rouge">placePokemonImage</code> function instead.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+      <span class="nx">placePokemonImage</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>     
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">There was a problem with the request.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">placePokemonImage</span><span class="p">(</span><span class="nx">pokemonData</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">pokemonData</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_default</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">pokemonData</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">img</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+  <span class="nx">image</span><span class="p">.</span><span class="nx">alt</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">pokemonListItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
+  <span class="nx">pokemonListItem</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="add-loading-message">Add loading message</h2>
+
+<p>Now that we have added the Pokemon data and image to the DOM, we’ll finish by improving the UX of the form by adding a loading message as the request is being made since it can take a few seconds to complete at times.</p>
+
+<p>First, we’ll create a new function for creating our loading indicator.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">createLoadingIndicator</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">loading</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">p</span><span class="dl">'</span><span class="p">)</span>
+  <span class="nx">loading</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">loading</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nx">loading</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Loading...</span><span class="dl">'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">loading</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note how our function returns the <code class="language-plaintext highlighter-rouge">loading</code> object rather than adding it to the DOM directly.</p>
+
+<p>Now we can call this function and add the loading indicator to the DOM within our <code class="language-plaintext highlighter-rouge">addToPokedex</code> function.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addToPokedex</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">description</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">description</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">pokemonContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">pokemonContainer</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">pokemonContent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">p</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">pokemonContent</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2"> - </span><span class="p">${</span><span class="nx">description</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="nx">pokemonContainer</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">pokemonContent</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokemon-list</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">list</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">pokemonContainer</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">loadingIndicator</span> <span class="o">=</span> <span class="nx">createLoadingIndicator</span><span class="p">();</span>
+  <span class="nx">pokemonContainer</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">loadingIndicator</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now when our <code class="language-plaintext highlighter-rouge">addToPokedex</code> function is called but <em>before</em> <code class="language-plaintext highlighter-rouge">fetchPokemon</code> is called, the loading indicator will be created and added to the DOM.</p>
+
+<p>Refresh and submit the form again and you should notice the loading indicator is created as expected. However, once the request is completed the loading indicator remains.</p>
+
+<p>To fix this, we’ll need to create another function to remove this loading indicator.</p>
+
+<h2 id="remove-loading-message">Remove loading message</h2>
+
+<p>First, we’ll write our function to remove the indicator.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">removeLoadingIndicator</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">loading</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">loading</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">loading</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now that our function is ready to be called, we have to think about <em>where</em> to call it. We want the loading indicator to be removed once a successful request has been made and completed. A good place for this would be inside our <code class="language-plaintext highlighter-rouge">placePokemonImage</code> function which is called only when a successful response is received from our HTTP request.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">placePokemonImage</span><span class="p">(</span><span class="nx">pokemonData</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">removeLoadingIndicator</span><span class="p">();</span>
+
+  <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">pokemonData</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_default</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">pokemonData</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">img</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+  <span class="nx">image</span><span class="p">.</span><span class="nx">alt</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">pokemonListItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
+  <span class="nx">pokemonListItem</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now when we receive a response from our HTTP request, we’ll remove the loading indicator just before adding the Pokemon image to the DOM.</p>
+
+<p>Refresh your browser, complete the form, and you should see the loading indicator appear briefly before being removed once the Pokemon image is added to the view.</p>
+
+<p><img src="/images/ajax/final.png" alt="Remove loading indicator" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You’ve now learned how to make your first HTTP request using AJAX to take a user’s input, send that to a server, and manage a response once it’s sent back. If you’re like me, doing that for the first time felt really cool.</p>
+
+<blockquote>
+  <p>If you’re looking for other APIs to use for development practice there’s a curated list <a href="https://github.com/toddmotto/public-apis" target="_blank">here</a>. To keep things simple on your end, look for an API where the “Auth” column says “No”.</p>
+</blockquote>
+
+<p>To wrap up, add your latest changes to Git.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init
+git add .
+</span></code></pre></div></div>
+
+<p>Then add a commit message.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git commit -m "Add AJAX call to form"
+</span></code></pre></div></div>
+
+<p>Then push these changes up to GitHub.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git push origin master
+</span></code></pre></div></div>
+
+<h2 id="exercise">Exercise</h2>
+
+<p>For some extra practice, see if you can update the <code class="language-plaintext highlighter-rouge">console.log</code> for request errors to remove the loading indicator and add a message to the DOM for the user to try again.</p>
+
+<!-- <hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;">
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&ie=UTF8&qid=1526926037&sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article> -->
+:ET
