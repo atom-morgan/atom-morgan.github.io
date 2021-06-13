@@ -1,0 +1,47 @@
+/* Tags Page */
+.tag {
+
+  .page-title {
+    text-transform: capitalize;
+  }
+
+  .tag-meta {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    .tag-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5em;
+      border-radius: 50%;
+      color: $white;
+      background-color: $primary-color;
+    
+      &.count-padding-small {
+        padding: 0.25em;
+      }
+    
+      &::after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 100%;
+        padding-bottom: 100%;
+      }
+    
+      .tag-number {
+        height: 0;
+        margin-top: -1em;
+        font-size: 14px;
+        line-height: 1;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,270 @@
+I"�o<h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial you’ll learn how to test a <a href="https://angular.io/api/router/CanActivate" target="_blank">CanActivate</a> route guard within Angular. We’ll create two separate routed components and apply this guard to one of the routes that will restrict it to authorized users.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>First, we’ll create a new application using the <a href="https://cli.angular.io/" target="_blank">Angular CLI</a> adding the <code class="language-plaintext highlighter-rouge">--routing</code> flag to generate a routing module for us.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ng new guard-testing --routing
+</span></code></pre></div></div>
+
+<p>From here, we’ll clean up a few things within this scaffolded application that we don’t need. First, we’ll remove all of the boilerplate in <code class="language-plaintext highlighter-rouge">app.component.html</code> leaving just the <code class="language-plaintext highlighter-rouge">router-outlet</code> directive.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+</code></pre></div></div>
+
+<p>Then we’ll update <code class="language-plaintext highlighter-rouge">app.component.spec.ts</code> by removing the bottom two tests that are no longer needed as a result of our template cleanup.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">AppComponent</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="k">async</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">TestBed</span><span class="p">.</span><span class="nx">configureTestingModule</span><span class="p">({</span>
+      <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+        <span class="nx">RouterTestingModule</span>
+      <span class="p">],</span>
+      <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span>
+        <span class="nx">AppComponent</span>
+      <span class="p">],</span>
+    <span class="p">}).</span><span class="nx">compileComponents</span><span class="p">();</span>
+  <span class="p">}));</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should create the app</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">fixture</span> <span class="o">=</span> <span class="nx">TestBed</span><span class="p">.</span><span class="nx">createComponent</span><span class="p">(</span><span class="nx">AppComponent</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">fixture</span><span class="p">.</span><span class="nx">debugElement</span><span class="p">.</span><span class="nx">componentInstance</span><span class="p">;</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+  <span class="p">}));</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="create-components">Create components</h2>
+
+<p>From here we’ll create two components to serve as our two views for a “restricted” and “unrestricted” portion of our application.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ng g component restricted
+ng g component unrestricted
+</span></code></pre></div></div>
+
+<p>Then we can update <code class="language-plaintext highlighter-rouge">app-routing.module.ts</code> to create the new routes for these components.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">RestrictedComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./restricted/restricted.component</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">UnrestrictedComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./unrestricted/unrestricted.component</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">routes</span><span class="p">:</span> <span class="nx">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">UnrestrictedComponent</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">restricted</span><span class="dl">'</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">RestrictedComponent</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="na">exports</span><span class="p">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>First we import the two components. Then we update <code class="language-plaintext highlighter-rouge">routes</code> setting <code class="language-plaintext highlighter-rouge">UnrestrictedComponent</code> as the root path of the application and <code class="language-plaintext highlighter-rouge">RestrictedComponent</code> to the <code class="language-plaintext highlighter-rouge">/restricted</code> path.</p>
+
+<p>Run your application with <code class="language-plaintext highlighter-rouge">ng serve</code> and you should now see the default templates for these two components when you access their routes.</p>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="auth-service">Auth service</h2>
+
+<p>Before we get to the guard, we’ll create a simple auth service that will be used to simulate authentication within our app.</p>
+
+<p>First, we create the service.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ng g service services/auth/auth
+</span></code></pre></div></div>
+
+<p>Then we’ll add an <code class="language-plaintext highlighter-rouge">isLoggedIn</code> method to the service with a hard-coded return value. For now, we’ll set it to <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">isLoggedIn</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="create-guard">Create guard</h2>
+
+<p>Now that our dummy <code class="language-plaintext highlighter-rouge">AuthService</code> is setup, we can move on to the route guard.</p>
+
+<p>Once again, we’ll use the CLI to generate this guard.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">ng g guard guards/auth/auth
+</span></code></pre></div></div>
+
+<p>Within <code class="language-plaintext highlighter-rouge">auth.guard.ts</code>, update the imports to include <code class="language-plaintext highlighter-rouge">Router</code> and <code class="language-plaintext highlighter-rouge">AuthService</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">CanActivate</span><span class="p">,</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/router</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AuthService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../services/auth/auth.service</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Then add a constructor to <code class="language-plaintext highlighter-rouge">AuthGuard</code> injecting <code class="language-plaintext highlighter-rouge">AuthService</code> and <code class="language-plaintext highlighter-rouge">Router</code> into the class.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">authService</span><span class="p">:</span> <span class="nx">AuthService</span><span class="p">,</span> <span class="k">private</span> <span class="nx">router</span><span class="p">:</span> <span class="nx">Router</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Since we don’t need the default parameters of <code class="language-plaintext highlighter-rouge">canActivate</code>, you can remove those as well.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">canActivate</span><span class="p">():</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">boolean</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now that <code class="language-plaintext highlighter-rouge">AuthGuard</code> is setup, we can implement the <code class="language-plaintext highlighter-rouge">canActivate</code> method.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">canActivate</span><span class="p">():</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">boolean</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">authService</span><span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>If <code class="language-plaintext highlighter-rouge">authService.isLoggedIn</code> is <code class="language-plaintext highlighter-rouge">true</code>, we return <code class="language-plaintext highlighter-rouge">true</code>. Otherwise, we redirect users to the root path of our application.</p>
+
+<p>Now we can move on to the tests in <code class="language-plaintext highlighter-rouge">auth.guard.spec.ts</code>. For a guard such as this with dependencies that aren’t all that complex, I find it easier to test without <code class="language-plaintext highlighter-rouge">TestBed</code>, creating instances of any classes we need manually.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AuthGuard</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./auth.guard</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">MockRouter</span> <span class="p">{</span>
+  <span class="nx">navigate</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">AuthGuard</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">canActivate</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="na">authGuard</span><span class="p">:</span> <span class="nx">AuthGuard</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">authService</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">router</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>We first create a mock for <code class="language-plaintext highlighter-rouge">Router</code> with a navigate method. Then we create a new <code class="language-plaintext highlighter-rouge">describe</code> for the <code class="language-plaintext highlighter-rouge">canActivate</code> method.</p>
+
+<p>From here we’ll add our first test for when <code class="language-plaintext highlighter-rouge">isLoggedIn</code> returns true, or when a user accessing a route with this route guard “can activate” the route.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">AuthGuard</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">canActivate</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="na">authGuard</span><span class="p">:</span> <span class="nx">AuthGuard</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">authService</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">router</span><span class="p">;</span>
+
+    <span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should return true for a logged in user</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">authService</span> <span class="o">=</span> <span class="p">{</span> <span class="na">isLoggedIn</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kc">true</span> <span class="p">};</span>
+      <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MockRouter</span><span class="p">();</span>
+      <span class="nx">authGuard</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AuthGuard</span><span class="p">(</span><span class="nx">authService</span><span class="p">,</span> <span class="nx">router</span><span class="p">);</span>
+
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">authGuard</span><span class="p">.</span><span class="nx">canActivate</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>First we mock <code class="language-plaintext highlighter-rouge">authService</code> with a stubbed return value of <code class="language-plaintext highlighter-rouge">true</code>. Then we create an instance of our <code class="language-plaintext highlighter-rouge">MockRouter</code> and an instance of <code class="language-plaintext highlighter-rouge">AuthGuard</code> using our two mocks.</p>
+
+<p>We then add our expectation that calling <code class="language-plaintext highlighter-rouge">canActivate</code> should return <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<p>Now we’ll add our second test case for when <code class="language-plaintext highlighter-rouge">canActivate</code> returns <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should return true for a logged in user</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+
+<span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">should navigate to home for a logged out user</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">authService</span> <span class="o">=</span> <span class="p">{</span> <span class="na">isLoggedIn</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kc">false</span> <span class="p">};</span>
+  <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MockRouter</span><span class="p">();</span>
+  <span class="nx">authGuard</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AuthGuard</span><span class="p">(</span><span class="nx">authService</span><span class="p">,</span> <span class="nx">router</span><span class="p">);</span>
+  <span class="nx">spyOn</span><span class="p">(</span><span class="nx">router</span><span class="p">,</span> <span class="dl">'</span><span class="s1">navigate</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">authGuard</span><span class="p">.</span><span class="nx">canActivate</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">).</span><span class="nx">toHaveBeenCalledWith</span><span class="p">([</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">]);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Here we update the return value of <code class="language-plaintext highlighter-rouge">isLoggedIn</code> to <code class="language-plaintext highlighter-rouge">false</code> and create the instance of our classes just as we did earlier. We also add a spy to the <code class="language-plaintext highlighter-rouge">navigate</code> method of <code class="language-plaintext highlighter-rouge">router</code>.</p>
+
+<p>Then we add our expectation that calling <code class="language-plaintext highlighter-rouge">canActivate</code> should return <code class="language-plaintext highlighter-rouge">false</code> and that the <code class="language-plaintext highlighter-rouge">navigate</code> method will be called to redirect users to the root path.</p>
+
+<p>At this point when you run <code class="language-plaintext highlighter-rouge">ng test</code> you should see passing tests for this guard.</p>
+
+<h2 id="add-guard-to-routing">Add guard to routing</h2>
+
+<p>At this point all that’s left to do is apply the <code class="language-plaintext highlighter-rouge">AuthGuard</code> to the <code class="language-plaintext highlighter-rouge">/restricted</code> route.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AuthGuard</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./guards/auth/auth.guard</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">routes</span><span class="p">:</span> <span class="nx">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">UnrestrictedComponent</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">restricted</span><span class="dl">'</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">RestrictedComponent</span><span class="p">,</span> <span class="na">canActivate</span><span class="p">:</span> <span class="p">[</span> <span class="nx">AuthGuard</span> <span class="p">]</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">)],</span>
+  <span class="na">exports</span><span class="p">:</span> <span class="p">[</span><span class="nx">RouterModule</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppRoutingModule</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>First we import <code class="language-plaintext highlighter-rouge">AuthGuard</code>. Then we add the <code class="language-plaintext highlighter-rouge">canActivate</code> property to the <code class="language-plaintext highlighter-rouge">restricted</code> path with our new guard.</p>
+
+<p>At this point you can update the hard-coded value for <code class="language-plaintext highlighter-rouge">isLoggedIn</code> to return <code class="language-plaintext highlighter-rouge">false</code> in <code class="language-plaintext highlighter-rouge">auth.service.ts</code>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">AuthService</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">isLoggedIn</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now when you try accessing <code class="language-plaintext highlighter-rouge">/restricted</code> and you should be redirected to the root path of the application, <code class="language-plaintext highlighter-rouge">UnrestrictedComponent</code>.</p>
+
+<blockquote>
+  <p>If you found this valuable and would like to see more, feel free to let me know <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a>.</p>
+</blockquote>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

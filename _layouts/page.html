@@ -1,28 +1,33 @@
 ---
-layout: body
+layout: default
 ---
 
-<div class="inner outer">
+<div class="container">
+  <div class="page-head">
+    <h1 class="page-title">{{ page.title }}</h1>
+  </div>
+</div>
 
-  <article class="post post-full {% if page.style %}{{ page.style }}{% endif %}">
-    <header class="post-header inner-sm">
-      <h1 class="post-title line-top">{{ page.title }}</h1>
-      {% assign subtitle_is_not_empty = page.subtitle | is_not_empty %}
-      {% if subtitle_is_not_empty %}
-      <div class="post-subtitle">
-        {{ page.subtitle }}
+{% if page.image %}
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="page-image">
+        <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
       </div>
-      {% endif %}
-    </header>
-    {% assign image_is_not_empty = page.image | is_not_empty %}
-    {% if image_is_not_empty %}
-    <div class="post-image">
-      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
     </div>
-    {% endif %}
-    <div class="post-content inner-sm">
+  </div>
+</div>
+{% endif %}
+
+<!-- begin page -->
+<div class="container">
+  <article class="page animate">
+
+    <div class="page__content">
       {{ content }}
     </div>
-  </article><!-- .post -->
 
-</div><!-- .inner -->
+  </article>
+</div>
+<!-- end page -->

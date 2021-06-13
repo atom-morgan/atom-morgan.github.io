@@ -1,0 +1,45 @@
+<!-- begin contact -->
+  <!--
+  <div class="contact-modal">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+
+          <div class="contact-close">
+            <i class="ion ion-md-close"></i>
+          </div>
+
+          <div class="form-box">
+            <div class="contact-head">
+              {% if site.data.settings.contact__settings.contact__title %}
+                <h2 class="contact-title">{{ site.data.settings.contact__settings.contact__title }}</h2>
+              {% endif %}
+              {% if site.data.settings.contact__settings.contact__description %}
+                <p class="contact-description">{{ site.data.settings.contact__settings.contact__description }}</p>
+              {% endif %}
+            </div>
+            <form class="form" action="{% if site.data.settings.contact__settings.contact__email %}https://formspree.io/{{site.contact.email}}{% else %}#{% endif %}" method="POST">
+              <div class="form__group">
+                <label class="form__label screen-reader-text" for="form-name">Your Name</label>
+                <input class="form__input" id="form-name" type="text" name="name" placeholder="Your name..." required>
+              </div>
+              <div class="form__group">
+                <label class="form__label screen-reader-text" for="form-email">Your Email</label>
+                <input class="form__input" id="form-email" type="email" name="_replyto" placeholder="Your email..." required>
+              </div>
+              <div class="form__group">
+                <label class="form__label screen-reader-text" for="form-text">Your Message</label>
+                <textarea class="form__input" id="form-text" name="text" rows="8" placeholder="Your message..." required></textarea>
+              </div>
+              <div class="form__group form__group-button">
+                <button class="button button--middle" type="submit">Send now <i class="ion ion-ios-paper-plane"></i></button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+<!-- end contact -->

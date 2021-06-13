@@ -1,0 +1,101 @@
+I"|'<p>Stack Overflow has been getting a lot of heat lately for being a toxic and hostile community, specifically towards beginners. It’s hostile towards anyone who isn’t a straight white male as well but everybody already knew that, right?</p>
+
+<p><img src="/images/stackoverflow/stack.png" alt="Stack EVP" /></p>
+
+<p>What people aren’t mentioning is that everyone who’s used Stack Overflow, to a certain degree, is at fault for it being perceived as unfriendly towards beginners. Whether you’re asking questions or answering them, here’s a few things to keep in mind going forward.</p>
+
+<h3 id="if-youre-a-beginner-dont-take-it-personally">If you’re a beginner, don’t take it personally.</h3>
+
+<p>Seriously, don’t let that shit get to you.</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Stackoverflow is the most toxic programming site in the world. It&#39;s a huge turn off for beginners. Our users basically get bullied over there.</p>&mdash; Amjad Masad (@amasad) <a href="https://twitter.com/amasad/status/1004173806787702784?ref_src=twsrc%5Etfw">June 6, 2018</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>If someone’s answer on Stack Overflow is bordering on “bullying” to you, you’re letting text on the Internet from some stranger have way too much power over you. Picture that neckbeard in their mom’s basement with Cheeto dust all over their mechanical keyboard and then ask yourself, “Why am I letting this person get to me?” Ignore them.</p>
+
+<p>From what I can tell, a lot of hostility comes from a lack of due diligence. If you’re a beginner the odds are probably that your question has been answered before. You’re at a beginner level, doing beginner level things, and a lot of those questions have already been answered.</p>
+
+<p>It’s also worth keeping in mind that Stack Overflow is entirely text based. It’s hard to determine tone from text. A comment that comes off as annoyed or dismissive may just be someone trying to be concise and to the point. For example, “Don’t post duplicate questions. It has already been answered here.”</p>
+
+<p>Could Stack Overflow do better by curating beginner friendly FAQs? I think so. Subreddits do it just fine. But in the meantime do a quick search for “var vs. let” before creating another thread for it.</p>
+
+<h3 id="youre-learning-and-requesting-help-be-considerate-to-the-person-offering-it">You’re learning and requesting help. Be considerate to the person offering it.</h3>
+
+<p>Yes, <em>you</em>. The beginner. You’re asking for help so be considerate and <strong>make it easy for people to help you</strong>.</p>
+
+<p>There’s nothing worse than a question like this:</p>
+
+<blockquote>
+  <p>Hi everyone i have problem with Angularjs app. I can noramali singin in app,but when i try to change password i got error [$http:baddata].</p>
+</blockquote>
+
+<p>Yeah, that’s real. And guess what? I have no problem describing it as a horrible question because it’s barely a question. I don’t shit on things like grammar and spelling because they may not be a native English speaker but there’s still room for improvement.</p>
+
+<ol>
+  <li><strong>Provide context</strong> - Does changing your password work when hitting the API directly using something like Postman or cURL? If so, say so. It helps isolate the problem.</li>
+  <li><strong>Show your code</strong> - It’s hard to help if you don’t provide code. Make it as easy as possible for the person helping to actually be able to run your code too.</li>
+  <li><strong>Use code formatting</strong> - Places like Stack Overflow allow you to format your code using backticks (<code class="language-plaintext highlighter-rouge">`</code>). Use them. Nobody wants to read through a wall of unformatted code. (Thanks to Stack Overflow I learned <a href="https://stackoverflow.com/a/25943045/2501330" target="_blank">how to escape a backtick within backticks</a> while writing this avoiding yet another question about it.)</li>
+  <li><strong>What have you tried?</strong> - Similar to context, provide some details about what you’ve already tried to resolve the issue.</li>
+</ol>
+
+<p>All of these go a long way towards showing that you actually care and appreciate the help. You took the time to craft a question and it’s usually much easier to answer a well crafted question than that “question” I listed earlier.</p>
+
+<p>Take a look at <a href="https://stackoverflow.com/questions/18803371/my-get-request-isnt-found-in-my-urls-py" target="_blank">this question</a> I asked back in 2013. I provide context about what it is I’m trying to accomplish, I use code formatting, I show the code in question with an external link to more code, and I provide a brief summary of how I’ve tried to debug the issue. And yet, despite it being a beginner question, I received a very friendly <a href="https://stackoverflow.com/a/18803401/2501330" target="_blank">answer</a>.</p>
+
+<h3 id="dont-be-the-use-x-instead-comment">Don’t be the “use X instead” comment</h3>
+
+<p>If you’re answering questions don’t be the guy that says, “Why are you using a for loop when you could just use map?”</p>
+
+<p>Guess what? Beginners don’t even understand how a for loop works. That’s why they’re trying to write one. You know that. But you also know there’s an abstraction that you use instead of a for loop.</p>
+
+<p>But instead of helping them, you whip out your dick and knowledge drop map. Guess what? Now the person asking about the for loop is questioning the tutorial or book or video course they’re using because some people on Stack Overflow are saying real developers don’t use for loops. Now they’re questioning whether to continue learning because they don’t want to waste their time.</p>
+
+<p>Help the beginner learn how a fucking for loop works. They’re not ready for map. If you don’t understand how that can be possible, you’re <a href="https://en.wikipedia.org/wiki/Curse_of_knowledge" target="_blank">cursed with knowledge</a>.</p>
+
+<h3 id="youll-never-make-everyone-happy">You’ll never make everyone happy</h3>
+
+<p>Remember, no matter how hard you try (as someone asking a question or answering a question) you’ll <em>clearly</em> never make everyone happy.</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This was just posted by a guy with 100K+ rep on a beginner StackOverflow question. <br /><br />EQ note: Even this kind of subtly condescending comment can be very discouraging. The words &quot;exactly&quot; and especially &quot;clearly&quot; are warning signs in this context. <a href="https://t.co/QBip43PexV">pic.twitter.com/QBip43PexV</a></p>&mdash; April Wensel (@aprilwensel) <a href="https://twitter.com/aprilwensel/status/974859164747931650?ref_src=twsrc%5Etfw">March 17, 2018</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

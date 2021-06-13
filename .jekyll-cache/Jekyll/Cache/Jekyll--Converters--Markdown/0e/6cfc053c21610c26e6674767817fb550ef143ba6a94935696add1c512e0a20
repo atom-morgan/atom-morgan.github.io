@@ -1,0 +1,38 @@
+I"D<!-- <div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/project-5.jpg" alt="Project">
+    <img src="/images/project-8.jpg" alt="Project">
+    <img src="/images/project-6.jpg" alt="Project">
+  </div>
+  <em>Projects / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
+</div> -->
+
+<div class="block-header inner-sm" style="margin-top: 1.5em; margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Contributions</h2>
+</div>
+
+<p>At Allied Security Trust, I was brought in during the very early stages of developing their MVP. One of my first tasks was to migrate their old MVP codebase to a new application architecture, update their UI from Angular Material to Clarity Design System, and migrate their old GraphQL queries to Hasura.</p>
+
+<p>Within the data and document heavy application, I used ag-Grid to present this information in a digestible way building additional functionality to provide freedom for users to customize and save their UI preferences. This provides all of AST’s users the option to fully customize the UI to their own specific needs.</p>
+
+<p>Given the amount of data manipulation being done within these features, managing state when users are switching back and forth between tasks was a necessity. I was responsible for implementing a state management system to integrate with the Elasticsearch driven patent search page.</p>
+
+<p>I also implemented an app wide alert service to combine the two different alert styles used for desktop and mobile users. This service automated displaying alerts based on screen size with an option to preserve alerts after a user has been redirected to a new page.</p>
+
+<div class="block-header inner-sm" style="margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Technology</h2>
+</div>
+
+<p>This isn’t a comprehensive list of all technologies used for this project but some of the primary ones are listed below:</p>
+
+<ul>
+  <li>Angular 9+</li>
+  <li>NestJS</li>
+  <li>Hasura/GraphQL</li>
+  <li>Firebase</li>
+  <li>Elasticsearch</li>
+  <li>ag-Grid</li>
+  <li>Clarity Design System</li>
+  <li>Ant Design</li>
+</ul>
+:ET

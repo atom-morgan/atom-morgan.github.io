@@ -1,0 +1,401 @@
+I"��<h2 id="video">Video</h2>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/5xSLd57kWJs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In the <a href="https://atom-morgan.github.io/properties-and-methods/" target="_blank">previous tutorial</a> we introduced properties and methods such as <code class="language-plaintext highlighter-rouge">.length</code> and <code class="language-plaintext highlighter-rouge">.charAt()</code> as well as the logical operators AND and OR. We finished by writing our first iterative code using the <code class="language-plaintext highlighter-rouge">for</code> loop.</p>
+
+<p>Up until this point we’ve been calling functions (also referred to as methods) like <code class="language-plaintext highlighter-rouge">console.log()</code> and <code class="language-plaintext highlighter-rouge">.charAt()</code>. In this tutorial we’re going to switch from <em>calling</em> functions to <em>writing</em> them as well.</p>
+
+<div class="box box-dark">
+  <p>I taught myself to code and now I’m a self-employed remote freelancer. I know what it takes to get here and I can teach you how to do it too.
+  Click <a href="https://landing.mailerlite.com/webforms/landing/d9l9q6" target="_blank">here</a> to join my email list where I share my career tips
+  and keep you up-to-date with my latest tutorials.</p>
+</div>
+
+<h2 id="setup">Setup</h2>
+
+<p>First, create a new directory for the code we’ll write in this tutorial.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">mkdir webdev-functions
+</span></code></pre></div></div>
+
+<p>Then use <code class="language-plaintext highlighter-rouge">cd</code> to move into your new directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd webdev-functions
+</span></code></pre></div></div>
+
+<p>Within this directory, create the new file for your code.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch functions.js
+</span></code></pre></div></div>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="creating-functions">Creating functions</h2>
+
+<p>In JavaScript, function calls consists of zero or more arguments enclosed in parentheses. Two examples illustrating this are listed below:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// One argument</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// Zero arguments</span>
+<span class="kd">let</span> <span class="nx">sales</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">2.50</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">sales</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Declaring or defining our own functions is one of the most important concepts in programming. It allows us to structure our programs and reduce repetition by isolating code into a single, reusable function.</p>
+
+<p>So let’s write our first function that determines whether or not a string was passed as an argument to the function call.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">evaluateString</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">The string has a value!</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">What string?</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To declare a function we begin with the name of the function, <code class="language-plaintext highlighter-rouge">evaluateString</code>, followed by a comma separated list of parameters enclosed in parentheses. In this function declaration, we have a single parameter named <code class="language-plaintext highlighter-rouge">string</code>. Following the function name and parameters are the open and close braces (<code class="language-plaintext highlighter-rouge">{}</code>). Within this block is where we write the code we want to be executed when our function is called.</p>
+
+<!--![Function declaration](/images/functions/function-declaration.png)-->
+
+<p>In our example we first check if the parameter <code class="language-plaintext highlighter-rouge">string</code> is truthy (has a value) and use <code class="language-plaintext highlighter-rouge">return</code> to specify a <em>return value</em> of the function: <code class="language-plaintext highlighter-rouge">The string has a value!</code>. If it’s falsy, the function’s return value is <code class="language-plaintext highlighter-rouge">What string?</code>.</p>
+
+<p>Now that we have our first function declaration, we need to call it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">evaluateString</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">The string has a value!</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">What string?</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">first</span> <span class="o">=</span> <span class="nx">evaluateString</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">second</span> <span class="o">=</span> <span class="nx">evaluateString</span><span class="p">(</span><span class="dl">'</span><span class="s1">This one!</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span> <span class="c1">// What string?</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">second</span><span class="p">);</span> <span class="c1">// The string has a value!</span>
+</code></pre></div></div>
+
+<p>Here we declare two new variables, <code class="language-plaintext highlighter-rouge">first</code> and <code class="language-plaintext highlighter-rouge">second</code>, and set them equal to the <em>return value</em> of the function call <code class="language-plaintext highlighter-rouge">evaluateString()</code>. In the first function call we call <code class="language-plaintext highlighter-rouge">evaluateString</code> and pass it an empty string and in the second call we provide it the string <code class="language-plaintext highlighter-rouge">This one!</code>. Run that code and you should see the two return values printed to your terminal window.</p>
+
+<div class="box">
+  <p>If you don’t want to set the return value to a variable and then print it using <code class="language-plaintext highlighter-rouge">console.log()</code> you can just pass in your <em>function call as the argument</em> to <code class="language-plaintext highlighter-rouge">console.log()</code> instead.</p>
+
+  <p>Feel free to use either one because the end result is the same. The takeaway here is that functions can <em>return values</em> and we can set those return values to variables if needed.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Option 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evaluateString</span><span class="p">(</span><span class="dl">''</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evaluateString</span><span class="p">(</span><span class="dl">'</span><span class="s1">This one!</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="c1">// Option 2</span>
+<span class="kd">let</span> <span class="nx">first</span> <span class="o">=</span> <span class="nx">evaluateString</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span> 
+<span class="kd">let</span> <span class="nx">second</span> <span class="o">=</span> <span class="nx">evaluateString</span><span class="p">(</span><span class="dl">'</span><span class="s1">This one!</span><span class="dl">'</span><span class="p">);</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span> <span class="c1">// What string?</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">second</span><span class="p">);</span> <span class="c1">// The string has a value!</span>
+</code></pre></div>  </div>
+</div>
+
+<h3 id="parameter-vs-argument">Parameter vs. Argument</h3>
+
+<p>Up to this point we’ve used the terms parameter and argument without clarifying the distinction between the two. The difference is small and one that even seasoned programmers get wrong.</p>
+
+<p>We can see a condensed version of the previous example below:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">evaluateString</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// parameter</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="nx">evaluateString</span><span class="p">(</span><span class="dl">'</span><span class="s1">This one!</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// argument</span>
+</code></pre></div></div>
+
+<p>An argument is the value(s) or variable(s) that’s used when <em>calling a function</em>. When we call <code class="language-plaintext highlighter-rouge">evaluateString('This one!')</code> the argument is the string <code class="language-plaintext highlighter-rouge">This one!</code>.</p>
+
+<p>A parameter is the name of the value that’s <em>passed in to the function</em>. When we defined our function <code class="language-plaintext highlighter-rouge">evaluateString</code> we specified a single parameter <code class="language-plaintext highlighter-rouge">string</code>.</p>
+
+<p>So what does this mean in practice? The name of our parameter is basically irrelevant from the <em>function caller’s</em> point-of-view. That means we can update our parameter name to something silly like <code class="language-plaintext highlighter-rouge">lol</code> and everything still works just fine!</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">evaluateString</span><span class="p">(</span><span class="nx">lol</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Updated parameter name</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">lol</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">The string has a value!</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">What string?</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evaluateString</span><span class="p">(</span><span class="dl">''</span><span class="p">));</span> <span class="c1">// What string?</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evaluateString</span><span class="p">(</span><span class="dl">'</span><span class="s1">This one!</span><span class="dl">'</span><span class="p">));</span> <span class="c1">// The string has a value!</span>
+</code></pre></div></div>
+
+<p>The parameter name is merely a placeholder for the value that’s passed in to the function but it’s still a best practice to make your parameter names descriptive.</p>
+
+<p>Let’s continue with functions by writing another one to square a number.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">square</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">number</span> <span class="o">*</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 4</span>
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">square</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> <span class="c1">// 9</span>
+</code></pre></div></div>
+
+<p>Here we defined a function <code class="language-plaintext highlighter-rouge">square</code> with a single parameter <code class="language-plaintext highlighter-rouge">number</code> that simply returns <code class="language-plaintext highlighter-rouge">number</code> multiplied by itself. We then call the function two times, printing the results to the screen.</p>
+
+<p>Now let’s move on to writing a function that gives us some additional…functionality…to JavaScript’s <code class="language-plaintext highlighter-rouge">Date</code> object which represents a specific moment in time. For example, we can create a new instance of the <code class="language-plaintext highlighter-rouge">Date</code> object using the <code class="language-plaintext highlighter-rouge">new</code> operator and with this object we can then call the <code class="language-plaintext highlighter-rouge">.getDay()</code> method to get the current day of the week.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getDay</span><span class="p">());</span> <span class="c1">// A number between 0 and 6</span>
+</code></pre></div></div>
+
+<p>Run that code and you should see a number between 0 and 6 printed to the screen where Sunday is 0 and Saturday is 6.</p>
+
+<div class="box">
+  <p>We’ll get to the specifics of objects like <code class="language-plaintext highlighter-rouge">Date</code> and terms like “instance” and <code class="language-plaintext highlighter-rouge">new</code> in a later tutorial. Before we get there, we need to solidify the concept of functions.</p>
+</div>
+
+<p>Unfortunately, a number isn’t exactly how humans refer to the days of the week. So let’s write a function that when given the numerical result of <code class="language-plaintext highlighter-rouge">.getDay()</code> will return us the day of the week as a string.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">dayOfWeek</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">days</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Sunday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Monday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Tuesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Wednesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Thursday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Friday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Saturday</span><span class="dl">'</span><span class="p">];</span>
+  <span class="k">return</span> <span class="nx">days</span><span class="p">[</span><span class="nx">date</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>First we declare our function’s name <code class="language-plaintext highlighter-rouge">dayOfWeek</code> and its parameter <code class="language-plaintext highlighter-rouge">date</code>. Then we declare a variable <code class="language-plaintext highlighter-rouge">days</code> using the <code class="language-plaintext highlighter-rouge">const</code> keyword (more on that in a minute) that’s set to an array of strings containing the days of the week. We end our function by returning a single element within <code class="language-plaintext highlighter-rouge">days</code> using the index given to us by calling <code class="language-plaintext highlighter-rouge">date.getDay()</code>.</p>
+
+<p>We can see this in action by calling the <code class="language-plaintext highlighter-rouge">dayOfWeek</code> function using the <code class="language-plaintext highlighter-rouge">Date</code> object.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">dayOfWeek</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">days</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Sunday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Monday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Tuesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Wednesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Thursday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Friday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Saturday</span><span class="dl">'</span><span class="p">];</span>
+  <span class="k">return</span> <span class="nx">days</span><span class="p">[</span><span class="nx">date</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()];</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Happy </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">dayOfWeek</span><span class="p">(</span><span class="nx">now</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Run that and you should see something like <code class="language-plaintext highlighter-rouge">Happy Wednesday!</code> printed to the screen depending on what day of the week it is when you’re working through this tutorial.</p>
+
+<h3 id="const-vs-let">Const vs. let</h3>
+
+<p>In our previous example we saw a new keyword, <code class="language-plaintext highlighter-rouge">const</code>, that was used when declaring the variable <code class="language-plaintext highlighter-rouge">days</code>. The keyword <code class="language-plaintext highlighter-rouge">const</code>, like <code class="language-plaintext highlighter-rouge">let</code>, is another keyword available to us when declaring variables.</p>
+
+<p>The keyword <code class="language-plaintext highlighter-rouge">const</code> stands for constant and it’s a variable whose value doesn’t change. We can illustrate this with the following code:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Morgan</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="nx">pi</span> <span class="o">=</span> <span class="mf">4.14</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pi</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Run that code and you should see an error like this:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">/Users/adammorgan/Desktop/webdev-functions/functions.js:6
+</span><span class="gp">pi = 4.14;</span><span class="w">
+</span><span class="go">   ^
+
+TypeError: Assignment to constant variable.
+</span></code></pre></div></div>
+
+<p>As you can see since we already assigned a value to the constant <code class="language-plaintext highlighter-rouge">pi</code> when it was declared, our code crashes once it hits that line because we’re attempting to update the value of a constant which isn’t allowed.</p>
+
+<p>So constants are great for values like <code class="language-plaintext highlighter-rouge">days</code> in our previous example where <code class="language-plaintext highlighter-rouge">days</code> was set to the days of the week—a value we don’t want to change.</p>
+
+<h3 id="template-literals">Template literals</h3>
+
+<p>Before moving on to our last example I want to briefly address a slightly cleaner way of combining variables and strings. Using concatentation, things can start to get messy quick.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">My name is </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>With multiple values and a longer string, the string can be a bit difficult to read for a developer who may be making updates. Instead, we can use a template literal with placeholders.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`My name is </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">.`</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Now instead of concatenating strings together with plus signs (<code class="language-plaintext highlighter-rouge">+</code>) we can use the dollar sign and curly brace syntax (<code class="language-plaintext highlighter-rouge">${expression}</code>) instead.</p>
+
+<h3 id="multiple-parameters">Multiple parameters</h3>
+
+<p>We’ll wrap up with one more example of a function that has two parameters instead of one.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">calculateSalesTax</span><span class="p">(</span><span class="nx">price</span><span class="p">,</span> <span class="nx">tax</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`price is </span><span class="p">${</span><span class="nx">price</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`tax is </span><span class="p">${</span><span class="nx">tax</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">price</span> <span class="o">*</span> <span class="nx">tax</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">calculateSalesTax</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Sales tax is $</span><span class="p">${</span><span class="nx">result</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Here we’ve declared a function <code class="language-plaintext highlighter-rouge">calculateSalesTax</code> with two parameters: <code class="language-plaintext highlighter-rouge">price</code> and <code class="language-plaintext highlighter-rouge">tax</code>. Within the function we simply print both parameters using <code class="language-plaintext highlighter-rouge">console.log()</code> and return the value of the two multiplied together. Run that code and you should see the following printed to your screen:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">price is 10
+tax is 0.15
+</span><span class="gp">Sales tax is $</span>1.5
+</code></pre></div></div>
+
+<p>Earlier we mentioned that the names of the parameters doesn’t matter. For example, we can update the names for <code class="language-plaintext highlighter-rouge">price</code> and <code class="language-plaintext highlighter-rouge">tax</code> to far less descriptive names and see our code still works.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">calculateSalesTax</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`a is </span><span class="p">${</span><span class="nx">a</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`b is </span><span class="p">${</span><span class="nx">b</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">calculateSalesTax</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Sales tax is $</span><span class="p">${</span><span class="nx">result</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Run that and you should still see the same output as before with the updated variable names.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">price is 10
+tax is 0.15
+</span><span class="gp">Sales tax is $</span>1.5
+</code></pre></div></div>
+
+<p>Now what happens if we switch the ordering of our <em>arguments</em> when we <em>call</em> our function?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">calculateSalesTax</span><span class="p">(</span><span class="nx">price</span><span class="p">,</span> <span class="nx">tax</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`price is </span><span class="p">${</span><span class="nx">price</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`tax is </span><span class="p">${</span><span class="nx">tax</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">price</span> <span class="o">*</span> <span class="nx">tax</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">calculateSalesTax</span><span class="p">(</span><span class="mf">0.15</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// Swapped these values</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Sales tax is $</span><span class="p">${</span><span class="nx">result</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Run that and you should see a slightly different output.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">price is 0.15
+tax is 10
+</span><span class="gp">Sales tax is $</span>1.5
+</code></pre></div></div>
+
+<p>So while the <em>naming</em> of our parameters doesn’t matter the ordering of arguments <em>when calling functions</em> does matter. Take a look at the more robust version of <code class="language-plaintext highlighter-rouge">calculateSalesTax</code> below:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">calculateSalesTax</span><span class="p">(</span><span class="nx">prices</span><span class="p">,</span> <span class="nx">tax</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">prices</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">prices</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="nx">tax</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSalesTax</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="mf">0.15</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSalesTax</span><span class="p">(</span><span class="mf">0.15</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]));</span>
+</code></pre></div></div>
+
+<p>Here we iterate through <code class="language-plaintext highlighter-rouge">prices</code> using a <code class="language-plaintext highlighter-rouge">for</code> loop multipling each element by <code class="language-plaintext highlighter-rouge">tax</code>. We then add each result to the <code class="language-plaintext highlighter-rouge">result</code> array using the <code class="language-plaintext highlighter-rouge">.push()</code> method. Once the loop has finished we then return the value of <code class="language-plaintext highlighter-rouge">result</code>.</p>
+
+<p>Below our function are two function calls with their arguments swapped. In the first function call an array of prices is followed by the tax rate whereas the second function call has the tax rate first and the array or prices second.</p>
+
+<p>Run that code and the results should illustrate why the order of arguments is important when calling a function.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.5</span> <span class="p">]</span> <span class="c1">// The result we expect</span>
+<span class="p">[]</span>                  <span class="c1">// ...not so much</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Before we finish, add your latest changes to Git.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init
+git add .
+</span></code></pre></div></div>
+
+<p>Then add a commit message.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git commit -m "Add functions"
+</span></code></pre></div></div>
+
+<p>Then push these changes up to GitHub.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git push origin master
+</span></code></pre></div></div>
+
+<h2 id="exercises">Exercises</h2>
+
+<p>To practice finish implementing the <code class="language-plaintext highlighter-rouge">greetByDay</code> function so that when it’s called it prints the greeting message we created earlier, <code class="language-plaintext highlighter-rouge">Happy Wednesday!</code>, where <code class="language-plaintext highlighter-rouge">Wednesday</code> is whatever day of the week it is.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">dayOfWeek</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">days</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Sunday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Monday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Tuesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Wednesday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Thursday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Friday</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Saturday</span><span class="dl">'</span><span class="p">];</span>
+  <span class="k">return</span> <span class="nx">days</span><span class="p">[</span><span class="nx">date</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()];</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">greetByDay</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Add your code here</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="nx">greetByDay</span><span class="p">(</span><span class="nx">now</span><span class="p">);</span> <span class="c1">// Happy Wednesday!</span>
+</code></pre></div></div>
+
+<div class="box">
+  <p>Need some help? Click <a href="https://discord.gg/xMc7n3Z" target="_blank">here</a> to join a Discord server created exclusively for this series.</p>
+</div>
+
+<p>For this exercise update the functionality of <code class="language-plaintext highlighter-rouge">calculateSalesTax</code> to return an array containing the price with the <em>sales tax added to the original price</em>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">calculateSalesTax</span><span class="p">(</span><span class="nx">prices</span><span class="p">,</span> <span class="nx">tax</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Add your code here</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateSalesTax</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="mf">0.15</span><span class="p">));</span> <span class="c1">// [ 1.15, 5.75, 11.5 ]</span>
+</code></pre></div></div>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

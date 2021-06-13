@@ -1,0 +1,442 @@
+I"��<h2 id="video">Video</h2>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HlGpWv1_lfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In the <a href="http://atom-morgan.github.io/data-types-in-javascript/" target="_blank">previous tutorial</a> we took a closer look at the data types available to us in JavaScript and the variables, or containers, we use to store those values. We also saw how we can use conditionals, using <code class="language-plaintext highlighter-rouge">if</code> and <code class="language-plaintext highlighter-rouge">else</code>, to control the flow of our programs.</p>
+
+<p>In this tutorial we’re going to introduce some of the properties and methods exposed to us by the data types in JavaScript. Finally, we’ll wrap up by taking our first look at iteration.</p>
+
+<div class="box">
+  <p>Need some help? Click <a href="https://discord.gg/xMc7n3Z" target="_blank">here</a> to join a Discord server created exclusively for this series.</p>
+</div>
+
+<h2 id="setup">Setup</h2>
+
+<p>First, create a new directory for the code we’ll write in this tutorial.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">mkdir webdev-properties-and-methods
+</span></code></pre></div></div>
+
+<p>Then use <code class="language-plaintext highlighter-rouge">cd</code> to move into your new directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd webdev-properties-and-methods
+</span></code></pre></div></div>
+
+<p>Within this directory, create the new file for your code.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch properties-and-methods.js
+</span></code></pre></div></div>
+
+<h2 id="properties">Properties</h2>
+
+<p>At the end of the <a href="http://atom-morgan.github.io/data-types-in-javascript/" target="_blank">previous tutorial</a> we created a few objects and accessed their properties using dot notation as shown below.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">myUser</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam Morgan</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">28</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myUser</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// Adam Morgan</span>
+</code></pre></div></div>
+
+<p>Well in JavaScript nearly everything is an object, including strings. This means strings, including all the strings we’ve created up to this point, have information about them that we can access known as properties.</p>
+
+<p>We’ll start by accessing a string’s <code class="language-plaintext highlighter-rouge">length</code> property.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">adam</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">username</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// 4</span>
+</code></pre></div></div>
+
+<p>As you can see, we use dot notation just as we did with objects to print the length of the string <code class="language-plaintext highlighter-rouge">username</code> using <code class="language-plaintext highlighter-rouge">username.length</code>.</p>
+
+<p>Another data type we’ve used, arrays, also have a <code class="language-plaintext highlighter-rouge">length</code> property.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">languages</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">javascript</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ruby</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">python</span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">languages</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>So what’s a practical application of a property such as <code class="language-plaintext highlighter-rouge">length</code>? We can use a combination of conditionals, the <code class="language-plaintext highlighter-rouge">length</code> property, and a comparison operator to create logic you’ve probably encountered at some point using the Internet.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">adam</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">username</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Your username is too short.</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Your username meets the length requirements!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we’ve used the <code class="language-plaintext highlighter-rouge">length</code> property in the expression of our <code class="language-plaintext highlighter-rouge">if</code> statement. If the length of <code class="language-plaintext highlighter-rouge">username</code> is less than (<code class="language-plaintext highlighter-rouge">&lt;</code>) 5 characters, we print a message to the user notifying them of the length requirement. Otherwise, we let the user know their username is valid.</p>
+
+<div class="box box-dark">
+  <p>I taught myself to code and now I’m a self-employed remote freelancer. I know what it takes to get here and I can teach you how to do it too.
+  Click <a href="https://landing.mailerlite.com/webforms/landing/d9l9q6" target="_blank">here</a> to join my email list where I share my career tips
+  and keep you up-to-date with my latest tutorials.</p>
+</div>
+
+<h3 id="properties-and-logical-operators">Properties and Logical Operators</h3>
+
+<p>In addition to the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators" target="_blank">comparison operator</a> we used in the example above, we also have <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators" target="_blank">logical operators</a> at our disposal which we can leverage at times like this.</p>
+
+<p>The first operator we’ll look at is the logical AND (<code class="language-plaintext highlighter-rouge">&amp;&amp;</code>) operator. When you’re comparing two booleans with <code class="language-plaintext highlighter-rouge">&amp;&amp;</code>, both have to be <code class="language-plaintext highlighter-rouge">true</code> for the combination to be <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>In this example we’ve used the <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> operator to compare two booleans: <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">true</code>. Since they’re both <code class="language-plaintext highlighter-rouge">true</code>, the result of the comparison is also <code class="language-plaintext highlighter-rouge">true</code>. Let’s see how the <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> operator works with the remaining combinations.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>As you can see, unless <em>both</em> sides of the <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> operator are <code class="language-plaintext highlighter-rouge">true</code>, the result is <code class="language-plaintext highlighter-rouge">false</code>. The combination of possibilities above is what’s known as a <a href="https://en.wikipedia.org/wiki/Truth_table" target="_blank">“truth table”</a>.</p>
+
+<p>Now, we can combine the logical <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> operator with the <code class="language-plaintext highlighter-rouge">length</code> property and comparison operator we used earlier for a more comprehensive example.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">adammorgan</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">password</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">123</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">username</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="nx">password</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Your username and password meet the length requirements!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Your username or password is too short.</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we have both <code class="language-plaintext highlighter-rouge">username</code> and <code class="language-plaintext highlighter-rouge">password</code> variables declared and initialized with values. Then within our <code class="language-plaintext highlighter-rouge">if</code> statement we use the <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> operator with two expressions.</p>
+
+<p><img src="/images/properties-and-methods/if-operator.png" alt="If statement with logical operator" /></p>
+
+<p>On the left side is <code class="language-plaintext highlighter-rouge">username.length &gt; 5</code> and on the right side is <code class="language-plaintext highlighter-rouge">password.length &gt; 5</code>. If <em>both</em> expressions evaluate to <code class="language-plaintext highlighter-rouge">true</code>, the code in our <code class="language-plaintext highlighter-rouge">if</code> statement is executed. Otherwise, the code in <code class="language-plaintext highlighter-rouge">else</code> is executed.</p>
+
+<p>Run that code and you should see <code class="language-plaintext highlighter-rouge">Your username or password is too short.</code> printed to the screen because the <code class="language-plaintext highlighter-rouge">length</code> of password is too short. We can verify <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> is working correctly by updating the value of <code class="language-plaintext highlighter-rouge">password</code> to be greater than 5 characters.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">adammorgan</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">password</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">s3cr3t</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">username</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="nx">password</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Your username and password meet the length requirements!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Your username or password is too short.</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="box">
+  <h4 id="the-repl-is-your-friend">The REPL is your friend!</h4>
+
+  <p>If at anytime you want to verify the result of these expressions just open a REPL and enter the code you want to run.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">adammorgan</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">username</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// true</span>
+</code></pre></div>  </div>
+
+  <p>You can also avoid variables altogether and just reference the <code class="language-plaintext highlighter-rouge">length</code> property on the string itself.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">adammorgan</span><span class="dl">'</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// true</span>
+<span class="dl">'</span><span class="s1">s3cr3t</span><span class="dl">'</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// true</span>
+</code></pre></div>  </div>
+</div>
+
+<p>The other logical operator available to us is the logical OR (<code class="language-plaintext highlighter-rouge">||</code>) operator. Unlike <code class="language-plaintext highlighter-rouge">&amp;&amp;</code>, <code class="language-plaintext highlighter-rouge">||</code> evaluates to true if <em>either</em> expression is <code class="language-plaintext highlighter-rouge">true</code>. We can see how this works by recreating the truth table from earlier using <code class="language-plaintext highlighter-rouge">||</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span> <span class="o">||</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span> <span class="o">||</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">false</span> <span class="o">||</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">false</span> <span class="o">||</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>As you can see, only one expression needs to be <code class="language-plaintext highlighter-rouge">true</code> for the result to be <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<p>We can see how we might use this in a program with the following example where we want to restrict certain features in an application to a type of user such as an administrator or moderator.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">isAdmin</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">isModerator</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">};</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">isAdmin</span> <span class="o">||</span> <span class="nx">user</span><span class="p">.</span><span class="nx">isModerator</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">I only care about one of these! They are authorized!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Don</span><span class="se">\'</span><span class="s1">t let them in!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here we have an object with two properties, <code class="language-plaintext highlighter-rouge">isAdmin</code> and <code class="language-plaintext highlighter-rouge">isModerator</code>, set to booleans. Then within our <code class="language-plaintext highlighter-rouge">if</code> statement we use the <code class="language-plaintext highlighter-rouge">||</code> operator with two expressions on either side. On the left side is <code class="language-plaintext highlighter-rouge">user.isAdmin</code> and on the right side is <code class="language-plaintext highlighter-rouge">user.isModerator</code>.</p>
+
+<p>Run that code and you should see <code class="language-plaintext highlighter-rouge">I only care about one of these! They are authorized!</code> printed to the screen because only <em>one</em> of the two expressions needs to be <code class="language-plaintext highlighter-rouge">true</code>. Once again we can verify everything is working correctly by updating both values to <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">isAdmin</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">isModerator</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">};</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">isAdmin</span> <span class="o">||</span> <span class="nx">user</span><span class="p">.</span><span class="nx">isModerator</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">I only care about one of these! They are authorized!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Don</span><span class="se">\'</span><span class="s1">t let them in!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="methods">Methods</h2>
+
+<p>In addition to properties we also have methods available to us as well.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">username</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span> <span class="c1">// adam</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">username</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span> <span class="c1">// ADAM</span>
+</code></pre></div></div>
+
+<p>Unlike properties which are values, a method is a function that we call with parentheses (like we do with <code class="language-plaintext highlighter-rouge">console.log()</code>) to get the value we want. These are just two of the string methods available to us and you can see a complete list of string methods <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Methods_2" target="_blank">here</a>.</p>
+
+<!-- [Upper case vs lower case](http://3.bp.blogspot.com/__uJC-guN1CM/TJdusqqrE1I/AAAAAAAAARk/qVSelaSBGFc/s1600/9_29+Upper+%26+Lower+Case.JPG). -->
+
+<p>As a programmer, learning how to read documentation is an extremely important skill to develop. Let’s explore the documentation for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2" target="_blank">array methods</a>.</p>
+
+<p><img src="/images/properties-and-methods/array-methods.png" alt="Array methods" /></p>
+
+<p>In this image are just a few of the array methods available to us. Let’s take a closer look at the <code class="language-plaintext highlighter-rouge">pop()</code> method. As the description says <code class="language-plaintext highlighter-rouge">pop()</code> “removes the last element from an array and returns that element.” You can <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop" target="_blank">click the method name</a> in the list and see even more details along with a few examples demonstrating how <code class="language-plaintext highlighter-rouge">pop()</code> works.</p>
+
+<p>We can create our own example to illustrate the effects of <code class="language-plaintext highlighter-rouge">pop()</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">favoriteFruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">returnedValue</span> <span class="o">=</span> <span class="nx">favoriteFruits</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteFruits</span><span class="p">);</span> <span class="c1">// ['mango', 'blueberry']</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">returnedValue</span><span class="p">);</span> <span class="c1">// raspberry</span>
+</code></pre></div></div>
+
+<p>Run this program and you’ll see that after calling <code class="language-plaintext highlighter-rouge">pop()</code>, the last element in the <code class="language-plaintext highlighter-rouge">favoriteFruits</code> array has been removed. We can also see that calling <code class="language-plaintext highlighter-rouge">favoriteFruits.pop()</code> <em>returned a value</em> which we assigned to the variable <code class="language-plaintext highlighter-rouge">returnedValue</code>.</p>
+
+<p>While we’re at it, we can test out the <code class="language-plaintext highlighter-rouge">push()</code> method listed just below <code class="language-plaintext highlighter-rouge">pop()</code>. The description for <code class="language-plaintext highlighter-rouge">push()</code> says it “adds one or more elements to the end of an array and returns the new length of the array.”</p>
+
+<p>We can see how this works with the following example.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">favoriteFruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">returnedValue</span> <span class="o">=</span> <span class="nx">favoriteFruits</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">passionfruit</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteFruits</span><span class="p">);</span> <span class="c1">// ['mango', 'blueberry', 'raspberry', 'passionfruit']</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">returnedValue</span><span class="p">);</span> <span class="c1">// 4</span>
+</code></pre></div></div>
+
+<h2 id="iteration">Iteration</h2>
+
+<p>The last topic we’re going to cover is known as iteration. Iteration in programming is the technique of repeating one or many statements for a defined number of repetitions with each repetition known as an iteration.</p>
+
+<p>Let’s build up to this idea by first taking a look at the <code class="language-plaintext highlighter-rouge">charAt()</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt" target="_blank">string method</a>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span> <span class="c1">// A</span>
+</code></pre></div></div>
+
+<p>As you can see the <code class="language-plaintext highlighter-rouge">charAt()</code> method takes a single parameter, an index, and returns the character in the string at that index. We could continue for the remaining characters by copying and pasting the <code class="language-plaintext highlighter-rouge">console.log()</code> statement incrementing the index each time.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span> <span class="c1">// A</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> <span class="c1">// d</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// a</span>
+<span class="c1">// ...and so on</span>
+</code></pre></div></div>
+
+<p>However, that gets old really quick. It’s a lot of copying and pasting which is repetitive and error prone.</p>
+
+<p>When we covered data types, we learned about variables that could store values such as <code class="language-plaintext highlighter-rouge">Hello, world!</code> so that we wouldn’t have to repeatedly copy that value over and over. In a similar way, we can avoid duplicating <code class="language-plaintext highlighter-rouge">console.log()</code> using what’s known as a <code class="language-plaintext highlighter-rouge">for</code> loop. First, let’s take a look at a generic <code class="language-plaintext highlighter-rouge">for</code> loop.</p>
+
+<!-- Well we can avoid duplicating `console.log()` for each character in the string `name` by iterating through the string using a `for` loop. -->
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Done! Outside the for loop!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Similar to an <code class="language-plaintext highlighter-rouge">if</code> statement, we begin our loop with the keyword <code class="language-plaintext highlighter-rouge">for</code> followed by a pair of parentheses. Within those parentheses are three expressions seperated by semicolons. Let’s break these down one by one.</p>
+
+<ol>
+  <li><strong>initialization</strong> - This is where we initialize a counter variable: <code class="language-plaintext highlighter-rouge">let i = 0;</code>.</li>
+  <li><strong>condition</strong> - This is an expression that’s evaluated <em>before each iteration</em>. If this evaluates to <code class="language-plaintext highlighter-rouge">true</code>, the statement(s) within the curly braces <code class="language-plaintext highlighter-rouge">{}</code> is executed. If the expression evaluates to <code class="language-plaintext highlighter-rouge">false</code>, execution skips to the next statement following the <code class="language-plaintext highlighter-rouge">for</code> loop.</li>
+  <li><strong>final expression</strong> - This is an expression that’s evaluated <em>after each iteration</em> and is generally used to increment the counter variable initialized in the initiliazation step above.</li>
+</ol>
+
+<p>So let’s walk through the loop code step by step.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Done! Outside the for loop!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>When this code is run, it begins with the initialization step by declaring <code class="language-plaintext highlighter-rouge">i</code> and setting it to <code class="language-plaintext highlighter-rouge">0</code>. Then the condition <code class="language-plaintext highlighter-rouge">i &lt; 5</code> is evaluated. Since it evaluates to <code class="language-plaintext highlighter-rouge">true</code> the statement(s) within the curly braces <code class="language-plaintext highlighter-rouge">{}</code> (also referred to as a block statement) is run. At this point <code class="language-plaintext highlighter-rouge">i</code> is <code class="language-plaintext highlighter-rouge">0</code> so the number <code class="language-plaintext highlighter-rouge">0</code> is printed to the screen. Now that the single statement has been run, the third expression in the for statement is evaluated: <code class="language-plaintext highlighter-rouge">i++</code>. The <code class="language-plaintext highlighter-rouge">i++</code> syntax simply increments the value of <code class="language-plaintext highlighter-rouge">i</code> by <code class="language-plaintext highlighter-rouge">1</code>.</p>
+
+<p>In the next iteration the condition <code class="language-plaintext highlighter-rouge">i &lt; 5</code> is evaluated again using the new, incremented value for <code class="language-plaintext highlighter-rouge">i</code> which is <code class="language-plaintext highlighter-rouge">1</code>. Once again the condition evaluates to <code class="language-plaintext highlighter-rouge">true</code> so the block statement is run again.</p>
+
+<p>This repeats until <code class="language-plaintext highlighter-rouge">i &lt; 5</code> evaluates to <code class="language-plaintext highlighter-rouge">false</code>. Once it does, our code exits the <code class="language-plaintext highlighter-rouge">for</code> loop running the first statement following <code class="language-plaintext highlighter-rouge">for</code> which is <code class="language-plaintext highlighter-rouge">console.log('Done! Outside the for loop!');</code>. Run the code listed above and you should see the following printed to your screen.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">0
+1
+2
+3
+4
+Done! Outside the for loop!
+</span></code></pre></div></div>
+
+<p>Now we can take our previous example and print every character in a string using a single <code class="language-plaintext highlighter-rouge">console.log()</code> within a <code class="language-plaintext highlighter-rouge">for</code> loop.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">name</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">i</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We can also use a <code class="language-plaintext highlighter-rouge">for</code> loop with an array to print out every element within the array.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sales</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">sales</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sales</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Running that code should print the following.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">5
+7
+3.5
+8
+</span></code></pre></div></div>
+
+<p>Rather than print every element within <code class="language-plaintext highlighter-rouge">sales</code>, why not use the <code class="language-plaintext highlighter-rouge">for</code> loop to keep a running total instead? We can do that with the following code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">sales</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">sales</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">total</span> <span class="o">=</span> <span class="nx">total</span> <span class="o">+</span> <span class="nx">sales</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">total</span><span class="p">);</span> <span class="c1">// 23.5</span>
+</code></pre></div></div>
+
+<p>Now rather than printing the value during each iteration we repeatedly increment the value of <code class="language-plaintext highlighter-rouge">total</code> with <code class="language-plaintext highlighter-rouge">total = total + sales[i]</code>.</p>
+
+<p>Finally, we can use a <code class="language-plaintext highlighter-rouge">for</code> loop to do things like modify an array of strings.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">exclamations</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">run</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hide</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">get away</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">exclamations</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">exclamations</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">exclamations</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exclamations</span><span class="p">);</span> <span class="c1">// ['RUN', 'HIDE', 'GET AWAY']</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Before we finish, add your latest changes with Git.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git add properties-and-methods.js
+</span></code></pre></div></div>
+
+<p>Then add a commit message.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git commit -m "Add properties and methods"
+</span></code></pre></div></div>
+
+<p>Then push these changes up to GitHub.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git push origin master
+</span></code></pre></div></div>
+
+<h2 id="exercises">Exercises</h2>
+
+<p>A few <code class="language-plaintext highlighter-rouge">for</code> loops are listed below that use different data types, methods, and operators we’ve seen so far. Try guessing the results of each loop before running them to see if you’re right.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Exercise #1</span>
+<span class="kd">let</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">   john</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">jane   </span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">  jeff  </span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">names</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">names</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">names</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">trim</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">names</span><span class="p">);</span>
+
+<span class="c1">// Exercise #2</span>
+<span class="kd">let</span> <span class="nx">languages</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">java</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">javascript</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">html</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">css</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ruby</span><span class="dl">'</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">languages</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">languages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="dl">'</span><span class="s1">java</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">languages</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Exercise #3</span>
+<span class="kd">let</span> <span class="nx">language</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">javascript</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">language</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">language</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">i</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">!</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">// Exercise #4</span>
+<span class="kd">let</span> <span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">ceo</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">title</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For additional practice, try writing a few <code class="language-plaintext highlighter-rouge">for</code> loops of your own. Pick an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2" target="_blank">array method</a> to see how it works.</p>
+
+<!-- In the next tutorial we'll take a look at some of the properties provided to us by data types. We'll also take a closer look at functions by writing some of our own. -->
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

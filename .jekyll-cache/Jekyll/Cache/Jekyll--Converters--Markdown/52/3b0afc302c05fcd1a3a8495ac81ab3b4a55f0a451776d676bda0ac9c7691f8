@@ -1,0 +1,463 @@
+I"R�<h2 id="video">Video</h2>
+
+<div class="videoWrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jaoqJG1xEOI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In the <a href="http://atom-morgan.github.io/hello-world-in-javascript/" target="_blank">previous tutorial</a> we took our first look at JavaScript by writing three variations of a “Hello, world” program using JavaScript in a <code class="language-plaintext highlighter-rouge">.html</code> file, JavaScript in a REPL, and finally JavaScript in a <code class="language-plaintext highlighter-rouge">.js</code> file. In those programs we briefly introduced the concept of a string by passing the string <code class="language-plaintext highlighter-rouge">Hello, world!</code> to <code class="language-plaintext highlighter-rouge">console.log()</code>.</p>
+
+<p>In this tutorial we’re going to take another look at the JavaScript we wrote and introduce some of the other data types that are available to us.</p>
+
+<div class="box">
+  <p>Need some help? Click <a href="https://discord.gg/xMc7n3Z" target="_blank">here</a> to join a Discord server created exclusively for this series.</p>
+</div>
+
+<h2 id="comments">Comments</h2>
+
+<p>It’s worth mentioning that similar to the comments we used in our <code class="language-plaintext highlighter-rouge">.html</code> file, we can also add comments in JavaScript as well.</p>
+
+<p>You can add comments in JavaScript using one of two ways.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Log a name</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This is what’s known as a single line comment. Just like our HTML comments this text is ignored when we run our code and it’s invisible to the user. It’s only visible to us and any other developers who look at this code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 
+Sometimes you just
+need a little extra
+room :)
+*/</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This is a multi-line comment. If a single line comment is getting a bit too long, use this syntax.</p>
+
+<div class="box">
+When you're just starting out, feel free to make liberal use of comments. Don't hesitate to add a plain English explanation of any code that's still a bit confusing to you.
+</div>
+
+<h2 id="variables">Variables</h2>
+
+<p>Before we get into variables and data types in JavaScript, create a new file for the code we’re going to write in this tutorial. You can either create a new directory or add this new file to the same directory as last time.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch data-types.js
+</span></code></pre></div></div>
+
+<p>Then add some code that’s similar to where we left off last time.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>In this program, we’re passing a string as an argument to <code class="language-plaintext highlighter-rouge">console.log()</code>. However there’s a part of JavaScript (and programming languages in general) that allows us to essentially store this string in a container. These containers are known as variables. Let’s update the program above to use a variable for the greeting message <code class="language-plaintext highlighter-rouge">Hello, world!</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Declare a variable and assign it a value</span>
+<span class="kd">let</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Now our program is utilizing a variable named <code class="language-plaintext highlighter-rouge">greeting</code> which has been assigned the value <code class="language-plaintext highlighter-rouge">Hello, world!</code>. Similar to our function call, we can break down this variable declaration into a few parts.</p>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<p><img src="/images/data-types/variable-declaration.png" alt="Variable declaration" /></p>
+
+<p>When we create variables we begin with what’s known as a “declaration”. In this case we’ve used the keyword <code class="language-plaintext highlighter-rouge">let</code> for our variable declaration. Following that is the “identifier” or what’s more commonly referred to as the name for the variable: <code class="language-plaintext highlighter-rouge">greeting</code>. After the variable name we add the assignment operator, <code class="language-plaintext highlighter-rouge">=</code>, and set it to its value. In this example the value that is assigned to <code class="language-plaintext highlighter-rouge">greeting</code> is the string <code class="language-plaintext highlighter-rouge">Hello, world!</code>. Finally, we end our statement with a semicolon.</p>
+
+<p>It’s also possible to simply declare a variable without assigning a value to it. We can see this in the following example.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">greeting</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
+<span class="nx">greeting</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>First we declare a variable <code class="language-plaintext highlighter-rouge">greeting</code> without assigning it a value. Then we attempt to <code class="language-plaintext highlighter-rouge">console.log()</code> the value of <code class="language-plaintext highlighter-rouge">greeting</code>, assign a string to <code class="language-plaintext highlighter-rouge">greeting</code>, and finally we attempt to <code class="language-plaintext highlighter-rouge">console.log()</code> the value of <code class="language-plaintext highlighter-rouge">greeting</code> again.</p>
+
+<p>Run this and you’ll notice the code runs without any errors. However the first <code class="language-plaintext highlighter-rouge">console.log()</code> call prints out the value <code class="language-plaintext highlighter-rouge">undefined</code>. This is a value in JavaScript that’s automatically assigned to variables that haven’t been assigned a value. We’ll see how this <code class="language-plaintext highlighter-rouge">undefined</code> value can be used to our advantage shortly when we get to control flow.</p>
+
+<p><img src="/images/data-types/logging-undefined.png" alt="Logging a variable with no assigned value" /></p>
+
+<p>So why do we need variables in the first place?</p>
+
+<p>Working with variables in programming allows us to work with symbolic identifiers rather than actual values. Imagine the greeting <code class="language-plaintext highlighter-rouge">Hello, world!</code> was used multiple times throughout a program. Rather than repeatedly typing <code class="language-plaintext highlighter-rouge">Hello, world!</code> every time we need that value we can instead assign it to a variable such as <code class="language-plaintext highlighter-rouge">greeting</code> and then reference <code class="language-plaintext highlighter-rouge">greeting</code> instead.</p>
+
+<p>Our new variable would also give us some flexibility in the future in the event that we decided to change the content of our greeting. Without variables, we’d have to find and replace every instance of our old greeting. With a variable, we make the update once and any references to the variable <code class="language-plaintext highlighter-rouge">greeting</code> will now use the updated greeting message.</p>
+
+<h3 id="strings">Strings</h3>
+
+<p>We’ve already been working with strings up to this point but it is worth mentioning a few more details.</p>
+
+<p>First, you can create strings in JavaScript using either single or double quotes.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// single</span>
+<span class="kd">let</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Morgan</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// double</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstName</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastName</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Enter <code class="language-plaintext highlighter-rouge">node data-types.js</code> to run this program and you’ll see both <code class="language-plaintext highlighter-rouge">firstName</code> and <code class="language-plaintext highlighter-rouge">lastName</code> are printed to the screen even though one string was enclosed in single quotes and the other in double quotes.</p>
+
+<div class="box">
+  <p>The identifiers here are written using what’s known as <a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank">Camel case</a>. This helps make identifiers a bit more legible at first glance. For example, compare the identifier <code class="language-plaintext highlighter-rouge">firstname</code> with <code class="language-plaintext highlighter-rouge">firstName</code>. Both identifiers are valid identifiers but it’s common within the JavaScript world to use camel case.</p>
+</div>
+
+<p>The one scenario where strings can get a little weird is when you have single or double quotes inside of a string.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This doesn't work</span>
+<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">You can</span><span class="dl">'</span><span class="nx">t</span> <span class="nx">be</span> <span class="nx">serious</span><span class="o">!</span><span class="dl">'</span><span class="s1">;
+console.log(message);
+</span></code></pre></div></div>
+
+<p>Run that code and you should see an error along the lines of <code class="language-plaintext highlighter-rouge">SyntaxError: Unexpected identifier</code> that causes the program to crash. In a text editor such as Visual Studio Code you may have even noticed something was wrong due to the syntax highlighting.</p>
+
+<p><img src="/images/data-types/syntax-error.png" alt="Syntax error" /></p>
+
+<p>So how do we fix this? When a string enclosed in single quotes <em>contains a single quote</em>, you can tell JavaScript to treat this as a part of the string by preceding the single quote with a backslash: <code class="language-plaintext highlighter-rouge">\</code>. This is what’s known as an “escape character”.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This does work</span>
+<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">You can</span><span class="se">\'</span><span class="s1">t be serious!</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>When a string enclosed in double quotes <em>contains double quotes</em>, such as dialogue, you can escape the double quote with a backslash as well.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">He asked, </span><span class="se">\"</span><span class="s2">Where are we?</span><span class="se">\"</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Another alternative is to update the enclosing quotes to single quotes.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">He asked, "Where are we?"</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Neither option is right or wrong, it’s purely a matter of personal preference. You’re bound to see both styles used as you continue programming depending on who you work with.</p>
+
+<h3 id="number">Number</h3>
+
+<p>The next data type available to us is the number type. Unlike strings which have no real parallel in the real world (we don’t refer to characters, words, or sentences as strings) numbers are a bit more straightforward.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">28</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pi</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Here we’ve created two variables set to numbers. The first variable, <code class="language-plaintext highlighter-rouge">pi</code>, is set to what’s known in programming as a “floating point” number but both are considered to be a number in JavaScript.</p>
+
+<p>Along with numbers are some of the mathematical operators you’d expect to be able to use with numbers.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// 0.75</span>
+</code></pre></div></div>
+
+<div class="box">
+  <p>These are just some of the mathematical operators available to us in JavaScript and you can see a more complete list <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators" target="_blank">here</a>. We’ll start to introduce more of these as we progress.</p>
+</div>
+
+<h3 id="boolean">Boolean</h3>
+
+<p>Next on this list is the data type known as boolean. A boolean is a data type that has one of two values: <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>. When assigning a boolean to a variable, <strong>do not</strong> use quotes. Otherwise you’re assigning strings to the variable instead of the intended boolean.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">isDrinkingAge</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">isSeniorCitizen</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isDrinkingAge</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isSeniorCitizen</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>As you may be able to infer from the example above, booleans are useful in programming when a variable can have one of two values. In the case of <code class="language-plaintext highlighter-rouge">isDrinkingAge</code> a person is either 21 or older or they’re younger than 21.</p>
+
+<p>A boolean is useful in this case because it controls the flow of logic. If you’re a bouncer at a bar and someone is under 21, you turn them away. If they’re 21 or older, you let them in.</p>
+
+<p>You’ve likely encountered this online as well. If you view the website of a brewery, there’s usually a popup asking you for your age. If you’re of legal drinking age you get to see the website. Otherwise you’re turned away. Booleans in action!</p>
+
+<h3 id="arrays">Arrays</h3>
+
+<p>Up until now every variable we’ve created has had a single value such as a string, number, or boolean. What if we need to store multiple values in a single variable? That’s where arrays come in.</p>
+
+<div class="box box-dark">
+  <p>I taught myself to code and now I’m a self-employed remote freelancer. I know what it takes to get here and I can teach you how to do it too.
+  Click <a href="https://landing.mailerlite.com/webforms/landing/d9l9q6" target="_blank">here</a> to join my email list where I share my career tips
+  and keep you up-to-date with my latest tutorials.</p>
+</div>
+
+<p>Arrays are an ordered collection of data that is used to store multiple values.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">favoriteFruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteFruits</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Run this and you should see the array of strings printed to the terminal. If we need to get a single value from this array we can do this using what’s known as an index.</p>
+
+<p>An index is what’s used to reference a specific element, or value, within the array. Arrays in JavaScript are zero-indexed meaning the first element in the array begins at index 0 with each subsequent element in the array incrementing the index by 1.</p>
+
+<p>So if we wanted to print the first element in the array we would do it like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">favoriteFruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteFruits</span><span class="p">);</span>
+
+<span class="c1">// Print the first element</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteFruits</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>As you can see the first element in the array was accessed by adding an open and close bracket (<code class="language-plaintext highlighter-rouge">[]</code>) to the end of the variable identifier (also known as bracket notation). Within the open and close bracket is where we add the index. Let’s update it by adding the remaining elements in the array.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">favoriteFruits</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteFruits</span><span class="p">);</span>
+
+<span class="c1">// Print each element</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteFruits</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteFruits</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">favoriteFruits</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<!-- Note about data typically being related? -->
+
+<h3 id="object">Object</h3>
+
+<p>Finally we have the powerhouse of JavaScript data types: the object. Objects are a list of property names and values enclosed in curly braces (<code class="language-plaintext highlighter-rouge">{}</code>). They’re somewhat similar to arrays but rather than using integers as an index, objects use strings.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userObject</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="na">favoriteFruits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">]</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<p>We can format this object into a more readable form with each property on a new line.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="na">favoriteFruits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">]</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Unlike arrays which typically contain values of the same data type, objects often contain a mix of many or all data types. In the object above we’ve used a number for my age, a string for my name, and an array of strings for my favorite fruits.</p>
+
+<p>We can access these values using what’s known as dot notation.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="na">favoriteFruits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">]</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// Adam</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span> <span class="c1">// 28</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">favoriteFruits</span><span class="p">);</span> <span class="c1">// [ 'mango', 'raspberry', 'blueberry' ]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">favoriteFruits</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// mango</span>
+</code></pre></div></div>
+
+<p>Similar to arrays you can also use bracket notation to access the values but dot notation is by far more common.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="na">favoriteFruits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">]</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">[</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">]);</span> <span class="c1">// Adam</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">[</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">]);</span> <span class="c1">// 28</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">[</span><span class="dl">'</span><span class="s1">favoriteFruits</span><span class="dl">'</span><span class="p">]);</span> <span class="c1">// [ 'mango', 'raspberry', 'blueberry' ]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">[</span><span class="dl">'</span><span class="s1">favoriteFruits</span><span class="dl">'</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// mango</span>
+</code></pre></div></div>
+
+<p>You can even nest objects <em>within</em> other objects.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="na">favoriteFruits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">car</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">make</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Honda</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">model</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Civic</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">isFunctional</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">car</span><span class="p">.</span><span class="nx">make</span><span class="p">);</span> <span class="c1">// Honda</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">car</span><span class="p">.</span><span class="nx">model</span><span class="p">);</span> <span class="c1">// Civic</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">car</span><span class="p">.</span><span class="nx">isFunctional</span><span class="p">);</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>Another key difference is that objects aren’t ordered like arrays. Since our values here are referenced through a property name rather than an index the order of these properties doesn’t matter.</p>
+
+<h3 id="conditionals">Conditionals</h3>
+
+<p>The last thing we’ll cover isn’t a data type but it does help us showcase some of the new things we can do with variables and data types. Here we’ll take a look at the <code class="language-plaintext highlighter-rouge">if</code> and <code class="language-plaintext highlighter-rouge">else</code> statement available to us in JavaScript that allows us to control the flow of our program. Even if you haven’t done much programming you may be familiar with the keywords <code class="language-plaintext highlighter-rouge">if</code> and <code class="language-plaintext highlighter-rouge">else</code>.</p>
+
+<p>We’ll start with an example using our previous <code class="language-plaintext highlighter-rouge">userObject</code> and the <code class="language-plaintext highlighter-rouge">age</code> property within it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="na">favoriteFruits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">car</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">make</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Honda</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">model</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Civic</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">isFunctional</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">age</span> <span class="o">&gt;=</span> <span class="mi">21</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">This user can drink!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">This user cannot drink!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Run this program and you should see <code class="language-plaintext highlighter-rouge">This user can drink!</code> logged to the screen. Update the value of age to <code class="language-plaintext highlighter-rouge">18</code>, run it again, and you’ll see <code class="language-plaintext highlighter-rouge">This user cannot drink!</code> logged to the screen. So how does this work?</p>
+
+<!-- *figure for if...else statement* -->
+
+<p>The <code class="language-plaintext highlighter-rouge">if</code> statement begins with the keyword <code class="language-plaintext highlighter-rouge">if</code> followed by an open and close parenthesis. Within these parenthesis is where we provide an expression that evaluates to either a “truthy” or “falsy” value (more on that in a bit).</p>
+
+<p>In our example, we provided the expression <code class="language-plaintext highlighter-rouge">userObject.age &gt;= 21</code> using the new “greater than or equal to” operator. Assuming <code class="language-plaintext highlighter-rouge">userObject.age</code> is the original value of <code class="language-plaintext highlighter-rouge">28</code> our condition evaluates to <code class="language-plaintext highlighter-rouge">28 &gt;= 21</code> which is “truthy”. As a result, the code within the <code class="language-plaintext highlighter-rouge">if</code> statement is executed which logs <code class="language-plaintext highlighter-rouge">This user can drink!</code>. If the condition is “falsy” the code within the <code class="language-plaintext highlighter-rouge">if</code> statement is ignored and the code within <code class="language-plaintext highlighter-rouge">else</code> is executed logging <code class="language-plaintext highlighter-rouge">This user cannot drink!</code> instead.</p>
+
+<div class="box">
+  <p>The operators we saw earlier (<code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code>) are known as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators">arithmetic operators</a>. Those are operators we use to perform math within JavaScript. Operators such as <code class="language-plaintext highlighter-rouge">&gt;=</code> are known as comparison operators which compares two values. You can see a complete list <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">here</a>.</p>
+</div>
+
+<p>So what is meant by a condition evaluating to a “truthy” or “falsy” value? Let’s take a look at this example.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Goodbye, </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">user</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Goodbye!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Run this program and you should see <code class="language-plaintext highlighter-rouge">Goodbye, Adam!</code> printed to the screen.</p>
+
+<div class="box">
+  <p>Just a minute ago a link was provided containing a complete list of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators">arithmetic operators</a> including <code class="language-plaintext highlighter-rouge">+</code>. However, we can see in the example above that the <code class="language-plaintext highlighter-rouge">+</code> operator is being used with strings.</p>
+
+  <p>That’s because the <code class="language-plaintext highlighter-rouge">+</code> operator in JavaScript can be used to do math and to manipulate strings. In this case, since the <code class="language-plaintext highlighter-rouge">+</code> operator is being used with strings, the operator performs <em>concatenation</em> rather than <em>addition</em> which joins the strings together as one.</p>
+</div>
+
+<p>The reason for this is that the condition in our <code class="language-plaintext highlighter-rouge">if</code> statement only needs to be “truthy”, not necessarily <code class="language-plaintext highlighter-rouge">true</code>. In our case, we have a variable that’s been assigned a value which classifies as “truthy” in JavaScript. Had we left the variable declaration <em>without assigning it a value</em> we’d see a change in our program’s behavior.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">user</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Goodbye, </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">user</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Goodbye!</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Run this program and you should see <code class="language-plaintext highlighter-rouge">Goodbye!</code> printed to the screen.</p>
+
+<p>As you can now see, removing the value assignment from our variable declaration has resulted in <code class="language-plaintext highlighter-rouge">user</code> now being evaluted as “falsy” rather than “truthy”. That’s a result of <code class="language-plaintext highlighter-rouge">user</code> now being <code class="language-plaintext highlighter-rouge">undefined</code> which is a “falsy” value in JavaScript. The list below is what’s <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy" target="_blank">“falsy” in JavaScript</a>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Falsy values in JavaScript</span>
+<span class="k">if</span> <span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="kc">undefined</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="kc">NaN</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Before we finish, add your latest changes with Git.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git add data-types.js
+</span></code></pre></div></div>
+
+<p>Then add a commit message.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git commit -m "Add data types"
+</span></code></pre></div></div>
+
+<p>Then push these changes up to GitHub.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git push origin master
+</span></code></pre></div></div>
+
+<h2 id="exercises">Exercises</h2>
+
+<p>To practice, create an object for yourself or a historical figure. Update existing properties or add new properties and experiment with the different data types available to you. Then verify that you can access these values by printing them to the screen with <code class="language-plaintext highlighter-rouge">console.log()</code>.</p>
+
+<p>A slightly modified <code class="language-plaintext highlighter-rouge">userObject</code> is below with a few <code class="language-plaintext highlighter-rouge">console.log()</code> statements at the end. Try guessing the results of each statement before running the code to see if you’re right.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">userObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Adam</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="na">favoriteFruits</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">mango</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">raspberry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blueberry</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">car</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">make</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Honda</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">model</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Civic</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">isFunctional</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="na">computer</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">manufacturer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Apple</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">laptop</span><span class="dl">'</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="na">manufacturer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Dell</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">laptop</span><span class="dl">'</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">favoriteFruits</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span> <span class="c1">// ?</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">car</span><span class="p">.</span><span class="nx">isFunctional</span><span class="p">);</span> <span class="c1">// ?</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">computer</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">manufacturer</span><span class="p">);</span> <span class="c1">// ?</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userObject</span><span class="p">.</span><span class="nx">computer</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">manufacturer</span><span class="p">);</span> <span class="c1">// ?</span>
+</code></pre></div></div>
+
+<p>In the <a href="http://atom-morgan.github.io/properties-and-methods/" target="_blank">next tutorial</a> we’ll take a look at some of the properties provided to us by data types. We’ll also take a closer look at functions by writing some of our own.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

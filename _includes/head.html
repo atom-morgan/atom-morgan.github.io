@@ -1,0 +1,42 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.tab__title }}{% endif %}</title>
+  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}'>
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.url == "/" %}{{ site.data.settings.tab__title }}{% else %}{{ page.title }} – {{ site.data.settings.tab__title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.url == "/" %}{{ site.data.settings.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}">
+  <meta name="twitter:image:src" content="{% if page.url == "/" %}{{ site.data.settings.author.image | absolute_url }}{% else %}{{ page.image | absolute_url }}{% endif %}">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="{% if page.url == "/" %}{{ site.data.settings.tab__title }}{% else %}{{ page.title }} – {{ site.data.settings.tab__title }}{% endif %}">
+  <meta property="og:description" content="{% if page.url == "/" %}{{ site.data.settings.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}">
+  <meta property="og:image" content="{% if page.url == "/" %}{{ site.data.settings.author.image | absolute_url }}{% else %}{{ page.image | absolute_url }}{% endif %}">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <style>
+  {% capture include_to_scssify %}
+    {% include main.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}
+  </style>
+
+  <!-- MailerLite Universal -->
+    <script>
+      function ml_webform_success_4255225(){var r=ml_jQuery||jQuery;r(".ml-subscribe-form-4255225 .row-success").show(),r(".ml-subscribe-form-4255225 .row-form").hide()}
+    </script>
+    <img src="https://track.mailerlite.com/webforms/o/4255225/j7u4v5?v1623598404" width="1" height="1" style="max-width:1px;max-height:1px;visibility:hidden;padding:0;margin:0;display:block" alt="." border="0">
+    <script src="https://static.mailerlite.com/js/w/webforms.min.js?v0c75f831c56857441820dcec3163967c" type="text/javascript"></script>
+  <!-- End MailerLite Universal -->    
+</head>

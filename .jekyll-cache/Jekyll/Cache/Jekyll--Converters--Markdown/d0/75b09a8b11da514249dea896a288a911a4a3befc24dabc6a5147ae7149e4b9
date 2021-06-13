@@ -1,0 +1,140 @@
+I"D+<p>Last year I quit my full-time job to write my book, <a href="http://www.angulartutorial.org/" target="_blank">The Angular Tutorial</a>. Once that was finished and available for purchase I started looking for my next project.</p>
+
+<p>Now I’m working on a <strong>free blog and screencast series</strong> teaching JavaScript and web development to complete beginners in programming (<a href="https://www.youtube.com/watch?v=qgkEjEA23L4&amp;list=PLsZjlbJIu0a9W8otpkC9bDKMcRb24DpbC" target="_blank">screencasts here</a>, <a href="http://atom-morgan.github.io/tutorials/" target="_blank">blogs here</a>).</p>
+
+<p>Thinking back on my own experiences as a beginner I remember taking a lot of time to research my sources before I started. I would ask myself questions like:</p>
+
+<ol>
+  <li>Who is this person?</li>
+  <li>Do they have a resume with credible experience and projects?</li>
+  <li>Do other people enjoy this person’s tutorials?</li>
+  <li>What is their teaching style? How are they different from other teachers?</li>
+  <li>Are they committed to this project or will these tutorials stop coming in a month?</li>
+</ol>
+
+<p>So to help you I’m going to answer these questions for you upfront.</p>
+
+<h3 id="who-is-this-person">Who is this person?</h3>
+
+<p>I’m not your traditional Stanford CS grad who went straight to Facebook after college.</p>
+
+<p>After I finished college, I was originally working in marketing consulting as a data analyst. Not even a year into that well-paying job with five weeks of paid vacation a year I quit to pursue programming with zero experience on my resume.</p>
+
+<p>Now I’m a self-taught, full-stack software engineer who’s been working in the industry for the past 5 years.</p>
+
+<div class="box box-dark">
+  <p>I taught myself to code and now I’m a self-employed remote freelancer. I know what it takes to get here and I can teach you how to do it too.
+  Click <a href="https://landing.mailerlite.com/webforms/landing/d9l9q6" target="_blank">here</a> to join my email list where I share my career tips
+  and keep you up-to-date with my latest tutorials.</p>
+</div>
+
+<p>You can hear the full story in <a href="https://youtu.be/u6Egm0bIP7k" target="_blank">this video</a> where I walk you through every job on my resume and provide lessons I learned along the way including <strong>how I negotiated a job offer that doubled my salary overnight</strong>.</p>
+
+<h3 id="do-they-have-a-resume-with-proven-experience">Do they have a resume with proven experience?</h3>
+
+<p>I’ll let you decide.</p>
+
+<p>I’ve worked with Fortune 500 companies, startups, agencies, and an angel investment firm. Here’s a few names you may recognize:</p>
+
+<ul>
+  <li>CNN</li>
+  <li>DirecTV</li>
+  <li>Turner Broadcasting System</li>
+  <li>NBC</li>
+  <li>Mazda</li>
+  <li>Olive Garden</li>
+  <li>The Home Depot</li>
+  <li>AutoTrader</li>
+</ul>
+
+<p>As far as projects go, here are two of the coolest ones I worked on.</p>
+
+<ul>
+  <li><strong>Clap.VC</strong> - Maybe the worst name ever but also the coolest project I delivered. This application allowed entrepreneurs to pitch investors remotely using real-time video and text chat. It also allowed screensharing to present pitch decks. I was the sole front-end developer who built the application using Angular. I was also the sole developer for the Chrome and Firefox extensions needed for screensharing.</li>
+  <li><strong>CNNgo</strong> - I worked with CNN and DirecTV to create the CNNgo app for DirecTV’s set-top boxes (39 million subscribers). While watching TV, the application presented the user with related content such as photo galleries and streaming VOD. I was one of two developers who built the application using AngularJS.</li>
+</ul>
+
+<h3 id="do-other-people-enjoy-this-persons-tutorials">Do other people enjoy this person’s tutorials?</h3>
+
+<p>Yes! I’ve previously written for the website <a href="https://scotch.io/@adam-morgan" target="_blank">Scotch.io</a> covering automated testing in AngularJS. In fact, the overwhelming positive feedback I received is what inspired me to write my book <a href="http://www.angulartutorial.org/" target="_blank">The Angular Tutorial</a>.</p>
+
+<p>Here’s what readers have to say:</p>
+
+<blockquote>
+  <p>“This book along with Adam’s advice has completely changed my career, after just a few examples I felt JavaScript suddenly “click” like never before. JS went from my most dreaded language to the only one I wanted to use and I landed my dream job because of it. I could write a book on just the benefits I have gotten from this one. If you are trying to learn JavaScript, how to architect an app, how to test, or Angular, then this book is a must have. As a React dev I can say with confidence this is the book that really taught me JavaScript.” -Levi Robertson</p>
+</blockquote>
+
+<blockquote>
+  <p>“Your instructions are very clear and well written. I was able to follow not only the syntax, but your thinking as well. Nice work.” -Casey Burnett</p>
+</blockquote>
+
+<blockquote>
+  <p>“Adam, you clearly and simply explained the things which were so difficult for me. Thanks a lot, cheers!” -Dmytro Kulikov</p>
+</blockquote>
+
+<blockquote>
+  <p>“Great tutorial! One of the best articles/tutorials on the subject. Thank you for sharing your knowledge.” -Bonnard Toc</p>
+</blockquote>
+
+<h3 id="whats-their-teaching-style-how-are-they-different-from-other-teachers">What’s their teaching style? How are they different from other teachers?</h3>
+
+<p>For my <strong>free, beginner-friendly material</strong> I’m releasing content in both <strong>written and video</strong> form. The videos on <a href="https://www.youtube.com/watch?v=qgkEjEA23L4&amp;list=PLsZjlbJIu0a9W8otpkC9bDKMcRb24DpbC" target="_blank">YouTube</a> cover the same material in the blog posts but I occasionally go into more details.</p>
+
+<p>My approach to teaching programming is one that’s practical and correlates to how I’ve worked as a software engineer for the past 5 years.</p>
+
+<p>When I’m illustrating a concept, I do everything I can to give <strong>realistic, real-world problems</strong> that we solve with code. Programming examples with variables like “foo”, “bar”, and “baz” have never helped me so you <strong>won’t see them here</strong>. That means coding samples will be <strong>easier for you to understand and remember</strong>. Problems can be told as stories and stories are easy to remember.</p>
+
+<p>You can also join my <a href="https://discord.gg/xMc7n3Z" target="_blank">Discord server</a> where you can ask questions directly to the person who wrote the material you’re reading (me!).</p>
+
+<h3 id="are-they-committed-to-this-project-or-will-these-tutorials-stop-coming-in-a-month">Are they committed to this project or will these tutorials stop coming in a month?</h3>
+
+<p>As I mentioned earlier, I quit my full-time job for this last year :)</p>
+
+<p>I’m now self-employed working on creating educational programming content full-time.</p>
+
+<p>Since then I <a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1529067875&amp;sr=1-1" target="_blank">published my first book</a> (500 pages!) teaching front-end development and automated testing using Angular and Cypress. It’s a full course that teaches you how to build, test, and deploy an Angular application from scratch.</p>
+
+<p>Now I’ve decided to move on to <strong>free, beginner friendly content</strong> for people who aren’t quite ready for a book like <a href="http://www.angulartutorial.org/" target="_blank">The Angular Tutorial</a>. Check out the Code Companion series <a href="http://atom-morgan.github.io/tutorials/" target="_blank">here</a>.</p>
+
+<p>If you have any questions, you can reach me on <a href="https://discord.gg/xMc7n3Z" target="_blank">Discord</a> or on <a href="https://twitter.com/atommorgan" target="_blank">Twitter</a>.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

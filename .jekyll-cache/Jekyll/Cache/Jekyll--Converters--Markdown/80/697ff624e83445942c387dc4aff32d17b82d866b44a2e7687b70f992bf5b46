@@ -1,0 +1,210 @@
+I"O<h2 id="goal">Goal</h2>
+
+<p>In the world of programming a “Hello, world” program allows us to create a very small working program to verify things are working correctly. If you’ve ever written JavaScript and you found yourself wishing there was a “Hello, world” equivalent for testing, this is it!</p>
+
+<h2 id="assumptions">Assumptions</h2>
+
+<p>For this tutorial I’m going to assume you have a basic understanding of JavaScript and will be able to download a few tools we’ll need for this tutorial. You’re not trying to write code. You’re trying to test it! Let’s get started.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>First, let’s create a directory that we’ll work in for this tutorial.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">mkdir js-testing &amp;&amp; cd js-testing
+</span></code></pre></div></div>
+
+<p>Next, we’ll need to install <a href="https://github.com/creationix/nvm" target="_blank">Node Version Manager</a> (NVM).</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+</span></code></pre></div></div>
+
+<p>Once that has finished, we’ll also install <a href="https://nodejs.org/en/" target="_blank">Node.js</a>.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">nvm install node
+</span></code></pre></div></div>
+
+<h2 id="hello">Hello!</h2>
+
+<p>With that, we’re ready to create our first JavaScript file which we will eventually test. Similar to a “Hello, world” program we’re going to keep the functionality very simple here. Let’s start by creating a file where we’ll place our to-be-tested code.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch hello-testing.js
+</span></code></pre></div></div>
+
+<p>Within this file, we’re going to create a module with one method that returns a message when called.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">testing</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">Hello, testing!</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">testing</span><span class="p">:</span> <span class="nx">testing</span>
+  <span class="p">};</span>
+<span class="p">})();</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Hello</span><span class="p">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>If this pattern looks a little odd, I’d highly recommend reading Todd Motto’s blog post <a href="https://toddmotto.com/mastering-the-module-pattern/" target="_blank">Mastering the Module Pattern</a>.</p>
+</blockquote>
+
+<h2 id="jasmine">Jasmine</h2>
+
+<p>Now that you’ve created the file we want to test let’s install <a href="http://jasmine.github.io/2.4/introduction.html" target="_blank">Jasmine</a>, the testing framework we’ll be using for our test.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">npm install -g jasmine
+</span></code></pre></div></div>
+
+<p>After that’s finished installing, you’ll need to initialize the project for Jasmine.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">jasmine init
+</span></code></pre></div></div>
+
+<p>After that, your file structure should look like this:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">js-testing
++-- hello-testing.js
++-- node_modules
++-- spec
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>You may notice a <code class="language-plaintext highlighter-rouge">support</code> directory within <code class="language-plaintext highlighter-rouge">spec</code> as well. This is for configuring Jasmine but for now we can leave it as is.</p>
+</blockquote>
+
+<p>The command <code class="language-plaintext highlighter-rouge">jasmine init</code> created the <code class="language-plaintext highlighter-rouge">spec</code> directory for us. This is where you’ll write your test file. So navigate to that directory and create your first test file.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd spec &amp;&amp; touch hello-testing.spec.js
+</span></code></pre></div></div>
+
+<p>The first thing you’ll do in this test file is <code class="language-plaintext highlighter-rouge">require()</code> the code from earlier so that we can actually use and test it and then we’ll set up the test case:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">../hello-testing</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello module</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">should return a message</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">Hello</span><span class="p">.</span><span class="nx">testing</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, testing!</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">describe</code> block here describes our suite of tests. Since we want to test the <code class="language-plaintext highlighter-rouge">Hello</code> module we created, I simply put <code class="language-plaintext highlighter-rouge">Hello module</code>. I think of this as the higher level description of our test file. In this case, I’m using the module name.</p>
+
+<p>After that is our <code class="language-plaintext highlighter-rouge">it</code> spec which describes what our code should actually do. In this case, we’re testing the <code class="language-plaintext highlighter-rouge">testing</code> method. So the <code class="language-plaintext highlighter-rouge">describe</code> block was a description of our module and the <code class="language-plaintext highlighter-rouge">it</code> is specific to a method. If our module had another method to test it’d be a good idea to create another <code class="language-plaintext highlighter-rouge">it</code> block.</p>
+
+<blockquote>
+  <p>You could replace <code class="language-plaintext highlighter-rouge">"Hello, module"</code> and <code class="language-plaintext highlighter-rouge">"should return a message"</code> with any string but since it serves as a description of what code is being tested and how we expect it to behave, it’s worth the time to make it readable.</p>
+</blockquote>
+
+<p>Finally, we hit our test’s expectation in the form of:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">expect</span><span class="p">(</span><span class="nx">THIS</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">THIS</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>As you can see in the real test we expect the method call, <code class="language-plaintext highlighter-rouge">Hello.testing()</code>, to equal <code class="language-plaintext highlighter-rouge">"Hello, testing"</code>. In other words, we expect our function call to be equal to the string we hardcode since we already know the answer.</p>
+
+<blockquote>
+  <p>When you begin to think about how to test your code, it’s important to remember that the test case is not concerned with <em>how</em> the code is solving the problem. We treat it as a black box by verifying its output so we know it’s behaving as expected. The test does not care about the implementation of the functionality that’s being tested.</p>
+</blockquote>
+
+<p>With that finished you can finally save this file, close it, and run your test!</p>
+
+<p>In the root directory (<code class="language-plaintext highlighter-rouge">js-testing</code> if you used the same names as me) run:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">jasmine spec/hello-testing.spec.js
+</span></code></pre></div></div>
+
+<p>If everything is setup correctly, you should see a passing test similar to this:</p>
+
+<p><img src="http://i.imgur.com/eZOOBAH.png" alt="Jasmine Passing Test" /></p>
+
+<p>But how do we know that’s actually testing our code? One quick way to find out is to modify our test to <em>expect a failing case</em>. Let’s do that real quick by changing this line:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">expect</span><span class="p">(</span><span class="nx">Hello</span><span class="p">.</span><span class="nx">testing</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, testing!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>To this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">expect</span><span class="p">(</span><span class="nx">Hello</span><span class="p">.</span><span class="nx">testing</span><span class="p">()).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, testing!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>It’s like you’re writing English, right?</p>
+
+<p>With that change run <code class="language-plaintext highlighter-rouge">jasmine spec/hello-testing.spec.js</code> again and you should see an error similar to the one below:</p>
+
+<p><img src="http://i.imgur.com/L8HviRq.png" alt="Jasmine Failing Test" /></p>
+
+<blockquote>
+  <p>The first line under “Failures” shows why the strings you pass in to <code class="language-plaintext highlighter-rouge">describe</code> and <code class="language-plaintext highlighter-rouge">it</code> should be descriptive.</p>
+</blockquote>
+
+<p>With that we now know that our test is handling our code correctly. When we <code class="language-plaintext highlighter-rouge">expect</code> it to return the string we specified, we don’t see an error. But with an intentionally failing case, Jasmine let’s us know something is wrong so we can update our code accordingly.</p>
+
+<h2 id="bonus">Bonus</h2>
+
+<p>This is the “Hello, world” of testing but I figured it couldn’t hurt to add another real world example to our code. We’re going to handle the well known <a href="http://c2.com/cgi/wiki?FizzBuzzTest">Fizz Buzz Test</a>. However, we’re going to do a slightly modified version.</p>
+
+<p>First, we’re goint to call this function with a specified start and end range rather than looping through an arbitrary range of numbers. Instead of logging the numbers we’ll also concatenate our result as a string and return that.</p>
+
+<p>So let’s add an extra method to <code class="language-plaintext highlighter-rouge">hello-testing.js</code> which will solve the Fizz Buzz problem.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">testing</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">Hello, testing!</span><span class="dl">"</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="kd">var</span> <span class="nx">fizzBuzz</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">start</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">end</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">((</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">message</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">FizzBuzz</span><span class="dl">"</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>  <span class="p">{</span>
+        <span class="nx">message</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">Fizz</span><span class="dl">"</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">message</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">Buzz</span><span class="dl">"</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">message</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">message</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">testing</span><span class="p">:</span> <span class="nx">testing</span><span class="p">,</span>
+    <span class="na">fizzBuzz</span><span class="p">:</span> <span class="nx">fizzBuzz</span>
+  <span class="p">};</span>
+<span class="p">})();</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Hello</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>With that in place let’s add a couple test cases to <code class="language-plaintext highlighter-rouge">hello-testing.spec.js</code> to test this new code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">../hello-testing</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello module</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">should return a message</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">Hello</span><span class="p">.</span><span class="nx">testing</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, testing!</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">should fizzbuzz correctly</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">Hello</span><span class="p">.</span><span class="nx">fizzBuzz</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">"</span><span class="s2">12Fizz4BuzzFizz78FizzBuzz</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">Hello</span><span class="p">.</span><span class="nx">fizzBuzz</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="dl">"</span><span class="s2">12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Save that file, run <code class="language-plaintext highlighter-rouge">jasmine spec/hello-testing.spec.js</code>, and you should see two passing tests with zero failures. Now you can test a programming problem you’re likely to see at some point in future interviews.</p>
+
+<blockquote>
+  <p>If you’re looking at my <code class="language-plaintext highlighter-rouge">fizzBuzz</code> code thinking you would have done it differently, that’s okay. As I mentioned earlier the test is not concerned with <em>how</em> the code is solving the problem. If it looks worthy of a refactor to you everything is already tested so at this point you can make your changes, run the test, and if everything passes you know your code still behaves as expected even with your new implementation.</p>
+</blockquote>
+
+<h2 id="summary">Summary</h2>
+
+<p>Hopefully you now know how to install Jasmine, setup a test file, and test a piece of code. If you have any questions or feedback feel free to reach out to me on Twitter <a href="http://twitter.com/atommorgan" target="_blank">@atommorgan</a>.</p>
+:ET

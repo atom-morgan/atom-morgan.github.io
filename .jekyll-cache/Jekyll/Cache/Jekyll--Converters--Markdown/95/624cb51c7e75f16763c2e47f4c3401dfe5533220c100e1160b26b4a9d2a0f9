@@ -1,0 +1,303 @@
+I"p|<h2 id="video">Video</h2>
+
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/p8ytrJ1ryBQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial we’re going to begin making our programs a bit more web-like. Up until this point we’ve been writing JavaScript and logging the results of our programs to a terminal or browser console using <code class="language-plaintext highlighter-rouge">console.log()</code>.</p>
+
+<p>Now we’re going to begin working with HTML to add some interactivity to our programs with a UI.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>First we’ll make a new folder for our project.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">mkdir dom-manipulation
+cd dom-manipulation
+</span></code></pre></div></div>
+
+<p>Within this directory we’ll create two new files, an HTML file and a JavaScript file similar to what we did way back in <a href="https://atom-morgan.github.io/hello-world-in-javascript/" target="_blank">Code Companion #2</a>.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch main.js index.html
+</span></code></pre></div></div>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="event-listener">Event Listener</h2>
+
+<p>Our goal for this application is to present the user a button that when clicked displays a prompt to the user for input. Once the user enters some text, we’ll then add that text to the HTML to display it back to the them.</p>
+
+<p>First we’ll start with a simple HTML page.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Code Companion - DOM Manipulation<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"main.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>The noteworthy part here is the <code class="language-plaintext highlighter-rouge">script</code> element (sometimes referred to as tags) with the <code class="language-plaintext highlighter-rouge">src</code> attribute set to the <code class="language-plaintext highlighter-rouge">main.js</code> file we created. Unlike our <code class="language-plaintext highlighter-rouge">script</code> tag in <a href="https://atom-morgan.github.io/hello-world-in-javascript/" target="_blank">Code Companion #2</a>, we’ll be writing our JavaScript in a separate file.</p>
+
+<div class="box">
+  <p>If you want a description of the various elements in our HTML page such as <code class="language-plaintext highlighter-rouge">html</code>, <code class="language-plaintext highlighter-rouge">head</code>, and <code class="language-plaintext highlighter-rouge">&lt;!DOCTYPE html&gt;</code>, the Mozilla Developer Network’s <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics#Anatomy_of_an_HTML_document" target="_blank">Anatomy of an HTML Document</a> has a great list describing each of these in detail.</p>
+</div>
+
+<p>To verify everything is working correctly, we can update <code class="language-plaintext highlighter-rouge">main.js</code> with a “Hello, world” using <code class="language-plaintext highlighter-rouge">console.log()</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Save these files, open <code class="language-plaintext highlighter-rouge">index.html</code> in Chrome, and you should see <code class="language-plaintext highlighter-rouge">Hello, world</code> logged within the console of Chrome’s developer tools. You can access this by going to View &gt; Developer &gt; JavaScript Console or use the keyboard shortcut <code class="language-plaintext highlighter-rouge">Cmd + Alt + J</code>.</p>
+
+<p><img src="/images/dom-manipulation/hello-world.png" alt="HTML and JavaScript, hello world" /></p>
+
+<p>Now that our HTML and JavaScript file are linked together, we can add a button to the page for the user to click which will display the prompt.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Code Companion - DOM Manipulation<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"main.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"displayPromptButton"</span><span class="nt">&gt;</span>Click here!<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Here we’ve added a <code class="language-plaintext highlighter-rouge">button</code> element with its <code class="language-plaintext highlighter-rouge">id</code> attribute set to an id name of our choice. In this case it’s <code class="language-plaintext highlighter-rouge">displayPromptButton</code>. But at the moment, our button doesn’t do anything. To fix this, we’ll need to use an “event listener” to do something once the button is clicked.</p>
+
+<p>Within <code class="language-plaintext highlighter-rouge">main.js</code> add the following code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">displayPromptButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">displayPromptButton</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">displayPromptButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">clicked!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>First we declare a variable <code class="language-plaintext highlighter-rouge">displayPromptButton</code> which is an object that represents the button within our HTML. We create this object by using the <code class="language-plaintext highlighter-rouge">getElementById</code> function which lets us find an element within our HTML page’s DOM or Document Object Model.</p>
+
+<p>The DOM is an application programming interface (API) which allows us to interact with our HTML as an object.</p>
+
+<p>We access the DOM using <code class="language-plaintext highlighter-rouge">document</code> which represents our document or HTML. As with other objects we’ve seen, this <code class="language-plaintext highlighter-rouge">document</code> object has methods exposed to us like <code class="language-plaintext highlighter-rouge">getElementById()</code> which allows us to provide it an id. This returns us an object representing that specific element.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">displayPromptButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">displayPromptButton</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>So this line accesses the DOM for our button (via its id) and sets it to our local <code class="language-plaintext highlighter-rouge">displayPromptButton</code> variable.</p>
+
+<p>After that, we use our new object to create our event listener.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">displayPromptButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">clicked!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">addEventListener</code> method takes two arguments. The first is the type of event to listen for and the second is a function that will run when this event occurs. So once the button is clicked it will log <code class="language-plaintext highlighter-rouge">clicked</code> to the console.</p>
+
+<p>Open the file within Chrome again (or refresh if it’s already open) and you should see an error related to our event listener.</p>
+
+<p><img src="/images/dom-manipulation/event-listener-null.png" alt="Event listener error" /></p>
+
+<p>The reason for this is that when our <code class="language-plaintext highlighter-rouge">main.js</code> file is loaded (which contains the event listener) the content within our document hasn’t finished loading yet. As a result, the element with the id <code class="language-plaintext highlighter-rouge">displayPromptButton</code> doesn’t exist yet which return us <code class="language-plaintext highlighter-rouge">null</code>. When <code class="language-plaintext highlighter-rouge">addEventListener</code> is called on <code class="language-plaintext highlighter-rouge">null</code>, we get the error we see above.</p>
+
+<p>To fix this we’ll need to add <em>another</em> event listener to <code class="language-plaintext highlighter-rouge">main.js</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">displayPromptButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">displayPromptButton</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">displayPromptButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">clicked!</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Here we’ve updated our previous code by adding a new event listener for <code class="language-plaintext highlighter-rouge">DOMContentLoaded</code> which, as you may be able to guess, listens for when the DOM content is loaded. Within this event listener we add our previous code so that it doesn’t execute until the <code class="language-plaintext highlighter-rouge">DOMContentLoaded</code> event has fired.</p>
+
+<p>Go back to your browser, click the button, and you should now see <code class="language-plaintext highlighter-rouge">clicked!</code> logged to the console.</p>
+
+<p><img src="/images/dom-manipulation/event-listener-working.png" alt="Button click event" /></p>
+
+<h2 id="user-prompt">User Prompt</h2>
+
+<p>Now that our event listener is working correctly we can move on to adding a prompt for a user’s input.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">displayPromptButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">displayPromptButton</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">displayPromptButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="dl">'</span><span class="s1">What is your favorite Pokemon?</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">input is </span><span class="dl">'</span><span class="p">,</span> <span class="nx">input</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>First we remove the previous <code class="language-plaintext highlighter-rouge">console.log()</code>. In its place we use the <code class="language-plaintext highlighter-rouge">prompt()</code> function which <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt" target="_blank">prompts the user for input</a>. We pass it a string containing a message we want displayed to the user within the prompt and set its return value to the variable <code class="language-plaintext highlighter-rouge">input</code>. Then we <code class="language-plaintext highlighter-rouge">console.log()</code> the user’s input.</p>
+
+<p>Go to your browser, click the button, and you should see the prompt displayed to you asking for input. Enter some text, click OK, and you should see your input logged to the console.</p>
+
+<p><img src="/images/dom-manipulation/prompt-window.png" alt="Prompt window" /></p>
+
+<p><img src="/images/dom-manipulation/prompt-result.png" alt="Prompt result" /></p>
+
+<h2 id="add-to-dom">Add to DOM</h2>
+
+<p>Now that we’re successfully getting input from a user, we can work towards displaying this within the DOM. First, we’ll add a new <code class="language-plaintext highlighter-rouge">p</code> element to <code class="language-plaintext highlighter-rouge">body</code> with an <code class="language-plaintext highlighter-rouge">id</code> set to <code class="language-plaintext highlighter-rouge">pokemon</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"displayPromptButton"</span><span class="nt">&gt;</span>Click here!<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"pokemon"</span><span class="nt">&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>Then we update <code class="language-plaintext highlighter-rouge">main.js</code> to add the input to this new element.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">displayPromptButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">displayPromptButton</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">view</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokemon</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">displayPromptButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="dl">'</span><span class="s1">What is your favorite Pokemon?</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">view</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>First we create another object, <code class="language-plaintext highlighter-rouge">view</code>, using <code class="language-plaintext highlighter-rouge">document.getElementById()</code> once again to access our new element. Then within the event handler for <code class="language-plaintext highlighter-rouge">click</code> we access the <code class="language-plaintext highlighter-rouge">innerHTML</code> property of view and set it to <code class="language-plaintext highlighter-rouge">input</code>. (A full list of element properties can be found <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element" target="_blank">here</a>.)</p>
+
+<div class="box">
+  <p>Need some help? Click <a href="https://discord.gg/xMc7n3Z" target="_blank">here</a> to join a Discord server created exclusively for this series.</p>
+</div>
+
+<p>Go back to your browser, enter text into the prompt, and you should see the result added to the page.</p>
+
+<p><img src="/images/dom-manipulation/innerhtml.png" alt="Prompt result" /></p>
+
+<h2 id="list-of-pokemon">List of Pokemon</h2>
+
+<p>Now that we can successfully add a user’s input to the DOM, we’re going to update the HTML removing the <code class="language-plaintext highlighter-rouge">p</code> tag in favor of <code class="language-plaintext highlighter-rouge">ul</code> so that we can have a list of multiple Pokemon instead.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"displayPromptButton"</span><span class="nt">&gt;</span>Click here!<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"pokemon"</span><span class="nt">&gt;&lt;/ul&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>Then we’ll update <code class="language-plaintext highlighter-rouge">main.js</code> for this new addition.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">displayPromptButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">displayPromptButton</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">view</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokemon</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">displayPromptButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="dl">'</span><span class="s1">What is your favorite Pokemon?</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">listItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">li</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">listItem</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
+  <span class="nx">view</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">listItem</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>First we use <code class="language-plaintext highlighter-rouge">document.createElement()</code> to create a new <code class="language-plaintext highlighter-rouge">li</code> element for an individual item within the unordered list (<code class="language-plaintext highlighter-rouge">ul</code>). We then access its <code class="language-plaintext highlighter-rouge">innerHTML</code> property and set it to <code class="language-plaintext highlighter-rouge">input</code>. Finally, we call <code class="language-plaintext highlighter-rouge">.appendChild()</code> to add <code class="language-plaintext highlighter-rouge">listItem</code> to the end of the unordered list using our <code class="language-plaintext highlighter-rouge">view</code> object.</p>
+
+<p>Go back to your browser and you should now be able to add multiple Pokemon to the view.</p>
+
+<p><img src="/images/dom-manipulation/unordered-list.png" alt="Unordered list" /></p>
+
+<p>Before wrapping up we’ll make one last change to our code by moving some of our functionality into a function.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addListItem</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">listItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">li</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">listItem</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
+  <span class="nx">target</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">listItem</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">displayPromptButton</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">displayPromptButton</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">view</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">pokemon</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">displayPromptButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="dl">'</span><span class="s1">What is your favorite Pokemon?</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">addListItem</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="nx">view</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Here we’ve defined a function, <code class="language-plaintext highlighter-rouge">addListItem</code>, that takes an <code class="language-plaintext highlighter-rouge">input</code> and <code class="language-plaintext highlighter-rouge">target</code> for where to add the input. Within this function we added the code for creating a new <code class="language-plaintext highlighter-rouge">li</code> element, adding the user’s input to the element, and appending it to the target DOM object.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Before we finish, add your latest changes to Git.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init
+git add .
+</span></code></pre></div></div>
+
+<p>Then add a commit message.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git commit -m "Add dom manipulation"
+</span></code></pre></div></div>
+
+<p>Then push these changes up to GitHub.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git push origin master
+</span></code></pre></div></div>
+
+<h2 id="exercise">Exercise</h2>
+
+<p>For some extra practice, see what happens when you click “Cancel” within the prompt or click “OK” without entering any text.</p>
+
+<p>See if you can fix this by adding some updates to <code class="language-plaintext highlighter-rouge">main.js</code> to avoid adding empty list elements to the DOM.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

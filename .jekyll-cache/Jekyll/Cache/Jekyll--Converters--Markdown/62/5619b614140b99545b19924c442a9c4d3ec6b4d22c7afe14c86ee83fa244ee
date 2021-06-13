@@ -1,0 +1,95 @@
+I"E'<p>Technical interviews aren’t fun. Every single person I know in the industry hates how companies conduct technical interviews but they all keep doing the same thing. So until things change, how should you prepare for the interview? Here are a few tips I’ve learned since I entered the industry.</p>
+
+<h3 id="treat-the-technical-interview-like-a-college-exam">Treat the technical interview like a college exam</h3>
+
+<p>The truth is most technical interviews aren’t going to accurately test your ability to code. It’s better to think of a technical interview as a college exam. It’s a bullshit test that measures whether or not you’re capable of memorizing whatever it is that’s in that test.</p>
+
+<p>Imagine you are hiring someone to handle customer support. Your biggest concern is their ability to write emails in English. What would you do to verify that? You could ask them to submit a writing sample. You could present them with a real email from a customer and ask them to write up a reply. You may even Google the person to find anything they’ve written online.</p>
+
+<p>Would you ever ask them to describe the difference between a gerund phrase and a present participle phrase? Of course not. Plenty of people are capable of reading and writing in English even if they don’t know the rules of grammar.</p>
+
+<p>You maybe be able to wire up an AngularJS route, factory, controller, and view but if you don’t know the differences between CSS2 and CSS3 off the top of your head, are you really a front-end developer?</p>
+
+<p>As frustrating as it may be expect your interview to be more like the English grammar test than the request for a writing sample and plan accordingly.</p>
+
+<h3 id="approach-the-interview-as-an-investor">Approach the interview as an investor</h3>
+
+<p>I know a lot of people who say they struggle coming up with questions to ask in their interviews. To help with this, imagine you had to invest your own real money into the company. What would you want to know before writing them a check?</p>
+
+<p>It may seem silly to treat yourself as an investor. After all, you’re not investing your money into the business. But you are investing your time and you can’t get that back.</p>
+
+<p>Framing the interview in this context is usually all people need to start sourcing better questions. Think about the specific industry the company is in and do some research. If you show up asking how their company’s software will address a new emerging trend in their industry, you’ve already set yourself apart from the average developer who only asks forced questions like which version of Node.js or Rails they’re using.</p>
+
+<h3 id="interview-the-company">Interview the company</h3>
+
+<p>Far too many people approach job interviews as a one-way evaluation. The company brings <em>you</em> in to determine if <em>you’re</em> good enough for <em>them</em>. Why not do the same? The more personal your questions are the better. It forces them to be transparent or lie. Here are a few examples.</p>
+
+<ol>
+  <li>What do you hate about your job?</li>
+  <li>What’s your company’s biggest weakness?</li>
+  <li>Assume there’s another company that does <em>exactly</em> what you do. What is it about your company that sets it apart from the identical competitor? How would you sell this difference to an interested investor?</li>
+  <li>Your company website says you give your employees unlimited vacation. What’s the average number of PTO days taken by your employees in a year?</li>
+</ol>
+
+<p>When I started asking questions like these, I noticed a huge change in the power dynamic within the room. The interview goes from a one-sided evaluation to a conversation within the group as we try to determine if there’s a good fit.</p>
+
+<p>Don’t hesitate to judge the interviewers on soft skills either. If they’re not paying attention to you during your interview, what makes you think they will when you’re an employee? Some people excuse this behavior for certain people (job titles) in the company like the CEO. But if the CEO was on their phone for the entire interview why are they half assing their phone and your interview at the same time instead of focusing their attention on one?</p>
+
+<h3 id="ask-to-change-the-interview">Ask to change the interview</h3>
+
+<p>If you really don’t like their interview process, ask them if they’re open to changing it. If they ask you to do live coding in a Google Doc, ask if they’d be open to you coding a small project over the weekend where you walk them through it after you’re finished.</p>
+
+<p>If you feel like you’re getting a glorified image of the company, ask to speak to other people one-on-one. A good indicator of this company glorification is if everyone in the room is a C-level employee or if entry-level employees are only giving their opinions as long as the CEO is in the room. If you want an honest perspective as <em>you begin to interview the company</em>, don’t hesitate to ask to speak with people from all areas of the company.</p>
+
+<p>The key here is to be able to defend your suggestion if it’s challenged. In that case, always bring it back to what real life is going to be like if you had the job. Once you’re employed, you’ll never have to write syntactically correct code on a whiteboard without the ability to reference documentation. If you communicate this, they’re much more likely to be flexible with their process.</p>
+
+<h3 id="vote-with-your-feet">Vote with your feet</h3>
+
+<p>The only way companies will <em>know</em> their interview is shit is if you let them know their interview is shit. If you’re being asked to whiteboard a linked list for a junior UI role, ask for a different interview or walk out. If you’re not a fan of their interviewing practices, you’ll probably butt heads once you start as well.</p>
+
+<p>This is the primary reason people say it’s better to job hunt while you’re employed. Even if it’s a shitty job it buys you time and bargaining power. Without the financial security of a regular paycheck you’re eventually going to need the money and your bargaining power isn’t as great when you’re desperate. With a certain level of financial security, your standards are higher and you’ll deal with less bullshit. Don’t be scared to leave. Plus, there’s always the chance that your willingness to leave makes them want you more.</p>
+
+<p>It’s my hypothesis that the unwillingness to walk out of an interview or provide honest feedback is what continues this process of horrible interviewing practices. As I mentioned earlier, every programmer I know hates programming interviews but the methods aren’t changing. But if we all complain and continue to do the interviews, how do we expect anything to change?</p>
+
+<p>We’re in an industry where there are more job opportunities than there are people to fill them. We should take full advantage of that while we can.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

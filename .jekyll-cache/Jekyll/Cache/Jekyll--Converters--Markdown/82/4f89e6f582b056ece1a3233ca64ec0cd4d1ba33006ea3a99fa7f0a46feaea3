@@ -1,0 +1,303 @@
+I"Z`<h2 id="video">Video</h2>
+
+<div class="videoWrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Llze9Pq76sE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial we’ll take our first glance at web development by creating three variations of the classic <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program" target="_blank">“Hello, world” program</a> using JavaScript. First we’ll do this in a web browser. Then we’ll create the same program using what’s known as a REPL. Finally, we’ll wrap up by writing the program in a JavaScript file.</p>
+
+<p>Once you’ve finished, you’ll have three different methods at your disposal to start writing JavaScript that we’ll continue to explore in future tutorials.</p>
+
+<div class="box">
+  <p>Need some help? Click <a href="https://discord.gg/xMc7n3Z" target="_blank">here</a> to join a Discord server created exclusively for this series.</p>
+</div>
+
+<h2 id="setup">Setup</h2>
+
+<p>Before we get started there’s a few things you’ll need to download.</p>
+
+<h3 id="text-editor">Text editor</h3>
+
+<p>One of the first things you’ll need before we begin writing code is a text editor to write your code in. Two popular choices at the moment are <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> and <a href="https://www.sublimetext.com/3" target="_blank">Sublime Text</a>. Either one of these will do just fine—they’re largely a matter of personal preference.</p>
+
+<p>Visual Studio Code is 100% free and open-source. Sublime Text is free to download as well but there is an $80 fee for a license which you’ll inevitably see in a prompt if you use Sublime Text long enough.</p>
+
+<h3 id="terminal">Terminal</h3>
+
+<p>Next you’ll need to get a terminal emulator for the command-line work we’ll be doing. If you’re on Mac, I’d recommend <a href="https://www.iterm2.com/" target="_blank">iTerm2</a> but you’re welcome to use the default terminal application provided by Apple.</p>
+
+<h3 id="git">Git</h3>
+
+<p>The last thing you’ll need to do is install <a href="https://git-scm.com/" target="_blank">Git</a>. Git is an open source version control system which allows you to track changes in source code and coordinate working on these files among a team. You’ll be using Git to push your code to <a href="https://github.com" target="_blank">Github</a> and to clone (or download) existing code repositories that other developers have created. For now, we’ll be using Git and Github to manage the code we write in this tutorial.</p>
+
+<div class="box">
+Don't stress too much about Git at the moment. The commands you'll need to use Git will be provided for you in this tutorial. We'll take a closer look at Git in a later tutorial.
+</div>
+
+<p>Once you’ve installed Git you can verify it was installed by running the following command in a terminal window:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git --version
+</span></code></pre></div></div>
+
+<p><img src="/images/hello-world/git-version.png" alt="Git version" /></p>
+
+<h3 id="project-directory">Project directory</h3>
+
+<p>Now that Git is installed and ready to go, we can create a folder for the code we’re about to write. First, create the new directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">mkdir webdev-intro
+</span></code></pre></div></div>
+
+<p>Then <code class="language-plaintext highlighter-rouge">cd</code> (which stands for change directory) into the new directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd webdev-intro
+</span></code></pre></div></div>
+
+<p>Now we can create the HTML page for our code using the <code class="language-plaintext highlighter-rouge">touch</code> command.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch index.html
+</span></code></pre></div></div>
+
+<p>At this point, we’ll initialize our new directory as a Git repository.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init
+</span></code></pre></div></div>
+
+<p>Then we add our files using <code class="language-plaintext highlighter-rouge">git add .</code> and commit our changes with a message: “Initialize repository”.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git add .
+git commit -m "Initialize repository"
+</span></code></pre></div></div>
+
+<div class="box box-dark">
+  <p>I taught myself to code and now I’m a self-employed remote freelancer. I know what it takes to get here and I can teach you how to do it too.
+  Click <a href="https://landing.mailerlite.com/webforms/landing/d9l9q6" target="_blank">here</a> to join my email list where I share my career tips
+  and keep you up-to-date with my latest tutorials.</p>
+</div>
+
+<h2 id="web-browser">Web browser</h2>
+
+<p>At this point we’re ready to take a look at our “Hello, world” program using the <code class="language-plaintext highlighter-rouge">index.html</code> file we just created. Open that file in a text editor such as Visual Studio Code or Sublime Text and add the following text to the file.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Code Companion - Hello, world<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>This is an extremely basic HTML page which displays a message: “Hello, world!”. Open this file in a web browser and you should see the message within the page.</p>
+
+<p><img src="/images/hello-world/screenshot-hello-world.png" alt="HTML hello world" /></p>
+
+<p>At this point there is no JavaScript in our HTML. Let’s change this by adding a few more lines of code to <code class="language-plaintext highlighter-rouge">index.html</code> just below <code class="language-plaintext highlighter-rouge">&lt;meta charset="utf-8"&gt;</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Code Companion - Hello, world<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!--start javascript--&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nt">&lt;/script&gt;</span>
+    <span class="c">&lt;!--end javascript--&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Now when you view this page in a browser you should see the previous message, “Hello, world!”, along with an alert that displays the same message.</p>
+
+<p><img src="/images/hello-world/screenshot-hello-world-alert.png" alt="HTML hello world with alert" /></p>
+
+<p>So how does this work? Let’s start by looking at the five lines we just added.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--start javascript--&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="c">&lt;!--end javascript--&gt;</span>
+</code></pre></div></div>
+
+<p>This section of code begins and ends with what’s known as an <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#HTML_comments" target="_blank">HTML comment</a>. This is a way for us to write text in our code which are both ignored by the browser and invisible to the user. In this case, we’ve added two comments to show us where our JavaScript code begins and ends.</p>
+
+<p>Following that is our <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> element which is what allows us to embed JavaScript code within HTML. We put any JavaScript code we want to execute below <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> and above its closing tag <code class="language-plaintext highlighter-rouge">&lt;/script&gt;</code>. In this case, we’ve added the following code:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This piece of code calls what’s known as a JavaScript function. In this case, the name of the function is <code class="language-plaintext highlighter-rouge">alert</code>.</p>
+
+<p>When we call a function there’s a certain structure to how it’s called. First there’s the function’s name followed by an open parenthesis. Afer this open parenthesis are zero or more “arguments” followed by a closing parenthesis and a semicolon to end the line.</p>
+
+<p><img src="/images/hello-world/function-anatomy.png" alt="Function anatomy" /></p>
+
+<p>In our case we began with our function name <code class="language-plaintext highlighter-rouge">alert</code> followed by an open parenthesis. Then we provided our function a single argument in the form of a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">string</a>: <code class="language-plaintext highlighter-rouge">Hello, world!</code>. After the single argument we finish our function call with a closing parenthesis and a semicolon.</p>
+
+<p>We’ve now written our first program in an HTML page. In the next section, we’ll introduce another way to write and run JavaScript code using what’s known as a <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop" target="_blank">REPL</a>.</p>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<h2 id="repl">REPL</h2>
+
+<p>In our second example of the “Hello, world” program we’re going to use an interactive programming environment known as a REPL (pronounced “repple”) which stands for read, evaluate, print, and loop. The REPL environment that we’ll be using first <strong>reads</strong> our input, then it <strong>evaluates</strong> our input, then it <strong>prints</strong> any results and finally loops back to the first <strong>read</strong> step. Let’s see what this looks like in action.</p>
+
+<p>First, open a browser such as Chrome and open the developer tools. You can do this with the keyboard shortcut <code class="language-plaintext highlighter-rouge">Cmd + option + J</code> or manually through the browser’s menu by clicking View &gt; Developer &gt; JavaScript Console.</p>
+
+<p><img src="/images/hello-world/chrome-dev-tools.png" alt="Developer tools" /></p>
+
+<p>Within this window you can now call the <code class="language-plaintext highlighter-rouge">alert</code> function as we did earlier to see the REPL in action.</p>
+
+<p><img src="/images/hello-world/chrome-repl.png" alt="Developer tools" /></p>
+
+<p>If you’d like to avoid an alert modal every time you call <code class="language-plaintext highlighter-rouge">alert</code> you can print the results directly into the REPL instead using the function call <code class="language-plaintext highlighter-rouge">console.log()</code>.</p>
+
+<p><img src="/images/hello-world/chrome-console-log.png" alt="Developer tools" /></p>
+
+<div class="box">
+  <p>If you’re wondering why <code class="language-plaintext highlighter-rouge">console.log()</code> has a period in the middle while <code class="language-plaintext highlighter-rouge">alert()</code> is just one word, that’s totally normal and it’s good you noticed the difference between the two function calls. Since this is an introduction, the difference between the two is out of scope for this tutorial but it will be covered when we get to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" target="_blank">functions</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics" target="_blank">objects</a>.</p>
+</div>
+
+<h2 id="javascript-file">JavaScript file</h2>
+
+<p>We’ll finish by writing our “Hello, world” program one more way using a JavaScript file. As a web developer, writing JavaScript in files such as these using a text editor is how most “real programming” is done.</p>
+
+<p>Before we do this, you’ll first need to install Node.js to run any JavaScript files. You can do this by visiting the <a href="https://nodejs.org">Node.js website</a> and downloading the Node.js installer which will walk you through the process.</p>
+
+<p>Once you’ve finished the installation process, you can double check that everything has been installed correctly by opening a terminal window and running the following command:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">node -v
+</span></code></pre></div></div>
+
+<p>Now that Node.js is installed, we can create the new JavaScript file for our code in our previous <code class="language-plaintext highlighter-rouge">webdev-intro</code> directory.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">touch main.js
+</span></code></pre></div></div>
+
+<p>Within this file we’ll add some of the code we used earlier with the REPL. However, since this code isn’t being run in a web browser the <code class="language-plaintext highlighter-rouge">alert</code> function, a function provide to us by web browsers, is no longer available to us. Instead we’ll use <code class="language-plaintext highlighter-rouge">console.log</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Save this and within a terminal window navigate to the <code class="language-plaintext highlighter-rouge">webdev-intro</code> directory and run the following command to run the JavaScript file.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">node main.js
+</span></code></pre></div></div>
+
+<p>At this point you should now see the argument to <code class="language-plaintext highlighter-rouge">console.log()</code> printed to the terminal window.</p>
+
+<p><img src="/images/hello-world/node-hello-world.png" alt="Node hello world" /></p>
+
+<p>Feel free to update the file with a few more function calls to see what happens.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world?</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="/images/hello-world/node-hello-world-2.png" alt="Node hello world 2" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Before we finish, head over to <a href="`https://github.com/`">GitHub</a> and create an account. From there, click “Start a project” and provide a repository name. Your directory name (<code class="language-plaintext highlighter-rouge">webdev-intro</code>) and repository name don’t have to be the same but it may help so that you can keep the two aligned. Then, click “Create repository”.</p>
+
+<p><img src="/images/hello-world/github-create-repo.png" alt="Creating a GitHub repository" /></p>
+
+<p>Now that your repository has been created you need to add the repository url to your project directory. Within the <code class="language-plaintext highlighter-rouge">webdev-intro</code> directory run the following command replacing <code class="language-plaintext highlighter-rouge">your-username-here</code> with your own GitHub username.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git remote set-url origin https://github.com/your-username-here/webdev-intro.git
+</span></code></pre></div></div>
+
+<div class="box">
+The exact command listed above should be provided to you by GitHub after you create your repository so feel free to just copy and paste that command instead.
+</div>
+
+<p>At this point you should see your updated URL by running the following command:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git remote -v
+</span></code></pre></div></div>
+
+<p>Now that the GitHub remote URL is set, add the latest updates along with a commit message.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git add .
+git commit -m "Add hello world"
+</span></code></pre></div></div>
+
+<p>Then push these changes up to GitHub.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git push origin master
+</span></code></pre></div></div>
+
+<div class="box">
+  <p>Now that these changes have been pushed to GitHub your code is accessible to you at any time (thanks to the “cloud”) even if you delete the files on your computer. Once again, Git and GitHub will be covered in more detail in a later tutorial.</p>
+</div>
+
+<h2 id="exercises">Exercises</h2>
+
+<p>At this point it would be worth spending some time exploring the HTML page, the REPL, and the JavaScript file you just created. Think of these as your personal sandbox. Just play around and see what happens.</p>
+
+<p>Experiment with arguments other than <code class="language-plaintext highlighter-rouge">Hello, world!</code>. What happens if you pass two strings to <code class="language-plaintext highlighter-rouge">alert()</code>? What happens if you pass two strings to <code class="language-plaintext highlighter-rouge">console.log()</code>?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">First</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Second</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">First</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Second</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>What happens if you pass a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">number</a> to <code class="language-plaintext highlighter-rouge">alert()</code> or <code class="language-plaintext highlighter-rouge">console.log()</code>?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>In the <a href="http://atom-morgan.github.io/data-types-in-javascript/" target="_blank">next tutorial</a> we’ll take a look at some of the data types (we’ve already used strings and numbers) available to us in JavaScript.</p>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

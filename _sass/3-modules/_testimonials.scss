@@ -1,0 +1,119 @@
+/* Testimonials */
+.testimonial-item {
+  position: relative;
+
+  &::after {
+    content: "“";
+    position: absolute;
+    top: 0%;
+    left: 3%;
+    display: block;
+    z-index: 2;
+    font-size: 180px;
+    line-height: 1;
+    color: rgba($white, 0.12);
+  }
+
+  .testimonial-content {
+    padding: 36px;
+    border-radius: 30px;
+    color: $white;
+    background: linear-gradient(332deg, $primary-color 0%, $secondary-color 250%);
+
+    .client-meta {
+      display: flex;
+      align-items: center;
+    }
+    
+    .client-text {
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
+
+    .image-container {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      margin-right: 12px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 2px;
+        border-radius: 50%;
+        border: 2px solid $white;
+        object-fit: cover;
+      }
+    }
+
+    .client-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .client-name {
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+
+    .client-designation {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+  }
+
+  @media only screen and (max-width: $mobile) {
+    .testimonial-content {
+      border-radius: 16px;
+    }
+  }
+}
+
+.tns-outer {
+  position: relative;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  outline: none;
+
+  .prev,
+  .next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    border-radius: 50%;
+    border: 1px solid $primary-color;
+    color: $white;
+    background-color: $primary-color;
+    outline: none;
+    cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover {
+      color: $primary-color;
+      background-color: transparent;
+    }
+
+    &:active {
+      transform: scale(0.97) translateY(1px);
+    }
+  }
+
+  .prev {
+    margin-right: 4px;
+  }
+}

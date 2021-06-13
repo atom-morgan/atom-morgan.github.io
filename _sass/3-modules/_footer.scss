@@ -1,0 +1,30 @@
+/* Footer */
+.footer {
+  position: relative;
+  padding-top: 96px;
+  overflow: hidden;
+
+  @media only screen and (max-width: $desktop) {
+    padding-top: 80px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+     padding-top: 60px;
+  }
+}
+
+/* Copyright */
+.copyright {
+  margin: 20px 0 60px;
+  font-size: 14px;
+  text-align: center;
+  color: $text-color-alt;
+
+  a {
+    font-weight: 800;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

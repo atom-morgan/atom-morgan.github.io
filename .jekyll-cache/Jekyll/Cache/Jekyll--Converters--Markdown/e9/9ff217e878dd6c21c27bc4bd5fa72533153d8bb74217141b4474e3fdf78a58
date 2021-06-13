@@ -1,0 +1,142 @@
+I"�1<p>I was recently working on an Angular (aka Angular2 aka Angular4 aka Angular 6) application where a user triggers a modal, completes a form within the modal, and submits. Unfortunately, the form wasn’t clearing after a form submission and manually resetting every <code class="language-plaintext highlighter-rouge">ngModel</code> seemed extremely tedious. Thankfully the solution to this problem is easy and takes just two lines of real code to get the job done.</p>
+
+<p>First, we’ll start with a basic component.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/app.component.ts</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">DummyService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./dummy.service</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app-root</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s2">`
+    &lt;form #myForm="ngForm" (ngSubmit)="submitForm(myForm.value)"&gt;
+      &lt;label for="name"&gt;Name: &lt;/label&gt;
+      &lt;input placeholder="Name"
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="name"&gt;
+
+      &lt;label for="name"&gt;Title: &lt;/label&gt;
+      &lt;input placeholder="Title"
+        type="text"
+        id="title"
+        name="title"
+        [(ngModel)]="title"&gt;
+
+      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;span *ngIf="submittedUser"&gt;{{submittedUser}}&lt;/span&gt;
+  `</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="nl">submittedUser</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">dummyService</span><span class="p">:</span> <span class="nx">DummyService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">submitForm</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dummyService</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">submittedUser</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this component we’ve provided a form template with two inputs: <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">title</code>. Within the component class we’ve defined a private <code class="language-plaintext highlighter-rouge">dummyService</code> which we’ll use as a mock service to “<code class="language-plaintext highlighter-rouge">POST</code>” our form. When the user clicks “Submit”, <code class="language-plaintext highlighter-rouge">submitForm</code> will call <code class="language-plaintext highlighter-rouge">this.dummyService.create()</code> and we set the response to the <code class="language-plaintext highlighter-rouge">submittedUser</code> property which conditionally displays in our view through <code class="language-plaintext highlighter-rouge">&lt;span *ngIf="submittedUser"&gt;</code>.</p>
+
+<p>Complete the form below, click “Submit”, and you should see the conditional <code class="language-plaintext highlighter-rouge">&lt;span&gt;</code> display our response but the form inputs are still populated.</p>
+
+<iframe src="https://stackblitz.com/edit/clearing-forms-problem?ctl=1&amp;embed=1&amp;file=src/main.ts&amp;hideExplorer=1&amp;view=preview" frameborder="0" width="100%" height="500"></iframe>
+
+<p>To fix this, we’ll need to leverage Angular’s <a href="https://angular.io/docs/ts/latest/api/core/index/ViewChild-decorator.html" target="_blank">ViewChild</a> decorator. <code class="language-plaintext highlighter-rouge">ViewChild</code> allows us to query our view to get an element or directive of our choice. In this case, we want a <code class="language-plaintext highlighter-rouge">ViewChild</code> for our form.</p>
+
+<div class="box">
+  <p>Got an idea for a tutorial? Contact me <a href="https://twitter.com/atommorgan" target="_blank">on Twitter</a> and I might publish it on this blog!</p>
+</div>
+
+<p>To do this, we’ll need to import <code class="language-plaintext highlighter-rouge">ViewChild</code> (Thanks to <a href="https://twitter.com/chrisoncode" target="_blank">Chris Sevilleja</a> for introducing me to ViewChild).</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/app.component.ts</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Then in our component class, we can set a <code class="language-plaintext highlighter-rouge">ViewChild</code> property to our form’s template variable <code class="language-plaintext highlighter-rouge">myForm</code> which we declared earlier: <code class="language-plaintext highlighter-rouge">&lt;form #myForm="ngForm" (ngSubmit)="submitForm(myForm.value)"&gt;</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/app.component.ts</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">myForm</span><span class="dl">'</span><span class="p">)</span> <span class="nx">formValues</span><span class="p">;</span> <span class="c1">// Added this</span>
+  <span class="nl">submittedUser</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">dummyService</span><span class="p">:</span> <span class="nx">DummyService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="p">...</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now we can add the one line to clear our form on a successful response.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// src/app.component.ts</span>
+
+<span class="p">...</span>
+
+<span class="nx">submitForm</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">dummyService</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">submittedUser</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">formValues</span><span class="p">.</span><span class="nx">resetForm</span><span class="p">();</span> <span class="c1">// Added this</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Try it again below and experience the magic of <code class="language-plaintext highlighter-rouge">resetForm()</code>.</p>
+
+<iframe src="https://stackblitz.com/edit/clearing-forms-solution?ctl=1&amp;embed=1&amp;file=src/main.ts&amp;hideExplorer=1&amp;view=preview" frameborder="0" width="100%" height="500"></iframe>
+
+<hr style="border: 0; border-bottom: solid 2px; margin: 3rem 0; border-bottom-color: #212931;" />
+
+<article class="post featured featured-bottom">
+  <header class="major">
+    <h2 style="font-size: 3rem;">Before you go...</h2>
+    <h3>Feeling stuck copying and pasting from tutorials that don't build realistic applications?</h3>
+    <h4>Become an Angular developer by building a real application using open-source libraries with a real API and database.</h4>
+    <div class="box">
+      <p><i>"The advice and techniques in this book landed me my dream job and literally doubled my salary. Well worth the $99 bucks, so much so that I have been waiting for it to be for sale just to pay the man for the good he has done to my career." -Levi Robertson</i></p>
+    </div>
+  </header>
+
+  <a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" class="image main" target="_blank" style="margin: 2rem auto;"><img src="/images/angular-tutorial-preview.png" alt="" style="display: block; width: 65%; margin: 0 auto;" /></a>
+  <h4 style="text-align: center; margin-bottom: 3rem;"><a href="https://landing.mailerlite.com/webforms/landing/k8s9l8" target="_blank">CLICK HERE FOR A FREE 8 CHAPTER PREVIEW OF THE ANGULAR TUTORIAL</a></h4>
+  <p>Learning a front-end framework is hard. "Getting started" tutorials cover the basics but you leave thinking, "Okay, now how do I build something with this?"</p>
+
+  <p>The truth is, <strong>getting started tutorials aren't all that great for beginners</strong>. They're demos to highlight as many features as quickly as possible.</p>
+
+  <p>They're great for showing off what a framework can do. <strong>They aren't so great for teaching you how to build web apps</strong>.</p>
+
+  <p>The end result is a basic application that doesn't mimick what it's like building <strong>real applications as a front-end developer</strong>.</p>
+
+  <p>You'll work with a mocked API and database. Application architecture isn't covered. Automated testing is skipped altogether.</p>
+
+  <p>Trust me, I've been there. But those days are over.</p>
+
+  <p>With The Angular Tutorial, you'll learn <strong>how to build applications using a real API and database</strong>. You'll leverage 3rd party APIs like Zomato, Google Places, and open-source libraries <strong>just as you would in a real job</strong>.</p>
+
+  <p>The Angular Tutorial assumes you have no previous knowledge of the Angular framework. It starts at the very beginning.</p>
+
+  <p>Every piece of code is explained and tested to make you interview ready.</p>
+
+  <p>Ready to get started? 👇</p>
+  
+  <ul class="actions fit" style="list-style: none; display: flex; padding-left: 0px;">
+    <li><a href="https://www.softcover.io/buy/6335c999/the-angular-tutorial?option=ebooks" class="button fit" target="_blank">Buy PDF!</a></li>
+    <li style="margin-left: 16px;"><a href="https://www.amazon.com/Angular-Tutorial-Front-End-Development-Automated/dp/1980891419/ref=la_B07CMC6CL8_1_1?s=books&amp;ie=UTF8&amp;qid=1526926037&amp;sr=1-1" class="button fit" target="_blank">Buy on Amazon!</a></li>
+  </ul>
+</article>
+:ET

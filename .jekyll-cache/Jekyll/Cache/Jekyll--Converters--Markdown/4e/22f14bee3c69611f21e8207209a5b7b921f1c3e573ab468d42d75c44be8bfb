@@ -1,0 +1,31 @@
+I"<!-- <div class="gallery-box">
+  <div class="gallery">
+    <img src="/images/project-5.jpg" alt="Project">
+    <img src="/images/project-8.jpg" alt="Project">
+    <img src="/images/project-7.jpg" alt="Project">
+  </div>
+  <em>Projects / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
+</div> -->
+
+<div class="block-header inner-sm" style="margin-top: 1.5em; margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Contributions</h2>
+</div>
+
+<p>Working with Shocase Sports, Adidas, and Rivals, I built an Angular 6 application to allow high school athletes to upload photos and videos to aid college scouts in recruiting efforts. Athletes were also provided the ability to enter regional challenges with a fan ranking system for user interactivity.</p>
+
+<p>In anticipation of reusing the application for other industries, I built an internal library to customize and generate multi-step user registration forms.</p>
+
+<div class="block-header inner-sm" style="margin-bottom: 1.5em">
+  <h2 class="block-title line-top">Technology</h2>
+</div>
+
+<p>This isn’t a comprehensive list of all technologies used for this project but some of the primary ones are listed below:</p>
+
+<ul>
+  <li>Angular 6+</li>
+  <li>hapi.js</li>
+  <li>MySQL</li>
+  <li>Shippable</li>
+  <li>AWS</li>
+</ul>
+:ET
