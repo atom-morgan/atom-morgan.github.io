@@ -131,7 +131,7 @@ jasmine spec/hello-testing.spec.js
 
 If everything is setup correctly, you should see a passing test similar to this:
 
-![Jasmine Passing Test](http://i.imgur.com/eZOOBAH.png)
+![Jasmine Passing Test](https://i.imgur.com/eZOOBAH.png)
 
 But how do we know that's actually testing our code? One quick way to find out is to modify our test to *expect a failing case*. Let's do that real quick by changing this line:
 
@@ -149,7 +149,7 @@ It's like you're writing English, right?
 
 With that change run `jasmine spec/hello-testing.spec.js` again and you should see an error similar to the one below:
 
-![Jasmine Failing Test](http://i.imgur.com/L8HviRq.png)
+![Jasmine Failing Test](https://i.imgur.com/L8HviRq.png)
 
 >The first line under "Failures" shows why the strings you pass in to `describe` and `it` should be descriptive.
 

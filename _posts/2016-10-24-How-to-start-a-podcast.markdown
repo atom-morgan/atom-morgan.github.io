@@ -23,15 +23,15 @@ I decided to invest a bit more when I first started so I bought a [Blue Snowball
 
 Once you have a mic to record yourself, you'll need software to record yourself and to create an MP3 to upload and share with the world. A very popular option within the podcasting community is [Audacity](http://www.audacityteam.org/){:target="_blank"}. The software is open source, free, and available on Windows, Mac, and Linux. The software is very straightforward. Once your mic is plugged in, you select it from the input options, hit record, and start talking. There's not much to it.
 
-![How to record in Audacity](http://i.imgur.com/ymRfrxC.png)
+![How to record in Audacity](https://i.imgur.com/ymRfrxC.png)
 
 Once you've finished recording, you can edit within Audacity as well. You may want to trim off the beginning and the end of your recording. To do that you simply click and drag on the section of audio you want to be removed and cut using Ctrl-X or ⌘-X.
 
-![How to edit in Audacity](http://i.imgur.com/MyuHpJx.png)
+![How to edit in Audacity](https://i.imgur.com/MyuHpJx.png)
 
 Once you've edited the audio all that's left to do is export the MP3 file which you will upload to your hosting provider.
 
-![How to export in Audacity](http://i.imgur.com/CYkMQfK.png)
+![How to export in Audacity](https://i.imgur.com/CYkMQfK.png)
 
 > If you went the barebones route and you recorded audio using your phone you can just import that audio file into Audacity, edit as needed, and export the MP3.
 

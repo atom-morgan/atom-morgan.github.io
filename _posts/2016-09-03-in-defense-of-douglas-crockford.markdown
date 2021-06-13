@@ -28,13 +28,13 @@ The second incident which you can also watch for [yourself](https://www.youtube.
 
 What a danger to our industry! Ignoring the complete over-reaction to these two comments a quick  search of the word promiscuity on [dictionary.com](http://www.dictionary.com/browse/promiscuous){:target="_blank"} shows that Crockford actually used this word correctly.
 
-![Promiscous](http://i.imgur.com/7CjrlAK.png)
+![Promiscous](https://i.imgur.com/7CjrlAK.png)
 
 I'll be the first to admit that the tech industry isn't always great. It can often be very unfriendly to beginners. The number of times I've seen seasoned developers tell beginners, "lol why are you using for loops when you can just use map" is extremely annoying when a beginner barely understands iteration. But when you see behavior in this industry you don't like, it's up to you to do something about it.
 
 Kas Perch wrote an article on Medium titled, ["Why I won’t be speaking at conferences with Douglas Crockford anymore."](https://medium.com/@nodebotanist/why-i-won-t-be-speaking-at-conferences-with-douglas-crockford-anymore-61bc29f028c8#.87591cy5u){:target="_blank"}. In the article, Kas describes dealing with Crockford's "untenable behavior" at multiple events even highlighting one specific face-to-face interaction with Crockford.
 
-![Mmmm](http://i.imgur.com/481WbPG.png)
+![Mmmm](https://i.imgur.com/481WbPG.png)
 
 "Mmm". What an effective and helpful way to provide feedback to someone's unproductive behavior! Rather than confront Crockford directly, we got a Medium article publicly shaming Crockford with the claim, "So I don’t like naming and shaming" *within the same article*.
 
@@ -42,7 +42,7 @@ It turns out Kas attended Nodevember last year and gave a talk related to [commu
 
 Within this talk Kas highlights the need for empathy "for the betterment of myself and others" with a bullet point dedicated to the importance of speaking up.
 
-![Speakup](http://i.imgur.com/OjszY85.jpg)
+![Speakup](https://i.imgur.com/OjszY85.jpg)
 
 You'd think that someone with such passion for building a better community to the point of giving an entire talk about it would be able to muster up a response greater than "Mmm" when the chance presented itself in real life at an event with Douglas Crockford himself.
 
